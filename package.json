@@ -4,7 +4,7 @@
     "demo": "https://demo.ghost.io",
     "version": "2.1.9",
     "scripts": {
-	"gulp": "gulp"
+        "gulp": "gulp"
     },
     "engines": {
         "ghost": ">=1.2.0"
@@ -52,5 +52,8 @@
     },
     "config": {
         "posts_per_page": 25
+    },
+    "dependencies": {
+        "jquery": "^3.6.0"
     }
 }
