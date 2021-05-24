@@ -111,6 +111,8 @@ body {
     padding-bottom: 12px;
     color: #fff;
     background: color(var(--darkgrey) l(-5%)) no-repeat center center;
+    background: rgb(141,104,82);
+    background: linear-gradient(50deg, rgba(141,104,82,1) 0%, rgba(70,46,37,1) 100%);
     background-size: cover;
 }
 
@@ -123,8 +125,8 @@ body {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.18);
-}
+    background: rgb(141,104,82);
+    background: linear-gradient(50deg, rgba(141,104,82,1) 0%, rgba(70,46,37,1) 100%);}
 
 .site-header:after {
     content: "";

@@ -6,11 +6,11 @@ language: 'en-uk'
 words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: /
+baseurl: /gh-pages/
 
 # Website info
-title: Wave
-description: A blog about everything that matters for living freely.
+title: Productivity & Coffee
+description: About Productivity & Coffee
 cover: assets/images/blog-cover.jpg
 logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
@@ -71,7 +71,7 @@ username: jekyller
 repo: jan20
 branch: master
 relative_source: ..
-destination: ..
+destination: ../preview
 production_url:  https://jan20.github.io/
 source_url:  https://jan20.github.com/
 
