@@ -71,7 +71,7 @@ username: jekyller
 repo: jan20
 branch: master
 relative_source: ..
-destination: ../
+destination: ../gh-pages
 production_url:  https://jan20.github.io/
 source_url:  https://jan20.github.com/
 
