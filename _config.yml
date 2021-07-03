@@ -19,7 +19,7 @@ CNAME: #add cname for website to be created
 
 # Social info
 navigation: True # show the navbar links
-subscribers: True # you need to connect an external service for this to work,
+subscribers: False # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
 # twitter: tryghost # replace by your username
@@ -30,7 +30,7 @@ disqus: False
 disqus_shortname: jekyller # replace with your disqus username
 
 # Google Analytics
-google_analytics: UA-69281367-1 # replace with your GA tracking identifier
+google_analytics: False # replace with your GA tracking identifier
 
 # Permalinks
 permalink: /:title
@@ -71,7 +71,7 @@ username: jekyller
 repo: jan20
 branch: master
 relative_source: ../
-destination: gh-pages
+destination: ../gh-pages
 production_url:  https://jan20.github.io/
 source_url:  https://jan20.github.com/
 
