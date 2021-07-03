@@ -6,10 +6,10 @@ language: 'en-uk'
 words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: /gh-pages
+baseurl: /gh-pages/
 
 # Website info
-title: Productivity & Coffee
+title: Turtle
 description: Turtle
 cover: assets/images/blog-cover.jpg
 logo: assets/images/blog-icon.png
