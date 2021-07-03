@@ -27,6 +27,13 @@ which is the directory in which a project's Gemfile is located.
 bundle exec jekyll serve --livereload
 ```
 
+To change the font style, the screen.css file needs to be adjusted.
+```
+Jan20.github.io/assets/built/screen.css
+```
+
+
+
 After having executed jekyll serve commmand, the blog becomes available on the
 locahost on port 4000.
 

@@ -10,6 +10,7 @@ production stylesheet in assets/built/screen.css
 
 /* 12. Pagination - Tools to let you flick between pages
 /* ---------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 /* The main wrapper for our pagination links */
 .pagination {
@@ -17,7 +18,7 @@ production stylesheet in assets/built/screen.css
     width: 80%;
     max-width: 800px;
     margin: 4rem auto;
-    font-family: "Ubuntu", sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
