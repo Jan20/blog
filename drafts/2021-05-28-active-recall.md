@@ -11,8 +11,6 @@ subclass: 'post'
 author: ghost
 ---
 
-# Active Recall
-Building up strong habits is key for building up long-term success!🥇 Only through performing tasks frequently we can expect to become any better. However, finding the motivation to stand up and excersising instead of relaxing is challenging. I like to share some tips building up the discipline needed to accomplish our goals.😉
 
 ## Building up Discipline
 
