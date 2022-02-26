@@ -1,0 +1,15 @@
+{
+    "angular": [
+        "post_001.md",
+        "testing_Angular_apps.md"
+    ],
+    "books": [
+        "book_001.md"
+    ],
+    "machine_learning": [
+        "tensorboard.md"
+    ],
+    "rxjs": [
+        "introduction_to_rxjs.md"
+    ]
+}

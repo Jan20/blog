@@ -1,0 +1,36 @@
+<mat-toolbar color='warn'>
+
+    <button class='title' mat-menu-item (click)='switchToLandingPage()'>{{title}}</button>
+  
+    <!-- <span flex mat-truncate></span> -->
+  
+    <span class='spacer'></span>
+    
+    <div class='desktop-menu' *ngFor="let item of items">
+      <button mat-menu-item (click)="navigateToMenuEntry(item)">
+        <span>{{item.name}}</span>
+      </button>
+    </div>
+  
+    <div class='desktop-menu'>
+      <button mat-menu-item (click)="navigateToMenuEntry(user)" class='user'>
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </div>
+  
+    <button class='mobile-menu' mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  
+    <mat-menu #menu="matMenu">
+      <div *ngFor="let item of items">
+        <button mat-menu-item (click)="navigateToMenuEntry(item)">
+          <span>
+            <mat-icon>{{item.icon}}</mat-icon>{{item.name}}
+          </span>
+        </button>
+      </div>
+    </mat-menu>
+  
+  </mat-toolbar>
+  

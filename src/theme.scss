@@ -1,0 +1,49 @@
+// below defines your custom color to build a theme palette from
+$mat-white: (
+    50: #ffffff,
+    100: #ffcdd2,
+    200: #ef9a9a,
+    300: #e57373,
+    400: #ef5350,
+    500: #f44336,
+    600: #e53935,
+    700: #d32f2f,
+    800: #c62828,
+    900: #b71c1c,
+    A100: #ff8a80,
+    A200: #ff5252,
+    A400: #ff1744,
+    A700: #d50000,
+    contrast: (
+      50: rgb(32, 86, 158),
+      100: rgb(32, 86, 158),
+      200: rgb(32, 86, 158),
+      300: rgb(32, 86, 158),
+      400: rgb(32, 86, 158),
+      500: rgb(32, 86, 158),
+      600: rgb(32, 86, 158),
+      700: rgb(32, 86, 158),
+      800: rgb(32, 86, 158),
+      900: rgb(32, 86, 158),
+      A100: rgb(32, 86, 158),
+      A200: rgb(32, 86, 158),
+      A400: rgb(32, 86, 158),
+      A700: rgb(32, 86, 158),
+    )
+);
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$primary: mat-palette($mat-grey, 500);
+$accent:  mat-palette($mat-blue, 500);
+$warn:    mat-palette($mat-white, 50);
+
+$hydra-app-theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($hydra-app-theme);
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);

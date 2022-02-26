@@ -1,0 +1,17 @@
+<h1 class='title'>{{title}}</h1>
+<mat-grid-list cols="3">
+  <div *ngFor='let post of posts'>
+    <mat-grid-tile>
+      <mat-card class='overviewCard' (click)="changeView(post.link)">
+        <img mat-card-image src="assets/images/angular.png">
+        <!-- <markdown commandLine [src]="posts[0].firstParagraph"></markdown> -->
+        <mat-card-content>
+          <mat-card-title>
+            {{post.headline}}
+          </mat-card-title>
+          {{post.firstParagraph}}
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </div>
+</mat-grid-list>

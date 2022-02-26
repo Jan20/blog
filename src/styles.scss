@@ -1,0 +1,126 @@
+@import './theme.scss';
+@import '@angular/material';
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: rgba(245, 245, 247, 1);
+  height: 100%;
+}
+
+h1 {
+  line-height: 300%;
+  font-size: 46px;
+  font-weight: 600;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  color: rgb(62, 72, 77);
+  text-align: center;
+}
+
+h2 {
+  line-height: 150%;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 4px;
+  color: rgb(62, 72, 77);
+}
+
+h3 {
+  line-height: 150%;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 4px;
+  color: rgb(62, 72, 77);
+}
+
+p {
+  line-height: 175%;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: justify;
+  color: rgb(51, 51, 51);
+  margin-bottom: 12px;
+}
+
+.separator {
+  border-bottom: 1px solid rgb(51, 51, 51);
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  .mat-card {
+    width: 80%;
+    border: None;
+  }
+}
+
+@media (min-width: 680px) {
+  .mat-card {
+    width: 300px;
+    border: 3px;
+  }
+}
+
+@media (max-width: 680px) {
+  .card-button-container {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 680px) {
+  .card-button-container {
+    width: 550px;
+    margin: auto;
+  }
+}
+
+.mat-raised-button {
+  padding: 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.small-space {
+  margin: 20px;
+}
+
+.normal-space {
+  margin: 50px;
+}
+
+.whitespace {
+  margin: 50px;
+}
+
+.whitespace-tiny {
+  margin: 5px;
+}
+
+.mat-fab-container {
+  margin-top: -45px;
+  margin-left: -48px;
+  position: absolute;
+}
+
+body {
+  background: white;
+  background: rgb(131, 58, 180);
+  background-color: rgba(245, 245, 247, 1);
+//  background: linear-gradient(196deg, rgb(16, 14, 102) 0%, rgb(5, 2, 24) 100%);
+}

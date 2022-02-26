@@ -1,59 +1,49 @@
 {
-    "name": "Jan.Schumann@io.com",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
-    "demo": "https://demo.ghost.io",
-    "version": "2.1.9",
-    "scripts": {
-        "gulp": "gulp"
-    },
-    "engines": {
-        "ghost": ">=1.2.0"
-    },
-    "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
-    },
-    "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Magazine"
-        ]
-    },
-    "keywords": [
-        "ghost",
-        "theme"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
-    },
-    "bugs": "https://github.com/TryGhost/Casper/issues",
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
-    "devDependencies": {
-        "autoprefixer": "6.3.6",
-        "cssnano": "3.7.1",
-        "gulp": "3.9.1",
-        "gulp-livereload": "3.8.1",
-        "gulp-postcss": "6.1.1",
-        "gulp-sourcemaps": "1.6.0",
-        "gulp-util": "3.0.7",
-        "gulp-watch": "4.3.8",
-        "gulp-zip": "4.0.0",
-        "postcss-color-function": "2.0.1",
-        "postcss-custom-properties": "5.0.1",
-        "postcss-easy-import": "1.0.1"
-    },
-    "config": {
-        "posts_per_page": 25
-    },
-    "dependencies": {
-        "jquery": "^3.6.0"
-    }
+  "name": "blog",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~13.1.0",
+    "@angular/common": "~13.1.0",
+    "@angular/compiler": "~13.1.0",
+    "@angular/core": "~13.1.0",
+    "@angular/forms": "~13.1.0",
+    "@angular/material": "^13.1.1",
+    "@angular/platform-browser": "~13.1.0",
+    "@angular/platform-browser-dynamic": "~13.1.0",
+    "@angular/router": "~13.1.0",
+    "ng-particles": "^2.21.0",
+    "ngx-markdown": "^13.0.0",
+    "prism": "^4.1.2",
+    "prismjs": "^1.25.0",
+    "rxjs": "~7.4.0",
+    "tslib": "^2.3.0",
+    "tsparticles": "^1.38.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~13.1.2",
+    "@angular/cli": "~13.1.2",
+    "@angular/compiler-cli": "~13.1.0",
+    "@types/jasmine": "~3.10.0",
+    "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "eslint": "^8.8.0",
+    "eslint-config-google": "^0.14.0",
+    "jasmine-core": "~3.10.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.1.0",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "typescript": "~4.5.2"
+  }
 }
