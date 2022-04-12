@@ -35,9 +35,6 @@
 
 .mat-card:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  /* Equal to scaleX(0.7) scaleY(0.7) */
-  cursor: pointer;
-
   transform: scale(1.005);
 }
 

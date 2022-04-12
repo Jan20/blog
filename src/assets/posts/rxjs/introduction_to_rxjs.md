@@ -1,3 +1,4 @@
+![alt text](assets/images/angular.png)
 # RxJS
 
 ## Core Concepts

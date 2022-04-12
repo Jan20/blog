@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { map, Observable } from 'rxjs';
 import { Post } from '../../models/post';
 import { BlogService } from '../../services/blog.service';
 
@@ -10,26 +11,19 @@ import { BlogService } from '../../services/blog.service';
 })
 export class BlogComponent implements OnInit {
 
-  title: string = 'Guides'
-  posts: Post[] = []
+  public title: string = 'Guides';
+  public posts: Observable<Post[]> = this.blogService.getPosts();
 
   constructor(
-    private blogService: BlogService,
-    private router: Router
+    private readonly blogService: BlogService,
+    private readonly router: Router
   ) { }
 
-  ngOnInit() {
-    this.blogService.fetchPosts()
-    this.blogService.postsSubject.subscribe((posts: Post[]) => {
-      this.posts = posts
-      this.posts.forEach((post, index) => {
-        this.posts[index].firstParagraph = post.firstParagraph.replace('**.', '.').replace('**', '')
-      })
-    })
+  ngOnInit(): void {
+    console.log(this.posts);
   }
 
   public changeView(link: string): void {
-    console.log(link)
-    this.router.navigate([link]);
+    this.router.navigate([`blog/${link}`]);
   }
 }

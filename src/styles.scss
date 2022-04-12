@@ -124,3 +124,11 @@ body {
   background-color: rgba(245, 245, 247, 1);
 //  background: linear-gradient(196deg, rgb(16, 14, 102) 0%, rgb(5, 2, 24) 100%);
 }
+
+img {
+  height: 200px;
+  width: 200px;
+  transform: scale(0.7);
+  margin-left: 300px;
+  margin-bottom: -50px;
+}

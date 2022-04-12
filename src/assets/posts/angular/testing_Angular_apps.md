@@ -1,3 +1,4 @@
+![alt text](assets/images/angular.png)
 # Testing Angular Apps
 Angular provides a set of tools that can be used to test individual functions,components as well as end-to-end flow. This guide dives into common testing use-cases and tries to highlight best practices.
 
@@ -15,4 +16,16 @@ if('should be created', () => {
 	fixture.detectChanges();
 	expect(component).toBeTruthy();
 });
+```
+
+## Mockito
+Mockito provides are range of functionalities for mocking services and varifying, whether a mocked services has been called as expected.
+
+```JS
+const callCapture = capture(restService.getPost)
+
+const firstParameter = callCapture.last()[0]
+const secondParameter = callCapture.last()[1]
+
+verify(restService.getPosts(anything(), deepEqual(paramteters))).once();
 ```

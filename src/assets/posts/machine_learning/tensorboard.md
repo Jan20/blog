@@ -1,3 +1,4 @@
+![alt text](assets/images/machine_learning/tensorflow.png)
 # Tensorboard
 
 ## Overview

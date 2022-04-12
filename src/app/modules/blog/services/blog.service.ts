@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, of, Subject } from 'rxjs';
+import { catchError, first, map, Observable, of, Subject, switchMap } from 'rxjs';
 import { Post } from '../models/post';
 import posts from '../../../../assets/posts/posts.json';
 
@@ -13,7 +13,7 @@ export class BlogService {
   private posts: Post[] = [];
 
   constructor(
-    private httpClient: HttpClient,
+    private readonly httpClient: HttpClient,
   ) {
     this.posts = this.importFileNames();
   }
@@ -28,27 +28,41 @@ export class BlogService {
     const files: Post[] = [];
     Object.keys(posts).forEach(key => {
       posts[key as keyof typeof posts].forEach(value => {
-        files.push(new Post(value, key))
+        files.push(new Post(key, value))
       });
     });
     return files;
   }
 
-  /**
-   * 
-   */
-  public fetchPosts(): void {
-    this.posts.forEach((post, index) => {
-      this.httpClient.get(`/assets/posts/${post.category}/${post.fileName}`, { responseType: 'text' })
-        .pipe(catchError(this.handleError<string>('getPosts', '[]')))
-        .subscribe(response => {
-          post.headline = response.split("\n")[0].replace("# ", "")
-          post.firstParagraph = response.split("\n")[1]
-          post.link = `blog/posts/${post.category}/${post.fileName}`
-          this.posts[index] = post
-          this.postsSubject.next(this.posts)
-        })
-    })
+  public getPosts(): Observable<Post[]> {
+    const posts: Post[] = [];
+    this.posts.forEach((post) => {
+      this.getPost(post.category, post.fileName).pipe(
+        map(fetchedPost => posts.push(fetchedPost))).subscribe();
+    });
+    return of(posts);
+  }
+
+  private getPost(category: string, fileName: string): Observable<Post> {
+    const url = `/posts/${category}/${fileName}`;
+    return this.httpClient.get(`assets/${url}`, { responseType: 'text' }).pipe(
+      catchError(this.handleError<string>('getPosts', '[]')),
+      switchMap(article => {
+        const headline: string = article.split('\n')[1].replace('# ', '');
+        const firstParagraph: string = this.cleanParagraph(article);
+        const imageUrl: string = article.split('(')[1].split(')')[0]
+        return of(new Post(category, fileName, headline, firstParagraph, url, imageUrl))
+      })
+    );
+  }
+
+  private cleanParagraph(article: string): string {
+    const firstParagraph: string = article.split('\n')[2];
+    let updatedParagraph: string = '';
+    for (let i = 0; i < firstParagraph.length; i++) {
+      updatedParagraph += firstParagraph[i] !== '*' ? firstParagraph[i] : '';
+    }
+    return updatedParagraph;
   }
 
   /**
