@@ -9,12 +9,12 @@
 .mat-card {
     width: 300px;
     margin: auto;
-    border-radius: 40px;
     line-height: 1.47059;
     -webkit-font-smoothing: antialiased;
-    font-weight: 400;
+    font-weight: 500;
     color: #ffffff !important;
     font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 16px;
     letter-spacing: -.022em;
     border: None;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -27,7 +27,6 @@
     .mat-card {
         width: 90%;
         margin: auto;
-        border-radius: 40px;
         line-height: 1.47059;
         font-weight: 400;
         color: #ffffff !important;
@@ -41,7 +40,7 @@
     }
 
     .mat-grid-tile-content {
-        padding-top: 100px !important;
+        padding-top: 60px !important;
         margin: 0px;
         padding: 0px;
     }
@@ -61,9 +60,7 @@
 }
 .mat-card:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    /* Equal to scaleX(0.7) scaleY(0.7) */
     cursor: pointer;
-
     transform: scale(1.02);
 }
 
@@ -75,8 +72,9 @@
     border-bottom-left-radius:  20px;
     background: linear-gradient(196deg, rgba(133, 78, 33, 0.597) 0%, rgb(61, 23, 8) 100%);
     padding: 10px;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-bottom: 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 8px;
 }
 
 markdown {
@@ -92,6 +90,7 @@ markdown {
     width: 50%;
     transform: scale(0.7);
     margin-left: 25%;
+    padding-top: 40px;
 }
 
 h1{

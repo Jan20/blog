@@ -1,20 +1,10 @@
 <mat-toolbar color='warn'>
 
-    <button class='title' mat-menu-item (click)='switchToLandingPage()'>{{title}}</button>
+    <button class='title' mat-menu-item (click)='switchToLandingPage()'>🌴 {{title}}</button>
   
-    <!-- <span flex mat-truncate></span> -->
-  
-    <span class='spacer'></span>
-    
     <div class='desktop-menu' *ngFor="let item of items">
       <button mat-menu-item (click)="navigateToMenuEntry(item)">
-        <span>{{item.name}}</span>
-      </button>
-    </div>
-  
-    <div class='desktop-menu'>
-      <button mat-menu-item (click)="navigateToMenuEntry(user)" class='user'>
-        <mat-icon>account_circle</mat-icon>
+        <span>{{ item.icon }} {{ item.name }}</span>
       </button>
     </div>
   

@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { catchError, first, map, Observable, of, Subject, switchMap } from 'rxjs';
 import { Post } from '../models/post';
 import posts from '../../../../assets/posts/posts.json';
+import { guides } from 'src/assets/posts/guides/guides';
+import { reviews } from 'src/assets/posts/reviews/reviews';
+import { productivity } from 'src/assets/posts/productivity/productivity';
 
 @Injectable({
   providedIn: 'root'
@@ -34,13 +37,13 @@ export class BlogService {
     return files;
   }
 
-  public getPosts(): Observable<Post[]> {
-    const posts: Post[] = [];
-    this.posts.forEach((post) => {
-      this.getPost(post.category, post.fileName).pipe(
-        map(fetchedPost => posts.push(fetchedPost))).subscribe();
-    });
-    return of(posts);
+  public getPosts(category: string): Post[] {
+    switch (category) {
+      case 'guides': return guides;
+      case 'reviews': return reviews;
+      case 'productivity': return productivity;
+      default: return guides;
+    }
   }
 
   private getPost(category: string, fileName: string): Observable<Post> {

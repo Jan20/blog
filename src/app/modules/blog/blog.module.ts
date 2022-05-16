@@ -40,7 +40,8 @@ export function markedOptionsFactory(): MarkedOptions {
     RouterModule.forChild([
       { path: '', component: BlogComponent },
       { path: 'blog', component: BlogComponent },
-      { path: 'blog/posts/:category/:id', component: PostComponent, pathMatch: 'full' }
+      { path: 'blog/:category', component: BlogComponent },
+      { path: 'blog/:category/:number/:id', component: PostComponent, pathMatch: 'full' }
     ]),
     MarkdownModule.forRoot({
       loader: HttpClient,

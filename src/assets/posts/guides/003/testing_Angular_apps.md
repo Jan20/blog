@@ -1,4 +1,4 @@
-![alt text](assets/images/angular.png)
+![alt text](assets/posts/angular/003/angular.png)
 # Testing Angular Apps
 Angular provides a set of tools that can be used to test individual functions,components as well as end-to-end flow. This guide dives into common testing use-cases and tries to highlight best practices.
 

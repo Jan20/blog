@@ -8,13 +8,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostComponent implements OnInit {
 
-  public markdownSource: string = './assets/posts/post_001.md'
+  public markdownSource: string = ''
 
   constructor(
     private activatedRoute: ActivatedRoute,
   ) {
     this.activatedRoute.params.subscribe(params => {
-      this.markdownSource = `./assets/posts/${params['category']}/${params['id']}`
+      const url = `./assets/posts/${params['category']}/${params['number']}/${params['id']}`;
+      this.markdownSource = url;
     })
   }
 

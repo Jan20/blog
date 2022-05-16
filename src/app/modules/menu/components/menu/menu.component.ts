@@ -9,66 +9,24 @@ import { MenuService } from '../../services/menu.service';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
   public title: String = "Jan Schumann's Blog";
-  private _items: MenuItem[];
-  private _user: MenuItem;
+  public items: MenuItem[];
 
   constructor(
     private readonly router: Router,
     private readonly menuService: MenuService,
   ) {
-
-    this._items = []
-    this._user = new MenuItem('User', 'account_circle', '/user')
-
+    this.items = [
+      new MenuItem('Reviews', '📚', '/blog/reviews'),
+      new MenuItem('Productivity', '⚙️', '/blog/productivity'),
+      new MenuItem('Guides', '🧑🏼‍💻', '/blog/guides'),
+    ]
   }
 
-  ngOnInit() {
-
-    // this.languageService.fetchLanguages()
-    // this.languageService.languagesSubject.subscribe(languages => {
-
-    this.items = []
-
-    //   languages.forEach(language => {
-
-    //     this.items.push(new MenuItem(language.name, 'grain', '/languages/' + language.languageId))
-
-    //   })
-    // })
-  }
-
-  public get items(): MenuItem[] {
-
-    return this._items;
-
-  }
-
-  public set items(value: MenuItem[]) {
-
-    this._items = value;
-
-  }
-
-  public get user(): MenuItem {
-
-    return this._user;
-
-  }
-
-  public set user(value: MenuItem) {
-
-    this._user = value;
-
-  }
+  ngOnInit() {  }
 
   public navigateToMenuEntry(item: MenuItem): void {
     this.router.navigate([item.link])
-  }
-
-  public addLanguage(): void {
-    this.router.navigate(['/languages/add'])
   }
 
   public switchToLandingPage(): void {
