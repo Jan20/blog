@@ -1,5 +1,7 @@
 ![alt text](assets/images/angular.png)
 # RxJS
+RxJS relies heavily on functional programming concepts, as brievly presentend in the following section.
+
 
 ## Core Concepts
 RxJS relies heavily on functional programming concepts, as brievly presentend
