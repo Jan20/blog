@@ -32,3 +32,28 @@ Finally, Tensorboard gets started by using the command, defined below:
 ```
 tensorboard --logdir logs/fit
 ```
+
+
+
+
+
+
+
+
+
+
+
+# What is not relevant
+
+1. asdf
+
+What is this blog about?
+
+I like to focus on three things:
+
+* Provide in-depth Angular tutorials
+
+* Guides for using machine learning for financial forcasting
+
+* Articles about getting stuff done
+

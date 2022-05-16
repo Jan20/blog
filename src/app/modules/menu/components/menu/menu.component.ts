@@ -10,16 +10,13 @@ import { MenuService } from '../../services/menu.service';
 })
 export class MenuComponent implements OnInit {
 
-  public title: String = "Jan Schumann";
+  public title: String = "Jan Schumann's Blog";
   private _items: MenuItem[];
   private _user: MenuItem;
 
   constructor(
-
-    // private languageService: LanguageService,
-    private router: Router,
-    public menuService: MenuService,
-
+    private readonly router: Router,
+    private readonly menuService: MenuService,
   ) {
 
     this._items = []
