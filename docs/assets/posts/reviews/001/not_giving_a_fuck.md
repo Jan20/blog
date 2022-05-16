@@ -1,4 +1,4 @@
-![alt text](assets/images/books/The_Subtle_Art_of_Not_Giving_a_F*ck.png)
+![alt text](assets/posts/reviews/001/not_giving_a_fuck.png)
 # Notes from The Subtle Art Of Not Giving A Fuck
 
 ## Quotes

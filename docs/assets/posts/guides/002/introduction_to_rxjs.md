@@ -1,5 +1,5 @@
-![alt text](assets/images/angular.png)
-# RxJS
+![RxJS Logo](assets/posts/angular/002/rxjs.png)
+# RxJS in Angular
 RxJS relies heavily on functional programming concepts, as brievly presentend in the following section.
 
 
