@@ -11,4 +11,3 @@ What pain do you want in life? What are you willing to sacrifice? What if, to wh
 
 Focus on simple experiences such as meeting friends, creating something or reading a good book instead of feeling that we are intitled to be special.
 
-

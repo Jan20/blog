@@ -1,4 +1,4 @@
-![Angular Logo](assets/posts/angular/001/angular.png)
+![Angular Logo](assets/posts/guides/001_angular_fundamentals/angular.png)
 # Angular Fundamentals
 This guide provides a **brief overview** of creating a **new Angular application**.
 ## How to create a new application?

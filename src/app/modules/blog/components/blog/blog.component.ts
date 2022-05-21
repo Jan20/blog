@@ -9,36 +9,23 @@ import { BlogService } from '../../services/blog.service';
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss']
 })
-export class BlogComponent implements OnInit, OnDestroy {
-
+export class BlogComponent implements OnInit {
   public title: string = 'Guides';
-  public posts: Post[] = [];
   public postsInRow: number = 3;
-  private destroyed: Subject<boolean> = new Subject();
+  public posts: Observable<Post[]>;
 
   constructor(
     private readonly blogService: BlogService,
     private readonly router: Router,
     private readonly activatedRoute: ActivatedRoute,
-  ) { 
-    this.activatedRoute.paramMap.pipe(
-      takeUntil(this.destroyed),
-      map((paramMap) => paramMap.get('category') as string),
-      tap((category) => this.title = category.charAt(0).toUpperCase() + category.slice(1)),
-      tap((category) => this.posts = this.blogService.getPosts(category))
-    )
-    .subscribe();
+  ) {
+    this.posts = this.fetchPosts();
   }
 
   ngOnInit(): void {
     if (window.innerWidth < 1000) {
       this.postsInRow = 1;
     }
-  }
-
-  ngOnDestroy(): void {
-    this.destroyed.next(true);
-    this.destroyed.complete();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -51,7 +38,16 @@ export class BlogComponent implements OnInit, OnDestroy {
   }
 
   public changeView(link: string): void {
-    console.log(link);
-    this.router.navigate([`blog/${link}`]);
+    const filePath = link.replace('./src/assets/posts', '')
+    this.router.navigate([`blog/${filePath}`]);
+  }
+
+  private fetchPosts(): Observable<Post[]> {
+    return this.activatedRoute.paramMap.pipe(
+      map((paramMap) => paramMap.get('category')),
+      map((category) => category ? category : this.title),
+      tap((category) => this.title = category.charAt(0).toUpperCase() + category.slice(1)),
+      map((category) => this.blogService.getPosts(category))
+    )
   }
 }

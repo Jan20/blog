@@ -5,6 +5,6 @@ export class Post {
         public headline: string = '',
         public firstParagraph: string = '',
         public link: string = '',
-        public imageUrl: string = ''
+        public thumbnail: string = ''
     ) { }
 }

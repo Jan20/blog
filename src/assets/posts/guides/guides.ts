@@ -1,7 +1,10 @@
-import { Post } from "src/app/modules/blog/models/post";
+import { Post } from "src/app/modules/blog/models/post"; 
 
 export const guides: Post[] = [
-    new Post('angular_fundamentals.md', 'Angular', 'Angular Fundamentals', 'This guide provides a **brief overview** of creating a **new Angular application**.', 'guides/001/angular_fundamentals.md', 'assets/posts/guides/001/angular.png'),
-    new Post('introduction_to_rxjs.md', 'Angular', 'RxJS in Angular', 'This guide provides a **brief overview** of creating a **new Angular application**.', 'guides/002/introduction_to_rxjs.md', 'assets/posts/guides/002/rxjs.png'),
-    new Post('testing_Angular_apps.md', 'Angular', 'Testing Angular Apps', 'Angular provides a set of tools that can be used to test individual functions,components as well as end-to-end flow. This guide dives into common testing use-cases and tries to highlight best practices.', 'guides/003/testing_Angular_apps.md', 'assets/posts/guides/003/angular.png'),
+    new Post('angular_apps_on_github_pages.md', 'guides', 'Angular on GitHub Pages ', 'GitHub pages is a free hosting service for static websides, integrated in ones Github account. ', './src/assets/posts/guides/006_angular_apps_on_github_pages/angular_apps_on_github_pages.md', 'assets/posts/guides/006_angular_apps_on_github_pages/thumbnail.png'), 
+    new Post('testing_Angular_apps.md', 'guides', 'Testing Angular Apps ', 'Angular provides a set of tools that can be used to test individual functions,components as well as end-to-end flow. This guide dives into common testing use-cases and tries to highlight best practices. ', './src/assets/posts/guides/003_testing_Angular_apps/testing_Angular_apps.md', 'assets/posts/guides/003_testing_Angular_apps/thumbnail.png'), 
+    new Post('introduction_to_rxjs.md', 'guides', 'RxJS in Angular ', 'RxJS relies heavily on functional programming concepts, as brievly presentend in the following section. ', './src/assets/posts/guides/002_introduction_to_rxjs/introduction_to_rxjs.md', 'assets/posts/guides/002_introduction_to_rxjs/thumbnail.png'), 
+    new Post('angular_fundamentals.md', 'guides', 'Angular Fundamentals ', 'This guide provides a **brief overview** of creating a **new Angular application**. ', './src/assets/posts/guides/001_angular_fundamentals/angular_fundamentals.md', 'assets/posts/guides/001_angular_fundamentals/thumbnail.png'), 
+    new Post('dataframe.md', 'guides', 'Pandas Datafames ', 'The following post provides an introduction to Pandas dataframes. ', './src/assets/posts/guides/005_pandas_dataframes/dataframe.md', 'assets/posts/guides/005_pandas_dataframes/thumbnail.png'), 
+    new Post('tensorboard.md', 'guides', 'Tensorboard ', '## Overview ', './src/assets/posts/guides/004_tensorboard/tensorboard.md', 'assets/posts/guides/004_tensorboard/thumbnail.png'), 
 ]

@@ -1,41 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, first, map, Observable, of, Subject, switchMap } from 'rxjs';
-import { Post } from '../models/post';
-import posts from '../../../../assets/posts/posts.json';
+import { Observable, of } from 'rxjs';
 import { guides } from 'src/assets/posts/guides/guides';
-import { reviews } from 'src/assets/posts/reviews/reviews';
 import { productivity } from 'src/assets/posts/productivity/productivity';
+import { reviews } from 'src/assets/posts/reviews/reviews';
+import { Post } from '../models/post';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
 
-  public postsSubject: Subject<Post[]> = new Subject<Post[]>();
-  private posts: Post[] = [];
-
   constructor(
     private readonly httpClient: HttpClient,
-  ) {
-    this.posts = this.importFileNames();
-  }
-
-  /**
-   * Loads the posts JSON from the asssets directory and returns an array of
-   * posts, based on the data provided in the JSON.
-   * 
-   * @returns: Array of Posts.
-   */
-  private importFileNames(): Post[] {
-    const files: Post[] = [];
-    Object.keys(posts).forEach(key => {
-      posts[key as keyof typeof posts].forEach(value => {
-        files.push(new Post(key, value))
-      });
-    });
-    return files;
-  }
+  ) {}
 
   public getPosts(category: string): Post[] {
     switch (category) {
@@ -44,28 +22,6 @@ export class BlogService {
       case 'productivity': return productivity;
       default: return guides;
     }
-  }
-
-  private getPost(category: string, fileName: string): Observable<Post> {
-    const url = `/posts/${category}/${fileName}`;
-    return this.httpClient.get(`assets/${url}`, { responseType: 'text' }).pipe(
-      catchError(this.handleError<string>('getPosts', '[]')),
-      switchMap(article => {
-        const headline: string = article.split('\n')[1].replace('# ', '');
-        const firstParagraph: string = this.cleanParagraph(article);
-        const imageUrl: string = article.split('(')[1].split(')')[0]
-        return of(new Post(category, fileName, headline, firstParagraph, url, imageUrl))
-      })
-    );
-  }
-
-  private cleanParagraph(article: string): string {
-    const firstParagraph: string = article.split('\n')[2];
-    let updatedParagraph: string = '';
-    for (let i = 0; i < firstParagraph.length; i++) {
-      updatedParagraph += firstParagraph[i] !== '*' ? firstParagraph[i] : '';
-    }
-    return updatedParagraph;
   }
 
   /**

@@ -1,7 +1,9 @@
-import { Post } from "src/app/modules/blog/models/post";
+import { Post } from "src/app/modules/blog/models/post"; 
 
 export const productivity: Post[] = [
-    new Post('angular_fundamentals.md', 'Angular', 'Angular Fundamentals', 'This guide provides a **brief overview** of creating a **new Angular application**.', 'angular/001/angular_fundamentals.md', 'assets/posts/angular/001/angular.png'),
-    new Post('introduction_to_rxjs.md', 'Angular', 'RxJS in Angular', 'This guide provides a **brief overview** of creating a **new Angular application**.', 'angular/002/introduction_to_rxjs.md', 'assets/posts/angular/002/rxjs.png'),
-    new Post('testing_Angular_apps.md', 'Angular', 'Testing Angular Apps', 'Angular provides a set of tools that can be used to test individual functions,components as well as end-to-end flow. This guide dives into common testing use-cases and tries to highlight best practices.', 'angular/003/testing_Angular_apps.md', 'assets/posts/angular/003/angular.png'),
+    new Post('getting_stuff_done.md', 'productivity', 'Getting Stuff Done ', 'Staying productive over the course of a day is key to accomplish our goals. ', './src/assets/posts/productivity/001_getting_stuff_done/getting_stuff_done.md', 'assets/posts/productivity/001_getting_stuff_done/thumbnail.png'), 
+    new Post('getting_along_with_people.md', 'productivity', 'Getting Along with people ', 'There are some speech patterns that can cause negative effects. Those are: ', './src/assets/posts/productivity/003_getting_along_with_people/getting_along_with_people.md', 'assets/posts/productivity/003_getting_along_with_people/thumbnail.png'), 
+    new Post('not_to_buy_stuff.md', 'productivity', 'Save Money ', '## Knowing our spendings ', './src/assets/posts/productivity/002_not_to_buy_stuff/not_to_buy_stuff.md', 'assets/posts/productivity/002_not_to_buy_stuff/thumbnail.png'), 
+    new Post('passive_learning.md', 'productivity', 'Passive Learning ', '* There are three states: laser sharp focus on getting stuff done, complete absoption in a recreative activity and doing something that leaves  ', './src/assets/posts/productivity/005_passive_learning/passive_learning.md', 'assets/posts/productivity/005_passive_learning/thumbnail.png'), 
+    new Post('positive_mindset.md', 'productivity', 'Positive Mindset ', '## Keep positive ', './src/assets/posts/productivity/004_positive_mindset/positive_mindset.md', 'assets/posts/productivity/004_positive_mindset/thumbnail.png'), 
 ]
