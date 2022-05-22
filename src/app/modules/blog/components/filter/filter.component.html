@@ -1,0 +1,6 @@
+<mat-card>
+    <mat-chip-list aria-label="Fish selection" *ngIf="topics | async as topics">
+        <mat-chip (click)="selectTopic('All')">All</mat-chip>
+        <mat-chip (click)="selectTopic(topic)" *ngFor="let topic of topics">{{topic}}</mat-chip>
+    </mat-chip-list>
+</mat-card>

@@ -5,6 +5,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuService } from './services/menu.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MenuService } from './services/menu.service';
     MatIconModule,
     MatMenuModule,
     MatToolbarModule,
+    MatButtonModule,
   ],
   providers: [
     MenuService

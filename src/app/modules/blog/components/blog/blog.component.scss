@@ -2,7 +2,6 @@ img {
     height: 200px;
     width: 200px;
     transform: scale(0.7);
-    margin-left: 300px;
     margin-bottom: -50px;
 }
 
@@ -14,9 +13,17 @@ img {
     line-height: normal;
 }
 
+.mat-grid-tile {
+    height: 500px;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .mat-card {
+    height: 340px;
     width: 300px;
-    margin: auto;
     line-height: 1.47059;
     -webkit-font-smoothing: antialiased;
     font-weight: 500;
@@ -28,48 +35,25 @@ img {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 10px;
     transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
-    padding: 0px;
+    padding: 0px !important;
+    margin-bottom: 100px;
 }
 
-@media(max-width: 768px) {
-    .mat-card {
-        width: 90%;
-        margin: auto;
-        line-height: 1.47059;
-        font-weight: 400;
-        color: #ffffff !important;
-        font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
-        letter-spacing: -.022em;
-        border: None;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        border-radius: 10px;
-        transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
-        padding: 0px;
-    }
-
-    .mat-grid-tile-content {
-        padding-top: 60px !important;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .mat-grid-list {
-        margin: 0px;
-        padding: 0px;
-        padding-top: 0px !important;
-    }
-
-    .mat-grid-tile {
-        margin: 0px;
-        padding: 0px;
-        padding-top: calc(100%) !important;
-        padding-bottom: 0px !important;
-    }
-}
 .mat-card:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
     transform: scale(1.02);
+}
+
+.mat-card-image {
+    height: 50%;
+    width: 50%;
+    transform: scale(0.7);
+    margin-left: 25%;
+}
+
+.mat-card-title {
+    text-align: center;
 }
 
 .mat-card-content {
@@ -83,24 +67,69 @@ img {
     padding-top: 40px;
     padding-bottom: 0px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 8px;
+    margin-bottom: 20px !important;
 }
 
-markdown {
-    color: #ffffff !important;
-}
+@media(max-width: 768px) {
+    .mat-grid-tile {
+        height: 500px;
+        padding-top: 0px !important;
+        padding-bottom: 20px !important;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 
-.mat-card-title {
-    text-align: center;
-}
+    .mat-card-image {
+        height: 50%;
+        width: 50%;
+        transform: scale(0.7);
+        margin-left: 25%;
+    }
+    
+    .mat-card {
+        height: 400px;  
+        width: 95%;
+        margin: auto;
+        line-height: 1.47059;
+        font-weight: 400;
+        color: #ffffff !important;
+        font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+        letter-spacing: -.022em;
+        border: None;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 10px;
+        transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
+    }
 
-.mat-card-image {
-    height: 50%;
-    width: 50%;
-    transform: scale(0.7);
-    margin-left: 25%;
-    padding-top: 40px;
-}
+    .mat-card-content {
+        height: 220px;  
+        border-color: #000 transparent transparent transparent;
+        border-radius: 95%/100px 100px 0 0;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius:  20px;
+        background: linear-gradient(196deg, rgba(133, 78, 33, 0.597) 0%, rgb(61, 23, 8) 100%);
+        padding: 10px;
+        padding-top: 40px;
+        padding-bottom: 0px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 8px;
+        margin-bottom: 20px !important;
+    }
 
-h1{
-    border: None !important;
+    .mat-grid-tile-content {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .mat-grid-list {
+        margin: 0px;
+        padding: 0px;
+        padding-top: 0px !important;
+    }
+
+    .mat-grid-tile {
+        margin: 0px;
+        padding: 0px !important;;
+        // padding-top: calc(100%) !important;
+        padding-bottom: 0px !important;
+    }
 }

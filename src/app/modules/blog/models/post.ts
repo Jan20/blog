@@ -1,10 +1,10 @@
 export class Post {
     constructor(
         public category: string = '',
-        public fileName: string = '',
+        public topic: string = '',
         public headline: string = '',
         public firstParagraph: string = '',
         public link: string = '',
-        public thumbnail: string = ''
+        public thumbnail: string = '',
     ) { }
 }

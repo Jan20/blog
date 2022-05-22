@@ -11,7 +11,7 @@ import { BlogService } from '../../services/blog.service';
 })
 export class BlogComponent implements OnInit {
   public title: string = 'Guides';
-  public postsInRow: number = 3;
+  public postsInRow: number = 4;
   public posts: Observable<Post[]>;
 
   constructor(
@@ -30,11 +30,19 @@ export class BlogComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   public onResize(event: { target: { innerWidth: number; }; }): void {
-    if (event.target.innerWidth < 1000) {
+    if (event.target.innerWidth < 800) {
       this.postsInRow = 1;
       return;
     }
-    this.postsInRow = 3;
+    if (event.target.innerWidth < 1000) {
+      this.postsInRow = 2;
+      return;
+    }
+    if (event.target.innerWidth < 1500) {
+      this.postsInRow = 3;
+      return;
+    }
+    this.postsInRow = 4;
   }
 
   public changeView(link: string): void {
@@ -42,12 +50,21 @@ export class BlogComponent implements OnInit {
     this.router.navigate([`blog/${filePath}`]);
   }
 
-  private fetchPosts(): Observable<Post[]> {
+  public onTopicSelected(topic: string): void {
+    console.log(topic);
+    if (topic === 'All') {
+      this.posts = this.fetchPosts();
+      return;
+    }
+    this.posts = this.fetchPosts(topic);
+  }
+
+  private fetchPosts(topic?: string): Observable<Post[]> {
     return this.activatedRoute.paramMap.pipe(
       map((paramMap) => paramMap.get('category')),
       map((category) => category ? category : this.title),
       tap((category) => this.title = category.charAt(0).toUpperCase() + category.slice(1)),
-      map((category) => this.blogService.getPosts(category))
+      map((category) => this.blogService.getPosts(category, topic))
     )
   }
 }

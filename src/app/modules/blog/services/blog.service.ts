@@ -15,13 +15,18 @@ export class BlogService {
     private readonly httpClient: HttpClient,
   ) {}
 
-  public getPosts(category: string): Post[] {
+  public getPosts(category: string, topic?: string): Post[] {
+    let posts: Post[] = [];
     switch (category) {
-      case 'guides': return guides;
-      case 'reviews': return reviews;
-      case 'productivity': return productivity;
-      default: return guides;
+      case 'guides': posts = guides; break;
+      case 'reviews': posts = reviews; break;
+      case 'productivity': posts = productivity; break;
+      default: posts = guides;
     }
+    if (topic) {
+      return posts.filter((post: Post) => post.topic === topic)
+    }
+    return posts;
   }
 
   /**

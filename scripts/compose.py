@@ -8,7 +8,7 @@ class Post:
     def __init__(
         self,
         category: str,
-        file_name: str,
+        topic: str,
         title: str,
         first_paragraph: str,
         link: str,
@@ -121,7 +121,7 @@ def compose_thumbnail_path(file_path: str) -> str:
 def parse_post_to_line(post: Post) -> str:
     """ Converts a Post object to a line, intended to be written to an index file.
     """
-    return f"    new Post('{post.file_name}', '{post.category}', '{post.title}', '{post.first_paragraph}', '{post.link}', '{post.thumbnail}'), \n"
+    return f"    new Post('{post.category}', '{post.topic}', '{post.title}', '{post.first_paragraph}', '{post.link}', '{post.thumbnail}'), \n"
 
 
 if __name__ == '__main__':
