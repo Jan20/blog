@@ -9,8 +9,8 @@ import { MenuItem } from '../../models/menu.item';
 })
 export class MenuComponent {
   public items: MenuItem[] = [
-    new MenuItem('Reviews', '📚', '/blog/reviews'),
-    new MenuItem('Productivity', '⚙️', '/blog/productivity'),
+    // new MenuItem('Reviews', '📚', '/blog/reviews'),
+    // new MenuItem('Productivity', '⚙️', '/blog/productivity'),
     new MenuItem('Guides', '🧑🏼‍💻', '/blog/guides'),
   ];
 

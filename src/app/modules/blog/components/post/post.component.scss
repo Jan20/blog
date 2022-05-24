@@ -17,7 +17,6 @@ img {
   line-height: 1.47059;
   -webkit-font-smoothing: antialiased;
   padding: 30px;
-  font-weight: 400;
   color: #1d1d1f;
   font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
   letter-spacing: -.022em;
@@ -25,13 +24,14 @@ img {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
   line-height: 1.47059;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
+  font-weight: 500;
   font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
   letter-spacing: -.022em;
   border: None;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 10px;
   transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
+  margin-bottom: 20px !important;
 }
 
 .mat-card-image {
@@ -53,7 +53,7 @@ img {
     line-height: 1.47059;
     -webkit-font-smoothing: antialiased;
     padding: 30px;
-    font-weight: 400;
+    font-weight: 500;
     color: #1d1d1f;
     font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
     letter-spacing: -.022em;
@@ -89,6 +89,7 @@ img {
   background: linear-gradient(196deg, rgb(255, 169, 99) 0%, rgb(255, 100, 39) 100%);
   padding: 10px;
   padding-bottom: 0px;
+  margin-bottom: 20px;
 }
 
 .mat-card-title {

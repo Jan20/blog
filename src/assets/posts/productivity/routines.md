@@ -1,3 +1,0 @@
-# Routines
-
-## Starting early

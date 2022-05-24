@@ -11,7 +11,7 @@ import { BlogService } from '../../services/blog.service';
 })
 export class BlogComponent implements OnInit {
   public title: string = 'Guides';
-  public postsInRow: number = 4;
+  public postsInRow: number = 3;
   public posts: Observable<Post[]>;
 
   constructor(
@@ -38,7 +38,7 @@ export class BlogComponent implements OnInit {
       this.postsInRow = 2;
       return;
     }
-    if (event.target.innerWidth < 1500) {
+    if (event.target.innerWidth < 1800) {
       this.postsInRow = 3;
       return;
     }

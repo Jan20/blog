@@ -49,7 +49,7 @@ h3 {
 p {
   line-height: 175%;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 500;
   text-align: justify;
   color: rgb(51, 51, 51);
   margin-bottom: 12px;
@@ -122,7 +122,6 @@ body {
   background: white;
   background: rgb(131, 58, 180);
   background-color: rgba(245, 245, 247, 1);
-//  background: linear-gradient(196deg, rgb(16, 14, 102) 0%, rgb(5, 2, 24) 100%);
 }
 
 // img {
@@ -134,5 +133,32 @@ body {
 // }
 
 .full {
+  width: calc(100% + 60px);
+  padding: 0px !important;
+  margin: -30px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.half-width {
+  width: 50%;
+  padding: 0px !important;
+  margin: 10px;
+  margin-left: calc(50%/ 2);
+  border-radius: 10px 10px 10px 10px;
+}
+
+.three-quarter-width {
+  width: 75%;
+  padding: 0px !important;
+  margin: 10px;
+  margin-left: calc(25% / 2);
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid gray;
+}
+
+.almost-full-width {
   width: 100%;
+  padding: 0px !important;
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid gray;
 }

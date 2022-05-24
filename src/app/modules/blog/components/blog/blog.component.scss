@@ -1,8 +1,11 @@
 img {
-    height: 200px;
-    width: 200px;
-    transform: scale(0.7);
-    margin-bottom: -50px;
+    width: 100%;
+    margin: 0px;
+    z-index: -1 !important;
+}
+
+span {
+    font-size: 20px;
 }
 
 .title {
@@ -23,12 +26,12 @@ img {
 
 .mat-card {
     height: 340px;
-    width: 300px;
+    width: 400px;
     line-height: 1.47059;
     -webkit-font-smoothing: antialiased;
     font-weight: 500;
     color: #ffffff !important;
-    font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: SF Pro Text;
     font-size: 16px;
     letter-spacing: -.022em;
     border: None;
@@ -45,29 +48,28 @@ img {
     transform: scale(1.02);
 }
 
-.mat-card-image {
-    height: 50%;
-    width: 50%;
-    transform: scale(0.7);
-    margin-left: 25%;
-}
-
 .mat-card-title {
+    font-size: 30px;
+    padding-top: 10px;
     text-align: center;
 }
 
 .mat-card-content {
     height: 200px;  
     border-color: #000 transparent transparent transparent;
-    border-radius: 95%/100px 100px 0 0;
+    border-radius: 99%/50px 50px 0 0;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius:  20px;
-    background: linear-gradient(196deg, rgba(133, 78, 33, 0.597) 0%, rgb(61, 23, 8) 100%);
+    background: linear-gradient(196deg, rgb(174, 147, 125) 0%, rgb(55, 25, 12) 100%);
     padding: 10px;
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 0px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 8px;
     margin-bottom: 20px !important;
+    margin-top: -29px !important;
+    position: absolute;
+    z-index: 10 !important;
+    opacity: 1 !important;
 }
 
 @media(max-width: 768px) {
@@ -78,13 +80,6 @@ img {
         padding-left: 0px;
         padding-right: 0px;
     }
-
-    .mat-card-image {
-        height: 50%;
-        width: 50%;
-        transform: scale(0.7);
-        margin-left: 25%;
-    }
     
     .mat-card {
         height: 400px;  
@@ -93,7 +88,7 @@ img {
         line-height: 1.47059;
         font-weight: 400;
         color: #ffffff !important;
-        font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+        font-family: SF Pro Text;
         letter-spacing: -.022em;
         border: None;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -129,7 +124,6 @@ img {
     .mat-grid-tile {
         margin: 0px;
         padding: 0px !important;;
-        // padding-top: calc(100%) !important;
         padding-bottom: 0px !important;
     }
 }
