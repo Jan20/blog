@@ -14,19 +14,19 @@ Now, let's assume that one or more parameters have changed during the execution.
 RxJS builds on the concept of event streams. An event can be a user input, such as a <code>click()</code> command or response provided by an http client. In RxJS, an event stream is captured by an <code>Obervable</code> that listens either to user inputs or values provided by the backend. An Observable alone just defines the event stream, but does not return any values after having been defined. For actually lisening to an event stream, Observables provide a <code>subscribe</code> method, that requires a callback function as input.
 
 ```TS
-public schemas: Observable<BoSchema[]>;
+public posts: Observable<Post[]>;
 
 ngOnInit(): void {
-    this.schemas = this.fetchSchemas();
+    this.posts = this.fetchPosts();
 }
 
-private fetchSchemas(searchTerm?: string): Observable<BoSchema[]> {
-    return this.cloudRestService.getSchemas(true, searchTerm)
+private fetchPosts(searchTerm?: string): Observable<Post[]> {
+    return this.postService.getPosts(true, searchTerm)
 }
 ```
 
 ```HTML
-<div *ngFor="let schema of schemas | async">{{ schema.alias }}</div>
+<div *ngFor="let post of posts | async">{{ post.title }}</div>
 ```
 
 ## Unsubscribing from Observables
@@ -35,42 +35,40 @@ Subscriptions to Observables are not terminated automatically.
 
 ## Debounce
 ``` TS
-public schemas: Observable<BoSchema[]>;
+public posts: Observable<Post[]>;
 private searchSubject: Subject<sting> = new Subject();
 
 ngOnInit(): void {
-    this.schemas = this.fetchSchemas();
+    this.posts = this.fetchPosts();
     this.searchSubject
         .pipe(debounceTime(250))
-        .subscribe((searchTerm) => (this.schemas = this.fetchSchemas(searchTerm)))
+        .subscribe((searchTerm) => (this.posts = this.fetchPosts(searchTerm)))
 }
 
 ngOnDestroy(): void {
     this.searchSubject.unsubscribe();
 }
 
-public searchSchema(searchTerm: string): void {
+public searchPost(searchTerm: string): void {
     this.searchSubject.next(searchTerm);
 }
 
-private fetchSchemas(searchTerm?: string): Observable<BoSchema[]> {
-    return this.cloudRestService
-        .getSchemas(true, searchTerm)
-        .pipe(tap((schemas: BoSchema[]) => (this.isOffineOrError = !schema ? true : false)))
+private fetchPosts(searchTerm?: string): Observable<Post[]> {
+    return this.postService.getPosts(true, searchTerm)
 }
 ```
 
 ```HTML
-<input (input)="searchSchema($any($event.target).value)" matInput>
-<div *ngFor="let schema of schemas | async">{{ schema.alias }}</div>
+<input (input)="searchPost($any($event.target).value)" matInput>
+<div *ngFor="let post of posts | async">{{ post.title }}</div>
 ```
 
 ``` TS
-it('should search for a schema', fakeAsync(() => {
-    spyOn(cloudRestApiService, 'getSchemas').and.returnValue(of([BO_SCHEMA]));
-    type(screen.getByRole('textbox'), 'Ticket');
+it('should search for a post', fakeAsync(() => {
+    spyOn(postService, 'getPosts').and.returnValue(of([Post]));
+    type(screen.getByRole('textbox'), 'Angular Basics');
     tick(250);
-    expect(cloudRestApiService.getSchemas).toHaveBeenCalledOnceWith(true, 'Ticket');
+    expect(postService.getPosts).toHaveBeenCalledOnceWith(true, 'Angular Basics');
 }));
 ```
 
