@@ -23,26 +23,19 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (window.innerWidth < 1000) {
-      this.postsInRow = 1;
-    }
+    if (window.innerWidth < 1000) this.postsInRow = 1;
   }
 
   @HostListener('window:resize', ['$event'])
   public onResize(event: { target: { innerWidth: number; }; }): void {
-    if (event.target.innerWidth < 800) {
-      this.postsInRow = 1;
-      return;
-    }
-    if (event.target.innerWidth < 1000) {
-      this.postsInRow = 2;
-      return;
-    }
-    if (event.target.innerWidth < 1800) {
-      this.postsInRow = 3;
-      return;
-    }
-    this.postsInRow = 4;
+    this.postsInRow = this.onWidthChange(event.target.innerWidth)
+  }
+
+  private onWidthChange(width: number): number {
+    if (width < 800) return 1;
+    if (width < 1000) return 2;
+    if (width < 1800) return 3;
+    return 4;
   }
 
   public changeView(link: string): void {
@@ -51,7 +44,6 @@ export class BlogComponent implements OnInit {
   }
 
   public onTopicSelected(topic: string): void {
-    console.log(topic);
     if (topic === 'All') {
       this.posts = this.fetchPosts();
       return;
