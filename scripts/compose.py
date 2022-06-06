@@ -5,25 +5,31 @@ from pathlib import Path
 
 
 class Post:
+    """ Defines a post, consisting of a category, topic, headline,
+        first_paragraph, link and thumbnail
+    """
+
     def __init__(
         self,
         category: str,
         topic: str,
-        title: str,
+        headline: str,
         first_paragraph: str,
         link: str,
         thumbnail: str
     ):
         self.category: str = category
-        self.file_name: str = file_name
-        self.title: str = title
+        self.topic: str = topic
+        self.headline: str = headline
         self.first_paragraph: str = first_paragraph
         self.link: str = link
         self.thumbnail: str = thumbnail
 
 
 def compose_index_files() -> None:
-    """_summary_
+    """ Iterates over all categories, finds all posts in their respective
+        category, creates a list of blog posts based on the files found in a
+        category's directory and writes the parsed objects to a json file.
     """
     categories: [bytes] = select_categories()
     for category in categories:
@@ -36,8 +42,8 @@ def compose_index_files() -> None:
 
 
 def parse_posts_in_category(post_dirs: [str]) -> [Post]:
-    """ Takes a list of directories that may contain a post,
-        checks whether the directory indeed contains a post and
+    """ Takes a list of directories that may contain blog posts,
+        checks whether the directory actually contains any posts and
         parses the content of the directory into a Post object.
     """
     posts: [Post] = []
@@ -55,7 +61,7 @@ def select_categories() -> [bytes]:
     categories: [bytes] = []
     for directory in listdir(full_dir_name):
         categories.append(os.path.join(full_dir_name, directory))
-    return list(filter(lambda category: isdir(category), categories))
+    return list(filter(isdir, categories))
 
 
 def select_post_dirs(category: str) -> [bytes]:
@@ -64,7 +70,7 @@ def select_post_dirs(category: str) -> [bytes]:
     posts: [bytes] = []
     for directory in listdir(category):
         posts.append(join(category, directory))
-    return list(filter(lambda post: isdir(post), posts))
+    return list(filter(isdir, posts))
 
 
 def select_post(post_dir: str) -> str:
@@ -77,29 +83,65 @@ def select_post(post_dir: str) -> str:
 
 
 def extract_post_from_file(file_path: str) -> Post:
-    """ Reads the content of a file, identified by its file path.
+    """ Reads the content of a file, identified by its file path. A file path
+        may look similar as the one depicted below:
+        ./src/assets/posts/guides/001_angular_apps_on_github_pages/angular.md
+    """
+    topic = parse_topic(file_path)
+    headline = parse_headline(file_path)
+    first_paragraph = parse_first_paragraph(file_path)
+    return Post(
+        file_path.split('/')[4],
+        topic,
+        headline,
+        first_paragraph,
+        file_path,
+        compose_thumbnail_path(file_path)
+    )
+
+
+def parse_headline(file_path: str) -> str:
+    """
+    """
+    with open(file_path) as reader:
+        for line in reader:
+            headline = line.split('# ')
+            if len(headline) > 1:
+                return clean_str(headline[1])
+
+
+def parse_topic(file_path: str) -> str:
+    """
+    """
+    with open(file_path) as reader:
+        for line in reader:
+            topic_candidate = line.split('topic=')
+            if len(topic_candidate) > 1:
+                return clean_str(topic_candidate[1])
+
+
+def parse_first_paragraph(file_path: str) -> str:
+    """
     """
     title: str = None
     with open(file_path) as reader:
         for line in reader:
-            title_candidate = line.split('# ')
-            if title is None and len(title_candidate) > 1:
-                title = title_candidate[1]
+            candidate = line.split('# ')
+            if title is None and len(candidate) > 1:
+                title = candidate[1]
                 continue
-            candidate = line.split(' ')
-            if title is not None and len(candidate) > 1:
-                return Post(
-                    file_path.split('/')[4],
-                    file_path.split('/')[-1],
-                    title.replace('\n', ' ').replace('\r', ' '),
-                    line.replace('\n', ' ').replace(
-                        '\r', ' ').replace("'", ''),
-                    file_path,
-                    compose_thumbnail_path(file_path)
-                )
+            if title is not None:
+                # print(clean_str(line))
+                return clean_str(line).split('.')[0] + '.'
+
+
+def clean_str(line: str) -> str:
+    """ Removes whitespaces from a given str."""
+    return line.replace('\n', ' ').replace('\r', ' ').replace("'", '')[:-1]
 
 
 def write_posts_to_file(posts: [Post]) -> None:
+    """ Writes a parsed Post object to a typescript file."""
     import_statement = 'import { Post } from "src/app/modules/blog/models/post"; \n'
     file_path = '/'.join(posts[0].link.split("/")[:-2])
     index_file = f'{file_path}/{posts[0].category}.ts'
@@ -114,6 +156,7 @@ def write_posts_to_file(posts: [Post]) -> None:
 
 
 def compose_thumbnail_path(file_path: str) -> str:
+    """ Computes the path to a post's thumbnail."""
     file_path = '/'.join(file_path.split("/")[2:-1])
     return f'{file_path}/thumbnail.png'
 
@@ -121,7 +164,7 @@ def compose_thumbnail_path(file_path: str) -> str:
 def parse_post_to_line(post: Post) -> str:
     """ Converts a Post object to a line, intended to be written to an index file.
     """
-    return f"    new Post('{post.category}', '{post.topic}', '{post.title}', '{post.first_paragraph}', '{post.link}', '{post.thumbnail}'), \n"
+    return f"    new Post('{post.category}', '{post.topic}', '{post.headline}', '{post.first_paragraph}', '{post.link}', '{post.thumbnail}'), \n"
 
 
 if __name__ == '__main__':

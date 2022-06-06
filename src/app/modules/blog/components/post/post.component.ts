@@ -6,12 +6,12 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit {
+export class PostComponent {
 
   public markdownSource: string = ''
 
   constructor(
-    private activatedRoute: ActivatedRoute,
+    private readonly activatedRoute: ActivatedRoute,
   ) {
     this.activatedRoute.params.subscribe(params => {
       const url = `./assets/posts/${params['category']}/${params['number']}/${params['id']}`;
@@ -19,5 +19,4 @@ export class PostComponent implements OnInit {
     })
   }
 
-  ngOnInit() { }
 }

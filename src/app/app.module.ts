@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { BlogModule } from './modules/blog/blog.module';
 import { MenuModule } from './modules/menu/menu.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,20 @@ import { SharedModule } from './modules/shared/shared.module';
     AppRoutingModule,
     MenuModule,
     SharedModule,
-    BlogModule
+    BlogModule,
+    MarkdownModule.forRoot({
+      loader: HttpClient, // optional, only if you use [src] attribute
+      markedOptions: {
+        provide: MarkedOptions,
+        useValue: {
+          gfm: true,
+          breaks: false,
+          pedantic: false,
+          smartLists: true,
+          smartypants: false,
+        },
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -56,7 +56,10 @@ export function markedOptionsFactory(): MarkedOptions {
     ]),
     MarkdownModule.forRoot({
       loader: HttpClient,
-
+      markedOptions: {
+        provide: MarkedOptions,
+        useFactory: markedOptionsFactory,
+      },
     }),
   ],
   providers: [

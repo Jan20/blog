@@ -162,3 +162,47 @@ body {
   border-radius: 10px 10px 10px 10px;
   border: 1px solid gray;
 }
+
+code {
+  font-family:  monospace !important;
+  font-weight: 500 !important;
+  font-weight: normal !important;
+  font-size: 18px !important;
+}
+
+.language-ts {
+  background-color: rgb(83, 82, 82) !important;
+}
+
+.language-shell {
+  background-color: rgb(83, 82, 82) !important;
+}
+
+.language-css {
+  background-color: rgb(83, 82, 82) !important;
+}
+
+.language-html {
+  background-color: rgb(83, 82, 82) !important;
+}
+
+.keyword-this {
+  font-family:  monospace !important;
+  font-weight: 500 !important;
+  font-weight: normal !important;
+  font-size: 18px !important;
+}
+
+.token {
+  font-family:  monospace !important;
+  font-weight: 500 !important;
+  font-weight: normal !important;
+  font-size: 18px !important;
+}
+
+.punctuation {
+  font-family:  monospace !important;
+  font-weight: 500 !important;
+  font-weight: normal !important;
+  font-size: 18px !important;
+}
