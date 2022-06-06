@@ -97,17 +97,21 @@ span {
     }
 
     .mat-card-content {
-        height: 220px;  
+        height: 200px;  
         border-color: #000 transparent transparent transparent;
-        border-radius: 95%/100px 100px 0 0;
+        border-radius: 99%/50px 50px 0 0;
         border-bottom-right-radius: 20px;
         border-bottom-left-radius:  20px;
-        background: linear-gradient(196deg, rgba(133, 78, 33, 0.597) 0%, rgb(61, 23, 8) 100%);
+        background: linear-gradient(196deg, rgb(174, 147, 125) 0%, rgb(55, 25, 12) 100%);
         padding: 10px;
-        padding-top: 40px;
+        padding-top: 20px;
         padding-bottom: 0px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 8px;
         margin-bottom: 20px !important;
+        margin-top: -29px !important;
+        position: absolute;
+        z-index: 10 !important;
+        opacity: 1 !important;
     }
 
     .mat-grid-tile-content {

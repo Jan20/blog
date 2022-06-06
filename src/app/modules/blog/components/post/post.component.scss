@@ -34,14 +34,6 @@ img {
   margin-bottom: 20px !important;
 }
 
-.mat-card-image {
-  // height: 200px;
-  // width: 200px;
-  // transform: scale(0.7);
-  // margin-left: 25%;
-  // margin-bottom: -50px;
-}
-
 @media(max-width: 768px) {
   .mat-card {
     margin: auto;
@@ -103,4 +95,10 @@ p {
   text-align: justify;
   color: rgb(51, 51, 51) !important;
   margin-bottom: 12px;
+}
+
+@media(max-width: 768px) {
+  h1 {
+      line-height: normal !important;
+  }
 }

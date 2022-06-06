@@ -19,7 +19,6 @@ import { HttpClient } from '@angular/common/http';
     SharedModule,
     BlogModule,
     MarkdownModule.forRoot({
-      loader: HttpClient, // optional, only if you use [src] attribute
       markedOptions: {
         provide: MarkedOptions,
         useValue: {
