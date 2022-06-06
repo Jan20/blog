@@ -1,3 +1,7 @@
+<!--
+topic=Angular
+-->
+
 <img class='full' src='assets/posts/guides/001_angular_apps_on_github_pages/thumbnail.png'>
 
 # Angular on GitHub Pages
