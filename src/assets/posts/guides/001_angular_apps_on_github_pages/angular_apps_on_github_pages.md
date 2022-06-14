@@ -50,7 +50,7 @@ The only thing that is missing now is to configure Github Pages, so that it serv
 
 Make sure that you have selected your **/docs** rather than your **/ (root)** as your source folder for Github Pages. After having selected your **/docs** directory, head back to your editor and push your entire project, including your docs directory to your master branch by executing the following commands:
 
-```TS
+``` TS
 git add .
 git commit -m "initial commit"
 git push

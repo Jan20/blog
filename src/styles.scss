@@ -167,6 +167,24 @@ code {
   font-weight: 500 !important;
   font-weight: normal !important;
   font-size: 18px !important;
+  background-color: rgb(212, 212, 212) !important;
+  border-radius: 5px;
+}
+
+ol {
+  padding: 0px;
+  margin-left: 24px;
+  line-height: 175%;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: justify;
+  color: rgb(51, 51, 51);
+  margin-bottom: 12px;
+}
+
+li {
+  padding-left: 10px;
+  margin-bottom: 10px;
 }
 
 .language-ts {
@@ -193,14 +211,14 @@ code {
 }
 
 .token {
-  font-family:  monospace !important;
+  font-family: monospace !important;
   font-weight: 500 !important;
   font-weight: normal !important;
   font-size: 18px !important;
 }
 
 .punctuation {
-  font-family:  monospace !important;
+  font-family: monospace !important;
   font-weight: 500 !important;
   font-weight: normal !important;
   font-size: 18px !important;

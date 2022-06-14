@@ -8,8 +8,8 @@ import { Post } from '../../models/post';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
-
   public topics!: Observable<string[]>;
+
   @Input() public posts!: Observable<Post[]>;
   @Output() private topicSelected = new EventEmitter<string>();
 
