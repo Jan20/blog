@@ -121,7 +121,8 @@ def parse_topic(file_path: str) -> str:
 
 
 def parse_first_paragraph(file_path: str) -> str:
-    """
+    """ Selects the first paragraph of a blog post and creates a short preview
+        of its content.
     """
     title: str = None
     with open(file_path) as reader:
@@ -131,8 +132,8 @@ def parse_first_paragraph(file_path: str) -> str:
                 title = candidate[1]
                 continue
             if title is not None:
-                # print(clean_str(line))
-                return clean_str(line).split('.')[0] + '.'
+                cleaned_str = clean_str(line).split('.')[0] + '.'
+                return cleaned_str[0:150] + '...'
 
 
 def clean_str(line: str) -> str:
