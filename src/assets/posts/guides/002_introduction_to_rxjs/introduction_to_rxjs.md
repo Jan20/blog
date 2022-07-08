@@ -1,4 +1,5 @@
 <!--
+date=2022-07-04
 topic=RxJS
 -->
 <img class='full' src='assets/posts/guides/002_introduction_to_rxjs/thumbnail.png'>

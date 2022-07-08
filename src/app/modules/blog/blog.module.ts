@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -10,6 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
+import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './components/blog/blog.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { PostComponent } from './components/post/post.component';
@@ -31,10 +32,12 @@ import { BlogService } from './services/blog.service';
     MatChipsModule,
     MatGridListModule,
     MatButtonModule,
+    BlogRoutingModule,
     RouterModule.forChild([
       { path: '', component: BlogComponent },
       { path: 'blog', component: BlogComponent },
       { path: 'blog/:category', component: BlogComponent },
+      { path: 'blog/:category/:topic', component: BlogComponent },
       { path: 'blog/:category/:number/:id', component: PostComponent, pathMatch: 'full' }
     ]),
     MarkdownModule

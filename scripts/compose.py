@@ -1,3 +1,6 @@
+""" Provides a range of functions used to create the overview page for blog
+    posts.
+"""
 import os
 from os import listdir
 from os.path import isdir, join
@@ -16,7 +19,8 @@ class Post:
         headline: str,
         first_paragraph: str,
         link: str,
-        thumbnail: str
+        thumbnail: str,
+        date: str
     ):
         self.category: str = category
         self.topic: str = topic
@@ -24,6 +28,7 @@ class Post:
         self.first_paragraph: str = first_paragraph
         self.link: str = link
         self.thumbnail: str = thumbnail
+        self.date: str = date
 
 
 def compose_index_files() -> None:
@@ -36,8 +41,6 @@ def compose_index_files() -> None:
         post_dirs: [bytes] = select_post_dirs(category)
         posts: [Post] = parse_posts_in_category(post_dirs)
         if len(posts) > 0:
-            print(category)
-            print(posts)
             write_posts_to_file(posts)
 
 
@@ -90,18 +93,21 @@ def extract_post_from_file(file_path: str) -> Post:
     topic = parse_topic(file_path)
     headline = parse_headline(file_path)
     first_paragraph = parse_first_paragraph(file_path)
+    date = parse_date(file_path)
     return Post(
         file_path.split('/')[4],
         topic,
         headline,
         first_paragraph,
         file_path,
-        compose_thumbnail_path(file_path)
+        compose_thumbnail_path(file_path),
+        date
     )
 
 
 def parse_headline(file_path: str) -> str:
-    """
+    """Opens a file containing a blog posts, iterates over the file and returns
+    the post's headline if existing.
     """
     with open(file_path) as reader:
         for line in reader:
@@ -111,13 +117,25 @@ def parse_headline(file_path: str) -> str:
 
 
 def parse_topic(file_path: str) -> str:
-    """
+    """ Opens a file containing a blog posts, iterates over the file and returns
+        the post's topic if existing.
     """
     with open(file_path) as reader:
         for line in reader:
-            topic_candidate = line.split('topic=')
-            if len(topic_candidate) > 1:
-                return clean_str(topic_candidate[1])
+            topic = line.split('topic=')
+            if len(topic) > 1:
+                return clean_str(topic[1])
+
+
+def parse_date(file_path: str) -> str:
+    """ Opens a file containing a blog posts, iterates over the file and returns
+        the post's date if existing.
+    """
+    with open(file_path) as reader:
+        for line in reader:
+            date = line.split('date=')
+            if len(date) > 1:
+                return clean_str(date[1])
 
 
 def parse_first_paragraph(file_path: str) -> str:
@@ -133,7 +151,7 @@ def parse_first_paragraph(file_path: str) -> str:
                 continue
             if title is not None:
                 cleaned_str = clean_str(line).split('.')[0] + '.'
-                return cleaned_str[0:150] + '...'
+                return cleaned_str[0:100] + '...'
 
 
 def clean_str(line: str) -> str:
@@ -163,9 +181,21 @@ def compose_thumbnail_path(file_path: str) -> str:
 
 
 def parse_post_to_line(post: Post) -> str:
-    """ Converts a Post object to a line, intended to be written to an index file.
+    """ Converts a Post object to a line, intended to be written to an index
+        file.
     """
-    return f"    new Post('{post.category}', '{post.topic}', '{post.headline}', '{post.first_paragraph}', '{post.link}', '{post.thumbnail}'), \n"
+    line: str = ''
+    line += "    new Post("
+    line += f"'{post.category}', "
+    line += f"'{post.topic}', "
+    line += f"'{post.headline}', "
+    line += f"'{post.first_paragraph}', "
+    line += f"'{post.link}', "
+    line += f"'{post.thumbnail}', "
+    line += f"'{post.date}'"
+    line += "), \n"
+    print(post.headline)
+    return line
 
 
 if __name__ == '__main__':

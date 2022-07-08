@@ -9,6 +9,8 @@ As we have seen in the previous post that Docker provides a rather sophiticated 
 
 ## Step 1: Minimal Flask application
 First take a quick look at a minimal Flask application as simple example. The application does nothing but returning "Hello World" upon calling the single endpoint it provides. Feel free to replace that barebone application at any time.
+
+<b>app.py</b>
 ```TS
 from flask import Flask
 from waitress import serve
@@ -23,6 +25,21 @@ def hello_world():
 
 if __name__ == '__main__':
     serve(app)
+```
+
+All dependencies required by Flask can be stored inside a requirements.txt file, so that they can be fetched and installed during the image build process.
+
+<b>requirements.txt</b>
+```TS
+click==8.1.3
+Flask==2.1.2
+importlib-metadata==4.11.4
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.1
+waitress==2.1.2
+Werkzeug==2.1.2
+zipp==3.8.0
 ```
 
 ## Step 2: Dockerfile

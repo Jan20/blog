@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostComponent {
 
-  public markdownSource: string = ''
+  public markdownSource: string = '';
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,

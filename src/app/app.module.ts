@@ -6,7 +6,6 @@ import { BlogModule } from './modules/blog/blog.module';
 import { MenuModule } from './modules/menu/menu.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
-import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
