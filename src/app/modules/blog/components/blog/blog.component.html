@@ -1,7 +1,7 @@
 <div *ngIf="posts | async as blogPosts">
-  <app-filter [posts]="posts" (topicSelected)="selectTopic($event)"></app-filter>
+  <app-filter (topicSelected)="selectTopic($event)"></app-filter>
   <h1 class='title'>{{ selectCategory() | async }}</h1>
-  <mat-grid-list [cols]=postsInRow rowHeight="30rem">
+  <mat-grid-list [cols]=postsInRow rowHeight="32em">
     <div *ngFor='let post of blogPosts'>
       <mat-grid-tile>
         <mat-card (click)="changeView(post.link)">

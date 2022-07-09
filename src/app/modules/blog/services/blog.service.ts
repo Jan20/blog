@@ -9,13 +9,21 @@ import { Post } from '../models/post';
 })
 export class BlogService {
   public getPosts(category: string, topic?: string): Post[] {
-    let posts: Post[] = [];
-    switch (category) {
-      case 'guides': posts = guides; break;
-      case 'reviews': posts = reviews; break;
-      case 'productivity': posts = productivity; break;
-      default: posts = guides;
-    }
+    const posts: Post[] = this.fetchPosts(category);
     return topic ? posts.filter((post: Post) => post.topic === topic) : posts;
+  }
+
+  public getTopics(category: string): string[] {
+    const posts: Post[] = this.fetchPosts(category);
+    return posts.map((post) => post.topic);
+  }
+
+  private fetchPosts(category: string): Post[] {
+    switch (category) {
+      case 'guides': return guides;
+      case 'reviews': return reviews;
+      case 'productivity': return productivity;
+      default: return [];
+    }
   }
 }

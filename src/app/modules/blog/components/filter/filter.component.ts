@@ -1,32 +1,32 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { distinct, map, Observable, tap } from 'rxjs';
-import { Post } from '../../models/post';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map, Observable } from 'rxjs';
+import { BlogService } from '../../services/blog.service';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss']
 })
-export class FilterComponent implements OnInit {
-  public topics!: Observable<string[]>;
+export class FilterComponent {
+  public topics: Observable<string[]> = this.fetchTopics();
 
-  @Input() public posts!: Observable<Post[]>;
   @Output() private topicSelected = new EventEmitter<string>();
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.topics = this.extractTopics(this.posts);
-  }
+  constructor(
+    private readonly blogService: BlogService,
+    private readonly activatedRoute: ActivatedRoute,
+  ) {}
 
   public selectTopic(topic: string): void {
     this.topicSelected.emit(topic);
   }
 
-  private extractTopics(posts: Observable<Post[]>): Observable<string[]> {
-    return posts.pipe(
-      map((posts: Post[]) => posts.map((post: Post) => post.topic)),
+  public fetchTopics(): Observable<string[]> {
+    return this.activatedRoute.url.pipe(
+      map((url) => url[1].path),
+      map((category) => this.blogService.getTopics(category)),
       map((topics: string[]) => [...new Set(topics)]),
-    )
+    );
   }
 }
