@@ -1,8 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { map, Observable, of, switchMap } from 'rxjs';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { map, Observable, of, tap } from 'rxjs';
 import { Post } from '../../models/post';
 import { BlogService } from '../../services/blog.service';
+import { WindowService } from '../../services/window.service';
 
 @Component({
   selector: 'app-blog',
@@ -10,25 +11,28 @@ import { BlogService } from '../../services/blog.service';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-  public postsInRow: number = 3;
-  public posts: Observable<Post[]> = this.fetchPosts('guides')
+  numberOfColumns: number = this.windowService.getNumberOfColumns();
+  posts: Observable<Post[]> = this.fetchPosts('guides')
 
   constructor(
     private readonly blogService: BlogService,
     private readonly router: Router,
     private readonly activatedRoute: ActivatedRoute,
+    private readonly windowService: WindowService,
   ) {}
 
   ngOnInit(): void {
-    if (window.innerWidth < 1000) this.postsInRow = 1;
-    this.activatedRoute.url.pipe(
-      switchMap((url) => this.posts = this.fetchPosts(url[1].path, url[2].path)),
+    this.activatedRoute.paramMap.pipe(
+      tap(console.log),
+      map((paramMap: ParamMap) => [paramMap.get('category'), paramMap.get('topic')]),
+      tap(console.log),
+      tap((params) => this.posts = this.fetchPosts(params[0], params[1])),
     ).subscribe();
   }
 
   @HostListener('window:resize', ['$event'])
   public onResize(event: { target: { innerWidth: number; }; }): void {
-    this.postsInRow = this.onWidthChange(event.target.innerWidth)
+    this.numberOfColumns = this.onWidthChange(event.target.innerWidth)
   }
 
   private onWidthChange(width: number): number {
@@ -38,24 +42,29 @@ export class BlogComponent implements OnInit {
     return 4;
   }
 
-  public changeView(link: string): void {
+  public showPost(link: string): void {
     const filePath = link.replace('./src/assets/posts', '')
     this.router.navigate([`blog/${filePath}`]);
   }
 
   public selectTopic(topic: string): void {
-    this.router.navigate([`blog/guides/${topic}`]);
+    this.activatedRoute.paramMap.pipe(
+      map((paramMap: ParamMap) => paramMap.get('category')),
+      map((category) => !category ? 'guides' : category),
+      tap((category) => this.router.navigate([`blog/${category}/${topic}`]))
+    ).subscribe();
   }
 
-  fetchPosts(category: string, topic?: string): Observable<Post[]> {
-    topic = topic !== 'All' ? topic : undefined
+  private fetchPosts(category: string | null, topic?: string | null): Observable<Post[]> {
+    category = category !== null ? category : 'guides';
+    topic = topic !== null ? topic : 'All';
     return of(this.blogService.getPosts(category, topic));
   }
 
   selectCategory(): Observable<string> {
     return this.activatedRoute.paramMap.pipe(
-      map((paramMap) => paramMap.get('category') ?? 'Guides'),
-      map((category) => category.charAt(0).toUpperCase() + category.slice(1)),
+      map((paramMap: ParamMap) => paramMap.get('category') ?? 'Guides'),
+      map((category: string) => category.charAt(0).toUpperCase() + category.slice(1)),
     );
   }
 }

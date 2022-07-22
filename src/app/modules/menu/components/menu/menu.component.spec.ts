@@ -1,39 +1,40 @@
-// Custom Components
-import { async, ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-
-// Routing
-import { RouterModule, Routes } from '@angular/router';
-
-// Services
-
-// Custom Components
+import { Router } from '@angular/router';
 import { MenuComponent } from './menu.component';
-// import { LoginComponent } from './../login/login.component';
+import { MenuService } from '../../services/menu.service';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+const compileComponent = () => {
+  TestBed.configureTestingModule({
+    declarations: [
+      MenuComponent,
+    ],
+    imports: [
+      FormsModule,
+      RouterTestingModule,
+      MatMenuModule,
+      MatIconModule,
+      MatToolbarModule,
+    ],
+    providers: [
+      MenuService,
+      { provide: APP_BASE_HREF, useValue : '/' }
+    ],
+  })
+  .compileComponents();
+}
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
   let fixture: ComponentFixture<MenuComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        MenuComponent,
-        // LoginComponent
-      ],
-      imports: [
-        FormsModule,
-      ],
-      providers: [
-        { provide: APP_BASE_HREF, useValue : '/' }
-      ],
-    })
-    .compileComponents();
-  }));
-
   beforeEach(() => {
+    compileComponent();
     fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlogModule } from './modules/blog/blog.module';
+import { PostCollection } from './modules/blog/models/postCollection';
 import { MenuModule } from './modules/menu/menu.module';
 import { SharedModule } from './modules/shared/shared.module';
-import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
       },
     }),
   ],
-  providers: [],
+  providers: [PostCollection],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

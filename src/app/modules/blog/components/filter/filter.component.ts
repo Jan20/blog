@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 import { BlogService } from '../../services/blog.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { BlogService } from '../../services/blog.service';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent {
-  public topics: Observable<string[]> = this.fetchTopics();
+  topics: Observable<Set<string>> = this.fetchTopics();
 
   @Output() private topicSelected = new EventEmitter<string>();
 
@@ -18,15 +18,15 @@ export class FilterComponent {
     private readonly activatedRoute: ActivatedRoute,
   ) {}
 
-  public selectTopic(topic: string): void {
+  selectTopic(topic: string): void {
     this.topicSelected.emit(topic);
   }
 
-  public fetchTopics(): Observable<string[]> {
-    return this.activatedRoute.url.pipe(
-      map((url) => url[1].path),
+  fetchTopics(): Observable<Set<string>> {
+    return this.activatedRoute.paramMap.pipe(
+      map((paramMap) => paramMap.get('category')),
+      map((category) => !category ? 'guides' : category),
       map((category) => this.blogService.getTopics(category)),
-      map((topics: string[]) => [...new Set(topics)]),
     );
   }
 }

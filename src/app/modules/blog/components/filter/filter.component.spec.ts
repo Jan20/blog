@@ -1,25 +1,35 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatCardModule } from '@angular/material/card';
+import { RouterTestingModule } from '@angular/router/testing';
 import { FilterComponent } from './filter.component';
+
+const compileComponent = () => {
+  TestBed.configureTestingModule({
+    declarations: [
+      FilterComponent,
+    ],
+    imports: [
+      RouterTestingModule,
+      MatCardModule,
+    ],
+    providers: [
+    ],
+  })
+  .compileComponents();
+}
 
 describe('FilterComponent', () => {
   let component: FilterComponent;
   let fixture: ComponentFixture<FilterComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ FilterComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
+    await compileComponent();
     fixture = TestBed.createComponent(FilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create a Filter component', () => {
     expect(component).toBeTruthy();
   });
 });
