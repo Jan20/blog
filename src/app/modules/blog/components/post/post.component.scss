@@ -18,15 +18,17 @@ img {
   -webkit-font-smoothing: antialiased;
   padding: 30px;
   color: #1d1d1f;
-  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-  letter-spacing: -.022em;
+  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  letter-spacing: -0.022em;
   border: None;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
   line-height: 1.47059;
   -webkit-font-smoothing: antialiased;
   font-weight: 500;
-  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-  letter-spacing: -.022em;
+  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  letter-spacing: -0.022em;
   border: None;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 10px;
@@ -34,7 +36,7 @@ img {
   margin-bottom: 20px !important;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .mat-card {
     margin: auto;
     margin-top: 30px;
@@ -47,17 +49,20 @@ img {
     padding: 30px;
     font-weight: 500;
     color: #1d1d1f;
-    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-    letter-spacing: -.022em;
+    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+      Arial, sans-serif;
+    letter-spacing: -0.022em;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
     line-height: 1.47059;
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
-    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-    letter-spacing: -.022em;
+    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+      Arial, sans-serif;
+    letter-spacing: -0.022em;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 10px;
-    transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
+    transition: box-shadow 1s, margin-top 1s, width 1s, height 1s,
+      transform 0.7s;
   }
 }
 
@@ -70,7 +75,11 @@ img {
   height: 100px;
   border-color: #000 transparent transparent transparent;
   border-radius: 95%/100px 100px 0 0;
-  background: linear-gradient(196deg, rgb(255, 169, 99) 0%, rgb(255, 100, 39) 100%);
+  background: linear-gradient(
+    196deg,
+    rgb(255, 169, 99) 0%,
+    rgb(255, 100, 39) 100%
+  );
   padding: 10px;
   padding-bottom: 0px;
   margin-bottom: 20px;
@@ -89,8 +98,8 @@ p {
   margin-bottom: 12px;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   h1 {
-      line-height: normal !important;
+    line-height: normal !important;
   }
 }

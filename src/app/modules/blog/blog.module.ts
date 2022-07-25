@@ -17,11 +17,7 @@ import { PostComponent } from './components/post/post.component';
 import { BlogService } from './services/blog.service';
 
 @NgModule({
-  declarations: [
-    BlogComponent,
-    PostComponent,
-    FilterComponent
-  ],
+  declarations: [BlogComponent, PostComponent, FilterComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -38,15 +34,15 @@ import { BlogService } from './services/blog.service';
       { path: 'blog', component: BlogComponent },
       { path: 'blog/:category', component: BlogComponent },
       { path: 'blog/:category/:topic', component: BlogComponent },
-      { path: 'blog/:category/:number/:id', component: PostComponent, pathMatch: 'full' }
+      {
+        path: 'blog/:category/:number/:id',
+        component: PostComponent,
+        pathMatch: 'full',
+      },
     ]),
-    MarkdownModule
+    MarkdownModule,
   ],
-  providers: [
-    BlogService
-  ],
-  exports: [
-    BlogComponent
-  ]
+  providers: [BlogService],
+  exports: [BlogComponent],
 })
-export class BlogModule { }
+export class BlogModule {}

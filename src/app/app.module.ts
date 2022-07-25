@@ -9,9 +9,7 @@ import { MenuModule } from './modules/menu/menu.module';
 import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,6 +30,6 @@ import { SharedModule } from './modules/shared/shared.module';
     }),
   ],
   providers: [PostCollection],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

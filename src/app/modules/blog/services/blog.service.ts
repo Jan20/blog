@@ -3,10 +3,9 @@ import { Post } from '../models/post';
 import { PostCollection } from '../models/postCollection';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BlogService {
-
   constructor(private readonly postCollection: PostCollection) {}
 
   getPosts(category: string, topic?: string): Post[] {

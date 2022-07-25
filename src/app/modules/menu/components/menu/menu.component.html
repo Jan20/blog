@@ -1,26 +1,26 @@
-<mat-toolbar color='warn'>
+<mat-toolbar color="warn">
+  <button class="title" mat-menu-item (click)="switchToLandingPage()">
+    🌴 Jan Schumann's Blog
+  </button>
 
-    <button class='title' mat-menu-item (click)='switchToLandingPage()'>🌴 Jan Schumann's Blog</button>
-  
-    <div class='desktop-menu' *ngFor="let item of items">
+  <div class="desktop-menu" *ngFor="let item of items">
+    <button mat-menu-item (click)="navigateToMenuEntry(item)">
+      <span>{{ item.icon }} {{ item.name }}</span>
+    </button>
+  </div>
+
+  <button class="mobile-menu" mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <div *ngFor="let item of items">
       <button mat-menu-item (click)="navigateToMenuEntry(item)">
-        <span>{{ item.icon }} {{ item.name }}</span>
+        <span>
+          <mat-icon>{{ item.icon }}</mat-icon
+          >{{ item.name }}
+        </span>
       </button>
     </div>
-  
-    <button class='mobile-menu' mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-  
-    <mat-menu #menu="matMenu">
-      <div *ngFor="let item of items">
-        <button mat-menu-item (click)="navigateToMenuEntry(item)">
-          <span>
-            <mat-icon>{{item.icon}}</mat-icon>{{item.name}}
-          </span>
-        </button>
-      </div>
-    </mat-menu>
-  
-  </mat-toolbar>
-  
+  </mat-menu>
+</mat-toolbar>

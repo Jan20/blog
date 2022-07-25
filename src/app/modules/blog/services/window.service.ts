@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WindowService {
-
-  constructor() { }
+  constructor() {}
 
   getNumberOfColumns(): number {
     return window.innerWidth < 1000 ? 1 : 3;

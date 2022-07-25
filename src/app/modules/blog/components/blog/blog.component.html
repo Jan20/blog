@@ -1,13 +1,13 @@
 <div *ngIf="posts | async as blogPosts">
   <app-filter (topicSelected)="selectTopic($event)"></app-filter>
-  <h1 class='title'>{{ selectCategory() | async }}</h1>
-  <mat-grid-list [cols]=numberOfColumns rowHeight="32em">
-    <div *ngFor='let post of blogPosts'>
+  <h1 class="title">{{ selectCategory() | async }}</h1>
+  <mat-grid-list [cols]="numberOfColumns" rowHeight="32em">
+    <div *ngFor="let post of blogPosts">
       <mat-grid-tile>
         <mat-card (click)="showPost(post.link)">
-          <img mat-card-image [src]="post.thumbnail">
+          <img mat-card-image [src]="post.thumbnail" />
           <mat-card-content>
-            <div class='date'>{{ post.date | date }}</div>
+            <div class="date">{{ post.date | date }}</div>
             <mat-card-title>
               {{ post.headline }}
             </mat-card-title>

@@ -8,9 +8,7 @@ import { MenuService } from './services/menu.service';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [
-    MenuComponent
-  ],
+  declarations: [MenuComponent],
   imports: [
     CommonModule,
     MatIconModule,
@@ -18,11 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatButtonModule,
   ],
-  providers: [
-    MenuService
-  ],
-  exports: [
-    MenuComponent,
-  ]
+  providers: [MenuService],
+  exports: [MenuComponent],
 })
-export class MenuModule { }
+export class MenuModule {}

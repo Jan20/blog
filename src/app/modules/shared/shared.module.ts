@@ -3,13 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-  ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-  ],
-  exports: [
-  ]
+  declarations: [],
+  imports: [CommonModule, HttpClientModule],
+  exports: [],
 })
-export class SharedModule { }
+export class SharedModule {}

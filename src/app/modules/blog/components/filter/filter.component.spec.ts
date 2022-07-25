@@ -1,22 +1,15 @@
+import { FilterComponent } from './filter.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
 import { RouterTestingModule } from '@angular/router/testing';
-import { FilterComponent } from './filter.component';
 
 const compileComponent = () => {
   TestBed.configureTestingModule({
-    declarations: [
-      FilterComponent,
-    ],
-    imports: [
-      RouterTestingModule,
-      MatCardModule,
-    ],
-    providers: [
-    ],
-  })
-  .compileComponents();
-}
+    declarations: [FilterComponent],
+    imports: [RouterTestingModule, MatCardModule],
+    providers: [],
+  }).compileComponents();
+};
 
 describe('FilterComponent', () => {
   let component: FilterComponent;

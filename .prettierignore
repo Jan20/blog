@@ -1,0 +1,14 @@
+package.json
+package-lock.json
+build
+coverage
+e2e
+docker
+nginx
+openshift
+.release
+
+*.md
+*.hbs
+.angular/**
+.doc/**

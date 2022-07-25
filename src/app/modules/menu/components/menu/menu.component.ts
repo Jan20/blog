@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from '../../models/menu.item';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
   public items: MenuItem[] = [
@@ -14,15 +14,13 @@ export class MenuComponent {
     new MenuItem('Guides', '🧑🏼‍💻', '/blog/guides'),
   ];
 
-  constructor(
-    private readonly router: Router,
-  ) {}
+  constructor(private readonly router: Router) {}
 
   public navigateToMenuEntry(item: MenuItem): void {
-    this.router.navigate([item.link])
+    this.router.navigate([item.link]);
   }
 
   public switchToLandingPage(): void {
-    this.router.navigate(['blog'])
+    this.router.navigate(['blog']);
   }
 }

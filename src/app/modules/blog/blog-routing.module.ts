@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class BlogRoutingModule { }
+export class BlogRoutingModule {}

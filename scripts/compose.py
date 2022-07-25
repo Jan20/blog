@@ -149,9 +149,9 @@ def parse_first_paragraph(file_path: str) -> str:
             if title is None and len(candidate) > 1:
                 title = candidate[1]
                 continue
-            if title is not None:
+            if title is not None and len(line) > 1:
                 cleaned_str = clean_str(line).split('.')[0] + '.'
-                return cleaned_str[0:100] + '...'
+                return cleaned_str[0:150] + '...'
 
 
 def clean_str(line: str) -> str:
