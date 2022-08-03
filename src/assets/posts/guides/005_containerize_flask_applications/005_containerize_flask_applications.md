@@ -21,13 +21,21 @@ from waitress import serve
 app = Flask(__name__)
 
 
+@app.after_request
+def add_access_control_headers(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Methods"] = "GET, HEAD, OPTIONS, POST, PUT"
+    return response
+
+
 @app.route('/')
 def hello_world():
-    return 'Hello World'
+    return {"message": "Hello World from Flask"}
 
 
 if __name__ == '__main__':
-    serve(app)
+    serve(app, host="0.0.0.0", port=8080)
+
 ```
 
 All dependencies required by Flask can be stored inside a requirements.txt file, so that they can be fetched and installed during the image build process.
@@ -64,7 +72,7 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD ["python3", "-m", "flask", "run"]
+CMD ["python3", "app.py"]
 ```
 
 ## Step 3: Building the image
