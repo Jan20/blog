@@ -1,6 +1,12 @@
+<!--
+date=2022-09-07
+topic=Hyperledger
+-->
+
+<img class='full' src='assets/posts/guides/011_hyperledger_indy/thumbnail.png'>
+
 # Hyperledger Indy
 
-## Overview
 Indy is a public ledger designed and only for privacy-preserving self-sovereign identity. Indy provides a **public permissioned** distributed ledger for managing decentralized identities.
 
 ## DID Creation

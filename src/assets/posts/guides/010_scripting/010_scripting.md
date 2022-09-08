@@ -1,3 +1,10 @@
+<!--
+date=2022-09-02
+topic=Bash
+-->
+
+<img class='full' src='assets/posts/guides/011_hyperledger_indy/thumbnail.png'>
+
 # Bash Scripting
 Bash scripts have been a stable for more than 20 years providing an exceptionally amount of freedom for writing small, self-contained pieces of code. Bash scripts may be used for automating tasks, scraping data or start applications.
 

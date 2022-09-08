@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post',
@@ -7,12 +8,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent {
-  public markdownSource: string = '';
+  public markdownSource = this.fetchPost();
 
-  constructor(private readonly activatedRoute: ActivatedRoute) {
-    this.activatedRoute.params.subscribe(params => {
-      const url = `./assets/posts/${params['category']}/${params['number']}/${params['id']}`;
-      this.markdownSource = url;
-    });
+  constructor(private readonly activatedRoute: ActivatedRoute) {}
+
+  private fetchPost(): Observable<string> {
+    return this.activatedRoute.params.pipe(
+      map(
+        params =>
+          `./assets/posts/${params['category']}/${params['number']}/${params['id']}`
+      )
+    );
   }
 }

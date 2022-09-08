@@ -16,7 +16,7 @@ export class BlogService {
 
   getTopics(category: string): Set<string> {
     const posts: Post[] = this.postCollection.selectPosts(category);
-    const topics: string[] = posts.map((post) => post.topic);
+    const topics: string[] = posts.map(post => post.topic);
     return new Set(topics);
   }
 }

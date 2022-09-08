@@ -1,3 +1,10 @@
+<!--
+date=2022-08-24
+topic=Bash
+-->
+
+<img class='full' src='assets/posts/guides/011_hyperledger_indy/thumbnail.png'>
+
 # Kubernetes Introduction
 
 ## Starting a local Kubernetes cluster
