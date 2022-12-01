@@ -1,8 +1,21 @@
 .mat-card {
-  width: calc(100% - 32px);
+  width: calc(100% - 200px);
+  background-color: rgb(245, 245, 247);
   border-radius: 0%;
+  box-shadow: none;
+}
+
+button {
+  color: rgb(109, 109, 109);
+  margin-right: 16px;
 }
 
 .mat-chip:hover {
   cursor: pointer;
+}
+
+.mat-button {
+  float: right;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
 }

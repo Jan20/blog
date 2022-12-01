@@ -6,3 +6,7 @@ karma.conf.js
 commitlint.config.js
 nginx
 docker
+
+productivity.ts
+guides.ts
+reviews.ts

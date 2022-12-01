@@ -1,0 +1,18 @@
+<span class="wrapper">
+  <h1 class="title headline">Series</h1>
+</span>
+<div *ngIf="seriesTitles">
+  <div *ngFor="let title of seriesTitles">
+    <mat-card>
+      <mat-card-content>
+        <h1>{{ title }}</h1>
+        <div *ngFor="let post of series.get(title)">
+          <h2 (click)="showPost(post.link)">
+            {{ post.seriesSection }}. {{ post.headline }}
+          </h2>
+          <span class="placeholder"></span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

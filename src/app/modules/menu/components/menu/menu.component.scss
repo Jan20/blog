@@ -1,27 +1,22 @@
+.mat-toolbar {
+  width: 100%;
+  background-color: rgb(245, 245, 247);
+}
+
 span {
   font-size: 16px;
-  font-weight: 400;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 .spacer {
   flex: 1 1 auto;
 }
 
-.mat-toolbar {
-  width: 100%;
-  margin: 0px;
-  background: linear-gradient(
-    196deg,
-    rgba(133, 78, 33, 0.597) 0%,
-    rgb(61, 23, 8) 100%
-  );
-}
 
 .mat-icon {
   color: rgb(255, 255, 255);
-  font-weight: 200;
+  font-weight: 100;
 }
 
 @media (min-width: 600px) {
@@ -29,7 +24,7 @@ span {
     display: none;
   }
   span {
-    color: rgb(255, 255, 255);
+    color: rgb(109, 109, 109);
   }
 }
 
@@ -40,7 +35,8 @@ span {
 }
 
 .title {
-  color: rgb(255, 255, 255);
+  color: rgb(109, 109, 109);
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
+  font-family: 'Roboto';
 }

@@ -1,16 +1,18 @@
 <!--
 date=2022-06-27
 topic=Docker
+series=Docker
+series_section=2
+summary=This post covers the creation of a container image for a minimal Flask application.
 -->
-<img class='full' src='assets/posts/guides/005_containerize_flask_applications/thumbnail.png'>
 
-# Containerize Flask Apps
+# Containerize Flask Applications
 
-As we have seen in the previous post that Docker provides a rather sophiticated toolset for creating images from applications, creating an easy way to share and deploy applications. But let's first take a closer look at creating a minimal working docker image in four rather simple steps.
+Docker's container runtime allows to run applications in their dedicated containers based on a predefined image. However, how are container images created? Let's answer this question by building a minimal Flask application, creating a corresponding image and spin up a container based on that image.
 
-## Step 1: Minimal Flask application
+## Step 1: Creating a Flask Application
 
-First take a quick look at a minimal Flask application as simple example. The application does nothing but returning "Hello World" upon calling the single endpoint it provides. Feel free to replace that barebone application at any time.
+Flask is a minimal Python library for writing web applications. If you are interested to learn more about the library itself, take a look at [Flask's documentation](https://flask.palletsprojects.com/en/2.2.x/). However, our application is intended to be as minimal as it gets. It will spin up a webserver doing not much more than returning "Hello World from Flask" upon calling the single endpoint it provides. It consists of a single app.py file called that's content is depicted below:
 
 <b>app.py</b>
 
@@ -38,7 +40,7 @@ if __name__ == '__main__':
 
 ```
 
-All dependencies required by Flask can be stored inside a requirements.txt file, so that they can be fetched and installed during the image build process.
+Flask requires a range of dependencies that are defined in a requirements.txt file, so that they can be fetched and installed during the image's build process.
 
 <b>requirements.txt</b>
 
@@ -56,19 +58,20 @@ zipp==3.8.0
 
 ## Step 2: Dockerfile
 
-After having created a minimal Flask application, let's take a closer look at the <code>Dockerfile</code> used to create a Docker image depicted below. The Dockerfile is a text document that contains all the commands necessary to assemble an image. Quite important to note is, that the image gets build inside a build context, which is the set of files at a specified location, such as the present working directory.
+After having created a minimal Flask application, let's take a closer look at the <code>Dockerfile</code> used to create a Docker image depicted below. The Dockerfile is a text document that contains all the commands necessary to assemble an image. An image gets build within a build context, which is the set of files at a specified location, such as the present working directory.
 
-All Dockerfiles start with the syntax definition, followed by a reference to a base image used to built upon. In our case, this would by <code>python:3</code>. A working directory for essembling the image gets defined, that may have an arbitrary name such as <code>/app</code>. the next part is a bit more interesting as the requirements.txt file, containing all dependencies required by Flask first gets copied in the working directory. Afterwards the <code>pip3 install</code> command for recursevely installing the dependencies defined in the requirement.txt gets executed. Afterwards, all remaining files get copied to the working dir. Finally, the the Flask application gets executed by running the <code>python3 -m flask run</code> command inside Docker's CMD command block, which is used execute arbitrary command line instructions.
+All Dockerfiles start with the syntax definition, followed by a reference to a base image used to built upon. In our case, this would be <code>python:3.9</code> containing a Debian distribution and as the name suggests Python 3.9. A working directory for essembling the image gets defined, that may have an arbitrary name such as <code>/app</code>. The requirements.txt file containing all dependencies required by Flask first gets copied in the working directory. Afterwards the <code>pip3 install</code> command gets executed that recursevely installs all dependencies defined in the requirement. Then, the <code>COPY . .</code> command copies of the project's files to the working directory. Finally, we define an entry point for the application by running the <code>python3 app.py</code> command inside Docker's CMD command block, which is used to execute arbitrary command line instructions.
 
 ```TS
 # syntax=docker/dockerfile:1
 
-FROM python:3
+FROM python:3.9
 
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . .
 
@@ -77,7 +80,7 @@ CMD ["python3", "app.py"]
 
 ## Step 3: Building the image
 
-First, make sure that you are in the same directory as the Dockerfile. Afterwards, execute the Docker <code>build</code> that searches for a valid Dockerfile at the present working directory. If a Dockerfile is found, the commands described inside the Dockerfile get executed sequentially. The <code>build</code> may take several additional parameters such as <code>-t</code> short for <code>-tag</code> which specifies an image's name, like <code>flask-introduction:latest</code>, where <code>latest</code> could be just as well replaced by an image's version number. Finally, take note of the <code>.</code> at the end of the build command that sends all files in the present working directory to the Docker deamon as build context.
+First, make sure that you are in the same directory as the Dockerfile. Afterwards, execute the Docker <code>build</code> command that searches for a valid Dockerfile at the present working directory. If a Dockerfile like the one shown above is found, the commands described inside the Dockerfile get executed sequentially. The <code>build</code> may take several additional parameters such as <code>-t</code> short image's tag consisting of a image's name, followed by an optional version number. In our case, we default to <code>latest</code>, but we could just as well have chosen <code>1.0</code> or any other version number. Finally, take note of the <code>.</code> at the end of the build command that sends all files in the present working directory to the Docker deamon as build context.
 
 ```TS
 docker build -t flask-introduction:latest .
@@ -85,7 +88,7 @@ docker build -t flask-introduction:latest .
 
 ## Step 4: Running the created image
 
-After having executed the build command, the newly created image should be listed alongside other images using the <code>docker images</code> command. Now, it is time to actually run a Docker container based on our Docker image. This is achieved by using the <code>docker run</code> command and using the <code>-d</code> detached flag. This flag spins up the Docker container in the background. In addition, we map Fask's default port 5000 to the port 8080 of our localhost and finally provide the name of the image we like to use that is flask-introduction. A container should have been started successfully. All processes running inside Docker including our freshly started container can be observed via <code>docker ps</code>.
+After having executed the build command, the newly created image should be listed alongside other images using the <code>docker images</code> command. Now, it is time to actually run a Docker container based on our Docker image. This is achieved by using the <code>docker run</code> command and using the <code>-d</code> (short for <code>--detached</code>)flag for running a container in the background. In addition, we map Fask's default port <code>5000</code> to the port <code>8080</code> of our localhost by using the <code>-p</code> (short for <code>--publish</code> flag. The syntax for mapping ports of a host machine Finally, we provide the name of the image we like to use that is flask-introduction. A container should have been started successfully. All processes running inside Docker including our freshly started container can be observed via <code>docker ps</code>.
 
 ```TS
 docker images

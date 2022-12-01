@@ -9,7 +9,7 @@ from pathlib import Path
 
 class Post:
     """ Defines a post, consisting of a category, topic, headline,
-        first_paragraph, link and thumbnail
+        summary, link and thumbnail
     """
 
     def __init__(
@@ -17,18 +17,22 @@ class Post:
         category: str,
         topic: str,
         headline: str,
-        first_paragraph: str,
+        summary: str,
         link: str,
         thumbnail: str,
-        date: str
+        date: str,
+        series: str,
+        series_section: int
     ):
         self.category: str = category
         self.topic: str = topic
         self.headline: str = headline
-        self.first_paragraph: str = first_paragraph
+        self.summary: str = summary
         self.link: str = link
         self.thumbnail: str = thumbnail
         self.date: str = date
+        self.series: str = series
+        self.series_section: int = series_section
 
 
 def compose_index_files() -> None:
@@ -92,16 +96,20 @@ def extract_post_from_file(file_path: str) -> Post:
     """
     topic = parse_topic(file_path)
     headline = parse_headline(file_path)
-    first_paragraph = parse_first_paragraph(file_path)
+    summary = parse_summary(file_path)
     date = parse_date(file_path)
+    series = parse_series(file_path)
+    series_section = parse_series_section(file_path)
     return Post(
         file_path.split('/')[4],
         topic,
         headline,
-        first_paragraph,
-        file_path,
+        summary,
+        compose_link(file_path),
         compose_thumbnail_path(file_path),
-        date
+        date,
+        series,
+        series_section
     )
 
 
@@ -138,31 +146,53 @@ def parse_date(file_path: str) -> str:
                 return clean_str(date[1])
 
 
-def parse_first_paragraph(file_path: str) -> str:
-    """ Selects the first paragraph of a blog post and creates a short preview
-        of its content.
+def parse_series(file_path: str) -> str:
+    """ Opens a file containing a blog posts, iterates over the file and returns
+        the series to which a post belongs to.
     """
-    title: str = None
     with open(file_path) as reader:
         for line in reader:
-            candidate = line.split('# ')
-            if title is None and len(candidate) > 1:
-                title = candidate[1]
-                continue
-            if title is not None and len(line) > 1:
-                cleaned_str = clean_str(line).split('.')[0] + '.'
-                return cleaned_str[0:150] + '...'
+            series = line.split('series=')
+            if len(series) > 1:
+                return replace_underscores(series[1])
+
+
+def parse_series_section(file_path: str) -> int:
+    """ Opens a file containing a blog posts, iterates over the file and returns
+        the series to which a post belongs to.
+    """
+    with open(file_path) as reader:
+        for line in reader:
+            series_section = line.split('series_section=')
+            if len(series_section) > 1:
+                return int(series_section[1])
+
+
+def parse_summary(file_path: str) -> str:
+    """ Opens a file containing a blog posts, iterates over the file and returns
+        the series to which a post belongs to.
+    """
+    with open(file_path) as reader:
+        for line in reader:
+            summary = line.split('summary=')
+            if len(summary) > 1:
+                return clean_str(summary[1])
 
 
 def clean_str(line: str) -> str:
-    """ Removes whitespaces from a given str."""
+    """ Removes whitespaces from a given str. """
     return line.replace('\n', ' ').replace('\r', ' ').replace("'", '')[:-1]
+
+
+def replace_underscores(line: str) -> str:
+    """ Replaces underscores with spaces. """
+    return line.replace('_', ' ').replace('\n', '')
 
 
 def write_posts_to_file(posts: [Post]) -> None:
     """ Writes a parsed Post object to a typescript file."""
     import_statement = 'import { Post } from "src/app/modules/blog/models/post"; \n'
-    file_path = '/'.join(posts[0].link.split("/")[:-2])
+    file_path = f'./src/{"/".join(posts[0].link.split("/")[1:-2])}'
     index_file = f'{file_path}/{posts[0].category}.ts'
     with open(index_file, 'w') as writer:
         writer.write(import_statement)
@@ -180,6 +210,14 @@ def compose_thumbnail_path(file_path: str) -> str:
     return f'{file_path}/thumbnail.png'
 
 
+def compose_link(file_path: str) -> str:
+    """ Computes the path to a post's thumbnail."""
+    print(file_path)
+    file_name = file_path.split("/")[-1]
+    link = '/'.join(file_path.split("/")[2:-1])
+    return f'/{link}/{file_name}'
+
+
 def parse_post_to_line(post: Post) -> str:
     """ Converts a Post object to a line, intended to be written to an index
         file.
@@ -189,10 +227,14 @@ def parse_post_to_line(post: Post) -> str:
     line += f"'{post.category}', "
     line += f"'{post.topic}', "
     line += f"'{post.headline}', "
-    line += f"'{post.first_paragraph}', "
+    line += f"'{post.summary}', "
     line += f"'{post.link}', "
     line += f"'{post.thumbnail}', "
     line += f"'{post.date}'"
+    if post.series:
+        line += f", '{post.series}'"
+    if post.series_section:
+        line += f", {post.series_section}"
     line += "), \n"
     print(post.headline)
     return line

@@ -1,3 +1,34 @@
-<mat-card class="overviewCard" *ngIf="markdownSource | async as markdownSource">
-  <markdown lineHighlight [src]="markdownSource"></markdown>
+<mat-card class="overviewCard" *ngIf="post | async as post">
+  <img mat-card-image class="full" [src]="post.thumbnail" />
+  <mat-card-content>
+    <div class="date">{{ post.date | date }}</div>
+    <div *ngIf="post.seriesSection" class="section">
+      <div class="section-wrapper">
+        <div class="button-left">
+          <button
+            mat-button
+            (click)="navigateToPost(post.series, post.seriesSection - 1)">
+            <mat-icon>arrow_back_ios</mat-icon>
+          </button>
+        </div>
+        <div class="wrapper">
+          Section {{ post.seriesSection }} of {{ sectionCount }}
+        </div>
+        <div class="button-right">
+          <button
+            mat-button
+            (click)="navigateToPost(post.series, post.seriesSection + 1)">
+            <mat-icon>arrow_forward_ios</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="post.seriesSection" class="content">
+      <markdown lineHighlight [src]="post.link"></markdown>
+    </div>
+    <div *ngIf="!post.seriesSection">
+      <markdown lineHighlight [src]="post.link"></markdown>
+    </div>
+  </mat-card-content>
 </mat-card>
+<div class="placeholder"></div>

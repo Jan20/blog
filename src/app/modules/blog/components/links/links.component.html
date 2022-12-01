@@ -1,0 +1,15 @@
+<mat-card>
+  <div class="wrapper">
+    <div class="introduction">
+      <h1>Links</h1>
+      <span *ngFor="let link of links">
+        <button mat-button (click)="openLink(link.url)">
+          <h2>
+            <img *ngIf="link.name !== 'About'" src="{{ link.iconPath }}" />
+            {{ link.name }}
+          </h2>
+        </button>
+      </span>
+    </div>
+  </div>
+</mat-card>

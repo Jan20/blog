@@ -1,0 +1,160 @@
+h1 {
+  text-align: left;
+  background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 20px;
+  padding: 0px;
+  line-height: normal;
+  width: 300px;
+  font-size: 36px;
+  padding-left: 20px;
+}
+
+h2 {
+  font-weight: 100;
+  line-height: normal;
+  float: left;
+  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 36px;
+  margin: 0px;
+  margin-bottom: 6px;
+  margin-left: 8px;
+  padding-top: 20px;
+  font-size: 26px;
+  color: rgb(64, 72, 76);
+}
+
+p {
+  line-height: 175%;
+  font-size: 24px;
+  text-align: justify;
+  color: #1d1d1f;
+  margin-bottom: 12px;
+  font-weight: 300;
+  margin-left: 20px;
+}
+
+span {
+  background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  background-clip: text;
+  font-weight: 400;
+  -webkit-text-fill-color: transparent;
+}
+
+img {
+  margin-top: 32px;
+  margin-left: 30px;
+  float: right;
+  width: 39%;
+  border-radius: 10px;
+}
+
+.mat-card {
+  width: 830px;
+  height: flex;
+  border-radius: 40px;
+  line-height: 1.47059;
+  -webkit-font-smoothing: antialiased;
+  padding: 30px;
+  color: rgb(64, 72, 76);
+  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  letter-spacing: -0.022em;
+  border: None;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+  line-height: 1.47059;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  letter-spacing: -0.022em;
+  border: None;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-left: 0px;
+}
+
+@media (max-width: 768px) {
+  .mat-card {
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: auto;
+    height: flex;
+    padding: 150px;
+    line-height: 1.47059;
+    -webkit-font-smoothing: antialiased;
+    padding: 30px;
+    font-weight: 500;
+    color: #1d1d1f;
+    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+      Arial, sans-serif;
+    letter-spacing: -0.022em;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+    line-height: 1.47059;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+      Arial, sans-serif;
+    letter-spacing: -0.022em;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    transition: box-shadow 1s, margin-top 1s, width 1s, height 1s,
+      transform 0.7s;
+  }
+}
+
+.mat-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: scale(1.005);
+}
+
+.mat-card-content {
+  height: 100px;
+  border-color: #000 transparent transparent transparent;
+  border-radius: 95%/100px 100px 0 0;
+  background: linear-gradient(
+    196deg,
+    rgb(255, 169, 99) 0%,
+    rgb(255, 100, 39) 100%
+  );
+  padding-right: 10px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+.mat-card-title {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    line-height: normal !important;
+  }
+}
+
+.wrapper {
+  width: 800px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.introduction {
+  width: 800px;
+  float: left;
+  margin: auto;
+  margin-right: 20px;
+}
+
+.mat-button {
+  padding-left: 0px !important;
+  margin-left: 0px !important;
+}

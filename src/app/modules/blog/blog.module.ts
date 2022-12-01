@@ -15,9 +15,24 @@ import { BlogComponent } from './components/blog/blog.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { PostComponent } from './components/post/post.component';
 import { BlogService } from './services/blog.service';
+import { MatIconModule } from '@angular/material/icon';
+import { LandingComponent } from './components/landing/landing.component';
+import { TopicsComponent } from './components/topics/topics.component';
+import { SeriesComponent } from './components/series/series.component';
+import { LinksComponent } from './components/links/links.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
-  declarations: [BlogComponent, PostComponent, FilterComponent],
+  declarations: [
+    BlogComponent,
+    PostComponent,
+    FilterComponent,
+    LandingComponent,
+    TopicsComponent,
+    SeriesComponent,
+    LinksComponent,
+    AboutComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -29,9 +44,12 @@ import { BlogService } from './services/blog.service';
     MatGridListModule,
     MatButtonModule,
     BlogRoutingModule,
+    MatIconModule,
     RouterModule.forChild([
-      { path: '', component: BlogComponent },
+      { path: '', component: LandingComponent },
       { path: 'blog', component: BlogComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'blog/series', component: SeriesComponent },
       { path: 'blog/:category', component: BlogComponent },
       { path: 'blog/:category/:topic', component: BlogComponent },
       {

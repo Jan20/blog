@@ -1,39 +1,107 @@
 img {
-  height: 200px;
-  width: 200px;
-  transform: scale(0.7);
-  margin-left: 300px;
   margin-bottom: -50px;
+  width: 800px;
+  border-radius: 10px 10px 0px 0px;
+  margin-left: 0px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+p {
+  line-height: 175%;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: justify;
+  color: rgb(185, 0, 0) !important;
+  margin-bottom: 12px;
 }
 
 .mat-card {
   margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  width: 800px;
-  height: flex;
-  padding: 150px;
+  width: 800px !important;
   border-radius: 40px;
   line-height: 1.47059;
-  -webkit-font-smoothing: antialiased;
-  padding: 30px;
   color: #1d1d1f;
-  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
-    Arial, sans-serif;
-  letter-spacing: -0.022em;
-  border: None;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
-  line-height: 1.47059;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  position: relative;
   font-weight: 500;
-  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
-    Arial, sans-serif;
-  letter-spacing: -0.022em;
   border: None;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 10px;
-  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
-  margin-bottom: 20px !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 2px;
+  padding: 0px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.mat-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.mat-card-content {
+  border-color: #000 transparent transparent transparent;
+  border-radius: 99%/150px 150px 0 0;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 8px;
+  height: flex;
+  padding: 20px;
+  position: relative;
+  margin-top: -80px;
+}
+
+.section-wrapper {
+  float: left;
+}
+
+.wrapper {
+  float: left;
+  margin-top: 4px;
+}
+
+.button-left {
+  float: left;
+  width: 10px !important;
+  text-align: center;
+  margin-right: 45px;
+}
+
+.button-right {
+  float: left;
+  width: 10px !important;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.content {
+  margin-top: 50px;
+}
+
+.date {
+  padding: 0;
+  width: calc(220px - 20px);
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(51, 51, 51) !important;
+  font-weight: 300;
+}
+
+.full-date {
+  margin-top: -50px;
+}
+
+.section {
+  padding: 0;
+  margin: 0;
+  width: calc(290px - 20px);
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(51, 51, 51) !important;
+  margin: auto;
+  margin-top: 8px;
+  font-weight: 300;
 }
 
 @media (max-width: 768px) {
@@ -49,57 +117,23 @@ img {
     padding: 30px;
     font-weight: 500;
     color: #1d1d1f;
-    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
-      Arial, sans-serif;
     letter-spacing: -0.022em;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
     line-height: 1.47059;
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
-    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
-      Arial, sans-serif;
     letter-spacing: -0.022em;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 10px;
     transition: box-shadow 1s, margin-top 1s, width 1s, height 1s,
       transform 0.7s;
   }
-}
 
-.mat-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transform: scale(1.005);
-}
-
-.mat-card-content {
-  height: 100px;
-  border-color: #000 transparent transparent transparent;
-  border-radius: 95%/100px 100px 0 0;
-  background: linear-gradient(
-    196deg,
-    rgb(255, 169, 99) 0%,
-    rgb(255, 100, 39) 100%
-  );
-  padding: 10px;
-  padding-bottom: 0px;
-  margin-bottom: 20px;
-}
-
-.mat-card-title {
-  text-align: center;
-}
-
-p {
-  line-height: 175%;
-  font-size: 18px;
-  font-weight: 300;
-  text-align: justify;
-  color: rgb(51, 51, 51) !important;
-  margin-bottom: 12px;
-}
-
-@media (max-width: 768px) {
   h1 {
     line-height: normal !important;
   }
+}
+
+.placeholder {
+  height: 1px;
 }

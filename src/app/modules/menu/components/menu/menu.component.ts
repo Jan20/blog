@@ -9,9 +9,9 @@ import { MenuItem } from '../../models/menu.item';
 })
 export class MenuComponent {
   public items: MenuItem[] = [
-    // new MenuItem('Reviews', '📚', '/blog/reviews'),
-    new MenuItem('Productivity', '⚙️', '/blog/productivity'),
     new MenuItem('Guides', '🧑🏼‍💻', '/blog/guides'),
+    new MenuItem('Series', '☕️', '/blog/series'),
+    new MenuItem('Productivity', '⚙️', '/blog/productivity'),
   ];
 
   constructor(private readonly router: Router) {}
@@ -21,6 +21,6 @@ export class MenuComponent {
   }
 
   public switchToLandingPage(): void {
-    this.router.navigate(['blog']);
+    this.router.navigate(['']);
   }
 }
