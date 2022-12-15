@@ -148,11 +148,31 @@
   }
 
   .half-width {
-    width: 50%;
+    width: 25%;
     padding: 0px !important;
-    margin: 10px;
-    margin-left: calc(50% / 2);
+    margin-left: calc(75% / 2);
     border-radius: 10px 10px 10px 10px;
+    float:right;
+    margin-top: 25px;
+    margin-left: 20px;
+    border: double 0.25px transparent;
+    border-radius: 10px;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(to right, #C850C0, #FFCC70);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+  }
+
+  .right {
+    float:right;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 0px;
+  }
+
+  .left {
+    float:left;
   }
 
   .three-quarter-width {
