@@ -6,6 +6,8 @@ from os import listdir
 from os.path import isdir, join
 from pathlib import Path
 
+root_dir: str = f'{Path(__file__).parent.parent}'
+
 
 class Post:
     """ Defines a post, consisting of a category, topic, headline,
@@ -63,7 +65,6 @@ def parse_posts_in_category(post_dirs: [str]) -> [Post]:
 def select_categories() -> [bytes]:
     """ Selects directories, containing categories of posts.
     """
-    root_dir: str = f'{Path(__file__).parent.parent}'
     full_dir_name: str = f'{root_dir}/src/assets/posts'
     categories: [bytes] = []
     for directory in listdir(full_dir_name):
@@ -100,13 +101,18 @@ def extract_post_from_file(file_path: str) -> Post:
     date = parse_date(file_path)
     series = parse_series(file_path)
     series_section = parse_series_section(file_path)
+    category = file_path.split('/')[9]
+    relative_path = '/'.join(file_path.split('/')[5:])
+    link = compose_link(relative_path)
+    thumbnail_path = compose_thumbnail_path(relative_path)
+
     return Post(
-        file_path.split('/')[4],
+        category,
         topic,
         headline,
         summary,
-        compose_link(file_path),
-        compose_thumbnail_path(file_path),
+        link,
+        thumbnail_path,
         date,
         series,
         series_section
@@ -191,11 +197,12 @@ def replace_underscores(line: str) -> str:
 
 def write_posts_to_file(posts: [Post]) -> None:
     """ Writes a parsed Post object to a typescript file."""
-    import_statement = 'import { Post } from "src/app/modules/blog/models/post"; \n'
-    file_path = f'./src/{"/".join(posts[0].link.split("/")[1:-2])}'
-    index_file = f'{file_path}/{posts[0].category}.ts'
+    first_line = 'import { Post } from "src/app/modules/blog/models/post"; \n'
+    path_elements: [str] = posts[0].link.split("/")[:-2]
+    relative_path = "/".join(path_elements)
+    index_file = f'{root_dir}/src{relative_path}/{posts[0].category}.ts'
     with open(index_file, 'w') as writer:
-        writer.write(import_statement)
+        writer.write(first_line)
         writer.write('\n')
         writer.write(f'export const {posts[0].category}: Post[] = [\n')
         for post in posts:

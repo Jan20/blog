@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MatIconModule } from '@angular/material/icon';
 
 const windowService = jasmine.createSpyObj('WindowService', [
   'getNumberOfColumns',
@@ -20,12 +21,17 @@ windowService.getNumberOfColumns.and.returnValue(1000);
 const compileComponent = () => {
   TestBed.configureTestingModule({
     declarations: [BlogComponent, FilterComponent],
-    imports: [RouterTestingModule, MatCardModule, MatGridListModule],
+    imports: [
+      RouterTestingModule,
+      MatIconModule,
+      MatCardModule,
+      MatGridListModule,
+    ],
     providers: [{ provide: WindowService, useValue: windowService }],
   }).compileComponents();
 };
 
-describe('BlogComponent', () => {
+describe('BlogComponent:', () => {
   let component: BlogComponent;
   let fixture: ComponentFixture<BlogComponent>;
   let router: Router;
@@ -39,7 +45,7 @@ describe('BlogComponent', () => {
     spyOn(router, 'navigate');
   });
 
-  it('should create', () => {
+  fit('should create a blog component', () => {
     expect(component).toBeTruthy();
   });
 

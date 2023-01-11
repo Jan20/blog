@@ -8,20 +8,20 @@ import { PostCollection } from '../models/postCollection';
 export class BlogService {
   constructor(private readonly postCollection: PostCollection) {}
 
-  getPosts(category: string, topic?: string): Post[] {
+  public getPosts(category: string, topic?: string): Post[] {
     const posts: Post[] = this.postCollection.selectPosts(category);
     return topic !== 'All'
       ? posts.filter((post: Post) => post.topic === topic)
       : posts;
   }
 
-  getTopics(category: string): Set<string> {
+  public getTopics(category: string): Set<string> {
     const posts: Post[] = this.postCollection.selectPosts(category);
     const topics: string[] = posts.map(post => post.topic);
     return new Set(topics);
   }
 
-  getSeriesTitles(): Set<string> {
+  public getSeriesTitles(): Set<string> {
     const posts: Post[] = this.postCollection.selectPosts('guides');
     const topics: string[] = posts
       .map(post => post.series)
@@ -29,16 +29,16 @@ export class BlogService {
     return new Set(topics);
   }
 
-  getSeries(series: string): Post[] {
+  public getSeries(series: string): Post[] {
     const posts: Post[] = this.postCollection.selectPosts('guides');
     return posts.filter((post: Post) => post.series === series);
   }
 
-  getSectionCount(series: string): number {
+  public getSectionCount(series: string): number {
     return this.getSeries(series).length;
   }
 
-  getPostBySeriesSection(series: string, section: number): Post {
+  public getPostBySeriesSection(series: string, section: number): Post {
     return this.getSeries(series).find(
       posts => posts.seriesSection === section
     )!;
