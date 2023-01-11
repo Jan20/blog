@@ -112,6 +112,7 @@ h2 {
   font-weight: 100;
 }
 
+/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
 mat-card {
   margin: auto;
   margin-top: 120px;

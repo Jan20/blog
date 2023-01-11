@@ -49,7 +49,7 @@ span {
   padding: 0px;
 }
 
-.mat-card {
+.mat-mdc-card {
   height: 250px;
   width: 250px;
   line-height: 1.5;
@@ -65,18 +65,18 @@ span {
   text-align: center;
 }
 
-.mat-card:hover {
+.mat-mdc-card:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
   transform: scale(1.02);
 }
 
-.mat-card-title {
+.mat-mdc-card-title {
   font-size: 24px;
   text-align: center;
 }
 
-.mat-card-content {
+.mat-mdc-card-content {
   height: 200px;
   border-color: #000 transparent transparent transparent;
   border-radius: 99%/50px 50px 0 0;
@@ -97,7 +97,7 @@ span {
     padding-right: 0px;
   }
 
-  .mat-card-content {
+  .mat-mdc-card-content {
     border-color: #000 transparent transparent transparent;
     padding: 10px;
     padding-top: 20px;

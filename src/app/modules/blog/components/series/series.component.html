@@ -3,7 +3,7 @@
 </span>
 <div *ngIf="seriesTitles">
   <div *ngFor="let title of seriesTitles">
-    <mat-card>
+    <mat-card appearance="outlined">
       <mat-card-content>
         <h1>{{ title }}</h1>
         <div *ngFor="let post of series.get(title)">

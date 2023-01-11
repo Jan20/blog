@@ -1,4 +1,4 @@
-.mat-card {
+.mat-mdc-card {
   width: calc(100% - 200px);
   background-color: rgb(245, 245, 247);
   border-radius: 0%;
@@ -10,11 +10,11 @@ button {
   margin-right: 16px;
 }
 
-.mat-chip:hover {
+.mat-mdc-chip:hover {
   cursor: pointer;
 }
 
-.mat-button {
+.mat-mdc-button {
   float: right;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;

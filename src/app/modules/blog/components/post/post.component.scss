@@ -15,7 +15,7 @@ p {
   margin-bottom: 12px;
 }
 
-.mat-card {
+.mat-mdc-card {
   margin: auto;
   width: 800px !important;
   border-radius: 40px;
@@ -32,11 +32,11 @@ p {
   margin-bottom: 20px;
 }
 
-.mat-card:hover {
+.mat-mdc-card:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.mat-card-content {
+.mat-mdc-card-content {
   border-color: #000 transparent transparent transparent;
   border-radius: 99%/150px 150px 0 0;
   border-bottom-right-radius: 20px;
@@ -105,7 +105,7 @@ p {
 }
 
 @media (max-width: 768px) {
-  .mat-card {
+  .mat-mdc-card {
     margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;

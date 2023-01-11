@@ -32,16 +32,24 @@ $mat-white: (
   ),
 );
 
-@import '~@angular/material/theming';
-@include mat-core();
+@use '@angular/material' as mat;
+@include mat.core();
 
-$primary: mat-palette($mat-grey, 500);
-$accent: mat-palette($mat-blue, 500);
-$warn: mat-palette($mat-white, 50);
+$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
-$hydra-app-theme: mat-light-theme($primary, $accent, $warn);
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$red-palette);
 
-@include angular-material-theme($hydra-app-theme);
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400);
 @import url(https://fonts.googleapis.com/css?family=Roboto:100);

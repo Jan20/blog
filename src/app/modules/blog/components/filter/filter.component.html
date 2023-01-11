@@ -4,11 +4,15 @@
 <button *ngIf="selected" mat-button (click)="toggleSelected()">
   <mat-icon>filter_alt</mat-icon>Hide Filters
 </button>
-<mat-card *ngIf="selected">
-  <mat-chip-list aria-label="Fish selection" *ngIf="topics | async as topics">
-    <mat-chip (click)="selectTopic('All')">All</mat-chip>
-    <mat-chip (click)="selectTopic(topic)" *ngFor="let topic of topics">{{
-      topic
-    }}</mat-chip>
-  </mat-chip-list>
+<mat-card appearance="outlined" *ngIf="selected">
+  <mat-chip-listbox
+    aria-label="Filter selection"
+    *ngIf="topics | async as topics">
+    <mat-chip-option (click)="selectTopic('All')">All</mat-chip-option>
+    <mat-chip-option
+      (click)="selectTopic(topic)"
+      *ngFor="let topic of topics"
+      >{{ topic }}</mat-chip-option
+    >
+  </mat-chip-listbox>
 </mat-card>

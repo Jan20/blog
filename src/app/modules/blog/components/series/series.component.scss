@@ -63,7 +63,7 @@ h2:hover {
   padding: 0px;
 }
 
-.mat-card {
+.mat-mdc-card {
   margin: auto;
   width: 860px;
   line-height: 1.5;
@@ -81,7 +81,7 @@ h2:hover {
   display: flex;
 }
 
-.mat-card-title {
+.mat-mdc-card-title {
   font-size: 24px;
   text-align: center;
 }
@@ -120,7 +120,7 @@ h2:hover {
     padding-right: 0px;
   }
 
-  .mat-card-content {
+  .mat-mdc-card-content {
     border-color: #000 transparent transparent transparent;
     padding: 10px;
     padding-top: 20px;

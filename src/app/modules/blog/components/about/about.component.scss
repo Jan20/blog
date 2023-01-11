@@ -52,7 +52,7 @@ img {
   border-radius: 10px;
 }
 
-.mat-card {
+.mat-mdc-card {
   width: 830px;
   height: flex;
   border-radius: 40px;
@@ -82,7 +82,7 @@ img {
 }
 
 @media (max-width: 768px) {
-  .mat-card {
+  .mat-mdc-card {
     margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -111,12 +111,12 @@ img {
   }
 }
 
-.mat-card:hover {
+.mat-mdc-card:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transform: scale(1.005);
 }
 
-.mat-card-content {
+.mat-mdc-card-content {
   height: 100px;
   border-color: #000 transparent transparent transparent;
   border-radius: 95%/100px 100px 0 0;
@@ -130,7 +130,7 @@ img {
   padding-bottom: 0px;
 }
 
-.mat-card-title {
+.mat-mdc-card-title {
   text-align: center;
 }
 
@@ -154,7 +154,7 @@ img {
   margin-right: 20px;
 }
 
-.mat-button {
+.mat-mdc-button {
   padding-left: 0px !important;
   margin-left: 0px !important;
 }
