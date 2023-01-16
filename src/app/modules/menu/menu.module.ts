@@ -4,7 +4,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MenuComponent } from './components/menu/menu.component';
-import { MenuService } from './services/menu.service';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatButtonModule,
   ],
-  providers: [MenuService],
   exports: [MenuComponent],
 })
 export class MenuModule {}

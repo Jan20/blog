@@ -1,4 +1,7 @@
-<mat-card appearance="outlined" class="overviewCard" *ngIf="post | async as post">
+<mat-card
+  appearance="outlined"
+  class="overviewCard"
+  *ngIf="post | async as post">
   <img mat-card-image class="full" [src]="post.thumbnail" />
   <mat-card-content>
     <div class="date">{{ post.date | date }}</div>

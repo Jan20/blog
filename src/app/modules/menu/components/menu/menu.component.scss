@@ -1,8 +1,3 @@
-.mat-toolbar {
-  width: 100%;
-  background-color: rgb(245, 245, 247);
-}
-
 span {
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
@@ -13,18 +8,9 @@ span {
   flex: 1 1 auto;
 }
 
-
-.mat-icon {
-  color: rgb(255, 255, 255);
-  font-weight: 100;
-}
-
 @media (min-width: 600px) {
   .mobile-menu {
     display: none;
-  }
-  span {
-    color: rgb(109, 109, 109);
   }
 }
 
@@ -35,8 +21,21 @@ span {
 }
 
 .title {
-  color: rgb(109, 109, 109);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 300;
   font-family: 'Roboto';
+}
+
+.desktop-menu {
+  float: right;
+}
+
+.menu-button {
+  font-weight: 100;
+  font-size: 22px;
+}
+
+.main-menu {
+  padding-top: 24px;
+  padding-bottom: 24px;
 }

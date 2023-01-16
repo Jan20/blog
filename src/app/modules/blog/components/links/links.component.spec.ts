@@ -16,7 +16,7 @@ describe('LinksComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create a link component', () => {
     expect(component).toBeTruthy();
   });
 });

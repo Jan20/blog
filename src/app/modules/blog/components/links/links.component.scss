@@ -51,10 +51,9 @@ img {
   margin: auto;
   margin-top: 30px;
   margin-bottom: 30px;
-  width: 830px;
+  width: 860px;
   height: flex;
-  border-radius: 40px;
-  line-height: 1.47059;
+  border-radius: 10px;
   -webkit-font-smoothing: antialiased;
   padding: 30px;
   color: rgb(64, 72, 76);
@@ -63,15 +62,10 @@ img {
   letter-spacing: -0.022em;
   border: None;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
-  line-height: 1.47059;
-  -webkit-font-smoothing: antialiased;
   font-weight: 500;
-  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
-    Arial, sans-serif;
   letter-spacing: -0.022em;
   border: None;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border-radius: 10px;
   transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
   margin-bottom: 20px;
   padding-left: 0px;
@@ -112,23 +106,6 @@ img {
   transform: scale(1.005);
 }
 
-.mat-mdc-card-content {
-  height: 100px;
-  border-color: #000 transparent transparent transparent;
-  border-radius: 95%/100px 100px 0 0;
-  background: linear-gradient(
-    196deg,
-    rgb(255, 169, 99) 0%,
-    rgb(255, 100, 39) 100%
-  );
-  padding-right: 10px;
-  padding-left: 0px;
-  padding-bottom: 0px;
-}
-
-.mat-mdc-card-title {
-  text-align: center;
-}
 
 @media (max-width: 768px) {
   h1 {
@@ -137,19 +114,19 @@ img {
 }
 
 .wrapper {
-  width: 800px;
+  width: 880px;
   margin: 0;
   padding: 0;
   overflow: hidden;
   margin-left: 20px;
 }
 
-.introduction {
-  width: 800px;
-  float: left;
-  margin: auto;
-  margin-right: 20px;
-}
+// .introduction {
+//   width: 800px;
+//   float: left;
+//   margin: auto;
+//   margin-right: 20px;
+// }
 
 .mat-mdc-button {
   padding-left: 0px !important;

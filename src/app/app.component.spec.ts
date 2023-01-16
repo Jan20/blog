@@ -1,14 +1,13 @@
 import { AppComponent } from './app.component';
 import { MenuModule } from './modules/menu/menu.module';
-import { MenuService } from './modules/menu/services/menu.service';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-const compileComponent = () => {
+const compileComponent = (): void => {
   TestBed.configureTestingModule({
     imports: [RouterTestingModule, MenuModule],
     declarations: [AppComponent],
-    providers: [MenuService],
+    providers: [],
   }).compileComponents();
 };
 
