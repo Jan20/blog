@@ -18,7 +18,7 @@ const windowService = jasmine.createSpyObj('WindowService', [
 ]);
 windowService.getNumberOfColumns.and.returnValue(1000);
 
-const compileComponent = () => {
+const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [BlogComponent, FilterComponent],
     imports: [

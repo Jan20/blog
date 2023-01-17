@@ -2,10 +2,13 @@ p {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+span {
+  font-family: 'Roboto', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 img {
   width: 100%;
   margin: 0px;
-  z-index: -1 !important;
 }
 
 span {
@@ -26,7 +29,7 @@ span {
   width: 200px;
   margin-top: 24px;
   margin-bottom: 10px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .headline {
@@ -55,17 +58,16 @@ span {
 }
 
 .mat-mdc-card {
-  height: 250px;
+  height: 320px;
   width: 250px;
   line-height: 1.5;
   font-weight: 100;
   color: #616161;
   font-size: 16px;
   border: None;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 10px;
   transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
-  padding: 0px !important;
+  padding: 0px;
   margin-top: -31px;
   text-align: center;
 }
@@ -87,8 +89,8 @@ span {
   border-radius: 99%/50px 50px 0 0;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  background: white;
-  padding: 10px;
+  background: rgb(255, 255, 255);
+  padding: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 8px;
   margin-top: -31px;
   position: relative;
@@ -102,22 +104,9 @@ span {
     padding-right: 0px;
   }
 
-  .mat-mdc-card-content {
-    border-color: #000 transparent transparent transparent;
-    padding: 10px;
-    padding-top: 20px;
-    padding-bottom: 0px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 8px;
-    margin-top: -30px;
-    position: relative;
-  }
 
   .mat-grid-tile-content {
     margin: 0px;
     padding: 0px;
   }
-}
-
-span {
-  font-family: 'Roboto', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

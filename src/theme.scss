@@ -55,10 +55,3 @@ $my-theme: mat.define-light-theme((
 // passed to `define-light-theme` omits typography, `button-theme` will not
 // emit any typography styles.
 @include mat.button-theme($my-theme);
-
-
-
-// @import url(https://fonts.googleapis.com/css?family=Roboto:400);
-// @import url(https://fonts.googleapis.com/css?family=Roboto:100);
-// @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-// @import url(https://fonts.googleapis.com/icon?family=Material+Icons);

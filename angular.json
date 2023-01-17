@@ -54,9 +54,7 @@
               "node_modules/prismjs/components/prism-markdown.min.js",
               "node_modules/prismjs/components/prism-python.min.js",
               "node_modules/prismjs/components/prism-typescript.min.js",
-              "node_modules/marked/marked.min.js",
-              "node_modules/prismjs/prism.js",
-              "node_modules/prismjs/components/prism-css.min.js"
+              "node_modules/marked/marked.min.js"
             ]
           },
           "configurations": {
