@@ -18,7 +18,7 @@ One approach to cope with diverse systems would be to execute an application in 
 
 ## Docker Containers
 
-A Docker container is a bundle of application code together with all required dependencies enabling an application to run quickly and reliably on diverse computing environments. A more detailed description aobut Docker containers can be found Docker's [What is a Container?](https://www.docker.com/resources/what-container/) page.
+A Docker container is a bundle of application code together with all required dependencies enabling an application to run quickly and reliably on diverse computing environments. A more detailed description about Docker containers can be found on Docker's [What is a Container?](https://www.docker.com/resources/what-container/) page.
 
 ## Docker Images
 
@@ -30,4 +30,4 @@ Docker images are built by exeucting the instructions defined in a Dockerfile. A
 
 ## Next Steps
 
-It is about time to jump into the code and get some hands-on experience with Docker by containerizing a minimal Flask application in the [next blog post](/blog/guides/005_containerize_flask_applications/005_containerize_flask_applications.md)
+It is about time to jump into the code and get some hands-on experience with Docker by containerizing a minimal Flask application in the [next blog post](/blog/guides/005_containerize_flask_applications/005_containerize_flask_applications.md).
