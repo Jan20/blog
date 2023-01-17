@@ -34,7 +34,6 @@
               "node_modules/prismjs/plugins/command-line/prism-command-line.css"
             ],
             "scripts": [
-              "node_modules/marked/lib/marked.js",
               "node_modules/prismjs/prism.js",
               "node_modules/prismjs/components/prism-markup-templating.js",
               "node_modules/prismjs/components/prism-csharp.min.js",
@@ -54,7 +53,10 @@
               "node_modules/prismjs/components/prism-markup.min.js",
               "node_modules/prismjs/components/prism-markdown.min.js",
               "node_modules/prismjs/components/prism-python.min.js",
-              "node_modules/prismjs/components/prism-typescript.min.js"
+              "node_modules/prismjs/components/prism-typescript.min.js",
+              "node_modules/marked/marked.min.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-css.min.js"
             ]
           },
           "configurations": {
@@ -118,7 +120,7 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
-            "scripts": [],
+            "scripts": ["node_modules/marked/marked.min.js "],
             "codeCoverage": true
           }
         },
