@@ -10,7 +10,7 @@ In order to complete any cognitively demanding job, it is key to focus as much a
 
 ## 1. Skipping the news
 
-<img class='half-width' src='assets/posts/productivity/204_focus/news.png'>
+<img class='side-image' src='assets/posts/productivity/204_focus/news.png'>
 
 Let's start off with consuming news. It is in the nature of news to provoke a certain amount of anxiety, especially when reporting about wars, pandemics or terrorism. However, a mental state of anxiety is highly counter productive when it comes to working efficiently. Rather than finding a solution to a concrete problem, our minds ponder about predominantly negative topics far outside of our sphere of influence.
 
@@ -18,7 +18,7 @@ Consuming news more consciously would definitely help us to focus better. While 
 
 ## 2. Avoiding YouTube
 
-<img class='half-width' src='assets/posts/productivity/204_focus/youtube.png'>
+<img class='side-image' src='assets/posts/productivity/204_focus/youtube.png'>
 
 YouTube is one of the worlds largest pools of content. It offers great tutorials and lectures, but also endless possibilities to distract ourselves. Especially recommended videos can draw us in for minutes or even hours. Thus, blocking YouTube on our phones and laptops is a great way to get less distracted. If we make the conscious decision to view a new video from our favorite channel, it is fine to unblock the platform for an evening, while leaving YouTube blocked over the day.
 
@@ -26,7 +26,7 @@ Of course, YouTube can be more seen as an example for any video platform. As Twi
 
 ## 3. Leaving social media
 
-<img class='half-width' src='assets/posts/productivity/204_focus/social_media.png'>
+<img class='side-image' src='assets/posts/productivity/204_focus/social_media.png'>
 
 For most of us, checking Instagram or Tik Tok has become the standard to fill in any moment that might feel even remotely boring. Quickly checking the latest stories of friends seems to be rather compelling. However, virtually all social media companies employ a random reward strategy mixing desired content such as messages from friends and loved once with advertisements. Instead of browsing through a wonderfully curated list of awesome things our friends are doing, we get bombarded with offers, ads and sponsored content with just enough a few nuggets of seemingly valuable content sparkled in to keep us scrolling.
 
@@ -34,12 +34,12 @@ There are not too many strategies to discuss here. The best default is to delete
 
 ## 4. Checking emails once a day
 
-<img class='half-width' src='assets/posts/productivity/204_focus/email.png'>
+<img class='side-image' src='assets/posts/productivity/204_focus/email.png'>
 
 There is almost nothing as distracting in a work environment than a flood of emails with requests and information . There are multiple strategies for dealing with emails. My favourite option is to treat emails as what they are, namely an asynchronous medium, not necessitating an immediate reply. There is always the option to call someone or send him or her a direct message for a quicker response. Thus, checking and responding to emails once or twice a day is a practical way to follow up on requests in a timely manner, while preserving long, uninterrupted stretches of time for working productively. For all emails not written by a human being, including newsletters and spam, the only right default is get them filtered out and deleted automatically.
 
 ## 5. Reducing the number of meetings 
 
-<img class='half-width' src='assets/posts/productivity/204_focus/meetings.png'>
+<img class='side-image' src='assets/posts/productivity/204_focus/meetings.png'>
 
 Balancing time spent in meetings and those dedicated for deep work can be challenging. While setting time apart for communicating ideas and exchanging information is crucial, leaving sufficient time for deep work is of paramount importance. Personally, I tend to think the fewer regular meetings the better. There is always the option to schedule ad-hoc meetings if required. Especially with the option to reach out for information via direct messages or using Slack's Huddle feature, there is less need for pre-planned meetings than a few years ago.

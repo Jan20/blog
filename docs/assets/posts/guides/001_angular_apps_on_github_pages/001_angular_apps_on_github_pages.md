@@ -3,7 +3,7 @@ topic=Angular
 date=2022-07-08
 series=Angular_Indepth
 series_section=1
-summary=This article gives an introduction to hosting an Angular project on GitHub Pages
+summary=Gives an introduction to hosting an Angular project on GitHub Pages
 -->
 
 # Angular on GitHub Pages

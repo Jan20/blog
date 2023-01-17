@@ -9,7 +9,7 @@ import { BlogService } from '../../services/blog.service';
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent {
-  public selected: boolean = false;
+  public filterText: string = 'Show Filters';
   public topics: Observable<Set<string>> = this.fetchTopics();
 
   @Output() private topicSelected = new EventEmitter<string>();
@@ -21,10 +21,6 @@ export class FilterComponent {
 
   public selectTopic(topic: string): void {
     this.topicSelected.emit(topic);
-  }
-
-  public toggleSelected(): void {
-    this.selected = !this.selected;
   }
 
   private fetchTopics(): Observable<Set<string>> {

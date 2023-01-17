@@ -6,11 +6,7 @@
     padding: 0;
     margin: 0;
     font-family: Roboto, Arial, Helvetica, sans-serif;
-  }
 
-  body {
-    margin: 0;
-    padding: 0;
   }
 
   html,
@@ -21,9 +17,8 @@
 
   h1 {
     line-height: 300%;
-    font-size: 46px;
-    font-weight: 300;
-    margin-top: 12px;
+    font-size: 42px !important;
+    font-weight: 100;
     margin-bottom: 4px;
     color: rgb(62, 72, 77);
     text-align: center;
@@ -32,15 +27,20 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: Roboto, Arial, Helvetica, sans-serif;
+    padding-top: 18px;
+    padding-bottom: 20px;
   }
 
   h2 {
+    color: rgb(62, 72, 77);
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-clip: text;
     line-height: 150%;
     font-size: 32px;
     font-weight: 300;
     margin-top: 30px;
     margin-bottom: 4px;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
   }
 
   h3 {
@@ -49,48 +49,52 @@
     font-weight: 300;
     margin-top: 30px;
     margin-bottom: 4px;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
   }
 
   p {
     line-height: 175%;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     text-align: justify;
     color: rgb(51, 51, 51);
     margin-bottom: 12px;
     font-family: Roboto, Arial, Helvetica, sans-serif;
   }
 
+  code {
+    font-family: monospace !important;
+    font-weight: normal !important;
+    font-size: 18px !important;
+    background-color: rgb(212, 212, 212) !important;
+    border-radius: 5px;
+    padding: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+
+  ol {
+    padding: 0px;
+    margin-left: 24px;
+    line-height: 175%;
+    font-weight: 400;
+    text-align: justify;
+    color: rgb(51, 51, 51);
+    margin-bottom: 12px;
+    font-size: 18px !important;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  }
+
+  li {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 18px !important;
+  }
+
   .separator {
     border-bottom: 1px solid rgb(51, 51, 51);
     margin: 0;
-  }
-
-  .mat-mdc-card {
-    width: 300px;
-    border: 3px;
-  }
-
-  @media (min-width: 680px) {
-    .mat-mdc-card {
-      width: 300px;
-      border: 3px;
-    }
-  }
-
-  @media (max-width: 680px) {
-    .card-button-container {
-      width: 80%;
-      margin: auto;
-    }
-  }
-
-  @media (min-width: 680px) {
-    .card-button-container {
-      width: 550px;
-      margin: auto;
-    }
   }
 
   @media (max-width: 768px) {
@@ -104,9 +108,6 @@
       width: 80%;
       margin-top: 0px !important;
     }
-  }
-  .mat-mdc-raised-button {
-    padding: 0;
   }
 
   .full-width {
@@ -135,25 +136,25 @@
     position: absolute;
   }
 
-  body {
-    background: white;
-    background: rgb(131, 58, 180);
-    background-color: rgba(245, 245, 247, 1);
-  }
-
   .full {
     width: calc(100% + 60px);
     padding: 0px !important;
-    margin: -30px;
     border-radius: 10px 10px 0px 0px;
   }
 
   .half-width {
+    width: 50%;
+    margin-top: 10px;
+    margin-left: calc(50% / 2);
+    border-radius: 10px;
+  }
+
+  .side-image {
     width: 25%;
     padding: 0px !important;
     margin-left: calc(75% / 2);
-    border-radius: 10px 10px 10px 10px;
-    float:right;
+    border-radius: 10px;
+    float: right;
     margin-top: 25px;
     margin-left: 20px;
     border: double 0.25px transparent;
@@ -162,7 +163,6 @@
                       linear-gradient(to right, #C850C0, #FFCC70);
     background-origin: border-box;
     background-clip: content-box, border-box;
-
   }
 
   .right {
@@ -176,50 +176,11 @@
     float:left;
   }
 
-  .three-quarter-width {
-    width: 75%;
-    padding: 0px !important;
-    margin: 10px;
-    margin-left: calc(25% / 2);
-    border-radius: 10px 10px 10px 10px;
-    border: 0.5px solid gray;
-  }
-
   .almost-full-width {
     width: 100%;
     padding: 0px !important;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
     border: 0.5px solid gray;
-  }
-
-  code {
-    font-family: monospace !important;
-    font-weight: 500 !important;
-    font-weight: normal !important;
-    font-size: 16px !important;
-    background-color: rgb(212, 212, 212) !important;
-    border-radius: 5px;
-    padding: 2px;
-    padding-right: 6px;
-    padding-left: 6px;
-  }
-
-  ol {
-    padding: 0px;
-    margin-left: 24px;
-    line-height: 175%;
-    font-size: 18px;
-    font-weight: 300;
-    text-align: justify;
-    color: rgb(51, 51, 51);
-    margin-bottom: 12px;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-  }
-
-  li {
-    padding-left: 10px;
-    margin-bottom: 10px;
-    font-weight: 300;
   }
 
   .language-ts {
@@ -260,3 +221,6 @@
     font-weight: normal !important;
     font-size: 18px !important;
   }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

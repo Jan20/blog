@@ -1,5 +1,5 @@
+<app-filter (topicSelected)="selectTopic($event)"></app-filter>
 <div *ngIf="posts">
-  <app-filter (topicSelected)="selectTopic($event)"></app-filter>
   <h1 class="title headline">{{ selectCategory() | async }}</h1>
   <mat-grid-list class="wrapper" [cols]="numberOfColumns" rowHeight="380px">
     <div *ngFor="let post of posts">

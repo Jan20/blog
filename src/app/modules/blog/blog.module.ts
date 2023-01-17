@@ -21,6 +21,7 @@ import { TopicsComponent } from './components/topics/topics.component';
 import { SeriesComponent } from './components/series/series.component';
 import { LinksComponent } from './components/links/links.component';
 import { AboutComponent } from './components/about/about.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AboutComponent } from './components/about/about.component';
     MatCommonModule,
     HttpClientModule,
     MatCardModule,
+    MatMenuModule,
     MatChipsModule,
     MatGridListModule,
     MatButtonModule,

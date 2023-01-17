@@ -1,18 +1,19 @@
-<button *ngIf="!selected" mat-button (click)="toggleSelected()">
-  <mat-icon>filter_alt</mat-icon>Show Filters
+<button
+  [matMenuTriggerFor]="menu"
+  class="close-button"
+  mat-mini-fab
+  color="primary">
+  <mat-icon>filter_alt</mat-icon>
 </button>
-<button *ngIf="selected" mat-button (click)="toggleSelected()">
-  <mat-icon>filter_alt</mat-icon>Hide Filters
-</button>
-<mat-card appearance="outlined" *ngIf="selected">
-  <mat-chip-listbox
-    aria-label="Filter selection"
-    *ngIf="topics | async as topics">
-    <mat-chip-option (click)="selectTopic('All')">All</mat-chip-option>
-    <mat-chip-option
+
+<mat-menu #menu="matMenu">
+  <div *ngIf="topics | async as topics">
+    <button mat-menu-item (click)="selectTopic('All')">All</button>
+    <button
+      mat-menu-item
       (click)="selectTopic(topic)"
-      *ngFor="let topic of topics"
-      >{{ topic }}</mat-chip-option
-    >
-  </mat-chip-listbox>
-</mat-card>
+      *ngFor="let topic of topics">
+      {{ topic }}
+    </button>
+  </div>
+</mat-menu>
