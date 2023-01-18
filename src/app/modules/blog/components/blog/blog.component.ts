@@ -13,6 +13,7 @@ import { WindowService } from '../../services/window.service';
 export class BlogComponent implements OnInit {
   public numberOfColumns: number = this.windowService.getNumberOfColumns();
   public posts: Post[] = this.fetchPosts('guides');
+  public rowHeight: string = '380px';
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
@@ -31,6 +32,8 @@ export class BlogComponent implements OnInit {
         tap(params => (this.posts = this.fetchPosts(params[0], params[1])))
       )
       .subscribe();
+
+    if (this.numberOfColumns === 1) this.rowHeight = '420px';
   }
 
   public showPost(link: string): void {

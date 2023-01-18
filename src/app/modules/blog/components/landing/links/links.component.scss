@@ -47,72 +47,6 @@ img {
   filter: grayscale(100%);
 }
 
-.mat-mdc-card {
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  width: 860px;
-  height: flex;
-  border-radius: 10px;
-  -webkit-font-smoothing: antialiased;
-  padding: 30px;
-  color: rgb(64, 72, 76);
-  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
-    Arial, sans-serif;
-  letter-spacing: -0.022em;
-  border: None;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
-  font-weight: 500;
-  letter-spacing: -0.022em;
-  border: None;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
-  margin-bottom: 20px;
-  padding-left: 0px;
-}
-
-@media (max-width: 768px) {
-  .mat-mdc-card {
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: auto;
-    height: flex;
-    padding: 150px;
-    line-height: 1.47059;
-    -webkit-font-smoothing: antialiased;
-    padding: 30px;
-    font-weight: 500;
-    color: #1d1d1f;
-    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
-      Arial, sans-serif;
-    letter-spacing: -0.022em;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
-    line-height: 1.47059;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 400;
-    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
-      Arial, sans-serif;
-    letter-spacing: -0.022em;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-radius: 10px;
-    transition: box-shadow 1s, margin-top 1s, width 1s, height 1s,
-      transform 0.7s;
-  }
-}
-
-.mat-mdc-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transform: scale(1.005);
-}
-
-
-@media (max-width: 768px) {
-  h1 {
-    line-height: normal !important;
-  }
-}
-
 .wrapper {
   width: 880px;
   margin: auto;
@@ -121,6 +55,29 @@ img {
   margin-left: 40px;
   margin: auto;
 }
+
+.mat-mdc-card {
+  width: 860px;
+  height: flex;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 30px;
+  padding-left: 0px;
+  color: rgb(64, 72, 76);
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  border-radius: 10px;
+  border: None;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
+}
+
+.mat-mdc-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: scale(1.005);
+}
+
 
 .mat-mdc-button {
   padding-left: 0px !important;
