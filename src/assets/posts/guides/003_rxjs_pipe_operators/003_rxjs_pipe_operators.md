@@ -44,7 +44,7 @@ private selectCategory(): Observable<string> {
 
 ## Tap
 
-To conclude our first introduction to operators, let's take a look at the <code>tap</code> operator used to "tap" into a source Observable, performing a side effect and returning the source Observable unchanged. It is useful for debugging purposes, as it may take a <code>console.log</code> function as input to print the value emitted by the source Observable to the console. However, overusing the <code>tap</code> operator leads easily to unintended behaviour that may proof hard to resolve. Thus, it is highly recommanded to use the <code>tap</code> operator primarly for debugging purposes or if we can assume certainty that using the <code>tap</code> operator does not lead to unintended side effects.
+To conclude our first introduction to operators, let's take a look at the <code>tap</code> operator used to "tap" into a source Observable, performing a side effect and returning the source Observable unchanged. It is useful for debugging purposes, as it may take a <code>console.log</code> function as input to print the value emitted by the source Observable to the console. However, overusing the <code>tap</code> operator leads easily to unintended behaviour that may proof hard to resolve. Thus, it is highly recommended to use the <code>tap</code> operator primarily for debugging purposes or if we can assume certainty that using the <code>tap</code> operator does not lead to unintended side effects.
 
 ```TS
 private selectCategory(): Observable<string> {

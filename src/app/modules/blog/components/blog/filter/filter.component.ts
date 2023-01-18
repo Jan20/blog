@@ -9,8 +9,7 @@ import { BlogService } from '../../../services/blog.service';
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent {
-  public filterText: string = 'Show Filters';
-  public topics: Observable<Set<string>> = this.fetchTopics();
+  public readonly topics: Observable<Set<string>> = this.fetchTopics();
 
   @Output() private topicSelected = new EventEmitter<string>();
 

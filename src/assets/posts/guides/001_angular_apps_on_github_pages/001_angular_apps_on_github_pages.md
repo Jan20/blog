@@ -8,7 +8,7 @@ summary=Gives an introduction to hosting an Angular project on GitHub Pages
 
 # Angular on GitHub Pages
 
-GitHub Pages is a free hosting service for static websides offered by Github. If you like to get an impression on what's awaiting you, check out the introduction video to [Github Pages](https://youtu.be/2MsN8gpT6jY). Although Github Pages comes with a the Jekyll blogging platform, it is rather limited, motivating me to write this small article about running an Angular application on Github Pages.
+GitHub Pages is a free hosting service for static websites offered by Github. If you like to get an impression on what's awaiting you, check out the introduction video to [Github Pages](https://youtu.be/2MsN8gpT6jY). Although Github Pages comes with a the Jekyll blogging platform, it is rather limited, motivating me to write this small article about running an Angular application on Github Pages.
 
 ## Getting Started
 
