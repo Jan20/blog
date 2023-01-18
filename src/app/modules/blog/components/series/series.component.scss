@@ -41,17 +41,6 @@ h2:hover {
   transform: scale(1.02);
 }
 
-.date {
-  padding: 0;
-  margin: 0;
-  width: calc(250px - 20px);
-  margin: auto;
-  text-align: center;
-  font-size: 12px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-  margin-bottom: 8px;
-}
-
 .mat-grid-tile-content {
   margin: 0px;
   padding: 0px;
@@ -63,7 +52,6 @@ h2:hover {
   line-height: 1.5;
   font-weight: 400;
   color: #616161;
-  font-family: SF Pro Text;
   font-size: 16px;
   border: None;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
