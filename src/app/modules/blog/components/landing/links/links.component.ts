@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Link } from '../../models/link';
+import { Link } from '../../../models/link';
 
 @Component({
   selector: 'app-links',

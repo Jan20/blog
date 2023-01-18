@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, map } from 'rxjs';
-import { BlogService } from '../../services/blog.service';
+import { BlogService } from '../../../services/blog.service';
 
 @Component({
   selector: 'app-filter',

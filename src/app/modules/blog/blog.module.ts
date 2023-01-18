@@ -12,16 +12,17 @@ import { RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './components/blog/blog.component';
-import { FilterComponent } from './components/filter/filter.component';
+import { FilterComponent } from './components/blog/filter/filter.component';
 import { PostComponent } from './components/post/post.component';
 import { BlogService } from './services/blog.service';
 import { MatIconModule } from '@angular/material/icon';
 import { LandingComponent } from './components/landing/landing.component';
-import { TopicsComponent } from './components/topics/topics.component';
+import { TopicsComponent } from './components/landing/topics/topics.component';
 import { SeriesComponent } from './components/series/series.component';
-import { LinksComponent } from './components/links/links.component';
+import { LinksComponent } from './components/landing/links/links.component';
 import { AboutComponent } from './components/about/about.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { BackButtonComponent } from './components/post/back-button.component/back-button.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MatMenuModule } from '@angular/material/menu';
     SeriesComponent,
     LinksComponent,
     AboutComponent,
+    BackButtonComponent,
   ],
   imports: [
     BrowserModule,

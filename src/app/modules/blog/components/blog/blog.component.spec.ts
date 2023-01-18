@@ -1,5 +1,5 @@
 import { WindowService } from '../../services/window.service';
-import { FilterComponent } from '../filter/filter.component';
+import { FilterComponent } from './filter/filter.component';
 import { BlogComponent } from './blog.component';
 import {
   ComponentFixture,
