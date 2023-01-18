@@ -12,6 +12,6 @@ export class BackButtonComponent {
   public navigateBack(): void {
     this.router.url.includes('guides')
       ? this.router.navigate([`blog/guides`])
-      : this.router.navigate([`..`]);
+      : this.router.navigate([`blog/productivity`]);
   }
 }
