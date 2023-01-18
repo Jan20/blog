@@ -26,8 +26,8 @@ A docker image, on the other hand, is an executable package of software that spe
 
 ## Dockerfile
 
-Docker images are built by exeucting the instructions defined in a Dockerfile. A Dockerfile is a text document that contains all the commands nessesary to assemble an image. Normally, a Dockerfile starts with defining a base image, such as a Linux Alpine image bundled with a webserver or desired software application.
+Docker images are built by executing the instructions defined in a Dockerfile. A Dockerfile is a text document that contains all the commands necessary to assemble an image. Normally, a Dockerfile starts with defining a base image, such as a Linux Alpine image bundled with a web-server or desired software application.
 
 ## Next Steps
 
-It is about time to jump into the code and get some hands-on experience with Docker by containerizing a minimal Flask application in the [next blog post](/blog/guides/005_containerize_flask_applications/005_containerize_flask_applications.md).
+It is about time to jump into the code and get some hands-on experience with Docker by containerising a minimal Flask application in the [next blog post](/blog/guides/005_containerize_flask_applications/005_containerize_flask_applications.md).
