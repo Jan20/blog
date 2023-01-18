@@ -1,7 +1,3 @@
-p {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
 span {
   font-family: 'Roboto', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -99,14 +95,22 @@ span {
   position: relative;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
+  .wrapper {
+    width: 90%;
+    margin: auto;
+  }
+
+  .mat-mdc-card {
+    width: 100%;
+  }
+
   .mat-grid-tile {
     padding-top: 0px;
     padding-bottom: 60px;
     padding-left: 0px;
     padding-right: 0px;
   }
-
 
   .mat-grid-tile-content {
     margin: 0px;

@@ -12,11 +12,11 @@ export class WindowService {
   }
 
   public getNumberOfColumns(): number {
-    return window.innerWidth < 1000 ? 3 : 3;
+    return window.innerWidth < 1000 ? 1 : 3;
   }
 
   private onWidthChange(width: number): number {
-    if (width < 800) return 3;
+    if (width < 800) return 1;
     if (width < 1200) return 3;
     return 3;
   }

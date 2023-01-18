@@ -34,6 +34,14 @@ img {
   margin-bottom: -50px;
 }
 
+.wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin: auto;
+  width: 890px;
+  overflow: hidden;
+}
+
 .mat-mdc-card {
   margin: auto;
   margin-top: 30px;
@@ -43,11 +51,7 @@ img {
   color: #1d1d1f;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
   line-height: 1.47059;
-  -webkit-font-smoothing: antialiased;
   font-weight: 500;
-  font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
-    Arial, sans-serif;
-  letter-spacing: -0.022em;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 10px;
   transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
@@ -68,40 +72,19 @@ img {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   h1 {
     line-height: normal !important;
   }
 
+  .wrapper {
+    width: 90%;
+  }
+
   .mat-mdc-card {
-    margin: auto;
-    margin-top: 30px;
-    width: calc((800px - 180px)/3);
-    border-radius: 40px;
-    padding: 30px;
-    color: #1d1d1f;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
-    line-height: 1.47059;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 500;
-    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
-      Arial, sans-serif;
-    letter-spacing: -0.022em;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-radius: 10px;
-    transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
-    margin-bottom: 20px;
-    float:left; 
-    margin: auto;
-    margin: 15px;
-    border: None;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 
-.wrapper {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin: auto;
-  width: 890px;
-  overflow: hidden;
-}

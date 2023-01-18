@@ -115,20 +115,36 @@ img {
 
 .wrapper {
   width: 880px;
-  margin: 0;
+  margin: auto;
   padding: 0;
   overflow: hidden;
-  margin-left: 20px;
+  margin-left: 40px;
+  margin: auto;
 }
-
-// .introduction {
-//   width: 800px;
-//   float: left;
-//   margin: auto;
-//   margin-right: 20px;
-// }
 
 .mat-mdc-button {
   padding-left: 0px !important;
   margin-left: 0px !important;
+}
+
+@media (max-width: 1000px) {
+  button {
+    width: 100%;
+  }
+
+  h1 {
+    text-align: center;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .wrapper {
+    width: 90%;
+  }
+  
+  .mat-mdc-card {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }

@@ -11,13 +11,12 @@ p {
   font-size: 18px;
   text-align: justify;
   font-weight: 300;
-  color: rgb(185, 0, 0) !important;
   margin-bottom: 12px;
 }
 
 .mat-mdc-card {
   margin: auto;
-  width: 800px !important;
+  width: 800px;
   border-radius: 40px;
   line-height: 1.47059;
   color: #1d1d1f;
@@ -106,33 +105,18 @@ p {
   font-weight: 300;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .mat-mdc-card {
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: auto;
-    height: flex;
-    padding: 150px;
-    line-height: 1.47059;
-    -webkit-font-smoothing: antialiased;
-    padding: 30px;
-    font-weight: 500;
-    color: #1d1d1f;
-    letter-spacing: -0.022em;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
-    line-height: 1.47059;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 400;
-    letter-spacing: -0.022em;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-radius: 10px;
-    transition: box-shadow 1s, margin-top 1s, width 1s, height 1s,
-      transform 0.7s;
+    width: 90%;
   }
 
   h1 {
     line-height: normal !important;
+  }
+
+  img {
+    margin-bottom: 7px;
+    width: 100%;
   }
 }
 
