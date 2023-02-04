@@ -1,24 +1,34 @@
 import { PostComponent } from './post.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { BackButtonComponent } from './back-button.component/back-button.component';
+import { MatButtonModule } from '@angular/material/button';
+
+let component: PostComponent;
+let fixture: ComponentFixture<PostComponent>;
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
+    declarations: [PostComponent, BackButtonComponent],
+    imports: [
+      RouterTestingModule,
+      MatIconModule,
+      MatMenuModule,
+      MatCardModule,
+      MatIconModule,
+      MatButtonModule,
+    ],
     providers: [],
     teardown: { destroyAfterEach: false },
   }).compileComponents();
 };
 
-describe('PostComponent', () => {
-  let component: PostComponent;
-  let fixture: ComponentFixture<PostComponent>;
-
+fdescribe('PostComponent:', () => {
   beforeEach(async () => {
     compileComponent();
-  });
-
-  beforeEach(() => {
     fixture = TestBed.createComponent(PostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

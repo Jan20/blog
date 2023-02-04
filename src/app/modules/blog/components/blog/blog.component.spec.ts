@@ -12,6 +12,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MatIconModule } from '@angular/material/icon';
+import { GUIDES } from 'src/app/helpers/post-mocks';
+import { MatMenuModule } from '@angular/material/menu';
 
 const windowService = jasmine.createSpyObj('WindowService', [
   'getNumberOfColumns',
@@ -24,6 +26,7 @@ const compileComponent = (): void => {
     imports: [
       RouterTestingModule,
       MatIconModule,
+      MatMenuModule,
       MatCardModule,
       MatGridListModule,
     ],
@@ -45,7 +48,7 @@ describe('BlogComponent:', () => {
     spyOn(router, 'navigate');
   });
 
-  fit('should create a blog component', () => {
+  it('should create a blog component', () => {
     expect(component).toBeTruthy();
   });
 
@@ -77,9 +80,9 @@ describe('BlogComponent:', () => {
     expect(component.numberOfColumns).toBe(1);
   }));
 
-  it('should change the view to "blog/001_introduction"', () => {
-    component.showPost('001_introduction');
-    expect(router.navigate).toHaveBeenCalledWith(['blog/001_introduction']);
+  it('should change the view to "blog/Git/git_history"', () => {
+    component.showPost(GUIDES[0]);
+    expect(router.navigate).toHaveBeenCalledWith(['blog/Git/git_history']);
   });
 
   it('should select the RxJS topic', () => {

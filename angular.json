@@ -122,7 +122,6 @@
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": ["node_modules/marked/marked.min.js "],
             "codeCoverage": true
           }
         },

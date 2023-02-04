@@ -36,7 +36,7 @@ const compileComponent = (): void => {
   }).compileComponents();
 };
 
-fdescribe('MenuComponent', () => {
+describe('MenuComponent', () => {
   let component: MenuComponent;
   let fixture: ComponentFixture<MenuComponent>;
 
@@ -51,13 +51,13 @@ fdescribe('MenuComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should navigate to the guides overview page', fakeAsync(() => {
+  it('should navigate to the guides overview page', fakeAsync(() => {
     userEvent.click(screen.getByRole('button', { name: '🧑🏼‍💻 Guides' }));
     tick(1);
     expect(router.navigate).toHaveBeenCalledWith(['/blog/guides']);
   }));
 
-  fit('should navigate to the landing page', fakeAsync(() => {
+  it('should navigate to the landing page', fakeAsync(() => {
     userEvent.click(screen.getByRole('button', { name: 'Jan Schumann' }));
     tick(1);
     expect(router.navigate).toHaveBeenCalledWith(['']);
