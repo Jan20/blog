@@ -55,12 +55,7 @@ import { BackButtonComponent } from './components/post/back-button.component/bac
       { path: 'about', component: AboutComponent },
       { path: 'blog/series', component: SeriesComponent },
       { path: 'blog/:category', component: BlogComponent },
-      { path: 'blog/:category/:topic', component: BlogComponent },
-      {
-        path: 'blog/:category/:number/:id',
-        component: PostComponent,
-        pathMatch: 'full',
-      },
+      { path: 'blog/:category/:topic', component: PostComponent },
     ]),
     MarkdownModule,
   ],

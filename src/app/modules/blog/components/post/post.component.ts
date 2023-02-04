@@ -8,7 +8,6 @@ import { BlogService } from '../../services/blog.service';
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
-  styles: ['h2 { color: red !important; }'],
 })
 export class PostComponent {
   public post: Observable<Post> = this.fetchPost();
@@ -35,7 +34,7 @@ export class PostComponent {
   private filterPosts(params: Params): Post {
     const posts = this.blogservice.getPosts(params['category'], 'All');
     const filteredPost = posts.filter((post: Post) =>
-      post.link.includes(params['number'])
+      post.link.includes(params['topic'])
     )[0];
     if (filteredPost.seriesSection)
       this.sectionCount = this.blogservice.getSectionCount(filteredPost.series);

@@ -38,7 +38,9 @@ export class BlogComponent implements OnInit {
 
   public showPost(link: string): void {
     const filePath = link.replace('/assets/posts', '');
-    this.router.navigate([`blog/${filePath}`]);
+    const category = filePath.split('/')[1];
+    const post = filePath.split('/')[2].substring(4);
+    this.router.navigate([`blog/${category}/${post}`]);
   }
 
   public selectTopic(topic: string): void {
