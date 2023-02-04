@@ -46,4 +46,7 @@ testem.log
 Thumbs.db
 .pages
 
+# Firebase
+.firebase
+public
 /src/assets/images/raw/
