@@ -36,11 +36,11 @@ export class BlogComponent implements OnInit {
     if (this.numberOfColumns === 1) this.rowHeight = '26em';
   }
 
-  public showPost(link: string): void {
-    const filePath = link.replace('/assets/posts', '');
+  public showPost(post: Post): void {
+    const filePath = post.link.replace('/assets/posts', '');
     const category = filePath.split('/')[1];
-    const post = filePath.split('/')[2].substring(4);
-    this.router.navigate([`blog/${category}/${post}`]);
+    const id = filePath.split('/')[2].substring(4);
+    this.router.navigate([`blog/${category}/${post.topic}/${id}`]);
   }
 
   public selectTopic(topic: string): void {
