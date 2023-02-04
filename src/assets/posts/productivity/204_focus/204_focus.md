@@ -1,10 +1,10 @@
 <!--
 date=2022-10-11
 topic=Focus
-summary=This post will share five simple strategies to become less distracted and stay focused longer.
+summary=This post will share five simple strategies to become less distracted and stay focused.
 -->
 
-# How to stay focused longer
+# How to stay focused
 
 In order to complete any cognitively demanding job, it is key to focus as much as possible on the task at hand. However, we live in a world with an overabundance of distractions. We are getting bombarded with information, notifications and alluring infinity pools such as social media or video platforms. Nevertheless, there are ways to deal with those distractions. In this post, we will highlight five strategies making it easier to stay focused.
 

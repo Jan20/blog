@@ -33,7 +33,7 @@ export class BlogComponent implements OnInit {
       )
       .subscribe();
 
-    if (this.numberOfColumns === 1) this.rowHeight = '420px';
+    if (this.numberOfColumns === 1) this.rowHeight = '26em';
   }
 
   public showPost(link: string): void {
