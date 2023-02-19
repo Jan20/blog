@@ -43,7 +43,9 @@ $my-theme: mat.define-light-theme((
    accent: $my-accent,
    warn: $my-warn,
  ),
- typography: mat.define-typography-config(),
+ typography: mat.define-typography-config(
+  $headline-2: mat.define-typography-level(156px, 156px, 400, $letter-spacing: -0.02em),
+ ),
  density: 0,
 ));
 
@@ -53,5 +55,4 @@ $my-theme: mat.define-light-theme((
 // Emit styles for MatButton based on `$my-theme`. Because the configuration
 // passed to `define-light-theme` omits typography, `button-theme` will not
 // emit any typography styles.
-@include mat.button-theme($my-theme);
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@include mat.all-component-themes($my-theme);

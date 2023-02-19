@@ -1,120 +1,22 @@
-img {
-  margin-bottom: -50px;
-  width: 800px;
-  border-radius: 10px 10px 0px 0px;
-  margin-left: 0px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-p {
-  line-height: 175%;
-  font-size: 18px;
-  text-align: justify;
+h3 {
+  font-size: 24px;
   font-weight: 300;
-  margin-bottom: 12px;
 }
 
 .mat-mdc-card {
-  margin: auto;
-  width: 800px;
-  border-radius: 40px;
-  color: #1d1d1f;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  position: relative;
   font-weight: 500;
-  border-radius: 10px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s,
-  transform 0.7s;
-}
-
-.mat-mdc-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
 }
 
 .mat-mdc-card-content {
-  border-color: #000 transparent transparent transparent;
   border-radius: 99%/150px 150px 0 0;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   background: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 8px;
   height: flex;
-  padding: 20px;
   position: relative;
   margin-top: -80px;
-}
-
-.section-wrapper {
-  float: left;
-}
-
-.wrapper {
-  float: left;
-  margin-left: 35px;
-  margin-top: 10px;
-  font-weight: 200 !important;
-  font-size: 30px;
-}
-
-.button-left {
-  float: left;
-  width: 10px !important;
-  text-align: center;
-}
-
-.button-right {
-  float: left;
-  width: 10px !important;
-  text-align: center;
-}
-
-.content {
-  margin-top: 50px;
-}
-
-.date {
-  padding: 0;
-  width: calc(220px - 20px);
-  margin: auto;
-  text-align: center;
-  font-size: 16px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(51, 51, 51) !important;
-  font-weight: 300;
-}
-
-.full-date {
-  margin-top: -50px;
-}
-
-.section {
-  padding: 0;
-  margin: 0;
-  width: calc(290px - 20px);
-  text-align: center;
-  font-size: 24px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: rgb(51, 51, 51) !important;
-  margin: auto;
-  margin-top: 8px;
-  font-weight: 300;
-}
-
-@media (max-width: 1000px) {
-  .mat-mdc-card {
-    width: 90%;
-  }
-
-  h1 {
-    line-height: normal !important;
-  }
-
-  img {
-    margin-bottom: 7px;
-    width: 100%;
-  }
 }
 
 .placeholder {

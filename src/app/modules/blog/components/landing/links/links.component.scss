@@ -1,107 +1,21 @@
 h1 {
   text-align: left;
-  background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 20px;
-  padding: 0px;
-  line-height: normal;
-  width: 300px;
-  font-size: 36px;
-  padding-left: 20px;
 }
 
-h2 {
+button {
   font-weight: 100;
-  line-height: normal;
-  float: left;
-  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 36px;
-  margin: 0px;
-  margin-bottom: 6px;
-  margin-left: 8px;
-  padding-top: 20px;
-  font-size: 26px;
-  color: rgb(64, 72, 76);
-}
-
-p {
-  line-height: 175%;
-  font-size: 18px;
-  font-weight: 300;
-  text-align: justify;
-  color: #1d1d1f;
-  margin-bottom: 12px;
-  font-weight: 100;
+  font-size: 24px;
+  color: rgb(64, 72, 76) !important;
 }
 
 img {
+  margin-top: -5px;
   width: 20px;
   opacity: 0.8;
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
+  border-radius: 0px;
   filter: grayscale(100%);
 }
 
-.wrapper {
-  width: 880px;
-  margin: auto;
-  padding: 0;
-  overflow: hidden;
-  margin-left: 40px;
-  margin: auto;
-}
-
-.mat-mdc-card {
-  width: 860px;
-  height: flex;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  padding: 30px;
-  padding-left: 0px;
-  color: rgb(64, 72, 76);
-  font-weight: 500;
-  letter-spacing: -0.022em;
-  border-radius: 10px;
-  border: None;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
-}
-
 .mat-mdc-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transform: scale(1.005);
-}
-
-
-.mat-mdc-button {
-  padding-left: 0px !important;
-  margin-left: 0px !important;
-}
-
-@media (max-width: 1000px) {
-  button {
-    width: 100%;
-  }
-
-  h1 {
-    text-align: center;
-    padding: 0;
-    width: 100%;
-  }
-  
-  .wrapper {
-    width: 90%;
-  }
-  
-  .mat-mdc-card {
-    width: 100%;
-    margin-left: 0px;
-    margin-right: 0px;
-  }
+  transform: scale(1.02);
 }

@@ -6,7 +6,7 @@ series_section=3
 summary=This post covers the creation of a container image for a minimal Angular application.
 -->
 
-# Containerize Angular Applications
+# Containerize Angular Apps
 
 As we have seen in the last entry of the series, it is rather simple to containerize a miminal Flask application. However, as applications tend to comprise also of a frondend, let's take a closer look at running an Angular application in a Docker container.
 

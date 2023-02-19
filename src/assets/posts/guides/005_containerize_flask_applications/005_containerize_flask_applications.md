@@ -6,7 +6,7 @@ series_section=2
 summary=This post covers the creation of a container image for a minimal Flask application.
 -->
 
-# Containerize Flask Applications
+# Containerize Flask Apps
 
 Docker's container runtime allows to run applications in their dedicated containers based on a predefined image. However, how are container images created? Let's answer this question by building a minimal Flask application, creating a corresponding image and spin up a container based on that image.
 

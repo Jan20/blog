@@ -23,6 +23,7 @@ import { LinksComponent } from './components/landing/links/links.component';
 import { AboutComponent } from './components/about/about.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { BackButtonComponent } from './components/post/back-button.component/back-button.component';
+import { TitleComponent } from './components/landing/title/title.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { BackButtonComponent } from './components/post/back-button.component/bac
     LinksComponent,
     AboutComponent,
     BackButtonComponent,
+    TitleComponent,
   ],
   imports: [
     BrowserModule,

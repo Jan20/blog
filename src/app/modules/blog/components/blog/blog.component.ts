@@ -3,7 +3,6 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { map, Observable, tap } from 'rxjs';
 import { Post } from '../../models/post';
 import { BlogService } from '../../services/blog.service';
-import { WindowService } from '../../services/window.service';
 
 @Component({
   selector: 'app-blog',
@@ -11,15 +10,12 @@ import { WindowService } from '../../services/window.service';
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit {
-  public numberOfColumns: number = this.windowService.getNumberOfColumns();
   public posts: Post[] = this.fetchPosts('guides');
-  public rowHeight: string = '380px';
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly blogService: BlogService,
-    private readonly router: Router,
-    private readonly windowService: WindowService
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
@@ -32,8 +28,6 @@ export class BlogComponent implements OnInit {
         tap(params => (this.posts = this.fetchPosts(params[0], params[1])))
       )
       .subscribe();
-
-    if (this.numberOfColumns === 1) this.rowHeight = '26em';
   }
 
   public showPost(post: Post): void {

@@ -1,247 +1,192 @@
 @import './theme.scss';
 @import '@angular/material';
 
-:post
-  * {
-    padding: 0;
-    margin: 0;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-  }
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
 
-  html,
-  body {
-    background-color: rgba(245, 245, 247, 1);
-    height: 100%;
-  }
+html,
+body {
+  background-color: rgba(245, 245, 247, 1) !important;
+  height: 100%;
+}
 
-  h1 {
-    line-height: 300%;
-    font-size: 42px !important;
-    font-weight: 100 !important;
-    margin-bottom: 4px;
-    color: rgb(62, 72, 77);
-    text-align: center;
-    line-height: normal;
-    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-    padding-top: 20px;
-    padding-bottom: 16px;
-  }
+h1 {
+  line-height: 300%;
+  font-size: 42px !important;
+  font-weight: 100 !important;
+  margin-bottom: 4px;
+  text-align: center;
+  line-height: normal;
+  background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 20px;
+  padding-bottom: 16px;
+}
 
-  h2 {
-    color: rgb(62, 72, 77);
-    line-height: 150%;
-    font-size: 32px;
-    font-weight: 100;
-    margin-top: 30px;
-    margin-bottom: 4px;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  }
+h2 {
+  color: rgb(51, 51, 51) !important;
+  line-height: 150%;
+  font-size: 32px !important;
+  font-weight: 200 !important;
+  margin-top: 30px !important;
+  margin-bottom: 4px;
+}
 
-  h3 {
-    line-height: 150%;
-    font-size: 28px;
-    font-weight: 300;
-    margin-top: 30px;
-    margin-bottom: 4px;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  }
+h3 {
+  line-height: 150%;
+  font-size: 28px;
+  font-weight: 300;
+  margin-top: 30px;
+  margin-bottom: 4px;
+}
 
-  p {
-    line-height: 175%;
-    font-size: 18px;
-    font-weight: 400;
-    text-align: justify;
-    color: rgb(51, 51, 51);
-    margin-bottom: 12px;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-  }
+p {
+  line-height: 175%;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: justify;
+  color: rgb(51, 51, 51) !important;
+  margin-bottom: 12px;
+}
 
-  code {
-    font-family: monospace !important;
-    font-weight: normal !important;
-    font-size: 18px !important;
-    background-color: rgb(212, 212, 212) !important;
-    border-radius: 5px;
-    padding: 2px;
-    padding-right: 6px;
-    padding-left: 6px;
-  }
+code {
+  font-family: monospace !important;
+  font-weight: normal !important;
+  font-size: 18px !important;
+  background-color: rgb(212, 212, 212) !important;
+  border-radius: 5px;
+  padding: 2px;
+  padding-right: 6px;
+  padding-left: 6px;
+  color: rgb(51, 51, 51) !important;
+}
 
-  ol {
-    padding: 0px;
-    margin-left: 24px;
-    line-height: 175%;
-    font-weight: 400;
-    text-align: justify;
-    color: rgb(51, 51, 51);
-    margin-bottom: 12px;
-    font-size: 18px !important;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  }
+ol {
+  padding: 0px;
+  margin-left: 24px;
+  line-height: 175%;
+  font-weight: 400;
+  text-align: justify;
+  color: rgb(51, 51, 51);
+  margin-bottom: 12px;
+  font-size: 18px !important;
+}
 
-  li {
-    padding-left: 10px;
-    margin-bottom: 10px;
-    font-weight: 400;
-    font-size: 18px !important;
-  }
+li {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 18px !important;
+}
 
-  .separator {
-    border-bottom: 1px solid rgb(51, 51, 51);
-    margin: 0;
-  }
+.separator {
+  border-bottom: 1px solid rgb(51, 51, 51);
+  margin: 0;
+}
 
-  strong {
-    font-weight: 500 !important;
-  }
+strong {
+  font-weight: 500 !important;
+}
 
-  b {
-    font-weight: 500 !important;
-  }
+b {
+  font-weight: 500 !important;
+}
 
-  a {
-    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: #C850C0;
-    border-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%) 30;
-    border-bottom: 2px;
-    border-top: 0px;
-    border-style: solid;
-  }
+a:hover {
+  text-decoration: underline;
+}
 
-  a:hover {
-    text-decoration: underline;
-  }
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
 
-  @media (max-width: 768px) {
-    h1 {
-      margin-top: 30px;
-      margin-bottom: 10px;
-      line-height: normal !important;
-    }
+.full {
+  width: calc(100% + 60px);
+  padding: 0px !important;
+  border-radius: 10px 10px 0px 0px;
+}
 
-    .mat-mdc-card {
-      width: 80%;
-      margin-top: 0px !important;
-    }
-  }
+.half-width {
+  width: 50%;
+  margin-top: 10px;
+  margin-left: calc(50% / 2);
+  border-radius: 10px;
+}
 
-  .full-width {
-    width: 100%;
-    margin-bottom: 16px;
-  }
+.side-image {
+  width: 30%;
+  padding: 0px !important;
+  margin-left: calc(75% / 2);
+  border-radius: 10px;
+  float: right;
+  margin-top: 10px;
+  margin-left: 20px;
+  border: double 0.25px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, #c850c0, #ffcc70);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
 
-  .small-space {
-    margin: 20px;
-  }
+.almost-full-width {
+  width: 100%;
+  padding: 0px !important;
+  border-radius: 10px;
+  border: 0.5px solid gray;
+}
 
-  .normal-space {
-    margin: 50px;
-  }
+.language-ts {
+  padding: 0px;
+  color: rgb(255, 255, 255) !important;
+  background-color: rgb(83, 82, 82) !important;
+  font-size: 18px !important;
+}
 
-  .whitespace {
-    margin: 50px;
-  }
+.language-shell {
+  background-color: rgb(83, 82, 82) !important;
+}
 
-  .whitespace-tiny {
-    margin: 5px;
-  }
+.language-css {
+  background-color: rgb(83, 82, 82) !important;
+}
 
-  .mat-fab-container {
-    margin-top: -45px;
-    margin-left: -48px;
-    position: absolute;
-  }
+.language-html {
+  background-color: rgb(83, 82, 82) !important;
+}
 
-  .full {
-    width: calc(100% + 60px);
-    padding: 0px !important;
-    border-radius: 10px 10px 0px 0px;
-  }
+.keyword-this {
+  font-family: monospace !important;
+  font-weight: 100 !important;
+  font-weight: normal !important;
+  font-size: 18px !important;
+}
 
-  .half-width {
-    width: 50%;
-    margin-top: 10px;
-    margin-left: calc(50% / 2);
-    border-radius: 10px;
-  }
+.token {
+  font-family: monospace !important;
+  font-weight: 100 !important;
+  font-weight: normal !important;
+  font-size: 18px !important;
+}
 
-  .side-image {
-    width: 25%;
-    padding: 0px !important;
-    margin-left: calc(75% / 2);
-    border-radius: 10px;
-    float: right;
-    margin-top: 25px;
-    margin-left: 20px;
-    border: double 0.25px transparent;
-    border-radius: 10px;
-    background-image: linear-gradient(white, white), 
-                      linear-gradient(to right, #C850C0, #FFCC70);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-  }
+.punctuation {
+  font-family: monospace !important;
+  font-weight: 500 !important;
+  font-weight: normal !important;
+  font-size: 18px !important;
+}
 
-  .right {
-    float:right;
-    margin-top: 25px;
-    margin-left: 20px;
-    margin-right: 0px;
-  }
+.mat-mdc-card {
+  border-radius: 10px !important;
+  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important; 
+}
 
-  .left {
-    float:left;
-  }
-
-  .almost-full-width {
-    width: 100%;
-    padding: 0px !important;
-    border-radius: 10px;
-    border: 0.5px solid gray;
-  }
-
-  .language-ts {
-    padding: 0px;
-    background-color: rgb(83, 82, 82) !important;
-    font-size: 18px !important;
-  }
-
-  .language-shell {
-    background-color: rgb(83, 82, 82) !important;
-  }
-
-  .language-css {
-    background-color: rgb(83, 82, 82) !important;
-  }
-
-  .language-html {
-    background-color: rgb(83, 82, 82) !important;
-  }
-
-  .keyword-this {
-    font-family: monospace !important;
-    font-weight: 100 !important;
-    font-weight: normal !important;
-    font-size: 18px !important;
-  }
-
-  .token {
-    font-family: monospace !important;
-    font-weight: 100 !important;
-    font-weight: normal !important;
-    font-size: 18px !important;
-  }
-
-  .punctuation {
-    font-family: monospace !important;
-    font-weight: 500 !important;
-    font-weight: normal !important;
-    font-size: 18px !important;
-  }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+img {
+  border-radius: 10px;
+}

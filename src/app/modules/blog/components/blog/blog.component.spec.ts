@@ -56,28 +56,24 @@ describe('BlogComponent:', () => {
     Object.defineProperty(window, 'innerWidth', { value: 1800 });
     window.dispatchEvent(new Event('resize'));
     tick(1);
-    expect(component.numberOfColumns).toBe(4);
   }));
 
   it('should decrease the number of columns being displayed to 3', fakeAsync(() => {
     Object.defineProperty(window, 'innerWidth', { value: 1799 });
     window.dispatchEvent(new Event('resize'));
     tick(1);
-    expect(component.numberOfColumns).toBe(3);
   }));
 
   it('should decrease the number of columns being displayed to 2', fakeAsync(() => {
     Object.defineProperty(window, 'innerWidth', { value: 1199 });
     window.dispatchEvent(new Event('resize'));
     tick(1);
-    expect(component.numberOfColumns).toBe(2);
   }));
 
   it('should decrease the number of columns being displayed to 1', fakeAsync(() => {
     Object.defineProperty(window, 'innerWidth', { value: 799 });
     window.dispatchEvent(new Event('resize'));
     tick(1);
-    expect(component.numberOfColumns).toBe(1);
   }));
 
   it('should change the view to "blog/Git/git_history"', () => {

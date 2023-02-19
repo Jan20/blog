@@ -25,7 +25,6 @@ export class LinksComponent {
   constructor(private readonly router: Router) {}
 
   public openLink(url: string): void {
-    this.router.navigate(['/about']);
     url === '/about'
       ? this.router.navigate(['/about'])
       : window.open(url, '_blank');

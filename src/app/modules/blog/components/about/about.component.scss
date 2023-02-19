@@ -1,20 +1,11 @@
 h1 {
   text-align: left;
-  background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 20px;
-  line-height: normal;
-  width: 300px;
-  font-size: 36px;
 }
 
 p {
   line-height: 175%;
-  font-size: 24px;
   text-align: justify;
   color: #1d1d1f;
-  margin-bottom: 12px;
   font-weight: 300;
 }
 
@@ -26,61 +17,8 @@ span {
 }
 
 img {
-  margin-top: 16px;
-  margin-left: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
   float: right;
   width: 39%;
-  border-radius: 10px;
-}
-
-.mat-mdc-card {
-  width: 830px;
-  height: flex;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-weight: 500;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border: None;
-  border-radius: 10px;
-  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
-  color: rgb(64, 72, 76);
-}
-
-.mat-mdc-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transform: scale(1.005);
-}
-
-.mat-mdc-card-title {
-  text-align: center;
-}
-
-.wrapper {
-  width: calc(100% - 60px);
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-@media (max-width: 1000px) {
-  .mat-mdc-card {
-    width: 90%;
-  }
-
-  h1 {
-    width: 100%;
-    line-height: normal !important;
-  }
-
-  img {
-    float: none;
-    width: calc(100% - 0px);
-    margin-top: 16px;
-    margin-left: 0px;
-  }
-
-  .mat-mdc-card:hover {
-    box-shadow: none;
-    transform: none;
-  }
 }

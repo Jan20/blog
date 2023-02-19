@@ -1,35 +1,37 @@
 <app-back-button></app-back-button>
-<mat-card *ngIf="post | async as post">
-  <img mat-card-image class="full" [src]="post.thumbnail" />
-  <mat-card-content>
-    <div class="date">{{ post.date | date }}</div>
-    <div *ngIf="post.seriesSection" class="section">
-      <div class="section-wrapper">
-        <div class="button-left">
+<div class="container col-lg-6 col-sm-12 mt-5">
+  <mat-card *ngIf="post | async as post">
+    <img mat-card-image [src]="post.thumbnail" />
+    <mat-card-content class="p-4">
+      <div class="d-flex justify-content-center">
+        <h4 class="mt-1">
+          {{ post.date | date }}
+        </h4>
+      </div>
+      <div *ngIf="post.seriesSection" class="section">
+        <div class="d-flex justify-content-center align-middle">
           <button
-            mat-button
+            mat-icon-button
             (click)="navigateToPost(post.series, post.seriesSection - 1)">
             <mat-icon>arrow_back_ios</mat-icon>
           </button>
-        </div>
-        <h5 class="wrapper">
-          Section {{ post.seriesSection }} of {{ sectionCount }}
-        </h5>
-        <div class="button-right">
+          <h3 class="mt-2">
+            Section {{ post.seriesSection }} of {{ sectionCount }}
+          </h3>
           <button
-            mat-button
+            mat-icon-button
             (click)="navigateToPost(post.series, post.seriesSection + 1)">
             <mat-icon>arrow_forward_ios</mat-icon>
           </button>
         </div>
       </div>
-    </div>
-    <div *ngIf="post.seriesSection" class="content">
-      <markdown lineHighlight [src]="post.link"></markdown>
-    </div>
-    <div *ngIf="!post.seriesSection">
-      <markdown lineHighlight [src]="post.link"></markdown>
-    </div>
-  </mat-card-content>
-</mat-card>
+      <div *ngIf="post.seriesSection" class="mt-2">
+        <markdown lineHighlight [src]="post.link"></markdown>
+      </div>
+      <div *ngIf="!post.seriesSection" class="mt-2">
+        <markdown lineHighlight [src]="post.link"></markdown>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
 <div class="placeholder"></div>

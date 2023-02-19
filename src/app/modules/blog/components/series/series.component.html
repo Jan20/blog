@@ -1,18 +1,20 @@
-<span class="wrapper">
-  <h1 class="title headline">Series</h1>
-</span>
-<div *ngIf="seriesTitles">
-  <div *ngFor="let title of seriesTitles" class="wrapper">
-    <mat-card appearance="outlined">
+<div class="container d-flex flex-column col-lg-6 col-sm-12">
+  <div class="d-flex justify-content-center">
+    <h1>Series</h1>
+  </div>
+  <div *ngFor="let title of seriesTitles" class="col-12">
+    <mat-card>
       <mat-card-content>
-        <h1>{{ title }}</h1>
+        <div class="d-flex flex-row">
+          <h1 class="headline">{{ title }}</h1>
+        </div>
         <div *ngFor="let post of series.get(title)">
-          <h2 (click)="showPost(post.link)">
+          <h2 class="p-2 m-0" (click)="showPost(post.link)">
             {{ post.seriesSection }}. {{ post.headline }}
           </h2>
-          <span class="placeholder"></span>
         </div>
       </mat-card-content>
     </mat-card>
+    <span class="placeholder"></span>
   </div>
 </div>

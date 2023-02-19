@@ -4,9 +4,15 @@ mat-icon {
 
 .filter-button {
   position: fixed;
-  margin-top: 500px;
+  margin-top: 240px;
   right: 5px;
   top: 20px;
   z-index: 2;
   background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+@media (max-width: 800px) {
+  .filter-button {
+    margin-top: 500px;
+  }
 }
