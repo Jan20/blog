@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { map, Observable, tap } from 'rxjs';
+import { map, Observable, Subject, takeUntil, tap } from 'rxjs';
 import { Post } from '../../models/post';
 import { BlogService } from '../../services/blog.service';
 
@@ -9,8 +9,9 @@ import { BlogService } from '../../services/blog.service';
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
 })
-export class BlogComponent implements OnInit {
+export class BlogComponent implements OnInit, OnDestroy {
   public posts: Post[] = this.fetchPosts('guides');
+  private readonly destroyed = new Subject();
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
@@ -25,9 +26,15 @@ export class BlogComponent implements OnInit {
           paramMap.get('category'),
           paramMap.get('topic'),
         ]),
-        tap(params => (this.posts = this.fetchPosts(params[0], params[1])))
+        tap(params => (this.posts = this.fetchPosts(params[0], params[1]))),
+        takeUntil(this.destroyed)
       )
       .subscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed.next(true);
+    this.destroyed.complete;
   }
 
   public showPost(post: Post): void {
@@ -42,7 +49,8 @@ export class BlogComponent implements OnInit {
       .pipe(
         map((paramMap: ParamMap) => paramMap.get('category')),
         map(category => (!category ? 'guides' : category)),
-        tap(category => this.router.navigate([`blog/${category}/${topic}`]))
+        tap(category => this.router.navigate([`blog/${category}/${topic}`])),
+        takeUntil(this.destroyed)
       )
       .subscribe();
   }

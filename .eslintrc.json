@@ -4,15 +4,19 @@
   "plugins": ["@typescript-eslint"],
   "overrides": [
     {
+      "parser": "@typescript-eslint/parser",
       "files": ["*.ts"],
       "parserOptions": {
         "project": ["tsconfig.json", "e2e/tsconfig.json"],
-        "createDefaultProgram": true
+        "createDefaultProgram": true,
+        "ecmaVersion": "latest",
+        "sourceType": "module"
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:rxjs/recommended"
       ],
       "rules": {
         "no-unused-vars": "off",
@@ -37,17 +41,20 @@
         // "sort-imports": [
         //   "error",
         //   {
-        //     "ignoreCase": false,
-        //     "ignoreDeclarationSort": false,
-        //     "ignoreMemberSort": false,
-        //     "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
-        //     "allowSeparatedGroups": false
-        //   },
+        //     "ignoreCase": false
+        //   }
         // ],
-        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-unsafe-call": "error",
+        "@typescript-eslint/no-unsafe-argument": "error",
         "prefer-const": "error",
         "@typescript-eslint/ban-types": "error",
-        "no-empty-function": "off"
+        "no-empty-function": "off",
+        "rxjs/no-async-subscribe": "error",
+        "rxjs/no-ignored-observable": "error",
+        "rxjs/no-nested-subscribe": "error",
+        "rxjs/no-unbound-methods": "error",
+        "rxjs/throw-error": "error"
       }
     },
     {

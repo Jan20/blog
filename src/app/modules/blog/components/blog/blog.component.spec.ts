@@ -1,4 +1,3 @@
-import { WindowService } from '../../services/window.service';
 import { FilterComponent } from './filter/filter.component';
 import { BlogComponent } from './blog.component';
 import {
@@ -15,11 +14,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { GUIDES } from 'src/app/helpers/post-mocks';
 import { MatMenuModule } from '@angular/material/menu';
 
-const windowService = jasmine.createSpyObj('WindowService', [
-  'getNumberOfColumns',
-]);
-windowService.getNumberOfColumns.and.returnValue(1000);
-
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [BlogComponent, FilterComponent],
@@ -30,7 +24,6 @@ const compileComponent = (): void => {
       MatCardModule,
       MatGridListModule,
     ],
-    providers: [{ provide: WindowService, useValue: windowService }],
   }).compileComponents();
 };
 

@@ -1,8 +1,8 @@
 import { APP_BASE_HREF } from '@angular/common';
 import {
   ComponentFixture,
-  fakeAsync,
   TestBed,
+  fakeAsync,
   tick,
 } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
@@ -13,11 +13,10 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MenuComponent } from './menu.component';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { EMPTY, of } from 'rxjs';
 import { Router } from '@angular/router';
 
-const router = jasmine.createSpyObj('Router', ['navigate']);
-router.navigate.and.returnValue(of(EMPTY));
+const router = jasmine.createSpyObj<Router>('Router', ['navigate']);
+router.navigate.and.returnValue(Promise.resolve(true));
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({

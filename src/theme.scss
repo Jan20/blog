@@ -37,17 +37,26 @@ $my-primary: mat.define-palette(mat.$indigo-palette, 500);
 $my-accent: mat.define-palette(mat.$indigo-palette, A200, A100, A400);
 $my-warn: mat.define-palette(mat.$red-palette);
 
-$my-theme: mat.define-light-theme((
- color: (
-   primary: $my-primary,
-   accent: $my-accent,
-   warn: $my-warn,
- ),
- typography: mat.define-typography-config(
-  $headline-2: mat.define-typography-level(156px, 156px, 400, $letter-spacing: -0.02em),
- ),
- density: 0,
-));
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+      warn: $my-warn,
+    ),
+    typography:
+      mat.define-typography-config(
+        $headline-2:
+          mat.define-typography-level(
+            156px,
+            156px,
+            400,
+            $letter-spacing: -0.02em
+          ),
+      ),
+    density: 0,
+  )
+);
 
 // Emit theme-dependent styles for common features used across multiple components.
 @include mat.core-theme($my-theme);

@@ -1,22 +1,10 @@
 import { Post } from '../models/post';
-import { PostCollection } from '../models/postCollection';
 import { BlogService } from './blog.service';
 import { TestBed } from '@angular/core/testing';
-import {
-  GUIDES,
-  PRODUCTIVITY,
-  RXJS_RELATED_POSTS,
-} from 'src/app/helpers/post-mocks';
+import { PRODUCTIVITY, RXJS_RELATED_POSTS } from 'src/app/helpers/post-mocks';
 
-const postCollection = jasmine.createSpyObj('PostCollection', ['selectPosts']);
-postCollection.selectPosts.withArgs('guides').and.returnValue(GUIDES);
-postCollection.selectPosts
-  .withArgs('productivity')
-  .and.returnValue(PRODUCTIVITY);
-
-const compileComponent = () => {
+const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    providers: [{ provide: PostCollection, useValue: postCollection }],
     teardown: { destroyAfterEach: false },
   }).compileComponents();
 };

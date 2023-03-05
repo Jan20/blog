@@ -32,9 +32,11 @@ export class PostComponent {
   }
 
   private filterPosts(params: Params): Post {
-    const posts = this.blogservice.getPosts(params['category'], 'All');
+    const category: string = params['category'];
+    const id: string = params['id'];
+    const posts = this.blogservice.getPosts(category, 'All');
     const filteredPost = posts.filter((post: Post) =>
-      post.link.includes(params['id'])
+      post.link.includes(id)
     )[0];
     if (filteredPost.seriesSection)
       this.sectionCount = this.blogservice.getSectionCount(filteredPost.series);
