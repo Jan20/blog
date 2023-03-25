@@ -12,3 +12,4 @@ openshift
 *.hbs
 .angular/**
 .doc/**
+public

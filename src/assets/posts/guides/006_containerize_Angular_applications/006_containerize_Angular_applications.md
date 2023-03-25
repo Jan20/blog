@@ -15,7 +15,9 @@ As we have seen in the last entry of the series, it is rather simple to containe
 Our Angular application should do not much more than retrieving a message form a backend, such as the Flask application we've created in the apprevious post of the series and displaying it to the screen. The easiest to initialize a new Angular application is to use the <code>ng new</code> command provided by Angular's CLI. Angular Material is an optional library that provides a range of UI elements, I personally like although not strictly required here.
 
 ```TS
-ng new project && add @angular/material
+ng new project
+cd project
+npm add @angular/material
 ```
 
 A freshly initialised Angular project comes already with a quite a few automatically generated files. As we like to build a minimal application, let's focus on the <code>src/app</code> directory, where the <code>app module</code> and <code>app component</code> reside. First jump to the directory by running the following command.
@@ -38,6 +40,10 @@ After having generated the <code>RestService</code>, we want to implement a <cod
 
 **rest.service.ts**
 ```TS
+import { Injectable } from '@angular/core';
+import { catchError, Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
