@@ -11,7 +11,7 @@ import { SharedModule } from './modules/shared/shared.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     MenuModule,
     SharedModule,

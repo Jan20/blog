@@ -3,7 +3,6 @@ date=2023-03-25
 topic=Docker
 summary=Gives step-by-step instructions for containerizing Postgres database.
 -->
-
 # Containerizing PostgreSQL
 
 Running a PostgreSQL database inside a Docker container offers several benefits, including enhanced portability and isolation from other processes and databases running on the host system. However, two factors may be considered when setting up PostgreSQL in a container.

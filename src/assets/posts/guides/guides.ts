@@ -1,8 +1,8 @@
 import { Post } from "src/app/modules/blog/models/post"; 
 
 export const guides: Post[] = [
-    new Post('guides', 'Code Quality', 'Introduction to ESLint', 'Provides an introduction into ESLint.', '/assets/posts/guides/009_eslint/009_eslint.md', 'assets/posts/guides/009_eslint/thumbnail.png', '2023-03-05'), 
-    new Post('guides', 'Docker', 'Containerizing a PostgreSQL database', 'Gives step-by-step instructions for containerizing Postgres database', '/assets/posts/guides/010_postgres/010_postgres.md', 'assets/posts/guides/010_postgres/thumbnail.png', '2023-03-25'), 
+    new Post('guides', 'Code Quality', 'Brief introduction to ESLint', 'Provides a brief introduction into ESLint.', '/assets/posts/guides/009_eslint/009_eslint.md', 'assets/posts/guides/009_eslint/thumbnail.png', '2023-03-05'), 
+    new Post('guides', 'Docker', 'Containerizing PostgreSQL', 'Gives step-by-step instructions for containerizing Postgres database.', '/assets/posts/guides/010_postgres/010_postgres.md', 'assets/posts/guides/010_postgres/thumbnail.png', '2023-03-25'), 
     new Post('guides', 'Docker', 'Containerize Flask Apps', 'This post covers the creation of a container image for a minimal Flask application.', '/assets/posts/guides/005_containerize_flask_applications/005_containerize_flask_applications.md', 'assets/posts/guides/005_containerize_flask_applications/thumbnail.png', '2022-06-27', 'Docker', 2), 
     new Post('guides', 'RxJS', 'RxJS in Angular', 'This post covers a short example of using RxJS in an Angular controller.', '/assets/posts/guides/002_introduction_to_rxjs/002_introduction_to_rxjs.md', 'assets/posts/guides/002_introduction_to_rxjs/thumbnail.png', '2022-07-04'), 
     new Post('guides', 'Angular', 'Angular on GitHub Pages', 'Gives an introduction to hosting an Angular project on GitHub Pages', '/assets/posts/guides/001_angular_apps_on_github_pages/001_angular_apps_on_github_pages.md', 'assets/posts/guides/001_angular_apps_on_github_pages/thumbnail.png', '2022-07-08', 'Angular Indepth', 1), 
