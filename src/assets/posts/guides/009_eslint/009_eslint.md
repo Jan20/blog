@@ -4,7 +4,7 @@ topic=Code Quality
 summary=Provides a brief introduction into ESLint.
 -->
 
-# Brief introduction to ESLint
+# Introduction to ESLint
 
 ESLint is a popular open-source JavaScript linting tool that is used to analyze and check JavaScript/Typescript code for errors, stylistic issues, and potential problems. It helps to write better, more consistent code by identifying issues and providing suggestions for improvement.
 

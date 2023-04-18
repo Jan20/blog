@@ -19,7 +19,7 @@ export class LinksComponent {
       'https://www.linkedin.com/in/jan-schumann-b5740213b/',
       'assets/images/links/linkedin.png'
     ),
-    new Link('About', '/about', ''),
+    new Link('About me', '/about', ''),
   ];
 
   constructor(private readonly router: Router) {}
