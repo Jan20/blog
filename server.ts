@@ -16,6 +16,12 @@ export function app(): express.Express {
     ? 'index.original.html'
     : 'index';
 
+  // All regular routes use the Universal engine
+  server.get('/robots.txt', function (_, res, next) {
+    res.type('text/plain');
+    res.send('User-agent: *\nDisallow: ');
+  });
+
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine(
     'html',
@@ -27,9 +33,6 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
-  // Serve static files from /browser
   server.get(
     '*.*',
     express.static(distFolder, {

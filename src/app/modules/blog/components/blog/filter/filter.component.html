@@ -1,4 +1,5 @@
 <button
+  type="button"
   [matMenuTriggerFor]="menu"
   class="gradient filter-button"
   mat-fab
@@ -8,8 +9,11 @@
 
 <mat-menu #menu="matMenu">
   <div *ngIf="topics | async as topics">
-    <button mat-menu-item (click)="selectTopic('All')">All</button>
+    <button type="button" mat-menu-item (click)="selectTopic('All')">
+      All
+    </button>
     <button
+      type="button"
       mat-menu-item
       (click)="selectTopic(topic)"
       *ngFor="let topic of topics">

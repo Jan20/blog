@@ -10,7 +10,7 @@
       *ngFor="let post of posts"
       class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-4">
       <mat-card (click)="showPost(post)" class="h-100">
-        <img mat-card-image [src]="post.thumbnail" />
+        <img mat-card-image [src]="post.thumbnail" alt="A post's thumbnail" />
         <mat-card-content>
           <div class="mt-1 justify-content-center">
             {{ post.date | date }}

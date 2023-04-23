@@ -1,7 +1,7 @@
 <app-back-button></app-back-button>
 <div class="container col-lg-6 col-sm-12 mt-5">
   <mat-card *ngIf="post | async as post">
-    <img mat-card-image [src]="post.thumbnail" />
+    <img mat-card-image [src]="post.thumbnail" alt="Post's thumbnail" />
     <mat-card-content class="p-4">
       <div class="d-flex justify-content-center">
         <h4 class="mt-1">
@@ -11,6 +11,7 @@
       <div *ngIf="post.seriesSection" class="section">
         <div class="d-flex justify-content-center align-middle">
           <button
+            type="button"
             mat-icon-button
             (click)="navigateToPost(post.series, post.seriesSection - 1)">
             <mat-icon>arrow_back_ios</mat-icon>
@@ -19,6 +20,7 @@
             Section {{ post.seriesSection }} of {{ sectionCount }}
           </h3>
           <button
+            type="button"
             mat-icon-button
             (click)="navigateToPost(post.series, post.seriesSection + 1)">
             <mat-icon>arrow_forward_ios</mat-icon>

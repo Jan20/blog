@@ -1,22 +1,30 @@
 <mat-toolbar class="main-menu">
-  <button mat-button class="title" (click)="switchToLandingPage()">
+  <button type="button" class="title" (click)="switchToLandingPage()">
     Jan Schumann
   </button>
   <span class="spacer"></span>
 
   <span class="desktop-menu" *ngFor="let item of items">
-    <button mat-button class="menu-button" (click)="navigateToMenuEntry(item)">
+    <button
+      type="button"
+      mat-button
+      class="menu-button"
+      (click)="navigateToMenuEntry(item)">
       {{ item.icon }} {{ item.name }}
     </button>
   </span>
 
-  <button class="mobile-menu" mat-icon-button [matMenuTriggerFor]="menu">
+  <button
+    type="button"
+    class="mobile-menu"
+    mat-icon-button
+    [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
   </button>
 
   <mat-menu #menu="matMenu">
     <div *ngFor="let item of items">
-      <button mat-menu-item (click)="navigateToMenuEntry(item)">
+      <button type="button" mat-menu-item (click)="navigateToMenuEntry(item)">
         <span>
           <mat-icon>{{ item.icon }}</mat-icon
           >{{ item.name }}
