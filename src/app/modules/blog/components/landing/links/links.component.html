@@ -9,8 +9,9 @@
             mat-button
             *ngFor="let link of links"
             (click)="openLink(link.url)">
+            <mat-icon *ngIf="link.name === 'About me'">account_circle</mat-icon>
             <img
-              *ngIf="link.name !== 'About'"
+              *ngIf="link.name !== 'About me'"
               src="{{ link.iconPath }}"
               alt="Link to {{ link.iconPath }}" />
             {{ link.name }}

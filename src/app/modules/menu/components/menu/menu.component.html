@@ -1,7 +1,12 @@
 <mat-toolbar class="main-menu">
-  <button type="button" class="title" (click)="switchToLandingPage()">
+  <button
+    mat-button
+    type="button"
+    class="title"
+    (click)="switchToLandingPage()">
     Jan Schumann
   </button>
+
   <span class="spacer"></span>
 
   <span class="desktop-menu" *ngFor="let item of items">
