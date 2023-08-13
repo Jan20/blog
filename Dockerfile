@@ -1,23 +1,29 @@
-# Use an official Node.js runtime as a parent image
-FROM node:14-alpine
+# Stage 1: Build the application
+FROM node:18 AS build
 
-# Set the working directory to /app
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files to the container
+# Copy package.json and package-lock.json for dependency installation
 COPY package*.json ./
+RUN npm ci --legacy-peer-deps
 
-# Install the dependencies
-RUN npm install
-
-# Copy the rest of the application code to the container
+# Copy the application source code
 COPY . .
 
 # Build the application
 RUN npm run build:ssr
 
-# Expose the port the app runs on
+# Stage 2: Create the production image
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy only the necessary files from the build stage
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/dist ./dist
+
+# Expose the port that your application will listen on
 EXPOSE 80
 
-# Start the app
-CMD ["npm", "run", "serve:ssr"]
+# Define the command to run your application
+CMD ["node", "dist/blog/server/main.js"]
