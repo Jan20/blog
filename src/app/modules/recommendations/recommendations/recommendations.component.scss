@@ -1,0 +1,29 @@
+h1 {
+  font-size: 72px !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  text-align: center;
+  font-size: 36px !important;
+  line-height: 150%;
+  color: black !important;
+}
+
+.mat-mdc-card {
+  height: 500px;
+}
+
+.card-image {
+  background-image: url("/assets/images/landing/title.png");
+  background-size: cover;
+  background-position: center;
+}
+
+button {
+  font-size: 26px;
+  font-weight: 400;
+  height: 68px !important;
+  border-radius: 100px !important;
+}

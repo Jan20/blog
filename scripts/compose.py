@@ -197,14 +197,17 @@ def replace_underscores(line: str) -> str:
 
 def write_posts_to_file(posts: [Post]) -> None:
     """ Writes a parsed Post object to a typescript file."""
-    first_line = 'import { Post } from "src/app/modules/blog/models/post"; \n'
+    first_line = 'import { Post } from "src/app/modules/shared/models/post"; \n'
     path_elements: [str] = posts[0].link.split("/")[:-2]
     relative_path = "/".join(path_elements)
-    index_file = f'{root_dir}/src{relative_path}/{posts[0].category}.ts'
+    file_name_elments = posts[0].category.split("-")
+    file_name_elments = [string.title() for string in file_name_elments]
+    file_name = "".join(file_name_elments)
+    index_file = f'{root_dir}/src{relative_path}/{file_name}.ts'
     with open(index_file, 'w') as writer:
         writer.write(first_line)
         writer.write('\n')
-        writer.write(f'export const {posts[0].category}: Post[] = [\n')
+        writer.write(f'export const {file_name}: Post[] = [\n')
         for post in posts:
             line = parse_post_to_line(post)
             writer.write(line)

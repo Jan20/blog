@@ -1,0 +1,18 @@
+h3 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.mat-mdc-card {
+  font-weight: 500;
+  box-shadow: none !important;
+  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
+}
+
+.placeholder {
+  height: 1px;
+}
+
+img {
+  border-radius: 40px !important;
+}

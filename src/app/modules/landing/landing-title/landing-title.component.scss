@@ -1,0 +1,51 @@
+h1 {
+  text-align: center;
+  font-size: 48px !important;
+  padding-bottom: 0px;
+  line-height: 100%;
+}
+
+h2 {
+  text-align: center;
+  font-size: 18px !important;
+  line-height: 150%;
+  padding-top: 0px;
+}
+
+h6 {
+  text-align: center;
+  font-size: 28px !important;
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 48px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  h1 {
+    font-size: 72px !important;
+  }
+
+  h2 {
+    font-size: 28px !important;
+  }
+}
+
+.mat-mdc-card {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+button {
+  font-size: 26px;
+  font-weight: 400;
+  height: 68px !important;
+  border-radius: 100px !important;
+}
+
+.landing {
+  background-image: url("/assets/images/landing/background.png");
+}

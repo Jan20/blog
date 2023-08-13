@@ -1,0 +1,34 @@
+h1 {
+  line-height: 300%;
+  font-size: 42px !important;
+  font-weight: 100 !important;
+  margin-bottom: 4px;
+  line-height: normal;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  text-align: left;
+  font-size: 26px !important;
+  font-weight: 400 !important;
+  line-height: 110%;
+}
+
+p {
+  text-align: left;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+}
+
+.mat-mdc-card {
+  line-height: 1.5;
+  font-weight: 100;
+  color: rgb(51, 51, 51);
+  text-align: center;
+  background-color: rgb(248, 250, 253);
+  box-shadow: none !important;
+}
+
+.mat-mdc-card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  background-color: rgb(201, 230, 252);
+}

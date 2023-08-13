@@ -1,21 +1,46 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BlogModule } from './modules/blog/blog.module';
-import { PostCollection } from './modules/blog/models/postCollection';
+import { AngularCourseModule } from './modules/angular-course/angular-course.module';
+import { EngineeringModule } from './modules/engineering/engineering.module';
+import { FooterModule } from './modules/footer/footer.module';
+import { LandingModule } from './modules/landing/landing.module';
 import { MenuModule } from './modules/menu/menu.module';
+import { RecommendationsModule } from './modules/recommendations/recommendations.module';
 import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserAnimationsModule,
+    CommonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
     MenuModule,
+    FooterModule,
+    LandingModule,
+    RecommendationsModule,
+    MatButtonModule,
     SharedModule,
-    BlogModule,
+    AngularCourseModule,
+    EngineeringModule,
     MarkdownModule.forRoot({
       markedOptions: {
         provide: MarkedOptions,
@@ -29,7 +54,7 @@ import { SharedModule } from './modules/shared/shared.module';
       },
     }),
   ],
-  providers: [PostCollection],
+  providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

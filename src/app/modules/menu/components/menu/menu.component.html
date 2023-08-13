@@ -1,40 +1,55 @@
-<mat-toolbar class="main-menu">
+<mat-toolbar class="d-flex justify-content-left" *ngIf="isNarrow">
+  <button mat-icon-button type="button" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
   <button
     mat-button
     type="button"
     class="title"
     (click)="switchToLandingPage()">
-    Jan Schumann
+    Efficient Engineering Blog
   </button>
-
-  <span class="spacer"></span>
-
-  <span class="desktop-menu" *ngFor="let item of items">
-    <button
-      type="button"
-      mat-button
-      class="menu-button"
-      (click)="navigateToMenuEntry(item)">
-      {{ item.icon }} {{ item.name }}
-    </button>
-  </span>
-
-  <button
-    type="button"
-    class="mobile-menu"
-    mat-icon-button
-    [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-
-  <mat-menu #menu="matMenu">
-    <div *ngFor="let item of items">
-      <button type="button" mat-menu-item (click)="navigateToMenuEntry(item)">
-        <span>
-          <mat-icon>{{ item.icon }}</mat-icon
-          >{{ item.name }}
-        </span>
-      </button>
-    </div>
-  </mat-menu>
 </mat-toolbar>
+<mat-sidenav-container class="vh-100">
+  <mat-sidenav
+    *ngIf="menuState !== 'minimized'"
+    #sidenav
+    [opened]="!isNarrow || isVisible"
+    [mode]="isNarrow ? 'over' : 'side'"
+    color="primary">
+    <mat-nav-list>
+      <button
+        type="button"
+        mat-button
+        class="pt-5 pb-5 w-100"
+        [ngClass]="{ active: item.active }"
+        (click)="navigateToMenuEntry(item)"
+        *ngFor="let item of items">
+        <div class="w-100">
+          <mat-icon class="w-100 h-100">
+            {{ item.icon }}
+          </mat-icon>
+        </div>
+        <div>
+          {{ item.name }}
+        </div>
+      </button>
+    </mat-nav-list>
+    <button type="button" mat-fab class="minimize-button" (click)="minimize()">
+      <mat-icon>close_fullscreen</mat-icon>
+    </button>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <button
+      *ngIf="menuState === 'minimized'"
+      type="button"
+      mat-fab
+      class="minimize-button"
+      (click)="minimize()">
+      <mat-icon>open_in_full</mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

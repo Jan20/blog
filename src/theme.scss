@@ -4,7 +4,7 @@ $mat-white: (
   200: #ef9a9a,
   300: #e57373,
   400: #ef5350,
-  500: #f44336,
+  500: #358205,
   600: #e53935,
   700: #d32f2f,
   800: #c62828,
@@ -33,7 +33,7 @@ $mat-white: (
 @use '@angular/material' as mat;
 @include mat.core();
 
-$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+$my-primary: mat.define-palette($mat-white, 500);
 $my-accent: mat.define-palette(mat.$indigo-palette, A200, A100, A400);
 $my-warn: mat.define-palette(mat.$red-palette);
 

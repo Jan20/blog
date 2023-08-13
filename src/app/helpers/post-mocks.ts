@@ -1,4 +1,4 @@
-import { Post } from '../modules/blog/models/post';
+import { Post } from '../modules/shared/models/post';
 
 export const GUIDES: Post[] = [
   new Post(

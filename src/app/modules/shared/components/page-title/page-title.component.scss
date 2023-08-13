@@ -1,0 +1,62 @@
+h1 {
+  line-height: 110%;
+  font-weight: 400 !important;
+  font-size: 96px !important;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+
+h2 {
+  text-align: left;
+  font-size: 28px !important;
+  line-height: 150%;
+  padding-top: 0px;
+  color: black !important;
+}
+
+.mat-mdc-card {
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+button {
+  font-size: 26px;
+  font-weight: 400;
+  height: 68px !important;
+  border-radius: 100px !important;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.guides {
+  background-image: url("/assets/images/guides/background.png");
+}
+
+.recommendations {
+  background-image: url("/assets/images/recommendations/background.png");
+}
+
+.angular-course {
+  background-image: url("/assets/images/angular-course/background.png");
+}
+
+.about {
+  background-image: url("/assets/images/landing/background.png");
+}
+
+.engineering {
+  background-image: url("/assets/images/engineering/background.png");
+}

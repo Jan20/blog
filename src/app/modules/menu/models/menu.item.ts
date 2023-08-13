@@ -1,7 +1,8 @@
 export class MenuItem {
-  public constructor(
-    public name: string,
-    public icon: string,
-    public link: string
+  constructor(
+    public readonly name: string,
+    public readonly icon: string,
+    public readonly link: string,
+    public active: boolean = false
   ) {}
 }
