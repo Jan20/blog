@@ -3,6 +3,5 @@ export class PageTitle {
     public headline: string,
     public description: string,
     public background: string,
-    public logo?: string,
-  ) {}
+  ) { }
 }

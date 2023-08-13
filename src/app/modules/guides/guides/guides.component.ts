@@ -14,7 +14,6 @@ export class GuidesComponent {
     'Guides',
     'This sections provides a range of guides covering topics ar',
     Background.GUIDES,
-    Logo.GUIDES,
   );
 
   public seriesTitles: Observable<Set<string>> = this.fetchSeries();

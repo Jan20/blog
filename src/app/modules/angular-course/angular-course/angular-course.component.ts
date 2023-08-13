@@ -14,12 +14,11 @@ export class AngularCourseComponent {
     'Angular Guides',
     'I want to share a few ideas around coding and productivity. Please, grab a coffee and feel free to go through some of my posts.',
     Background.ANGULAR_COURSE,
-    Logo.ANGULAR_COURSE
   );
 
   public seriesTitles: Observable<Set<string>> = this.fetchSeries();
 
-  constructor(private readonly blogService: BlogService) {}
+  constructor(private readonly blogService: BlogService) { }
 
   public fetchSeries(): Observable<Set<string>> {
     return this.blogService.getSeriesTitles('angular-course');

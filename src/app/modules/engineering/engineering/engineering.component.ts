@@ -11,6 +11,5 @@ export class EngineeringComponent {
     'Effective Engineering',
     'I want to share a few ideas around coding and productivity. Please, grab a coffee and feel free to go through some of my posts.',
     Background.ENGINEERING,
-    Logo.ENGINEERING
   );
 }

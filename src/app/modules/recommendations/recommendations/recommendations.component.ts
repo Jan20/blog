@@ -12,6 +12,5 @@ export class RecommendationsComponent {
     'Recommendations',
     'I want to share a few ideas around coding and productivity. Please, grab a coffee and feel free to go through some of my posts.',
     Background.RECOMMENDATIONS,
-    Logo.RECOMMENDATIONS
   );
 }
