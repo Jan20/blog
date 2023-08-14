@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Background } from '../../shared/models/enums';
-import { PageTitle } from '../../../components/models/page-title';
+import { PageTitle, PageTitleBackground } from '../../../components/models/page-title';
 
 @Component({
   selector: 'app-landing-title',
@@ -12,7 +11,7 @@ export class LandingTitleComponent {
   public readonly pageTitle = new PageTitle(
     "Jan's Engineering Blog",
     "Writing software requires passion, skill, and considerable amount of time. However, time is our most limited resource, so let's explore techniques helping us to craft great software faster.",
-    Background.LANDING,
+    PageTitleBackground.LANDING,
   );
 
   constructor(private readonly router: Router) { }

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Background } from '../../shared/models/enums';
-import { PageTitle } from '../../../components/models/page-title';
+import { PageTitle, PageTitleBackground } from '../../../components/models/page-title';
 import { BlogService } from '../../shared/services/blog.service';
 
 @Component({
@@ -13,7 +12,7 @@ export class GuidesComponent {
   public readonly pageTitle = new PageTitle(
     'Guides',
     'This sections provides a range of guides covering topics ar',
-    Background.GUIDES,
+    PageTitleBackground.GUIDES,
   );
 
   public seriesTitles: Observable<Set<string>> = this.fetchSeries();

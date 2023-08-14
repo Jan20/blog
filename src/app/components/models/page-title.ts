@@ -5,3 +5,12 @@ export class PageTitle {
     public background: string,
   ) { }
 }
+
+export enum PageTitleBackground {
+  LANDING = 'landing',
+  ANGULAR_COURSE = 'angular-course',
+  ENGINEERING = 'engineering',
+  GUIDES = 'guides',
+  CONTACT = 'contact',
+  RECOMMENDATIONS = 'recommendations',
+}

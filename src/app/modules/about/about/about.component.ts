@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Background, Logo } from '../../shared/models/enums';
-import { PageTitle } from '../../../components/models/page-title';
+import { PageTitle, PageTitleBackground } from '../../../components/models/page-title';
 
 @Component({
   selector: 'app-about',
@@ -11,7 +10,7 @@ export class AboutComponent {
   public readonly pageTitle = new PageTitle(
     'About Me',
     '',
-    Background.ANGULAR_COURSE,
+    PageTitleBackground.ANGULAR_COURSE,
   );
 
   constructor() { }
