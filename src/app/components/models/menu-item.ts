@@ -18,7 +18,7 @@ export const MENU_ITEMS: MenuItem[] = [
     false
   ),
   new MenuItem('Recommendations', 'assistant', 'recommendations', false),
-  new MenuItem('About', 'person_pin', 'about', false),
+  new MenuItem('About Me', 'person_pin', 'about', false),
 ];
 
 export enum MenuState {

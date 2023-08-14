@@ -11,7 +11,7 @@ import { BlogService } from '../../shared/services/blog.service';
 export class AngularCourseComponent {
   public readonly pageTitle = new PageTitle(
     'Angular Guides',
-    'I want to share a few ideas around coding and productivity. Please, grab a coffee and feel free to go through some of my posts.',
+    "Angular is an exceptional web application framework, particularly well-suited for large-scale applications. Below, I've curated a series of posts that delve into specific areas deserving a closer look.",
     PageTitleBackground.ANGULAR_COURSE,
   );
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, switchMap, map, zip, tap, mergeMap } from 'rxjs';
+import { Observable, map, mergeMap, tap, zip } from 'rxjs';
 import { Post } from '../../models/post';
 import { BlogService } from '../../services/blog.service';
 
@@ -16,7 +16,7 @@ export class SeriesNavigationComponent {
     private readonly router: Router,
     private readonly blogService: BlogService,
     private readonly activatedRoute: ActivatedRoute
-  ) {}
+  ) { }
 
   public navigateToPost(post: Post): void {
     const filePath = post.link.replace('/assets/posts', '');

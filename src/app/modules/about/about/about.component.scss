@@ -15,3 +15,8 @@ img {
   float: right;
   width: 39%;
 }
+
+.mat-mdc-card {
+  box-shadow: none;
+  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s;
+}

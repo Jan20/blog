@@ -1,11 +1,10 @@
-import { AppComponent } from './app.component';
-import { MenuModule } from './modules/menu/menu.module';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AppComponent } from './app.component';
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    imports: [RouterTestingModule, MenuModule],
+    imports: [RouterTestingModule],
     declarations: [AppComponent],
     providers: [],
   }).compileComponents();

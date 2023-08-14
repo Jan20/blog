@@ -6,10 +6,10 @@ import {
 } from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { PostListComponent } from './post-list.component';
 
 const compileComponent = (): void => {
@@ -66,11 +66,6 @@ describe('PostListComponent:', () => {
     window.dispatchEvent(new Event('resize'));
     tick(1);
   }));
-
-  // it('should change the view to "blog/Git/git_history"', () => {
-  //   component.showPost(GUIDES[0]);
-  //   expect(router.navigate).toHaveBeenCalledWith(['blog/Git/git_history']);
-  // });
 
   // it('should select the RxJS topic', () => {
   //   component.selectTopic('RxJS');

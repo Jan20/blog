@@ -8,7 +8,7 @@ import { PageTitle, PageTitleBackground } from '../../../components/models/page-
 export class EngineeringComponent {
   public readonly pageTitle = new PageTitle(
     'Effective Engineering',
-    'I want to share a few ideas around coding and productivity. Please, grab a coffee and feel free to go through some of my posts.',
+    "While practical guides are excellent for addressing specific issues, I've come across some broader strategies that I'd like to share here.",
     PageTitleBackground.ENGINEERING,
   );
 }

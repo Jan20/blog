@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { PostComponent } from '../shared/components/post/post.component';
+import { RecommendationsComponent } from './recommendations/recommendations.component';
 
 export const recommendationsRoutes: Routes = [
   {

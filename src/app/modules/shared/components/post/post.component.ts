@@ -16,7 +16,7 @@ export class PostComponent {
     private readonly activatedRoute: ActivatedRoute,
     private readonly blogservice: BlogService,
     private readonly router: Router
-  ) {}
+  ) { }
 
   private fetchPost(): Observable<Post> {
     return this.activatedRoute.paramMap.pipe(

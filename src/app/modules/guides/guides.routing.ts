@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { GuidesComponent } from './guides/guides.component';
 import { PostComponent } from '../shared/components/post/post.component';
+import { GuidesComponent } from './guides/guides.component';
 
 export const guidesRoutes: Routes = [
   {

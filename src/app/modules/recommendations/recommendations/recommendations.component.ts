@@ -9,7 +9,7 @@ import { PageTitle, PageTitleBackground } from '../../../components/models/page-
 export class RecommendationsComponent {
   public readonly pageTitle = new PageTitle(
     'Recommendations',
-    'I want to share a few ideas around coding and productivity. Please, grab a coffee and feel free to go through some of my posts.',
+    "Over the years, I've discovered several books that have proven to be particularly valuable. Here are a few of them listed below.",
     PageTitleBackground.RECOMMENDATIONS,
   );
 }

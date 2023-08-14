@@ -11,11 +11,10 @@ import { BlogService } from '../../shared/services/blog.service';
 export class GuidesComponent {
   public readonly pageTitle = new PageTitle(
     'Guides',
-    'This sections provides a range of guides covering topics ar',
+    "Over the years, I have encountered a rather vast array of technical challenges. Thus, I would like to share some of them that have not yet been exclusively covered elsewhere or deserve further explanation.",
     PageTitleBackground.GUIDES,
   );
-
-  public seriesTitles: Observable<Set<string>> = this.fetchSeries();
+  public readonly seriesTitles: Observable<Set<string>> = this.fetchSeries();
 
   constructor(private readonly blogService: BlogService) { }
 
