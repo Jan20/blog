@@ -1,56 +1,63 @@
-import { Component, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
-import { MenuItem } from '../../models/menu.item';
-
-export type MenuState = 'narrow' | 'minimized' | 'hidden';
+import { BreakpointObserver, Breakpoints, LayoutModule } from '@angular/cdk/layout';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { Router, RouterModule } from '@angular/router';
+import { MENU_ITEMS, MenuItem, MenuState } from '../../models/menu.item';
 
 @Component({
+  standalone: true,
+  imports: [
+    CommonModule,
+    LayoutModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    RouterModule,
+  ],
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
-  public items: MenuItem[] = [
-    new MenuItem('Home', 'home', '/', false),
-    new MenuItem('Guides', 'auto_stories', 'guides', false),
-    new MenuItem('Angular Guides', 'school', 'angular-course', false),
-    new MenuItem(
-      'Efficient Engineering',
-      'settings_suggest',
-      'efficient-software-engineering',
-      false
-    ),
-    new MenuItem('Recommendations', 'assistant', 'recommendations', false),
-    new MenuItem('About', 'person_pin', 'about', false),
-  ];
+  public activeStates: Set<MenuState> = new Set();
+  public readonly MenuState = MenuState;
+  public readonly menuItems: MenuItem[] = MENU_ITEMS;
 
-  public menuState: MenuState = 'hidden';
-  public isNarrow: boolean = false;
-  public isVisible: boolean = true;
-
-  constructor(private readonly router: Router) { }
-
-  @HostListener('window:resize', ['$event'])
-  public onResize(event: Event): void {
-    this.isVisible = (event.target as Window).innerWidth >= 960;
-    this.isNarrow = !this.isVisible;
-  }
+  constructor(private readonly breakpointObserver: BreakpointObserver, private readonly router: Router) {
+    this.breakpointObserver.observe(Breakpoints.Web).pipe(takeUntilDestroyed()).subscribe((result) =>
+      this.activeStates = result.matches ? new Set([MenuState.MAXIMIZED]) : new Set([MenuState.MOBILE])
+    )
+  };
 
   public toggleMenu(): void {
-    this.isNarrow = true;
-    this.isVisible = !this.isVisible;
+    this.activeStates.has(MenuState.MAXIMIZED) ? this.activeStates.delete(MenuState.MAXIMIZED) : this.activeStates.add(MenuState.MAXIMIZED);
   }
 
   public minimize(): void {
-    this.menuState = this.menuState === 'minimized' ? 'narrow' : 'minimized';
+    this.activeStates = this.activeStates.has(MenuState.MOBILE)
+      ? this.activeStates.has(MenuState.MAXIMIZED)
+        ? new Set([MenuState.MOBILE, MenuState.MINIMIZED])
+        : new Set([MenuState.MOBILE, MenuState.MAXIMIZED])
+      : this.activeStates.has(MenuState.MAXIMIZED)
+        ? new Set([MenuState.MINIMIZED])
+        : new Set([MenuState.MAXIMIZED]);
   }
 
-  public navigateToMenuEntry(item: MenuItem): void {
-    this.items
-      .filter(item => item.active)
-      .forEach(item => (item.active = false));
-    item.active = true;
-    this.router.navigate([item.link]);
+  public navigateToMenuEntry(selectedItem: MenuItem): void {
+    const activeItem = this.menuItems.find(item => item.active);
+    if (activeItem) activeItem.active = false;
+    selectedItem.active = true;
+    this.router.navigate([selectedItem.link]);
   }
 
   public switchToLandingPage(): void {

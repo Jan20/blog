@@ -15,7 +15,7 @@ import { AngularCourseModule } from './modules/angular-course/angular-course.mod
 import { EngineeringModule } from './modules/engineering/engineering.module';
 import { FooterModule } from './modules/footer/footer.module';
 import { LandingModule } from './modules/landing/landing.module';
-import { MenuModule } from './modules/menu/menu.module';
+import { MenuComponent } from './modules/menu/components/menu/menu.component';
 import { RecommendationsModule } from './modules/recommendations/recommendations.module';
 import { SharedModule } from './modules/shared/shared.module';
 
@@ -33,7 +33,7 @@ import { SharedModule } from './modules/shared/shared.module';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    MenuModule,
+    MenuComponent,
     FooterModule,
     LandingModule,
     RecommendationsModule,

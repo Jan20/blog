@@ -1,18 +1,21 @@
-<mat-toolbar class="d-flex justify-content-left" *ngIf="isNarrow">
+<mat-toolbar class="d-flex justify-content-left" *ngIf="activeStates.has(MenuState.MOBILE)">
   <button mat-icon-button type="button" (click)="toggleMenu()" aria-label="Toggle Menu">
     <mat-icon>menu</mat-icon>
   </button>
 
   <button mat-button type="button" class="title" (click)="switchToLandingPage()">
-    Efficient Engineering Blog
+    Jan's Engineering Blog
   </button>
 </mat-toolbar>
+
 <mat-sidenav-container class="vh-100">
-  <mat-sidenav *ngIf="menuState !== 'minimized'" #sidenav [opened]="!isNarrow || isVisible"
-    [mode]="isNarrow ? 'over' : 'side'" color="primary">
+  <mat-sidenav *ngIf="!activeStates.has(MenuState.MOBILE) || activeStates.has(MenuState.MAXIMIZED)" #sidenav
+    [opened]="activeStates.has(MenuState.MAXIMIZED)" [mode]="activeStates.has(MenuState.MINIMIZED) ? 'over' : 'side'"
+    color="primary">
+
     <mat-nav-list>
       <button type="button" mat-button class="pt-5 pb-5 w-100" [ngClass]="{ active: item.active }"
-        (click)="navigateToMenuEntry(item)" *ngFor="let item of items">
+        (click)="navigateToMenuEntry(item)" *ngFor="let item of menuItems">
         <div class="w-100">
           <mat-icon class="w-100 h-100">
             {{ item.icon }}
@@ -23,15 +26,22 @@
         </div>
       </button>
     </mat-nav-list>
+
     <button type="button" mat-fab class="minimize-button" (click)="minimize()" aria-label="Minimize Navigation Bar">
       <mat-icon>close_fullscreen</mat-icon>
     </button>
+
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <button *ngIf="menuState === 'minimized'" type="button" mat-fab class="minimize-button" (click)="minimize()">
+
+    <button type="button" *ngIf="!activeStates.has(MenuState.MOBILE)" mat-fab class="minimize-button"
+      (click)="minimize()" aria-label="Minimize Navigation Bar">
       <mat-icon>open_in_full</mat-icon>
     </button>
+
     <router-outlet></router-outlet>
+
   </mat-sidenav-content>
+
 </mat-sidenav-container>
