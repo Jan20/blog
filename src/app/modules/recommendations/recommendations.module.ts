@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { RecommendationsComponent } from './recommendations/recommendations.component';
-import { recommendationsRoutes } from './recommendations.routing';
-import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { SharedModule } from '../shared/shared.module';
+import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
+import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 import { PageTitleComponent } from '../../components/page-title/page-title.component';
+import { SharedModule } from '../shared/shared.module';
+import { recommendationsRoutes } from './recommendations.routing';
+import { RecommendationsComponent } from './recommendations/recommendations.component';
 
 @NgModule({
   declarations: [RecommendationsComponent],
@@ -17,6 +18,7 @@ import { PageTitleComponent } from '../../components/page-title/page-title.compo
     RouterModule.forChild(recommendationsRoutes),
     PageTitleComponent,
     SharedModule,
+    PostListComponent,
   ],
 })
 export class RecommendationsModule { }

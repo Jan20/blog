@@ -9,11 +9,11 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MenuComponent } from './menu.component';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { Router } from '@angular/router';
+import { MenuComponent } from './menu.component';
 
 const router = jasmine.createSpyObj<Router>('Router', ['navigate']);
 router.navigate.and.returnValue(Promise.resolve(true));

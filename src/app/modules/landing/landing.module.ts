@@ -1,16 +1,17 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { LandingTitleComponent } from './landing-title/landing-title.component';
-import { LinksComponent } from './links/links.component';
-import { LandingComponent } from './landing/landing.component';
-import { EngineeringModule } from '../engineering/engineering.module';
+import { MatIconModule } from '@angular/material/icon';
+import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 import { AngularCourseModule } from '../angular-course/angular-course.module';
+import { EngineeringModule } from '../engineering/engineering.module';
+import { FooterModule } from '../footer/footer.module';
 import { GuidesModule } from '../guides/guides.module';
 import { SharedModule } from '../shared/shared.module';
-import { FooterModule } from '../footer/footer.module';
+import { LandingTitleComponent } from './landing-title/landing-title.component';
+import { LandingComponent } from './landing/landing.component';
+import { LinksComponent } from './links/links.component';
 
 @NgModule({
   declarations: [LandingComponent, LandingTitleComponent, LinksComponent],
@@ -24,6 +25,7 @@ import { FooterModule } from '../footer/footer.module';
     MatCardModule,
     SharedModule,
     FooterModule,
+    PostListComponent,
   ],
 })
-export class LandingModule {}
+export class LandingModule { }

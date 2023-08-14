@@ -9,7 +9,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router, RouterModule } from '@angular/router';
-import { MenuState, MenuItem, MENU_ITEMS } from '../models/menu-item';
+import { MENU_ITEMS, MenuItem, MenuState } from '../models/menu-item';
 
 @Component({
   standalone: true,

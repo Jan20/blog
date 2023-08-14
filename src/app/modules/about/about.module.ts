@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent } from './about/about.component';
+import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
-import { aboutRoutes } from './about.routing';
-import { SharedModule } from '../shared/shared.module';
 import { PageTitleComponent } from '../../components/page-title/page-title.component';
+import { SharedModule } from '../shared/shared.module';
+import { aboutRoutes } from './about.routing';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [AboutComponent],
