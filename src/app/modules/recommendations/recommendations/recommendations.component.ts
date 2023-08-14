@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Background, Logo } from '../../shared/models/enums';
-import { PageTitle } from '../../shared/models/pageTitle';
+import { PageTitle } from '../../../components/models/page-title';
 
 @Component({
   selector: 'app-recommendations',
