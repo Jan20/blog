@@ -7,7 +7,6 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MarkdownModule } from 'ngx-markdown';
-import { PageTitleComponent } from './components/page-title/page-title.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostNavigationComponent } from './components/post-navigation/post-navigation.component';
 import { PostComponent } from './components/post/post.component';
@@ -18,7 +17,6 @@ import { BlogService } from './services/blog.service';
   declarations: [
     PostComponent,
     PostListComponent,
-    PageTitleComponent,
     PostNavigationComponent,
     SeriesNavigationComponent,
   ],
@@ -33,6 +31,6 @@ import { BlogService } from './services/blog.service';
     MarkdownModule,
   ],
   providers: [BlogService],
-  exports: [PageTitleComponent, PostNavigationComponent, PostListComponent],
+  exports: [PostNavigationComponent, PostListComponent],
 })
 export class SharedModule { }

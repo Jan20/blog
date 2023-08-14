@@ -6,6 +6,7 @@ import { engineeringRoutes } from './guides.routing';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedModule } from '../shared/shared.module';
+import { PageTitleComponent } from '../shared/components/page-title/page-title.component';
 
 @NgModule({
   declarations: [EngineeringComponent],
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
     MatCardModule,
     RouterModule.forChild(engineeringRoutes),
     SharedModule,
+    PageTitleComponent,
   ],
   exports: [],
 })
-export class EngineeringModule {}
+export class EngineeringModule { }
