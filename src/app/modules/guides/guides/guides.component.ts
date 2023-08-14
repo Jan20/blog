@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Background, Logo } from '../../shared/models/enums';
+import { Background } from '../../shared/models/enums';
 import { PageTitle } from '../../shared/models/pageTitle';
 import { BlogService } from '../../shared/services/blog.service';
 

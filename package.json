@@ -16,7 +16,8 @@
     "serve:ssr": "node dist/blog/server/main.js",
     "build:ssr": "ng build && ng run blog:server",
     "prerender": "ng run blog:prerender",
-    "build:docker": "docker build -t blog:latest ."
+    "build:docker": "docker build -t blog:latest .",
+    "start:docker": "docker run --name blog -p 80:80 blog:latest"
   },
   "private": true,
   "dependencies": {

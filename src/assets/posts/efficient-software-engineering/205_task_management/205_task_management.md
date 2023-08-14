@@ -4,7 +4,7 @@ topic=Efficiency
 summary=Describes an effective task management system for getting stuff done.
 -->
 
-# Efficient Task Managemnt
+# Efficient Task Management
 
 Let's delve a bit deeper into managing tasks. While it may not be the most exciting aspect of software development, it is undeniably crucial for maintaining focus on essential tasks and getting things done. Our goal is to implement an unobtrusive system that seamlessly tracks all tasks, supports task prioritization, and effectively monitors their progress. Such a system can be split into three distinct parts: (1) A list serving as the home for all open tasks, (2) a form or page providing space to describe the details of tasks, and (3) finally, a set of three columns providing space for tracking the current status of tasks.
 

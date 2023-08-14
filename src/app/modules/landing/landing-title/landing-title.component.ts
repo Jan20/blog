@@ -10,8 +10,8 @@ import { PageTitle } from '../../shared/models/pageTitle';
 })
 export class LandingTitleComponent {
   public readonly pageTitle = new PageTitle(
-    'Efficient Software Engineering',
-    'Writing software requires passion, skill, and time. However, our time is limited, thus I like to share a insides craft great software quicker.',
+    "Jan's Engineering Blog",
+    "Writing software requires passion, skill, and considerable amount of time. However, time is our most limited resource, so let's explore techniques helping us to craft great software faster.",
     Background.LANDING,
   );
 

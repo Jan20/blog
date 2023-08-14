@@ -1,7 +1,6 @@
-import { Post } from '../models/post';
-import { BlogService } from './blog.service';
 import { TestBed } from '@angular/core/testing';
 import { PRODUCTIVITY, RXJS_RELATED_POSTS } from 'src/app/helpers/post-mocks';
+import { BlogService } from './blog.service';
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
@@ -22,18 +21,10 @@ describe('BlogService', () => {
   });
 
   it('should retrieve all posts belonging to the productivity category', () => {
-    const result: Post[] = service.getPosts('productivity');
-    expect(result).toEqual(PRODUCTIVITY);
+    service.getPosts('productivity', '').subscribe((result) => expect(result).toEqual(PRODUCTIVITY));
   });
 
   it('should only retrieve posts about RxJS', () => {
-    const result: Post[] = service.getPosts('guides');
-    expect(result).toEqual(RXJS_RELATED_POSTS);
-  });
-
-  it('should return all topics belonging to "guides" category', () => {
-    const result: Set<string> = service.getTopics('guides');
-    const topcis: string[] = ['Git', 'Docker', 'RxJS', 'Python', 'Angular'];
-    expect(result).toEqual(new Set<string>(topcis));
+    service.getPosts('guides', 'RxJS').subscribe((result) => expect(result).toEqual(RXJS_RELATED_POSTS));
   });
 });

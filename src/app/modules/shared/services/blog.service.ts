@@ -8,7 +8,7 @@ import { PostCollection } from '../models/postCollection';
   providedIn: 'root',
 })
 export class BlogService {
-  constructor(private readonly postCollection: PostCollection) {}
+  constructor(private readonly postCollection: PostCollection) { }
 
   public getPosts(category: string, series: string): Observable<Post[]> {
     if (series === 'all') {
@@ -27,13 +27,6 @@ export class BlogService {
     return this.postCollection.selectPosts(category).pipe(
       map(posts => posts.filter((post: Post) => post.series === series)),
       map(posts => posts.sort(this.sortByDate))
-    );
-  }
-
-  public getTopics(category: string): Observable<Set<string>> {
-    return this.postCollection.selectPosts(category).pipe(
-      map(posts => posts.map(post => post.topic)),
-      map((topics: string[]) => new Set(topics))
     );
   }
 

@@ -1,6 +1,6 @@
 <div class="container col-lg-6 col-sm-12 mt-5" *ngIf="post | async as post">
   <mat-card>
-    <img mat-card-image [src]="post.thumbnail" alt="Post's thumbnail" />
+    <img mat-card-image class="img-fluid" height="720" width="960" [src]="post.thumbnail" alt="Post's thumbnail" />
     <mat-card-content class="p-4">
       <h4 class="mt-1 mb-0">
         {{ post.date | date }}
