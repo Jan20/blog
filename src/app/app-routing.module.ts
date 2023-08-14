@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenuComponent } from './modules/menu/components/menu/menu.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { LandingComponent } from './modules/landing/landing/landing.component';
 
 const routes: Routes = [
@@ -75,4 +75,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

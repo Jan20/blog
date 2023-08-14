@@ -5,7 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { aboutRoutes } from './about.routing';
 import { SharedModule } from '../shared/shared.module';
-import { PageTitleComponent } from '../shared/components/page-title/page-title.component';
+import { PageTitleComponent } from '../../components/page-title/page-title.component';
 
 @NgModule({
   declarations: [AboutComponent],

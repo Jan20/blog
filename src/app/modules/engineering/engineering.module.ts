@@ -6,7 +6,7 @@ import { engineeringRoutes } from './guides.routing';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedModule } from '../shared/shared.module';
-import { PageTitleComponent } from '../shared/components/page-title/page-title.component';
+import { PageTitleComponent } from '../../components/page-title/page-title.component';
 
 @NgModule({
   declarations: [EngineeringComponent],

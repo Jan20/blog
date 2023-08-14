@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { angularCourseRoutes } from './angular-course.routing';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedModule } from '../shared/shared.module';
-import { PageTitleComponent } from '../shared/components/page-title/page-title.component';
+import { PageTitleComponent } from '../../components/page-title/page-title.component';
 
 @NgModule({
   declarations: [AngularCourseComponent],
