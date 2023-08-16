@@ -13,4 +13,5 @@ export enum PageTitleBackground {
   GUIDES = 'guides',
   CONTACT = 'contact',
   RECOMMENDATIONS = 'recommendations',
+  ABOUT = 'about',
 }
