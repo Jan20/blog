@@ -22,4 +22,4 @@ import { GuidesComponent } from './guides/guides.component';
   ],
   exports: [],
 })
-export class GuidesModule { }
+export class GuidesModule {}

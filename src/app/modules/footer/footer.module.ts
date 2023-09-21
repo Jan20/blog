@@ -1,19 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ImpressumComponent } from './impressum/impressum.component';
+import { NgModule } from '@angular/core';
 import { FooterComponent } from './footer/footer.component';
-
+import { ImpressumComponent } from './impressum/impressum.component';
 
 @NgModule({
-  declarations: [
-    ImpressumComponent,
-    FooterComponent
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    FooterComponent
-  ]
+  declarations: [ImpressumComponent, FooterComponent],
+  imports: [CommonModule],
+  exports: [FooterComponent],
 })
 export class FooterModule { }

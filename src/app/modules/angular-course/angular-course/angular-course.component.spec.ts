@@ -8,9 +8,8 @@ describe('AngularCourseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AngularCourseComponent ]
-    })
-    .compileComponents();
+      declarations: [AngularCourseComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AngularCourseComponent);
     component = fixture.componentInstance;

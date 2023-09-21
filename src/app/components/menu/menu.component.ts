@@ -1,4 +1,8 @@
-import { BreakpointObserver, Breakpoints, LayoutModule } from '@angular/cdk/layout';
+import {
+  BreakpointObserver,
+  Breakpoints,
+  LayoutModule,
+} from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -33,14 +37,25 @@ export class MenuComponent {
   public readonly MenuState = MenuState;
   public readonly menuItems: MenuItem[] = MENU_ITEMS;
 
-  constructor(private readonly breakpointObserver: BreakpointObserver, private readonly router: Router) {
-    this.breakpointObserver.observe(Breakpoints.Web).pipe(takeUntilDestroyed()).subscribe((result) =>
-      this.activeStates = result.matches ? new Set([MenuState.MAXIMIZED]) : new Set([MenuState.MOBILE])
-    )
-  };
+  constructor(
+    private readonly breakpointObserver: BreakpointObserver,
+    private readonly router: Router
+  ) {
+    this.breakpointObserver
+      .observe(Breakpoints.Web)
+      .pipe(takeUntilDestroyed())
+      .subscribe(
+        result =>
+          (this.activeStates = result.matches
+            ? new Set([MenuState.MAXIMIZED])
+            : new Set([MenuState.MOBILE]))
+      );
+  }
 
   public toggleMenu(): void {
-    this.activeStates.has(MenuState.MAXIMIZED) ? this.activeStates.delete(MenuState.MAXIMIZED) : this.activeStates.add(MenuState.MAXIMIZED);
+    this.activeStates.has(MenuState.MAXIMIZED)
+      ? this.activeStates.delete(MenuState.MAXIMIZED)
+      : this.activeStates.add(MenuState.MAXIMIZED);
   }
 
   public minimize(): void {
@@ -49,8 +64,8 @@ export class MenuComponent {
         ? new Set([MenuState.MOBILE, MenuState.MINIMIZED])
         : new Set([MenuState.MOBILE, MenuState.MAXIMIZED])
       : this.activeStates.has(MenuState.MAXIMIZED)
-        ? new Set([MenuState.MINIMIZED])
-        : new Set([MenuState.MAXIMIZED]);
+      ? new Set([MenuState.MINIMIZED])
+      : new Set([MenuState.MAXIMIZED]);
   }
 
   public navigateToMenuEntry(selectedItem: MenuItem): void {

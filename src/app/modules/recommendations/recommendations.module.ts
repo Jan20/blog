@@ -21,4 +21,4 @@ import { RecommendationsComponent } from './recommendations/recommendations.comp
     PostListComponent,
   ],
 })
-export class RecommendationsModule { }
+export class RecommendationsModule {}

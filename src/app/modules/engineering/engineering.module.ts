@@ -22,4 +22,4 @@ import { engineeringRoutes } from './guides.routing';
   ],
   exports: [],
 })
-export class EngineeringModule { }
+export class EngineeringModule {}

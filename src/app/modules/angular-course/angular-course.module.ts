@@ -22,4 +22,4 @@ import { AngularCourseComponent } from './angular-course/angular-course.componen
   ],
   exports: [],
 })
-export class AngularCourseModule { }
+export class AngularCourseModule {}

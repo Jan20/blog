@@ -4,7 +4,7 @@ export class MenuItem {
     public readonly icon: string,
     public readonly link: string,
     public active: boolean = false
-  ) { }
+  ) {}
 }
 
 export const MENU_ITEMS: MenuItem[] = [

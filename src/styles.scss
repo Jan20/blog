@@ -19,7 +19,7 @@ h1 {
   margin-bottom: 4px;
   padding-top: 30px;
   padding-bottom: 36px;
-  line-height: 100% !important; 
+  line-height: 100% !important;
   text-align: left;
 }
 
@@ -180,10 +180,16 @@ a:hover {
 
 .mat-mdc-card {
   border-radius: 20px !important;
-  transition: box-shadow 1s, margin-top 1s, width 1s, height 1s, transform 0.7s !important;
+  transition:
+    box-shadow 1s,
+    margin-top 1s,
+    width 1s,
+    height 1s,
+    transform 0.7s !important;
   box-shadow: none;
 }
 
 img {
+  width: 100%;
   border-radius: 20px;
 }

@@ -4,15 +4,15 @@ topic=Angular
 summary=Gives a brief introduction to npm and its most commonly-used command-line commands.
 -->
 
-# Beginner's Guide to NPM
+# Beginner's Guide to npm
 
-Let's assume you've just started out using Angular or any other modern web application framework. Changes are high that you stumbled across a package.json that got generated automatically using the <code>ng new</code> command of Angular's CLI. The package.json file's main purpose is to provide a list of a project's dependencies that are managed through the Node Package Manager (npm) which is the largest registry of open source software packages in the world, with over 1.5 million packages and counting. Let's take a closer look at the package.json.
+Let's assume you've just started out using Angular or any other modern web application framework. Changes are high that you stumbled across a package.json that got generated automatically using the `ng new` command of Angular's CLI. The package.json file's main purpose is to provide a list of a project's dependencies that are managed through the Node Package Manager (npm) which is the largest registry of open source software packages in the world, with over 1.5 million packages and counting. Let's take a closer look at the package.json.
 
-## Package.json File
+# Package.json File
 
-A typical package.json in a newly initialized Angular project may look similar to the one depicted below.
+A typical package.json in a newly initialized Angular project looks similar to the one depicted below.
 
-<img class='almost-full-width' src='assets/posts/angular-course/111_introduction_to_npm/package_json.png'>
+![package_json.png](assets/posts/angular-course/111_introduction_to_npm/package_json.png)
 
 The package.json file serves three purpose:
 

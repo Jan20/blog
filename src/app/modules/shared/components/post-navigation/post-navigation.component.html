@@ -1,6 +1,9 @@
 <div class="row mb-5 mp-2" *ngIf="adjacentPosts | async as adjacentPosts">
   <div class="col-6">
-    <mat-card *ngIf="adjacentPosts.get('previousPost')" matRipple class="col-12"
+    <mat-card
+      *ngIf="adjacentPosts.get('previousPost')"
+      matRipple
+      class="col-12"
       (click)="navigateToPost(adjacentPosts.get('previousPost')!)">
       <mat-card-content class="p-4">
         <p class="mt-2 d-flex align-middle">
@@ -11,7 +14,10 @@
     </mat-card>
   </div>
   <div class="col-6">
-    <mat-card *ngIf="adjacentPosts.get('upcomingPost')" matRipple class="col-12"
+    <mat-card
+      *ngIf="adjacentPosts.get('upcomingPost')"
+      matRipple
+      class="col-12"
       (click)="navigateToPost(adjacentPosts.get('upcomingPost')!)">
       <mat-card-content class="p-4">
         <p class="mt-2 d-flex align-middle">

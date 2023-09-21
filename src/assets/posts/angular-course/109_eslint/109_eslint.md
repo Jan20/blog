@@ -35,7 +35,7 @@ Some useful rules are provided as plugins that extend the ESLint's default rules
 npm install eslint-plugin-rxjs --save-dev
 ```
 
-Afterwards, the <code>.eslintrc.json</code> file's <code>rules</code> section can be extended by additional rules like
+Afterwards, the <code>.eslintrc</code> file's <code>rules</code> section can be extended by additional rules like
 
 ```TS
 "rules": {

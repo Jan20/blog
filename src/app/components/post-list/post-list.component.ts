@@ -34,7 +34,7 @@ export class PostListComponent {
     private readonly activatedRoute: ActivatedRoute,
     private readonly blogService: BlogService,
     private readonly router: Router
-  ) { }
+  ) {}
 
   public showPost(post: Post): void {
     const filePath = post.link.replace('/assets/posts', '');

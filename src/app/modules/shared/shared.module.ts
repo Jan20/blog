@@ -31,4 +31,4 @@ import { BlogService } from './services/blog.service';
   providers: [BlogService],
   exports: [PostNavigationComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

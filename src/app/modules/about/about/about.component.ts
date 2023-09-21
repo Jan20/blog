@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { PageTitle, PageTitleBackground } from '../../../components/models/page-title';
+import {
+  PageTitle,
+  PageTitleBackground,
+} from '../../../components/models/page-title';
 
 @Component({
   selector: 'app-about',
@@ -10,7 +13,7 @@ export class AboutComponent {
   public readonly pageTitle = new PageTitle(
     'About Me',
     "If you're interested in learning more about me, please feel free to read through this page.",
-    PageTitleBackground.ABOUT,
+    PageTitleBackground.ABOUT
   );
 
   constructor() { }

@@ -21,10 +21,14 @@ describe('BlogService', () => {
   });
 
   it('should retrieve all posts belonging to the productivity category', () => {
-    service.getPosts('productivity', '').subscribe((result) => expect(result).toEqual(PRODUCTIVITY));
+    service
+      .getPosts('productivity', '')
+      .subscribe(result => expect(result).toEqual(PRODUCTIVITY));
   });
 
   it('should only retrieve posts about RxJS', () => {
-    service.getPosts('guides', 'RxJS').subscribe((result) => expect(result).toEqual(RXJS_RELATED_POSTS));
+    service
+      .getPosts('guides', 'RxJS')
+      .subscribe(result => expect(result).toEqual(RXJS_RELATED_POSTS));
   });
 });

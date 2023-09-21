@@ -8,7 +8,7 @@ import { PostCollection } from '../models/postCollection';
   providedIn: 'root',
 })
 export class BlogService {
-  constructor(private readonly postCollection: PostCollection) { }
+  constructor(private readonly postCollection: PostCollection) {}
 
   public getPosts(category: string, series: string): Observable<Post[]> {
     if (series === 'all') {

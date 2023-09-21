@@ -7,12 +7,7 @@ import { PageTitle } from '../models/page-title';
 
 @Component({
   standalone: true,
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatButtonModule,
-    MatRippleModule,
-  ],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatRippleModule],
   selector: 'app-page-title',
   templateUrl: './page-title.component.html',
   styleUrls: ['./page-title.component.scss'],

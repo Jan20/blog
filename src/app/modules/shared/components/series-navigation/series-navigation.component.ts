@@ -16,7 +16,7 @@ export class SeriesNavigationComponent {
     private readonly router: Router,
     private readonly blogService: BlogService,
     private readonly activatedRoute: ActivatedRoute
-  ) { }
+  ) {}
 
   public navigateToPost(post: Post): void {
     const filePath = post.link.replace('/assets/posts', '');

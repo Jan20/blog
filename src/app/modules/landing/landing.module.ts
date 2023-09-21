@@ -28,4 +28,4 @@ import { LinksComponent } from './links/links.component';
     PostListComponent,
   ],
 })
-export class LandingModule { }
+export class LandingModule {}
