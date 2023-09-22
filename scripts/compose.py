@@ -217,7 +217,7 @@ def write_posts_to_file(posts: [Post]) -> None:
 def compose_thumbnail_path(file_path: str) -> str:
     """ Computes the path to a post's thumbnail."""
     file_path = '/'.join(file_path.split("/")[2:-1])
-    return f'{file_path}/thumbnail.png'
+    return f'{file_path}/thumbnail.svg'
 
 
 def compose_link(file_path: str) -> str:
