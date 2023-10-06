@@ -1,26 +1,26 @@
-# Stage 1: Build the application
-FROM node:18 AS build
+###############
+# Build Stage #
+###############
+FROM node:20 AS build_stage
 
 WORKDIR /app
 
 # Copy package.json and package-lock.json for dependency installation
 COPY package*.json ./
-RUN npm ci --legacy-peer-deps
 
 # Copy the application source code
 COPY . .
 
 # Build the application
-RUN npm run build:ssr
+RUN npm ci && npm run build:ssr
 
-# Stage 2: Create the production image
-FROM node:18-alpine
-
-WORKDIR /app
+###############
+# Final Image #
+###############
+FROM node:20-alpine3.17
 
 # Copy only the necessary files from the build stage
-COPY --from=build /app/node_modules ./node_modules
-COPY --from=build /app/dist ./dist
+COPY --from=build_stage /app/dist ./dist
 
 # Expose the port that your application will listen on
 EXPOSE 80

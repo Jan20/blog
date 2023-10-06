@@ -1,0 +1,23 @@
+# Exclude node_modules directory as it can be large and is not needed in the image
+node_modules
+
+# Exclude development and build artifacts
+.angular
+dist
+.tmp
+coverage
+e2e
+cloudbuild.yaml
+
+# Exclude version control files and directories
+.git
+.gitignore
+
+# Exclude editor and IDE-specific files
+.idea
+.vscode
+
+# Exclude Angular CLI configuration
+.angular-cli.json
+.angular-cli.json.bak
+.angular-cli.json~*
