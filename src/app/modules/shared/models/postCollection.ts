@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { AngularCourse } from 'src/assets/posts/angular-course/AngularCourse';
-import { EfficientSoftwareEngineering } from 'src/assets/posts/efficient-software-engineering/EfficientSoftwareEngineering';
-import { Guides } from 'src/assets/posts/guides/guides';
-import { Recommendations } from 'src/assets/posts/recommendations/Recommendations';
+import { guides } from 'src/assets/posts/guides/guides';
+import { recommendations } from 'src/assets/posts/recommendations/Recommendations';
 import { Post } from './post';
+import { engineering } from 'src/assets/posts/engineering/engineering';
+import { course } from 'src/assets/posts/course/course';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostCollection {
   private readonly categories: { [category: string]: Post[] } = {
-    'angular-course': AngularCourse,
-    guides: Guides,
-    'efficient-software-engineering': EfficientSoftwareEngineering,
-    recommendations: Recommendations,
+    'course': course,
+    'guides': guides,
+    'engineering': engineering,
+    'recommendations': recommendations,
   };
 
   public selectPosts(category: string): Observable<Post[]> {

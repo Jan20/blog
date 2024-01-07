@@ -12,6 +12,11 @@ usage() {
   echo "  help              : Display this help message"
   echo "  build_docker_image: Create a new Docker image"
   echo "  run_docker_image  : Create a container based on the Docker image"
+  echo "  compose           : Composes the blog"
+}
+
+compose() {
+    python3 compose.py
 }
 
 build_docker_image() {
@@ -48,7 +53,7 @@ fi
 
 # Call the corresponding function based on the command
 case "${COMMAND}" in
-    deploy | build_docker_image | run_docker_image)
+    deploy | build_docker_image | run_docker_image | compose)
         $COMMAND
         ;;
     *)

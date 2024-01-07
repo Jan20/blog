@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, switchMap, tap } from 'rxjs';
 import { Post } from '../../models/post';
 import { BlogService } from '../../services/blog.service';
 
@@ -25,7 +25,8 @@ export class PostComponent {
           this.router.url.split('/')[1],
           this.router.url.split('/')[3]
         )
-      )
+      ),
+      tap(console.log)
     );
   }
 }

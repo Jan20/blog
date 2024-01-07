@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
@@ -25,7 +25,7 @@ import { BlogService } from '../../modules/shared/services/blog.service';
   styleUrls: ['./post-list.component.scss'],
 })
 export class PostListComponent {
-  public readonly posts: Observable<Post[]> = this.fetchPosts();
+  public readonly posts: Observable<Post[]>;
 
   @Input() public category!: string;
   @Input() public series: string = 'misc';
@@ -34,17 +34,13 @@ export class PostListComponent {
     private readonly activatedRoute: ActivatedRoute,
     private readonly blogService: BlogService,
     private readonly router: Router
-  ) {}
-
-  public showPost(post: Post): void {
-    const filePath = post.link.replace('/assets/posts', '');
-    const id = filePath.split('/')[2].substring(4);
-    this.router.navigate([`${this.category}/${post.topic}/${id}`]);
-  }
-
-  private fetchPosts(): Observable<Post[]> {
-    return this.activatedRoute.paramMap.pipe(
+  ) {
+    this.posts = this.activatedRoute.paramMap.pipe(
       switchMap(() => this.blogService.getPosts(this.category, this.series))
     );
+  }
+
+  public showPost(post: Post): void {
+    this.router.navigate([`${post.filePath}`]);
   }
 }

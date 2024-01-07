@@ -33,10 +33,9 @@ import { MENU_ITEMS, MenuItem, MenuState } from '../models/menu-item';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
-  public activeStates: Set<MenuState> = new Set();
+  public activeStates = new Set<MenuState>();
   public readonly MenuState = MenuState;
   public readonly menuItems: MenuItem[] = MENU_ITEMS;
-
   constructor(
     private readonly breakpointObserver: BreakpointObserver,
     private readonly router: Router
@@ -45,8 +44,8 @@ export class MenuComponent {
       .observe(Breakpoints.Web)
       .pipe(takeUntilDestroyed())
       .subscribe(
-        result =>
-          (this.activeStates = result.matches
+        breakpoint =>
+          (this.activeStates = breakpoint.matches
             ? new Set([MenuState.MAXIMIZED])
             : new Set([MenuState.MOBILE]))
       );

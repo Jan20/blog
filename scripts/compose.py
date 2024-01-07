@@ -5,36 +5,26 @@ import os
 from os import listdir
 from os.path import isdir, join
 from pathlib import Path
+from dataclasses import dataclass
 
 root_dir: str = f'{Path(__file__).parent.parent}'
 
 
+@dataclass
 class Post:
     """ Defines a post, consisting of a category, topic, headline,
-        summary, link and thumbnail
+        summary, link, thumbnail, date, series, series_section, and route.
     """
-
-    def __init__(
-        self,
-        category: str,
-        topic: str,
-        headline: str,
-        summary: str,
-        link: str,
-        thumbnail: str,
-        date: str,
-        series: str,
-        series_section: int
-    ):
-        self.category: str = category
-        self.topic: str = topic
-        self.headline: str = headline
-        self.summary: str = summary
-        self.link: str = link
-        self.thumbnail: str = thumbnail
-        self.date: str = date
-        self.series: str = series
-        self.series_section: int = series_section
+    category: str
+    topic: str
+    headline: str
+    summary: str
+    file_path: str
+    thumbnail_path: str
+    date: str
+    route: str
+    series: str
+    series_section: int
 
 
 def compose_index_files() -> None:
@@ -42,9 +32,12 @@ def compose_index_files() -> None:
         category, creates a list of blog posts based on the files found in a
         category's directory and writes the parsed objects to a json file.
     """
-    categories: [bytes] = select_categories()
-    for category in categories:
-        post_dirs: [bytes] = select_post_dirs(category)
+    base_dir = f"{Path(__file__).parent.parent}/src/assets/posts"
+
+    category_dirs: [str] = list(filter(isdir, (join(base_dir, directory) for directory in listdir(base_dir))))
+
+    for category_dir in category_dirs:
+        post_dirs: [str] = list(filter(isdir, (join(category_dir, directory) for directory in listdir(category_dir))))
         posts: [Post] = parse_posts_in_category(post_dirs)
         if len(posts) > 0:
             write_posts_to_file(posts)
@@ -57,37 +50,9 @@ def parse_posts_in_category(post_dirs: [str]) -> [Post]:
     """
     posts: [Post] = []
     for post_dir in post_dirs:
-        post_file: str = select_post(post_dir)
+        post_file: str = [join(post_dir, file) for file in listdir(post_dir) if file.endswith('.md')][0]
         posts.append(extract_post_from_file(post_file))
     return posts
-
-
-def select_categories() -> [bytes]:
-    """ Selects directories, containing categories of posts.
-    """
-    full_dir_name: str = f'{root_dir}/src/assets/posts'
-    categories: [bytes] = []
-    for directory in listdir(full_dir_name):
-        categories.append(os.path.join(full_dir_name, directory))
-    return list(filter(isdir, categories))
-
-
-def select_post_dirs(category: str) -> [bytes]:
-    """ Selects all posts contained in a category.
-    """
-    posts: [bytes] = []
-    for directory in listdir(category):
-        posts.append(join(category, directory))
-    return list(filter(isdir, posts))
-
-
-def select_post(post_dir: str) -> str:
-    """ Selects the markdown file containing the actual post
-    """
-    for file in listdir(post_dir):
-        # noinspection PyTypeChecker
-        if file.endswith('.md'):
-            return join(post_dir, file)
 
 
 def extract_post_from_file(file_path: str) -> Post:
@@ -95,32 +60,36 @@ def extract_post_from_file(file_path: str) -> Post:
         may look similar as the one depicted below:
         ./src/assets/posts/guides/001_angular_apps_on_github_pages/angular.md
     """
-    topic = parse_topic(file_path)
-    headline = parse_headline(file_path)
-    summary = parse_summary(file_path)
-    date = parse_date(file_path)
-    series = parse_series(file_path)
-    series_section = parse_series_section(file_path)
-    category = file_path.split('/')[9]
+
+    # Extract the file name with extension
+    file_name = os.path.basename(file_path)
+
+    # If you want to extract just the file name without the extension
+    file_name_without_extension, file_extension = os.path.splitext(file_name)
+
+    print("Full file name:", file_name)
+    print("File name without extension:", file_name_without_extension)
+    print("File extension:", file_extension)
+
     relative_path = '/'.join(file_path.split('/')[5:])
-    link = compose_link(relative_path)
-    thumbnail_path = compose_thumbnail_path(relative_path)
 
     return Post(
-        category,
-        topic,
-        headline,
-        summary,
-        link,
-        thumbnail_path,
-        date,
-        series,
-        series_section
+        category=file_path.split('/')[9],
+        topic=parse_topic(file_path),
+        headline=parse_headline(file_path),
+        summary=parse_summary(file_path),
+        file_path=compose_file_path(relative_path),
+        thumbnail_path=compose_thumbnail_path(relative_path),
+        date=parse_date(file_path),
+        series=parse_series(file_path),
+        series_section=parse_series_section(file_path),
+        route=file_path
     )
 
 
 def parse_headline(file_path: str) -> str:
-    """Opens a file containing a blog posts, iterates over the file and returns
+    """
+    Opens a file containing a blog posts, iterates over the file and returns
     the post's headline if existing.
     """
     with open(file_path) as reader:
@@ -160,7 +129,7 @@ def parse_series(file_path: str) -> str:
         for line in reader:
             series = line.split('series=')
             if len(series) > 1:
-                return replace_underscores(series[1])
+                return series[1].replace('_', ' ').replace('\n', '')
 
 
 def parse_series_section(file_path: str) -> int:
@@ -190,24 +159,20 @@ def clean_str(line: str) -> str:
     return line.replace('\n', ' ').replace('\r', ' ').replace("'", '')[:-1]
 
 
-def replace_underscores(line: str) -> str:
-    """ Replaces underscores with spaces. """
-    return line.replace('_', ' ').replace('\n', '')
-
-
 def write_posts_to_file(posts: [Post]) -> None:
     """ Writes a parsed Post object to a typescript file."""
-    first_line = 'import { Post } from "src/app/modules/shared/models/post"; \n'
-    path_elements: [str] = posts[0].link.split("/")[:-2]
+    path_elements: [str] = posts[0].file_path.split("/")[:-2]
+
+    category: str = path_elements[-1]
+
     relative_path = "/".join(path_elements)
-    file_name_elments = posts[0].category.split("-")
-    file_name_elments = [string.title() for string in file_name_elments]
-    file_name = "".join(file_name_elments)
-    index_file = f'{root_dir}/src{relative_path}/{file_name}.ts'
+
+    index_file = f'{root_dir}/src/assets/posts/{relative_path}/{category}.ts'
+
     with open(index_file, 'w') as writer:
-        writer.write(first_line)
+        writer.write('import { Post } from "src/app/modules/shared/models/post"; \n')
         writer.write('\n')
-        writer.write(f'export const {file_name}: Post[] = [\n')
+        writer.write(f'export const {category}: Post[] = [\n')
         for post in posts:
             line = parse_post_to_line(post)
             writer.write(line)
@@ -217,37 +182,37 @@ def write_posts_to_file(posts: [Post]) -> None:
 def compose_thumbnail_path(file_path: str) -> str:
     """ Computes the path to a post's thumbnail."""
     file_path = '/'.join(file_path.split("/")[2:-1])
-    return f'{file_path}/thumbnail.svg'
+    return f'assets/{file_path}/thumbnail.svg'
 
 
-def compose_link(file_path: str) -> str:
+def compose_file_path(file_path: str) -> str:
     """ Computes the path to a post's thumbnail."""
-    print(file_path)
     file_name = file_path.split("/")[-1]
-    link = '/'.join(file_path.split("/")[2:-1])
+    print(file_path.split("/"))
+    link = '/'.join(file_path.split("/")[3:-1])
+    print('_:_______')
+    print(link)
     return f'/{link}/{file_name}'
 
 
 def parse_post_to_line(post: Post) -> str:
-    """ Converts a Post object to a line, intended to be written to an index
-        file.
-    """
-    line: str = ''
-    line += "    new Post("
-    line += f"'{post.category}', "
-    line += f"'{post.topic}', "
-    line += f"'{post.headline}', "
-    line += f"'{post.summary}', "
-    line += f"'{post.link}', "
-    line += f"'{post.thumbnail}', "
-    line += f"'{post.date}'"
-    if post.series:
-        line += f", '{post.series}'"
-    if post.series_section:
-        line += f", {post.series_section}"
-    line += "), \n"
-    print(post.headline)
-    return line
+    """Converts a Post object to a line for an index file."""
+    series_part = f", '{post.series}'" if post.series else ""
+    section_part = f", {post.series_section}" if post.series_section else ""
+
+    return (
+        f"    new Post('{post.category}', "
+        f"'{post.topic}', "
+        f"'{post.headline}', "
+        f"'{post.summary}', "
+        f"'{post.file_path}', "
+        f"'{post.thumbnail_path}', "
+        f"'{post.date}',"
+        f"'{post.route}'"
+        f"{series_part}"
+        f"{section_part}"
+        "), \n"
+    )
 
 
 if __name__ == '__main__':

@@ -19,7 +19,7 @@ export class SeriesNavigationComponent {
   ) {}
 
   public navigateToPost(post: Post): void {
-    const filePath = post.link.replace('/assets/posts', '');
+    const filePath = post.filePath.replace('/assets/posts', '');
     const id = filePath.split('/')[2].substring(4);
     this.router.navigate([`${post.category}/${post.topic}/${id}`]);
   }

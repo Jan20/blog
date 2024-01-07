@@ -12,16 +12,16 @@ import {
 })
 export class LandingTitleComponent {
   public readonly pageTitle = new PageTitle(
-    "Jan's Engineering Blog",
+    "Efficient Software Engineering",
     "Writing software requires passion, skill, and a considerable amount of time. However, time is our most limited resource, so let's explore techniques helping us to craft great software faster.",
     PageTitleBackground.LANDING
   );
 
   constructor(private readonly router: Router) {}
 
-  public scrollDown(): void {
+  public startReading(): void {
     this.router.navigate([
-      `efficient-software-engineering/Efficiency/task_management`,
+      `efficient-engineering/Efficiency/task_management`,
     ]);
   }
 }

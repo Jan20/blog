@@ -54,7 +54,7 @@ export class BlogService {
       .pipe(
         map(
           (posts: Post[]) =>
-            posts.filter((post: Post) => post.link.includes(id))[0]
+            posts.filter((post: Post) => post.filePath.includes(id))[0]
         )
       );
   }

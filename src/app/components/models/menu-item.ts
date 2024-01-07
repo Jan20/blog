@@ -14,7 +14,7 @@ export const MENU_ITEMS: MenuItem[] = [
   new MenuItem(
     'Efficient Engineering',
     'settings_suggest',
-    'efficient-software-engineering',
+    'efficient-engineering',
     false
   ),
   new MenuItem('Recommendations', 'assistant', 'recommendations', false),

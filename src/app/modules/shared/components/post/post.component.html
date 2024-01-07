@@ -11,7 +11,8 @@
       <h4 class="mt-1 mb-0">
         {{ post.date | date }}
       </h4>
-      <markdown [src]="post.link"></markdown>
+      <markdown [src]="post.filePath"></markdown>
+      {{ post.filePath }}
     </mat-card-content>
   </mat-card>
   <app-series-navigation *ngIf="post.seriesSection"></app-series-navigation>
