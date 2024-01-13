@@ -8,4 +8,4 @@ import { ImpressumComponent } from './impressum/impressum.component';
   imports: [CommonModule],
   exports: [FooterComponent],
 })
-export class FooterModule { }
+export class FooterModule {}

@@ -2,117 +2,170 @@ import { Post } from '../modules/shared/models/post';
 
 export const GUIDES: Post[] = [
   new Post(
-    'guides',
-    'Git',
-    'Git History',
-    'Lets assume you are building your own application on the codebase of a repository and are interestin...',
-    './src/assets/posts/guides/008_git_history/008_git_history.md',
-    'assets/posts/guides/008_git_history/thumbnail.png',
-    '2022-06-20'
-  ),
-  new Post(
-    'guides',
+    '010_postgres',
     'Docker',
-    'Multi Container Applications',
-    'As we have seen in the previous blog post, it is rather simple to run a Flask application inside a d...',
-    './src/assets/posts/guides/006_multi_container_applications/006_multi_container_applications.md',
-    'assets/posts/guides/006_multi_container_applications/thumbnail.png',
-    '2022-06-27'
+    'Containerizing PostgreSQL',
+    'Gives step-by-step instructions for containerizing Postgres database.',
+    '/guides/010_postgres/010_postgres.md',
+    'assets/posts/guides/010_postgres/thumbnail.svg',
+    '2023-03-25',
+    '/Users/jan/Developer/blog/src/assets/posts/guides/010_postgres/010_postgres.md'
   ),
   new Post(
-    'guides',
-    'RxJS',
-    'DebounceTime',
-    'The debounce ope....',
-    './src/assets/posts/guides/009_searching_with_rxjs/009_searching_with_rxjs.md',
-    'assets/posts/guides/009_searching_with_rxjs/thumbnail.png',
-    '2022-07-04'
-  ),
-  new Post(
-    'guides',
+    '005_containerize_flask_applications',
     'Docker',
     'Containerize Flask Apps',
-    'As we have seen in the previous post that Docker provides a rather sophiticated toolset for creating...',
-    './src/assets/posts/guides/005_containerize_flask_applications/005_containerize_flask_applications.md',
-    'assets/posts/guides/005_containerize_flask_applications/thumbnail.png',
-    '2022-06-27'
+    'This post covers the creation of a container image for a minimal Flask application.',
+    '/guides/005_containerize_flask_applications/005_containerize_flask_applications.md',
+    'assets/posts/guides/005_containerize_flask_applications/thumbnail.svg',
+    '2022-06-27',
+    '/Users/jan/Developer/blog/src/assets/posts/guides/005_containerize_flask_applications/005_containerize_flask_applications.md',
+    'Docker',
+    2
   ),
   new Post(
-    'guides',
+    '006_containerize_Angular_applications',
+    'Docker',
+    'Containerize Angular Apps',
+    'This post covers the creation of a container image for a minimal Angular application.',
+    '/guides/006_containerize_Angular_applications/006_containerize_Angular_applications.md',
+    'assets/posts/guides/006_containerize_Angular_applications/thumbnail.svg',
+    '2022-06-27',
+    '/Users/jan/Developer/blog/src/assets/posts/guides/006_containerize_Angular_applications/006_containerize_Angular_applications.md',
+    'Docker',
+    3
+  ),
+  new Post(
+    '004_introduction_to_docker',
+    'Docker',
+    'Introduction to Docker',
+    'Provides a high-level introduction to Docker an its terminology.',
+    '/guides/004_introduction_to_docker/004_introduction_to_docker.md',
+    'assets/posts/guides/004_introduction_to_docker/thumbnail.svg',
+    '2022-06-27',
+    '/Users/jan/Developer/blog/src/assets/posts/guides/004_introduction_to_docker/004_introduction_to_docker.md',
+    'Docker',
+    1
+  ),
+  new Post(
+    '008_virtual_envs_and_dependencies',
     'Python',
-    'Virtual Environments',
-    'It is considered best practice to run Python applications inside isolated environments different fro...',
-    './src/assets/posts/guides/007_python_virtual_environments/007_python_virtual_environments.md',
-    'assets/posts/guides/007_python_virtual_environments/thumbnail.png',
-    '2022-06-27'
+    'Virtual Envs & Dependencies',
+    'Gives an introduciton to virtual environments and dependency management in Python.',
+    '/guides/008_virtual_envs_and_dependencies/008_virtual_envs_and_dependencies.md',
+    'assets/posts/guides/008_virtual_envs_and_dependencies/thumbnail.svg',
+    '2023-02-06',
+    '/Users/jan/Developer/blog/src/assets/posts/guides/008_virtual_envs_and_dependencies/008_virtual_envs_and_dependencies.md'
   ),
   new Post(
-    'guides',
+    '007_multi_container_applications',
+    'Docker',
+    'Multi Container Applications',
+    'Describes how to build an application based on a minimal Flask backend and Angular frontend',
+    '/guides/007_multi_container_applications/007_multi_container_applications.md',
+    'assets/posts/guides/007_multi_container_applications/thumbnail.svg',
+    '2022-06-27',
+    '/Users/jan/Developer/blog/src/assets/posts/guides/007_multi_container_applications/007_multi_container_applications.md',
+    'Docker',
+    4
+  ),
+];
+
+export const COURSE: Post[] = [
+  new Post(
+    '002-introduction-to-rxjs',
     'RxJS',
     'RxJS in Angular',
-    'RxJS (Reactive Extensions for JavaScript) is a library that enables reactive programming in Angular,...',
-    './src/assets/posts/guides/002_introduction_to_rxjs/introduction_to_rxjs.md',
-    'assets/posts/guides/002_introduction_to_rxjs/thumbnail.png',
-    '2022-07-04'
+    'This post covers a short example of using RxJS in an Angular controller.',
+    '/course/002-introduction-to-rxjs/002-introduction-to-rxjs.md',
+    'assets/posts/course/002-introduction-to-rxjs/thumbnail.svg',
+    '2022-07-04',
+    '/Users/jan/Developer/blog/src/assets/posts/course/002-introduction-to-rxjs/002-introduction-to-rxjs.md'
   ),
   new Post(
-    'guides',
+    '111-introduction-to-npm',
     'Angular',
-    'Angular on GitHub Pages',
-    'GitHub Pages is a free hosting service for static websides offered by Github....',
-    './src/assets/posts/guides/001_angular_apps_on_github_pages/angular_apps_on_github_pages.md',
-    'assets/posts/guides/001_angular_apps_on_github_pages/thumbnail.png',
-    '2022-07-08'
+    'Beginners Guide to npm',
+    'Gives a brief introduction to npm and its most commonly-used command-line commands.',
+    '/course/111-introduction-to-npm/111-introduction-to-npm.md',
+    'assets/posts/course/111-introduction-to-npm/thumbnail.svg',
+    '2023-04-13',
+    '/Users/jan/Developer/blog/src/assets/posts/course/111-introduction-to-npm/111-introduction-to-npm.md'
   ),
   new Post(
-    'guides',
+    '109-eslint',
+    'Code Quality',
+    'Introduction to ESLint',
+    'Provides a brief introduction into ESLint.',
+    '/course/109-eslint/109-eslint.md',
+    'assets/posts/course/109-eslint/thumbnail.svg',
+    '2023-03-05',
+    '/Users/jan/Developer/blog/src/assets/posts/course/109-eslint/109-eslint.md'
+  ),
+  new Post(
+    '003-rxjs-pipe-operators',
     'RxJS',
     'RxJS Operators',
-    'The core strength of RxJS lies in applying operators on Observables to filter and transform the retu...',
-    './src/assets/posts/guides/003_rxjs_pipe_operators/003_rxjs_pipe_operators.md',
-    'assets/posts/guides/003_rxjs_pipe_operators/thumbnail.png',
-    '2022-07-04'
+    'RxJS offers a range of operators of which map, filter and tap get presented.',
+    '/course/003-rxjs-pipe-operators/003-rxjs-pipe-operators.md',
+    'assets/posts/course/003-rxjs-pipe-operators/thumbnail.svg',
+    '2022-07-04',
+    '/Users/jan/Developer/blog/src/assets/posts/course/003-rxjs-pipe-operators/003-rxjs-pipe-operators.md'
+  ),
+  new Post(
+    '101-angular-apps-on-github-pages',
+    'Angular',
+    'Angular on GitHub Pages',
+    'Gives an introduction to hosting an Angular project on GitHub Pages',
+    '/course/101-angular-apps-on-github-pages/101-angular-apps-on-github-pages.md',
+    'assets/posts/course/101-angular-apps-on-github-pages/thumbnail.svg',
+    '2022-07-08',
+    '/Users/jan/Developer/blog/src/assets/posts/course/101-angular-apps-on-github-pages/101-angular-apps-on-github-pages.md'
   ),
 ];
 
 export const RXJS_RELATED_POSTS: Post[] = [
   new Post(
-    'guides',
-    'RxJS',
-    'DebounceTime',
-    'The debounce ope....',
-    './src/assets/posts/guides/009_searching_with_rxjs/009_searching_with_rxjs.md',
-    'assets/posts/guides/009_searching_with_rxjs/thumbnail.png',
-    '2022-07-04'
-  ),
-  new Post(
-    'guides',
+    '002-introduction-to-rxjs',
     'RxJS',
     'RxJS in Angular',
-    'RxJS (Reactive Extensions for JavaScript) is a library that enables reactive programming in Angular,...',
-    './src/assets/posts/guides/002_introduction_to_rxjs/introduction_to_rxjs.md',
-    'assets/posts/guides/002_introduction_to_rxjs/thumbnail.png',
-    '2022-07-04'
+    'This post covers a short example of using RxJS in an Angular controller.',
+    '/course/002-introduction-to-rxjs/002-introduction-to-rxjs.md',
+    'assets/posts/course/002-introduction-to-rxjs/thumbnail.svg',
+    '2022-07-04',
+    '/Users/jan/Developer/blog/src/assets/posts/course/002-introduction-to-rxjs/002-introduction-to-rxjs.md'
   ),
   new Post(
-    'guides',
+    '003-rxjs-pipe-operators',
     'RxJS',
     'RxJS Operators',
-    'The core strength of RxJS lies in applying operators on Observables to filter and transform the retu...',
-    './src/assets/posts/guides/003_rxjs_pipe_operators/003_rxjs_pipe_operators.md',
-    'assets/posts/guides/003_rxjs_pipe_operators/thumbnail.png',
-    '2022-07-04'
+    'RxJS offers a range of operators of which map, filter and tap get presented.',
+    '/course/003-rxjs-pipe-operators/003-rxjs-pipe-operators.md',
+    'assets/posts/course/003-rxjs-pipe-operators/thumbnail.svg',
+    '2022-07-04',
+    '/Users/jan/Developer/blog/src/assets/posts/course/003-rxjs-pipe-operators/003-rxjs-pipe-operators.md'
   ),
 ];
 
-export const PRODUCTIVITY: Post[] = [
+export const ENGINEERING: Post[] = [
   new Post(
-    'productivity',
-    'Routines',
-    'On Routines',
-    'Regardless of what we pursue, having a set of highly effective routines in place is crucial for comi...',
-    './src/assets/posts/productivity/202_daily_routines/202_daily_routines.md',
-    'assets/posts/productivity/202_daily_routines/thumbnail.png',
-    '2022-07-21'
+    '205-task-management',
+    'Efficiency',
+    'Efficient Task Management',
+    'Describes an effective task management system for getting stuff done.',
+    '/engineering/205-task-management/205-task-management.md',
+    'assets/posts/engineering/205-task-management/thumbnail.svg',
+    '2023-02-04',
+    '/Users/jan/Developer/blog/src/assets/posts/engineering/205-task-management/205-task-management.md'
+  ),
+  new Post(
+    '204-staying-focus',
+    'Focus',
+    'Staying Focused',
+    'This post will share five simple strategies to become less distracted and stay focused.',
+    '/engineering/204-staying-focus/204-staying-focused.md',
+    'assets/posts/engineering/204-staying-focus/thumbnail.svg',
+    '2022-10-11',
+    '/Users/jan/Developer/blog/src/assets/posts/engineering/204-staying-focus/204-staying-focused.md'
   ),
 ];

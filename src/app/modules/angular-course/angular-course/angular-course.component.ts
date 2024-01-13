@@ -17,10 +17,11 @@ export class AngularCourseComponent {
     "Angular is an exceptional web application framework, particularly well-suited for large-scale applications. Below, I've curated a series of posts that delve into specific areas deserving a closer look.",
     PageTitleBackground.ANGULAR_COURSE
   );
+  public seriesTitles: Observable<Set<string>>;
 
-  public seriesTitles: Observable<Set<string>> = this.fetchSeries();
-
-  constructor(private readonly blogService: BlogService) {}
+  constructor(private readonly blogService: BlogService) {
+    this.seriesTitles = this.fetchSeries();
+  }
 
   public fetchSeries(): Observable<Set<string>> {
     return this.blogService.getSeriesTitles('angular-course');

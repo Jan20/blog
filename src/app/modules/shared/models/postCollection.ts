@@ -11,10 +11,10 @@ import { course } from 'src/assets/posts/course/course';
 })
 export class PostCollection {
   private readonly categories: { [category: string]: Post[] } = {
-    'course': course,
-    'guides': guides,
-    'engineering': engineering,
-    'recommendations': recommendations,
+    course: course,
+    guides: guides,
+    engineering: engineering,
+    recommendations: recommendations,
   };
 
   public selectPosts(category: string): Observable<Post[]> {

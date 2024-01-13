@@ -16,5 +16,5 @@ export class AboutComponent {
     PageTitleBackground.ABOUT
   );
 
-  constructor() { }
+  constructor() {}
 }

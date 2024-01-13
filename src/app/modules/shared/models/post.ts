@@ -3,18 +3,18 @@
  */
 export class Post {
   /**
-   * Creates a new Post object.
+   * Constructor for creating a new instance of the Post class.
    *
-   * @param category - The category of the blog post.
-   * @param topic - The topic of the blog post.
-   * @param headline - The headline or title of the blog post.
-   * @param summary - A summary or brief description of the post.
-   * @param filePath - The link to the full blog post.
-   * @param thumbnail - The path to the post's thumbnail image.
-   * @param date - The date of the blog post.
-   * @param series - The series to which the post belongs.
-   * @param seriesSection - The section within a series, if applicable.
-   * @param route - The route of a blog post such as /guides/docker-introduction
+   * @param {string} category - The category to which the post belongs.
+   * @param {string} topic - The topic or title of the post.
+   * @param {string} headline - The headline or main title of the post.
+   * @param {string} summary - A brief summary or description of the post content.
+   * @param {string} filePath - The file path of the post content.
+   * @param {string} thumbnail - The URL or file path of the post thumbnail or image.
+   * @param {string} date - The date when the post was created or published.
+   * @param {string} route - The route or URL associated with the post.
+   * @param {string} series - The series to which the post belongs, if applicable.
+   * @param {number} seriesSection - The section number within the series, if applicable.
    */
   constructor(
     public category: string = '',
@@ -26,6 +26,6 @@ export class Post {
     public date: string = '',
     public route: string = '',
     public series: string = '',
-    public seriesSection: number = 0,
+    public seriesSection: number = 0
   ) {}
 }

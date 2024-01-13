@@ -1,12 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
     declarations: [AppComponent],
+    imports: [RouterTestingModule, CommonModule],
     providers: [],
+    teardown: { destroyAfterEach: false },
   }).compileComponents();
 };
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Post } from '../models/post';
 import { PostCollection } from '../models/postCollection';
 
@@ -10,14 +10,14 @@ import { PostCollection } from '../models/postCollection';
 export class BlogService {
   constructor(private readonly postCollection: PostCollection) {}
 
-  public getPosts(category: string, series: string): Observable<Post[]> {
-    if (series === 'all') {
+  public getPosts(category: string, topic: string): Observable<Post[]> {
+    if (topic === 'all') {
       return this.postCollection
         .selectPosts(category)
         .pipe(map(posts => posts.sort(this.sortByDate)));
     }
 
-    if (series === 'misc') {
+    if (topic === 'misc') {
       return this.postCollection.selectPosts(category).pipe(
         map(posts => posts.filter((post: Post) => post.series === '')),
         map(posts => posts.sort(this.sortByDate))
@@ -25,7 +25,7 @@ export class BlogService {
     }
 
     return this.postCollection.selectPosts(category).pipe(
-      map(posts => posts.filter((post: Post) => post.series === series)),
+      map(posts => posts.filter((post: Post) => post.topic === topic)),
       map(posts => posts.sort(this.sortByDate))
     );
   }

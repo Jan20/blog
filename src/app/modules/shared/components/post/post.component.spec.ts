@@ -25,7 +25,7 @@ const compileComponent = (): void => {
   }).compileComponents();
 };
 
-fdescribe('PostComponent:', () => {
+describe('PostComponent:', () => {
   beforeEach(async () => {
     compileComponent();
     fixture = TestBed.createComponent(PostComponent);

@@ -34,6 +34,7 @@ import { MENU_ITEMS, MenuItem, MenuState } from '../models/menu-item';
 })
 export class MenuComponent {
   public activeStates = new Set<MenuState>();
+  public readonly title = 'Efficient Engineering';
   public readonly MenuState = MenuState;
   public readonly menuItems: MenuItem[] = MENU_ITEMS;
   constructor(
