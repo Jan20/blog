@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, map, mergeMap } from 'rxjs';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable, map } from 'rxjs';
 import { Post } from '../../models/post';
 import { BlogService } from '../../services/blog.service';
 
@@ -10,34 +10,22 @@ import { BlogService } from '../../services/blog.service';
   styleUrls: ['./post-navigation.component.scss'],
 })
 export class PostNavigationComponent {
+  @Input() public post: Post = new Post();
   public adjacentPosts = this.fetchAdjacentPosts();
 
   constructor(
     private readonly router: Router,
-    private readonly blogService: BlogService,
-    private readonly activatedRoute: ActivatedRoute
+    private readonly blogService: BlogService
   ) {}
 
   public navigateToPost(post: Post): void {
-    const filePath = post.filePath.replace('/assets/posts', '');
-    const id = filePath.split('/')[2].substring(4);
-    this.router.navigate([`${post.category}/${post.topic}/${id}`]);
+    this.router.navigate([`${post.route}`]);
   }
 
   private fetchAdjacentPosts(): Observable<Map<string, Post | undefined>> {
-    return this.activatedRoute.paramMap.pipe(
-      mergeMap(() =>
-        this.blogService.getPost(
-          this.router.url.split('/')[1],
-          this.router.url.split('/')[3]
-        )
-      ),
-      mergeMap((post: Post) =>
-        this.blogService
-          .getPosts(post.category, 'all')
-          .pipe(map((posts: Post[]) => this.selectAdjacentPosts(post, posts)))
-      )
-    );
+    return this.blogService
+      .getPosts(this.post.category, 'all')
+      .pipe(map((posts: Post[]) => this.selectAdjacentPosts(this.post, posts)));
   }
 
   private selectAdjacentPosts(

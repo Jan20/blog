@@ -9,7 +9,7 @@ export const guidesRoutes: Routes = [
     data: { title: 'Guides' },
   },
   {
-    path: ':topic/:id',
+    path: ':id',
     component: PostComponent,
     data: { title: 'Guides' },
   },

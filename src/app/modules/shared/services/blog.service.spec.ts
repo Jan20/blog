@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
-import { ENGINEERING, RXJS_RELATED_POSTS } from 'src/app/helpers/post-mocks';
+import {
+  ENGINEERING_POSTS,
+  RXJS_RELATED_POSTS,
+} from 'src/app/helpers/post-mocks';
 import { BlogService } from './blog.service';
 
 const compileComponent = (): void => {
@@ -23,7 +26,7 @@ describe('BlogService', () => {
   it('should retrieve all posts belonging to the productivity category', () => {
     service
       .getPosts('engineering', 'all')
-      .subscribe(result => expect(result).toEqual(ENGINEERING));
+      .subscribe(result => expect(result).toEqual(ENGINEERING_POSTS));
   });
 
   it('should only retrieve posts about RxJS', () => {

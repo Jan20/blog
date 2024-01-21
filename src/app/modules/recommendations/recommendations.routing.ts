@@ -9,7 +9,7 @@ export const recommendationsRoutes: Routes = [
     data: { title: 'Recommendations' },
   },
   {
-    path: ':topic/:id',
+    path: ':id',
     component: PostComponent,
     data: { title: 'Recommendation' },
   },

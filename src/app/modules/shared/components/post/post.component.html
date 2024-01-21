@@ -12,10 +12,11 @@
         {{ post.date | date }}
       </h4>
       <markdown [src]="post.filePath"></markdown>
-      {{ post.filePath }}
     </mat-card-content>
   </mat-card>
   <app-series-navigation *ngIf="post.seriesSection"></app-series-navigation>
-  <app-post-navigation *ngIf="!post.seriesSection"></app-post-navigation>
+  <app-post-navigation
+    [post]="post"
+    *ngIf="!post.seriesSection"></app-post-navigation>
 </div>
 <div class="placeholder"></div>

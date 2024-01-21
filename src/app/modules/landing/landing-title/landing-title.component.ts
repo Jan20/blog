@@ -20,6 +20,6 @@ export class LandingTitleComponent {
   constructor(private readonly router: Router) {}
 
   public startReading(): void {
-    this.router.navigate([`efficient-engineering/Efficiency/task_management`]);
+    this.router.navigate([`engineering/Efficiency/task_management`]);
   }
 }

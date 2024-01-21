@@ -74,16 +74,16 @@ def extract_post_from_file(file_path: str) -> Post:
     relative_path = '/'.join(file_path.split('/')[5:])
 
     return Post(
-        category=file_path.split('/')[9],
-        topic=parse_topic(file_path),
-        headline=parse_headline(file_path),
-        summary=parse_summary(file_path),
-        file_path=compose_file_path(relative_path),
-        thumbnail_path=compose_thumbnail_path(relative_path),
-        date=parse_date(file_path),
-        series=parse_series(file_path),
-        series_section=parse_series_section(file_path),
-        route=file_path
+        category=file_path.split('/')[8],
+        topic=parse_topic(file_path=file_path),
+        headline=parse_headline(file_path=file_path),
+        summary=parse_summary(file_path=file_path),
+        file_path=compose_file_path(file_path=relative_path),
+        thumbnail_path=compose_thumbnail_path(file_path=relative_path),
+        date=parse_date(file_path=file_path),
+        series=parse_series(file_path=file_path),
+        series_section=parse_series_section(file_path=file_path),
+        route=compose_route(file_path=file_path)
     )
 
 
@@ -161,13 +161,9 @@ def clean_str(line: str) -> str:
 
 def write_posts_to_file(posts: [Post]) -> None:
     """ Writes a parsed Post object to a typescript file."""
-    path_elements: [str] = posts[0].file_path.split("/")[:-2]
+    category: [str] = posts[0].file_path.split("/")[2:-2][0]
 
-    category: str = path_elements[-1]
-
-    relative_path = "/".join(path_elements)
-
-    index_file = f'{root_dir}/src/assets/posts/{relative_path}/{category}.ts'
+    index_file = f'{root_dir}/src/assets/posts/{category}/{category}.ts'
 
     with open(index_file, 'w') as writer:
         writer.write('import { Post } from "src/app/modules/shared/models/post"; \n')
@@ -180,19 +176,67 @@ def write_posts_to_file(posts: [Post]) -> None:
 
 
 def compose_thumbnail_path(file_path: str) -> str:
-    """ Computes the path to a post's thumbnail."""
+    """
+    Computes the path to a post's thumbnail.
+
+    This function takes a file path as input and generates the corresponding path
+    to the thumbnail of a post. The process involves intelligent string manipulation,
+    extracting the necessary segment from the input file path. The resulting path is
+    structured as 'assets/{extracted_path}/thumbnail.svg'.
+
+    Parameters:
+    - file_path (str): The original file path containing information about the post.
+
+    Returns:
+    - str: The computed path to the post's thumbnail, formatted within the 'assets'
+           directory.
+
+    Example:
+    >>> compose_thumbnail_path("posts/category1/post123/content/image.jpg")
+    'assets/category1/post123/thumbnail.svg'
+
+    Explanation:
+    In the given example, the file path represents an image associated with a post.
+    The function extracts the relevant information between the second and second-to-last
+    segments of the file path. The extracted path is then combined with the 'assets'
+    directory, and the final thumbnail path is returned.
+    """
     file_path = '/'.join(file_path.split("/")[2:-1])
     return f'assets/{file_path}/thumbnail.svg'
 
 
 def compose_file_path(file_path: str) -> str:
     """ Computes the path to a post's thumbnail."""
-    file_name = file_path.split("/")[-1]
-    print(file_path.split("/"))
-    link = '/'.join(file_path.split("/")[3:-1])
-    print('_:_______')
-    print(link)
-    return f'/{link}/{file_name}'
+    file_path = '/'.join(file_path.split("/")[1:])
+    return f'{file_path}'
+
+
+def compose_route(file_path: str) -> str:
+    """
+    Composes a route from a file path.
+
+    Parameters:
+        file_path (str): A file path such as '/Users/<USER_NAME>/Developer/blog/src/assets/posts/course/002-introduction-to-rxjs/002-introduction-to-rxjs.md'
+
+    Returns:
+        str: The composed route, for example, '/course/introduction-to-rxjs'
+
+    Explanation:
+        - The function splits the file path into elements using the "/" separator.
+        - Extracts the category and post_id from the elements based on their positions.
+        - Removes the first four characters from the post_id.
+        - Composes the route using the extracted category and updated post_id.
+        - Returns the composed route.
+
+    Example:
+        file_path = '/Users/<USER_NAME>/Developer/blog/src/assets/posts/course/002-introduction-to-rxjs/002-introduction-to-rxjs.md'
+        compose_route(file_path)  # Output: '/course/introduction-to-rxjs'
+    """
+    elements = file_path.split("/")
+    category = elements[-3]
+    post_id = elements[-2]
+    updated_post_id = post_id[4:]
+    return f'/{category}/{updated_post_id}'
 
 
 def parse_post_to_line(post: Post) -> str:

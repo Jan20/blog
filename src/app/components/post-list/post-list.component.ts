@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
@@ -26,7 +26,6 @@ import { BlogService } from '../../modules/shared/services/blog.service';
 })
 export class PostListComponent {
   public readonly posts: Observable<Post[]>;
-
   @Input() public category!: string;
   @Input() public series: string = 'misc';
 
@@ -41,6 +40,6 @@ export class PostListComponent {
   }
 
   public showPost(post: Post): void {
-    this.router.navigate([`${post.filePath}`]);
+    this.router.navigate([`${post.route}`]);
   }
 }

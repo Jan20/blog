@@ -9,7 +9,7 @@ export const engineeringRoutes: Routes = [
     data: { title: 'Engineering' },
   },
   {
-    path: ':topic/:id',
+    path: ':id',
     component: PostComponent,
     data: { title: 'Engineering' },
   },

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, switchMap, tap } from 'rxjs';
+import { Observable, map, switchMap } from 'rxjs';
 import { Post } from '../../models/post';
 import { BlogService } from '../../services/blog.service';
 
@@ -20,13 +20,10 @@ export class PostComponent {
 
   private fetchPost(): Observable<Post> {
     return this.activatedRoute.paramMap.pipe(
-      switchMap(() =>
-        this.blogservice.getPost(
-          this.router.url.split('/')[1],
-          this.router.url.split('/')[3]
-        )
-      ),
-      tap(console.log)
+      map(() => this.router.url.split('/')),
+      switchMap((route: string[]) =>
+        this.blogservice.getPost(route[1], route[2])
+      )
     );
   }
 }

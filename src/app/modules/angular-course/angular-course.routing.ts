@@ -9,7 +9,7 @@ export const angularCourseRoutes: Routes = [
     data: { title: 'Angular Course' },
   },
   {
-    path: ':topic/:id',
+    path: ':id',
     component: PostComponent,
     data: { title: 'Angular Course' },
   },

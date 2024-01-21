@@ -126,46 +126,46 @@ export const COURSE: Post[] = [
 
 export const RXJS_RELATED_POSTS: Post[] = [
   new Post(
-    '002-introduction-to-rxjs',
+    'course',
     'RxJS',
     'RxJS in Angular',
     'This post covers a short example of using RxJS in an Angular controller.',
-    '/course/002-introduction-to-rxjs/002-introduction-to-rxjs.md',
+    'assets/posts/course/002-introduction-to-rxjs/002-introduction-to-rxjs.md',
     'assets/posts/course/002-introduction-to-rxjs/thumbnail.svg',
     '2022-07-04',
-    '/Users/jan/Developer/blog/src/assets/posts/course/002-introduction-to-rxjs/002-introduction-to-rxjs.md'
+    '/course/introduction-to-rxjs'
   ),
   new Post(
-    '003-rxjs-pipe-operators',
+    'course',
     'RxJS',
     'RxJS Operators',
     'RxJS offers a range of operators of which map, filter and tap get presented.',
-    '/course/003-rxjs-pipe-operators/003-rxjs-pipe-operators.md',
+    'assets/posts/course/003-rxjs-pipe-operators/003-rxjs-pipe-operators.md',
     'assets/posts/course/003-rxjs-pipe-operators/thumbnail.svg',
     '2022-07-04',
-    '/Users/jan/Developer/blog/src/assets/posts/course/003-rxjs-pipe-operators/003-rxjs-pipe-operators.md'
+    '/course/rxjs-pipe-operators'
   ),
 ];
 
-export const ENGINEERING: Post[] = [
+export const ENGINEERING_POSTS: Post[] = [
   new Post(
-    '205-task-management',
+    'engineering',
     'Efficiency',
     'Efficient Task Management',
     'Describes an effective task management system for getting stuff done.',
-    '/engineering/205-task-management/205-task-management.md',
+    'assets/posts/engineering/205-task-management/205-task-management.md',
     'assets/posts/engineering/205-task-management/thumbnail.svg',
     '2023-02-04',
-    '/Users/jan/Developer/blog/src/assets/posts/engineering/205-task-management/205-task-management.md'
+    '/engineering/task-management'
   ),
   new Post(
-    '204-staying-focus',
+    'engineering',
     'Focus',
     'Staying Focused',
     'This post will share five simple strategies to become less distracted and stay focused.',
-    '/engineering/204-staying-focus/204-staying-focused.md',
+    'assets/posts/engineering/204-staying-focus/204-staying-focused.md',
     'assets/posts/engineering/204-staying-focus/thumbnail.svg',
     '2022-10-11',
-    '/Users/jan/Developer/blog/src/assets/posts/engineering/204-staying-focus/204-staying-focused.md'
+    '/engineering/staying-focus'
   ),
 ];

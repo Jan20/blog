@@ -1,20 +1,26 @@
 import { Component } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  ComponentFixtureAutoDetect,
+  TestBed,
+} from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Post } from 'src/app/modules/shared/models/post';
 import { PostListComponent } from './post-list.component';
+import { of } from 'rxjs';
+import { BlogService } from 'src/app/modules/shared/services/blog.service';
 
 let component: PostListComponent;
 let hostComponent: HostComponent;
 let hostFixture: ComponentFixture<HostComponent>;
 
-export const engineering: Post[] = [
+export const POSTS: Post[] = [
   new Post(
     '205-task-management',
     'Efficiency',
@@ -23,7 +29,7 @@ export const engineering: Post[] = [
     '/engineering/205-task-management/205-task-management.md',
     'assets/posts/engineering/205-task-management/thumbnail.svg',
     '2023-02-04',
-    '/Users/jan/Developer/blog/src/assets/posts/engineering/205-task-management/205-task-management.md'
+    '/engineering/task-management'
   ),
   new Post(
     '204-staying-focus',
@@ -33,9 +39,25 @@ export const engineering: Post[] = [
     '/engineering/204-staying-focus/204-staying-focused.md',
     'assets/posts/engineering/204-staying-focus/thumbnail.svg',
     '2022-10-11',
-    '/Users/jan/Developer/blog/src/assets/posts/engineering/204-staying-focus/204-staying-focused.md'
+    '/engineering/staying-focus'
   ),
 ];
+
+const router = jasmine.createSpyObj<Router>('Router', ['navigate']);
+router.navigate.and.returnValue(Promise.resolve(true));
+
+const activatedRoute = jasmine.createSpyObj('ActivatedRoute', [
+  'paramMap',
+  'snapshot',
+]);
+activatedRoute.paramMap = of('/engineering');
+
+const blogService = jasmine.createSpyObj('BlogService', [
+  'getPost',
+  'getPosts',
+]);
+blogService.getPost.and.returnValue(of(POSTS[0]));
+blogService.getPosts.and.returnValue(of(POSTS));
 
 @Component({
   selector: 'host-component',
@@ -48,7 +70,6 @@ const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [HostComponent],
     imports: [
-      RouterTestingModule,
       NoopAnimationsModule,
       MatIconModule,
       MatMenuModule,
@@ -57,13 +78,17 @@ const compileComponent = (): void => {
       PostListComponent,
       RouterTestingModule,
     ],
+    providers: [
+      { provide: ActivatedRoute, useValue: activatedRoute },
+      { provide: Router, useValue: router },
+      { provide: BlogService, useValue: blogService },
+      { provide: ComponentFixtureAutoDetect, useValue: true },
+    ],
     teardown: { destroyAfterEach: false },
   }).compileComponents();
 };
 
 describe('PostListComponent:', () => {
-  let router: Router;
-
   beforeEach(async () => {
     await compileComponent();
     hostFixture = TestBed.createComponent(HostComponent);
@@ -76,32 +101,10 @@ describe('PostListComponent:', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should set the number of columns being displayed to 4', fakeAsync(() => {
-  //   Object.defineProperty(window, 'innerWidth', { value: 1800 });
-  //   window.dispatchEvent(new Event('resize'));
-  //   tick(1);
-  // }));
-
-  // it('should decrease the number of columns being displayed to 3', fakeAsync(() => {
-  //   Object.defineProperty(window, 'innerWidth', { value: 1799 });
-  //   window.dispatchEvent(new Event('resize'));
-  //   tick(1);
-  // }));
-
-  // it('should decrease the number of columns being displayed to 2', fakeAsync(() => {
-  //   Object.defineProperty(window, 'innerWidth', { value: 1199 });
-  //   window.dispatchEvent(new Event('resize'));
-  //   tick(1);
-  // }));
-
-  // it('should decrease the number of columns being displayed to 1', fakeAsync(() => {
-  //   Object.defineProperty(window, 'innerWidth', { value: 799 });
-  //   window.dispatchEvent(new Event('resize'));
-  //   tick(1);
-  // }));
-
-  // it('should select the RxJS topic', () => {
-  //   component.selectTopic('RxJS');
-  //   expect(router.navigate).toHaveBeenCalledWith([`blog/guides/RxJS`]);
-  // });
+  it('should select the "task management" post', () => {
+    component.showPost(POSTS[0]);
+    expect(router.navigate).toHaveBeenCalledWith([
+      `/engineering/task-management`,
+    ]);
+  });
 });

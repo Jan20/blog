@@ -10,7 +10,7 @@ import {
 })
 export class EngineeringComponent {
   public readonly pageTitle = new PageTitle(
-    'Effective Engineering',
+    'Efficient Engineering',
     "While practical guides are excellent for addressing specific issues, I've come across some broader strategies that I'd like to share here.",
     PageTitleBackground.ENGINEERING
   );
