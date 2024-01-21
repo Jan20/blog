@@ -10,14 +10,14 @@ import { PostCollection } from '../models/postCollection';
 export class BlogService {
   constructor(private readonly postCollection: PostCollection) {}
 
-  public getPosts(category: string, topic: string): Observable<Post[]> {
-    if (topic === 'all') {
+  public getPosts(category: string, series: string): Observable<Post[]> {
+    if (series === 'all') {
       return this.postCollection
         .selectPosts(category)
         .pipe(map(posts => posts.sort(this.sortByDate)));
     }
 
-    if (topic === 'misc') {
+    if (series === 'misc') {
       return this.postCollection.selectPosts(category).pipe(
         map(posts => posts.filter((post: Post) => post.series === '')),
         map(posts => posts.sort(this.sortByDate))
@@ -25,7 +25,7 @@ export class BlogService {
     }
 
     return this.postCollection.selectPosts(category).pipe(
-      map(posts => posts.filter((post: Post) => post.topic === topic)),
+      map(posts => posts.filter((post: Post) => post.series === series)),
       map(posts => posts.sort(this.sortByDate))
     );
   }
