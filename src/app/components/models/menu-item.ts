@@ -10,11 +10,11 @@ export class MenuItem {
 export const MENU_ITEMS: MenuItem[] = [
   new MenuItem('Home', 'home', '/', false),
   new MenuItem('Guides', 'auto_stories', 'guides', false),
-  new MenuItem('Angular Guides', 'school', 'angular-course', false),
+  new MenuItem('Angular Guides', 'school', 'course', false),
   new MenuItem(
     'Efficient Engineering',
     'settings_suggest',
-    'efficient-engineering',
+    'engineering',
     false
   ),
   new MenuItem('Recommendations', 'assistant', 'recommendations', false),

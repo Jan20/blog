@@ -27,11 +27,12 @@ const activatedRoute = jasmine.createSpyObj('ActivatedRoute', [
 ]);
 activatedRoute.paramMap = of('/engineering/task-management');
 
-const router = jasmine.createSpyObj('Router', ['navigate']);
+const router = jasmine.createSpyObj('Router', ['navigate', 'parseUrl']);
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 router.navigate.and.returnValue(Promise.resolve(true));
 router.url = '/engineering/task-management';
 
-const blogService = jasmine.createSpyObj('BlogService', [
+const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
   'getPost',
   'getPosts',
 ]);

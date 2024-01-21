@@ -6,6 +6,7 @@ import { PageTitleComponent } from '../../components/page-title/page-title.compo
 import { SharedModule } from '../shared/shared.module';
 import { aboutRoutes } from './about.routing';
 import { AboutComponent } from './about/about.component';
+import { LinksComponent } from '../../components/links/links.component';
 
 @NgModule({
   declarations: [AboutComponent],
@@ -15,6 +16,7 @@ import { AboutComponent } from './about/about.component';
     RouterModule.forChild(aboutRoutes),
     SharedModule,
     PageTitleComponent,
+    LinksComponent,
   ],
 })
 export class AboutModule {}

@@ -10,7 +10,7 @@ In order to complete any cognitively demanding job, it is key to focus as much a
 
 ## Skipping the News
 
-<img class='side-image' src='assets/posts/engineering/204-focus/news.png'>
+<img class='side-image' src='assets/posts/engineering/204-staying-focused/news.png'>
 
 Let's start off by rethinking our relationship with news. It is in the nature of news to provoke a certain amount of anxiety, especially when reporting about wars, pandemics, or terrorism. However, a mental state of anxiety is highly counterproductive when it comes to working efficiently. Rather than finding a solution to a concrete problem, our minds ponder predominantly negative topics far outside of our sphere of influence.
 
@@ -18,7 +18,7 @@ Consuming news more consciously would definitely help us to focus better. While 
 
 ## Escaping the YouTube Time Sink
 
-<img class='side-image' src='assets/posts/engineering/204-focus/youtube.png'>
+<img class='side-image' src='assets/posts/engineering/204-staying-focused/youtube.png'>
 
 YouTube is one of the world's largest pools of content. It offers great tutorials and lectures, but also endless possibilities to distract ourselves. Especially recommended videos can draw us in for minutes or even hours. Thus, blocking YouTube on our phones and laptops is a great way to get less distracted. If we make the conscious decision to view a new video from our favorite channel, it is fine to unblock the platform for an evening, while leaving YouTube blocked during the day.
 
@@ -26,7 +26,7 @@ Of course, YouTube can be seen more as an example of any video platform. Just as
 
 ## Embracing a Social Media-Free Lifestyle
 
-<img class='side-image' src='assets/posts/engineering/204-focus/social_media.png'>
+<img class='side-image' src='assets/posts/engineering/204-staying-focused/social_media.png'>
 
 For most of us, checking Instagram or TikTok has become the standard to fill in any moment that might feel even remotely boring. Quickly checking the latest stories of friends seems to be rather compelling. However, virtually all social media companies employ a random reward strategy, mixing desired content such as messages from friends and loved ones with advertisements. Instead of browsing through a wonderfully curated list of awesome things our friends are doing, we get bombarded with offers, ads, and sponsored content with just enough few nuggets of seemingly valuable content sprinkled in to keep us scrolling.
 
@@ -34,12 +34,12 @@ There are not too many strategies to discuss here. The best default is to delete
 
 ## Single Daily Email Check
 
-<img class='side-image' src='assets/posts/engineering/204-focus/email.png'>
+<img class='side-image' src='assets/posts/engineering/204-staying-focused/email.png'>
 
 There is almost nothing as distracting in a work environment as a flood of emails with requests and information. There are multiple strategies for dealing with emails. My favorite option is to treat emails as what they are, namely an asynchronous medium, not necessitating an immediate reply. There is always the option to call someone or send him or her a direct message for a quicker response. Thus, checking and responding to emails once or twice a day is a practical way to follow up on requests in a timely manner while preserving long, uninterrupted stretches of time for working productively. For all emails not written by a human being, including newsletters and spam, the only right default is to get them filtered out and deleted automatically.
 
 ## Cutting Back on Meeting 
 
-<img class='side-image' src='assets/posts/engineering/204-focus/meetings.png'>
+<img class='side-image' src='assets/posts/engineering/204-staying-focused/meetings.png'>
 
 Balancing time spent in meetings and those dedicated to deep work can be challenging. While setting time apart for communicating ideas and exchanging information is crucial, leaving sufficient time for deep work is of paramount importance. In my opinion, having fewer regular meetings is generally more beneficial. There is always the option to schedule ad-hoc meetings if required. Especially with the option to reach out for information via direct messages or using Slack's Huddle feature, there is less need for pre-planned meetings than a few years ago.

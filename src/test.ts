@@ -21,6 +21,7 @@ getTestBed().initTestEnvironment(
 );
 
 beforeAll(() => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   jasmine.addMatchers(JasmineDOM);
   user = userEvent.setup();
 });

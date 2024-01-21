@@ -1,85 +1,82 @@
-// {
-//   "root": true,
-//   "ignorePatterns": ["projects/**/*"],
-//   "plugins": [
-//     "@typescript-eslint",
-//     "prettier"
-//   ],
-//   "overrides": [
-//     {
-//       "parser": "@typescript-eslint/parser",
-//       "files": ["*.ts"],
-//       "parserOptions": {
-//         "project": ["tsconfig.json", "e2e/tsconfig.json"],
-//         "createDefaultProgram": true,
-//         "ecmaVersion": "latest",
-//         "sourceType": "module"
-//       },
-//       "extends": [
-//         "plugin:@angular-eslint/recommended",
-//         "plugin:@angular-eslint/template/process-inline-templates",
-//         "plugin:prettier/recommended",
-//         "plugin:rxjs/recommended",
-//         "prettier"
-//       ],
-//       "rules": {
-//         "no-unused-vars": "off",
-//         "@typescript-eslint/no-unused-vars": "off",
-//         "@angular-eslint/component-selector": [
-//           "error",
-//           {
-//             "prefix": "app",
-//             "style": "kebab-case",
-//             "type": "element"
-//           }
-//         ],
-//         "@typescript-eslint/explicit-function-return-type": "error",
-//         "@angular-eslint/directive-selector": [
-//           "error",
-//           {
-//             "prefix": "app",
-//             "style": "camelCase",
-//             "type": "attribute"
-//           }
-//         ],
-//         // "sort-imports": [
-//         //   "error",
-//         //   {
-//         //     "ignoreCase": false
-//         //   }
-//         // ],
-//         "@typescript-eslint/no-explicit-any": "error",
-//         "@typescript-eslint/no-unsafe-call": "error",
-//         "@typescript-eslint/no-unsafe-argument": "error",
-//         "prefer-const": "error",
-//         "@typescript-eslint/ban-types": "error",
-//         "no-empty-function": "off",
-//         "rxjs/no-async-subscribe": "error",
-//         "rxjs/no-ignored-observable": "error",
-//         "rxjs/no-nested-subscribe": "error",
-//         "rxjs/no-unbound-methods": "error",
-//         "rxjs/throw-error": "error"
-//       }
-//     },
-//     {
-//       "files": ["*.html"],
-//       "extends": ["plugin:@angular-eslint/template/recommended"],
-//       "rules": {
-//         "@angular-eslint/template/accessibility-alt-text": "error",
-//         "@angular-eslint/template/accessibility-elements-content": "error",
-//         "@angular-eslint/template/accessibility-label-has-associated-control": "error",
-//         "@angular-eslint/template/accessibility-table-scope": "error",
-//         "@angular-eslint/template/no-distracting-elements": "error",
-//         "@angular-eslint/template/button-has-type": "error"
-//       }
-//     },
-//     {
-//       "files": ["*.html"],
-//       "excludedFiles": ["*inline-template-*.component.html"],
-//       "extends": ["plugin:prettier/recommended"],
-//       "rules": {
-//         "prettier/prettier": ["error", { "parser": "angular" }]
-//       }
-//     }
-//   ]
-// }
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "plugins": ["@typescript-eslint", "prettier"],
+  "overrides": [
+    {
+      "parser": "@typescript-eslint/parser",
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json", "e2e/tsconfig.json"],
+        "createDefaultProgram": true,
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended",
+        "plugin:rxjs/recommended",
+        "prettier"
+      ],
+      "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "prefix": "app",
+            "style": "kebab-case",
+            "type": "element"
+          }
+        ],
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "prefix": "app",
+            "style": "camelCase",
+            "type": "attribute"
+          }
+        ],
+        // "sort-imports": [
+        //   "error",
+        //   {
+        //     "ignoreCase": false
+        //   }
+        // ],
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-unsafe-call": "error",
+        "@typescript-eslint/no-unsafe-argument": "error",
+        "prefer-const": "error",
+        "@typescript-eslint/ban-types": "error",
+        "no-empty-function": "off",
+        "rxjs/no-async-subscribe": "error",
+        "rxjs/no-ignored-observable": "error",
+        "rxjs/no-nested-subscribe": "error",
+        "rxjs/no-unbound-methods": "error",
+        "rxjs/throw-error": "error"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        // "@angular-eslint/template/accessibility-alt-text": "error",
+        // "@angular-eslint/template/accessibility-elements-content": "error",
+        // "@angular-eslint/template/accessibility-label-has-associated-control": "error",
+        // "@angular-eslint/template/accessibility-table-scope": "error",
+        "@angular-eslint/template/no-distracting-elements": "error",
+        "@angular-eslint/template/button-has-type": "error"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "excludedFiles": ["*inline-template-*.component.html"],
+      "extends": ["plugin:prettier/recommended"],
+      "rules": {
+        "prettier/prettier": ["error", { "parser": "angular" }]
+      }
+    }
+  ]
+}

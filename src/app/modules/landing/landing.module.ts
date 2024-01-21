@@ -11,10 +11,9 @@ import { GuidesModule } from '../guides/guides.module';
 import { SharedModule } from '../shared/shared.module';
 import { LandingTitleComponent } from './landing-title/landing-title.component';
 import { LandingComponent } from './landing/landing.component';
-import { LinksComponent } from './links/links.component';
 
 @NgModule({
-  declarations: [LandingComponent, LandingTitleComponent, LinksComponent],
+  declarations: [LandingComponent, LandingTitleComponent],
   imports: [
     CommonModule,
     MatButtonModule,
