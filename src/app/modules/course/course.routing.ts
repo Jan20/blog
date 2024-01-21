@@ -1,11 +1,10 @@
-import { Routes } from '@angular/router';
 import { PostComponent } from '../shared/components/post/post.component';
-import { AngularCourseComponent } from './angular-course/angular-course.component';
+import { CourseComponent } from './course/course.component';
 
-export const angularCourseRoutes: Routes = [
+export const courseRoutes = [
   {
     path: '',
-    component: AngularCourseComponent,
+    component: CourseComponent,
     data: { title: 'Angular Course' },
   },
   {

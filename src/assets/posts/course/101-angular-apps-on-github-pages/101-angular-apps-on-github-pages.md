@@ -13,7 +13,7 @@ GitHub Pages is a free hosting service for static websites offered by Github. If
 Let's get started: Go to [Github.com](https://github.com) and create a new repository starting with the name of your Github user account, followed by the suffix .github.io, as depicted below:
 
 ```TS
-<your-github-username>.github.io
+[YOUR_GITHUB_USERNAME].github.io
 ```
 
 After having done so, just clone the freshly created repository and change your working directory to jump in the cloned folder. Once there, create an Angular application by using Angular's CLI or use an existing project :
@@ -46,13 +46,13 @@ ng build
 
 After having built your project, your docs directory should look roughly the same as this one:
 
-<img class='half-width' src='assets/posts/angular-course/101_angular_apps_on_github_pages/file_structure.png'>
+<img class='half-width' src='assets/posts/course/101-angular-apps-on-github-pages/file-structure.png'>
 
 ## Deploying your application
 
 The only thing that is missing now is to configure Github Pages, so that it serves your freshly built project. In order to do so, go to [Github.com](https://github.com) and jump into your project. Once arrived there, open the **Settings** tap and navigate to the menu entry **Pages** at on the left hand side. You should see a page that looks like the one depicted below:
 
-<img class='almost-full-width' src='assets/posts/angular-course/101_angular_apps_on_github_pages/angular_on_github_pages.png'>
+<img class='almost-full-width' src='assets/posts/course/101-angular-apps-on-github-pages/angular-on-github-pages.png'>
 
 Make sure that you have selected your **/docs** rather than your **/ (root)** as your source folder for Github Pages. After having selected your **/docs** directory, head back to your editor and push your entire project, including your docs directory to your master branch by executing the following commands:
 

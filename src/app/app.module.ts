@@ -12,7 +12,7 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { AngularCourseModule } from './modules/angular-course/angular-course.module';
+import { CourseModule } from './modules/course/course.module';
 import { EngineeringModule } from './modules/engineering/engineering.module';
 import { FooterModule } from './modules/footer/footer.module';
 import { LandingModule } from './modules/landing/landing.module';
@@ -24,7 +24,11 @@ import { SharedModule } from './modules/shared/shared.module';
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
+    CourseModule,
     CommonModule,
+    EngineeringModule,
+    LandingModule,
+    FooterModule,
     MatIconModule,
     MatMenuModule,
     MatToolbarModule,
@@ -33,13 +37,7 @@ import { SharedModule } from './modules/shared/shared.module';
     MatSidenavModule,
     MatListModule,
     MenuComponent,
-    FooterModule,
-    LandingModule,
-    RecommendationsModule,
     MatButtonModule,
-    SharedModule,
-    AngularCourseModule,
-    EngineeringModule,
     MarkdownModule.forRoot({
       markedOptions: {
         provide: MarkedOptions,
@@ -52,6 +50,8 @@ import { SharedModule } from './modules/shared/shared.module';
         },
       },
     }),
+    RecommendationsModule,
+    SharedModule,
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],

@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { PostListComponent } from 'src/app/components/post-list/post-list.component';
-import { AngularCourseModule } from '../angular-course/angular-course.module';
+import { CourseModule } from '../course/course.module';
 import { EngineeringModule } from '../engineering/engineering.module';
 import { FooterModule } from '../footer/footer.module';
 import { GuidesModule } from '../guides/guides.module';
@@ -20,7 +20,7 @@ import { LandingComponent } from './landing/landing.component';
     MatIconModule,
     EngineeringModule,
     GuidesModule,
-    AngularCourseModule,
+    CourseModule,
     MatCardModule,
     SharedModule,
     FooterModule,

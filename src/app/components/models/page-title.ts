@@ -8,7 +8,7 @@ export class PageTitle {
 
 export enum PageTitleBackground {
   LANDING = 'landing',
-  ANGULAR_COURSE = 'angular-course',
+  ANGULAR_COURSE = 'course',
   ENGINEERING = 'engineering',
   GUIDES = 'guides',
   CONTACT = 'contact',

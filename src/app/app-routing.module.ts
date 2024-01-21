@@ -49,8 +49,8 @@ const routes: Routes = [
       {
         path: 'course',
         loadChildren: () =>
-          import('./modules/angular-course/angular-course.module').then(
-            module => module.AngularCourseModule
+          import('./modules/course/course.module').then(
+            module => module.CourseModule
           ),
         data: { title: 'Angular Course' },
       },

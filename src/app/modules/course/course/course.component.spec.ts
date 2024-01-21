@@ -14,12 +14,12 @@ import { PageTitleComponent } from 'src/app/components/page-title/page-title.com
 import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 import { ENGINEERING_POSTS } from 'src/app/helpers/post-mocks';
 import { BlogService } from '../../shared/services/blog.service';
-import { AngularCourseComponent } from './angular-course.component';
+import { CourseComponent } from './course.component';
 
-let component: AngularCourseComponent;
-let fixture: ComponentFixture<AngularCourseComponent>;
+let component: CourseComponent;
+let fixture: ComponentFixture<CourseComponent>;
 
-const blogService = jasmine.createSpyObj('BlogService', [
+const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
   'getSeriesTitles',
   'getPosts',
   'getPost',
@@ -30,7 +30,7 @@ blogService.getPosts.and.returnValue(of(ENGINEERING_POSTS));
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    declarations: [AngularCourseComponent],
+    declarations: [CourseComponent],
     imports: [
       CommonModule,
       PostListComponent,
@@ -54,10 +54,10 @@ const compileComponent = (): void => {
   }).compileComponents();
 };
 
-describe('AngularCourseComponent', () => {
+describe('CourseComponent', () => {
   beforeEach(async () => {
     compileComponent();
-    fixture = TestBed.createComponent(AngularCourseComponent);
+    fixture = TestBed.createComponent(CourseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

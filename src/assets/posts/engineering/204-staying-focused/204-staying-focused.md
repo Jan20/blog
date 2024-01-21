@@ -26,7 +26,7 @@ Of course, YouTube can be seen more as an example of any video platform. Just as
 
 ## Embracing a Social Media-Free Lifestyle
 
-<img class='side-image' src='assets/posts/engineering/204-staying-focused/social_media.png'>
+<img class='side-image' src='assets/posts/engineering/204-staying-focused/social-media.png'>
 
 For most of us, checking Instagram or TikTok has become the standard to fill in any moment that might feel even remotely boring. Quickly checking the latest stories of friends seems to be rather compelling. However, virtually all social media companies employ a random reward strategy, mixing desired content such as messages from friends and loved ones with advertisements. Instead of browsing through a wonderfully curated list of awesome things our friends are doing, we get bombarded with offers, ads, and sponsored content with just enough few nuggets of seemingly valuable content sprinkled in to keep us scrolling.
 

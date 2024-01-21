@@ -12,7 +12,7 @@ Let's assume you've just started out using Angular or any other modern web appli
 
 A typical package.json in a newly initialized Angular project looks similar to the one depicted below.
 
-![package_json.png](assets/posts/angular-course/111_introduction_to_npm/package_json.png)
+![package-json.png](assets/posts/course/111-introduction-to-npm/package-json.png)
 
 The package.json file serves three purpose:
 
@@ -60,7 +60,7 @@ npm outdated -g
 
 The command should generate a list of outdated global dependencies.
 
-<img class='almost-full-width' src='assets/posts/angular-course/111_introduction_to_npm/npm_outdated.png'>
+<img class='almost-full-width' src='assets/posts/course/111-introduction-to-npm/npm-outdated.png'>
 
 All global dependencies can easily be updated by running <code>npm update</code> with the <code>-g</code> flag as follows:
 

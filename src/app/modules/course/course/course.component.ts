@@ -7,11 +7,11 @@ import {
 import { BlogService } from '../../shared/services/blog.service';
 
 @Component({
-  selector: 'app-angular-course',
-  templateUrl: './angular-course.component.html',
-  styleUrls: ['./angular-course.component.scss'],
+  selector: 'app-course',
+  templateUrl: './course.component.html',
+  styleUrls: ['./course.component.scss'],
 })
-export class AngularCourseComponent {
+export class CourseComponent {
   public readonly pageTitle = new PageTitle(
     'Angular Guides',
     "Angular is an exceptional web application framework, particularly well-suited for large-scale applications. Below, I've curated a series of posts that delve into specific areas deserving a closer look.",
@@ -24,6 +24,6 @@ export class AngularCourseComponent {
   }
 
   public fetchSeries(): Observable<Set<string>> {
-    return this.blogService.getSeriesTitles('angular-course');
+    return this.blogService.getSeriesTitles('course');
   }
 }

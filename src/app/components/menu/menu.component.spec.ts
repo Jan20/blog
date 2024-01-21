@@ -103,7 +103,7 @@ describe('MenuComponent', () => {
     const selectedItem = new MenuItem(
       'Angular Guides',
       'school',
-      'angular-course',
+      'course',
       false
     );
     component.navigateToMenuEntry(selectedItem);

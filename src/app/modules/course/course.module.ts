@@ -6,20 +6,21 @@ import { RouterModule } from '@angular/router';
 import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 import { PageTitleComponent } from '../../components/page-title/page-title.component';
 import { SharedModule } from '../shared/shared.module';
-import { angularCourseRoutes } from './angular-course.routing';
-import { AngularCourseComponent } from './angular-course/angular-course.component';
+import { courseRoutes } from './course.routing';
+import { CourseComponent } from './course/course.component';
 
 @NgModule({
-  declarations: [AngularCourseComponent],
+  declarations: [CourseComponent],
   imports: [
     CommonModule,
     MatButtonModule,
     MatCardModule,
     SharedModule,
-    RouterModule.forChild(angularCourseRoutes),
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    RouterModule.forChild(courseRoutes),
     PageTitleComponent,
     PostListComponent,
   ],
   exports: [],
 })
-export class AngularCourseModule {}
+export class CourseModule {}
