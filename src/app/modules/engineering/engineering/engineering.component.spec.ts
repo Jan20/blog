@@ -20,7 +20,7 @@ import { EngineeringComponent } from './engineering.component';
 let component: EngineeringComponent;
 let fixture: ComponentFixture<EngineeringComponent>;
 
-const blogService = jasmine.createSpyObj('BlogService', [
+const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
   'getSeriesTitles',
   'getPosts',
   'getPost',

@@ -24,7 +24,7 @@ const activatedRoute = jasmine.createSpyObj('ActivatedRoute', [
 ]);
 activatedRoute.paramMap = of('test/route/34');
 
-const blogService = jasmine.createSpyObj('BlogService', [
+const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
   'getPost',
   'getPosts',
 ]);

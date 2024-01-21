@@ -43,7 +43,7 @@ const POSTS: Post[] = [
   ),
 ];
 
-const blogService = jasmine.createSpyObj('BlogService', [
+const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
   'getSeriesTitles',
   'getPosts',
   'getPost',
