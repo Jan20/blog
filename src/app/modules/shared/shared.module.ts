@@ -7,17 +7,15 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MarkdownModule } from 'ngx-markdown';
-import { PostNavigationComponent } from './components/post-navigation/post-navigation.component';
 import { PostComponent } from './components/post/post.component';
 import { SeriesNavigationComponent } from './components/series-navigation/series-navigation.component';
 import { BlogService } from './services/blog.service';
+import { PostNavigationComponent } from '../../components/post-navigation/post-navigation.component';
 
 @NgModule({
-  declarations: [
-    PostComponent,
-    PostNavigationComponent,
-    SeriesNavigationComponent,
-  ],
+  declarations: [PostComponent, SeriesNavigationComponent],
+  providers: [BlogService],
+  exports: [],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -27,8 +25,7 @@ import { BlogService } from './services/blog.service';
     MatIconModule,
     MatRippleModule,
     MarkdownModule,
+    PostNavigationComponent,
   ],
-  providers: [BlogService],
-  exports: [PostNavigationComponent],
 })
 export class SharedModule {}

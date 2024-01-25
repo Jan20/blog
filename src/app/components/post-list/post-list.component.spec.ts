@@ -73,7 +73,7 @@ describe('PostListComponent:', () => {
     hostFixture.detectChanges();
   });
 
-  it('should create a blog component', () => {
+  it('should create a post list component', () => {
     expect(component).toBeTruthy();
   });
 

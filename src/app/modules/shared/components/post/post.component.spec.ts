@@ -3,19 +3,17 @@ import {
   ComponentFixture,
   ComponentFixtureAutoDetect,
   TestBed,
-  fakeAsync,
-  tick,
 } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
-import { of } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
 import { ENGINEERING_POSTS } from 'src/app/helpers/post-mocks';
+import { PostNavigationComponent } from '../../../../components/post-navigation/post-navigation.component';
 import { BlogService } from '../../services/blog.service';
-import { PostNavigationComponent } from '../post-navigation/post-navigation.component';
 import { PostComponent } from './post.component';
 
 let component: PostComponent;
@@ -31,6 +29,7 @@ const router = jasmine.createSpyObj('Router', ['navigate', 'parseUrl']);
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
 router.navigate.and.returnValue(Promise.resolve(true));
 router.url = '/engineering/task-management';
+router.events = new BehaviorSubject(new NavigationEnd(0, '', ''));
 
 const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
   'getPost',
@@ -41,7 +40,7 @@ blogService.getPosts.and.returnValue(of(ENGINEERING_POSTS));
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    declarations: [PostComponent, PostNavigationComponent],
+    declarations: [PostComponent],
     imports: [
       HttpClientModule,
       MatIconModule,
@@ -60,6 +59,7 @@ const compileComponent = (): void => {
           },
         },
       }),
+      PostNavigationComponent,
     ],
     providers: [
       { provide: ActivatedRoute, useValue: activatedRoute },

@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { Link } from '../models/link';
-import { MatCardModule } from '@angular/material/card';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
+import { Component, Inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { Window } from 'src/app/providers/window.provider';
+import { Link } from '../models/link';
 
 @Component({
   standalone: true,
@@ -34,14 +34,11 @@ export class LinksComponent {
       'https://www.linkedin.com/in/jan-schumann-b5740213b/',
       'assets/images/links/linkedin.png'
     ),
-    new Link('About me', '/about', ''),
   ];
 
-  constructor(private readonly router: Router) {}
+  constructor(@Inject(Window) private window: Window) {}
 
   public openLink(url: string): void {
-    url === '/about'
-      ? this.router.navigate(['/about'])
-      : window.open(url, '_blank');
+    this.window.open(url, '_blank');
   }
 }

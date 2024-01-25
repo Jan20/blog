@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, map, switchMap } from 'rxjs';
+import { Observable, map, mergeMap } from 'rxjs';
 import { Post } from '../../models/post';
 import { BlogService } from '../../services/blog.service';
 
@@ -21,7 +21,7 @@ export class PostComponent {
   private fetchPost(): Observable<Post> {
     return this.activatedRoute.paramMap.pipe(
       map(() => this.router.url.split('/')),
-      switchMap((route: string[]) =>
+      mergeMap((route: string[]) =>
         this.blogservice.getPost(route[1], route[2])
       )
     );
