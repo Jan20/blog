@@ -15,38 +15,37 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationEnd, Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { MarkdownModule } from 'ngx-markdown';
 import { BehaviorSubject, of } from 'rxjs';
-import { ENGINEERING_POSTS } from 'src/app/helpers/post-mocks';
+import { DOCKER_GUIDES } from 'src/app/helpers/post-mocks';
 import { BlogService } from '../../modules/shared/services/blog.service';
-import { PostNavigationComponent } from './post-navigation.component';
+import { SeriesNavigationComponent } from './series-navigation.component';
 
-import '@testing-library/jasmine-dom';
-
-let component: PostNavigationComponent;
-let fixture: ComponentFixture<PostNavigationComponent>;
+let component: SeriesNavigationComponent;
+let fixture: ComponentFixture<SeriesNavigationComponent>;
 
 const router = jasmine.createSpyObj('Router', ['navigate']);
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
 router.navigate.and.returnValue(Promise.resolve(true));
-router.url = '/engineering/task-management';
+router.url = '/guides/containerize_flask_applications';
 router.events = new BehaviorSubject(new NavigationEnd(0, '', ''));
 
 const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
   'getPost',
   'getPosts',
 ]);
-blogService.getPost.and.returnValue(of(ENGINEERING_POSTS[0]));
-blogService.getPosts.and.returnValue(of(ENGINEERING_POSTS));
+blogService.getPost.and.returnValue(of(DOCKER_GUIDES[0]));
+blogService.getPosts.and.returnValue(of(DOCKER_GUIDES));
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [],
     imports: [
       CommonModule,
-      PostNavigationComponent,
+      SeriesNavigationComponent,
       HttpClientModule,
       MatCardModule,
       MatMenuModule,
@@ -56,6 +55,7 @@ const compileComponent = (): void => {
       MarkdownModule,
       NoopAnimationsModule,
       MatGridListModule,
+      RouterTestingModule,
     ],
     providers: [
       { provide: Router, useValue: router },
@@ -66,20 +66,28 @@ const compileComponent = (): void => {
   }).compileComponents();
 };
 
-describe('PostNavigationComponent', () => {
+describe('SeriesNavigationComponent', () => {
   beforeEach(async () => {
     compileComponent();
-    fixture = TestBed.createComponent(PostNavigationComponent);
+    fixture = TestBed.createComponent(SeriesNavigationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should navigate to the staying focused post', fakeAsync(() => {
-    userEvent.click(screen.getByRole('heading', { name: 'Staying Focused' }));
+  it('should navigate to the containerize Angular application', fakeAsync(() => {
+    expect(
+      screen.getByRole('heading', { name: 'Introduction to Docker' })
+    ).toBeVisible();
+    expect(
+      screen.getByRole('heading', { name: 'Containerize Angular Apps' })
+    ).toBeVisible();
+    userEvent.click(
+      screen.getByRole('heading', { name: 'Containerize Angular Apps' })
+    );
     tick(1);
     fixture.detectChanges();
     expect(router.navigate).toHaveBeenCalledWith([
-      '/engineering/staying-focused',
+      '/guides/containerize_Angular_applications',
     ]);
   }));
 });

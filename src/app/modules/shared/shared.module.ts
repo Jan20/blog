@@ -8,12 +8,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MarkdownModule } from 'ngx-markdown';
 import { PostComponent } from './components/post/post.component';
-import { SeriesNavigationComponent } from './components/series-navigation/series-navigation.component';
+import { SeriesNavigationComponent } from '../../components/series-navigation/series-navigation.component';
 import { BlogService } from './services/blog.service';
 import { PostNavigationComponent } from '../../components/post-navigation/post-navigation.component';
 
 @NgModule({
-  declarations: [PostComponent, SeriesNavigationComponent],
+  declarations: [PostComponent],
   providers: [BlogService],
   exports: [],
   imports: [
@@ -26,6 +26,7 @@ import { PostNavigationComponent } from '../../components/post-navigation/post-n
     MatRippleModule,
     MarkdownModule,
     PostNavigationComponent,
+    SeriesNavigationComponent,
   ],
 })
 export class SharedModule {}

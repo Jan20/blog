@@ -44,7 +44,7 @@ describe('LinksComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should navigate to LinkedIn', fakeAsync(() => {
+  it('should navigate to LinkedIn', fakeAsync(() => {
     userEvent.click(
       screen.getByRole('button', {
         name: 'Link to assets/images/links/github.png Github',

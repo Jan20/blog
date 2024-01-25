@@ -1,14 +1,14 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable, map, mergeMap } from 'rxjs';
+import { Post } from '../../modules/shared/models/post';
+import { BlogService } from '../../modules/shared/services/blog.service';
+import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { Router } from '@angular/router';
-import { Observable, map, mergeMap } from 'rxjs';
-import { Post } from '../../modules/shared/models/post';
-import { BlogService } from '../../modules/shared/services/blog.service';
 
 @Component({
   standalone: true,
@@ -20,11 +20,11 @@ import { BlogService } from '../../modules/shared/services/blog.service';
     MatIconModule,
     MatRippleModule,
   ],
-  selector: 'app-post-navigation',
-  templateUrl: './post-navigation.component.html',
-  styleUrls: ['./post-navigation.component.scss'],
+  selector: 'app-series-navigation',
+  templateUrl: './series-navigation.component.html',
+  styleUrls: ['./series-navigation.component.scss'],
 })
-export class PostNavigationComponent {
+export class SeriesNavigationComponent {
   public adjacentPosts: Observable<Map<string, Post | undefined>>;
 
   constructor(
@@ -43,11 +43,16 @@ export class PostNavigationComponent {
   }
 
   private selectAdjacentPosts(posts: Post[]): Map<string, Post | undefined> {
-    const post = posts.find(p => this.router.url.includes(p.route));
-    const index = post ? posts.indexOf(post) : -1;
-    return new Map([
-      ['previousPost', index > 0 ? posts[index - 1] : undefined],
-      ['upcomingPost', index < posts.length - 1 ? posts[index + 1] : undefined],
+    const post = posts.filter(p => this.router.url.includes(p.route))[0];
+    return new Map<string, Post | undefined>([
+      [
+        'previousPost',
+        posts.filter(p => p.seriesSection === post.seriesSection - 1)[0],
+      ],
+      [
+        'upcomingPost',
+        posts.filter(p => p.seriesSection === post.seriesSection + 1)[0],
+      ],
     ]);
   }
 }

@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import {
+  DOCKER_GUIDES,
   ENGINEERING_POSTS,
   MISCELLANEOUS_GUIDES,
-  DOCKER_GUIDES,
 } from 'src/app/helpers/post-mocks';
 import { BlogService } from './blog.service';
 
