@@ -8,6 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "open ./coverage/blog/index.html && ng test",
+    "test:ci": "ng test",
     "compose": "python3 scripts/compose.py",
     "lint": "ng lint --fix",
     "format": "prettier-eslint --eslint-config-path ./.eslintrc --write '**/*.ts'",
