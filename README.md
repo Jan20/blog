@@ -1,4 +1,4 @@
-[![Unit Tests](https://github.com/Jan20/blog/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/Jan20/blog/actions/workflows/unit-tests.yml)
+[![Unit Tests](https://github.com/Jan20/blog/actions/workflows/unit-tests.yml/badge.svg?branch=main)](https://github.com/Jan20/blog/actions/workflows/unit-tests.yml)
 
 # Jan's Engineering Blog
 
