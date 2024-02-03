@@ -17,11 +17,13 @@ import { FooterModule } from './modules/footer/footer.module';
 import { LandingModule } from './modules/landing/landing.module';
 import { RecommendationsModule } from './modules/recommendations/recommendations.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     AppRoutingModule,
+    RouterModule,
     BrowserAnimationsModule,
     CourseModule,
     CommonModule,
