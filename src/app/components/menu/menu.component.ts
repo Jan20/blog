@@ -64,8 +64,8 @@ export class MenuComponent {
         ? new Set([MenuState.MOBILE, MenuState.MINIMIZED])
         : new Set([MenuState.MOBILE, MenuState.MAXIMIZED])
       : this.activeStates.has(MenuState.MAXIMIZED)
-      ? new Set([MenuState.MINIMIZED])
-      : new Set([MenuState.MAXIMIZED]);
+        ? new Set([MenuState.MINIMIZED])
+        : new Set([MenuState.MAXIMIZED]);
   }
 
   public navigateToMenuEntry(selectedItem: MenuItem): void {

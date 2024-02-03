@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import {
   ComponentFixture,
   ComponentFixtureAutoDetect,
@@ -6,15 +6,18 @@ import {
 } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { MarkdownComponent, MarkdownModule } from 'ngx-markdown';
 import { BehaviorSubject, of } from 'rxjs';
 import { ENGINEERING_POSTS } from 'src/app/helpers/post-mocks';
-import { PostNavigationComponent } from '../../../../components/post-navigation/post-navigation.component';
-import { BlogService } from '../../services/blog.service';
+import { BlogService } from '../../modules/shared/services/blog.service';
+import { PostNavigationComponent } from '../post-navigation/post-navigation.component';
+import { SeriesNavigationComponent } from '../series-navigation/series-navigation.component';
 import { PostComponent } from './post.component';
+import { HttpClientModule } from '@angular/common/http';
 
 let component: PostComponent;
 let fixture: ComponentFixture<PostComponent>;
@@ -40,26 +43,21 @@ blogService.getPosts.and.returnValue(of(ENGINEERING_POSTS));
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    declarations: [PostComponent],
+    declarations: [],
     imports: [
       HttpClientModule,
-      MatIconModule,
-      MatMenuModule,
+      PostComponent,
       MatCardModule,
+      MatMenuModule,
       MatButtonModule,
-      MarkdownModule.forRoot({
-        markedOptions: {
-          provide: MarkedOptions,
-          useValue: {
-            gfm: true,
-            breaks: false,
-            pedantic: false,
-            smartLists: true,
-            smartypants: false,
-          },
-        },
-      }),
+      MatIconModule,
+      MatRippleModule,
+      MarkdownModule,
       PostNavigationComponent,
+      SeriesNavigationComponent,
+      MarkdownModule,
+      CommonModule,
+      MarkdownComponent,
     ],
     providers: [
       { provide: ActivatedRoute, useValue: activatedRoute },

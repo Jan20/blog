@@ -97,10 +97,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "blog:build:production"
+              "buildTarget": "blog:build:production"
             },
             "development": {
-              "browserTarget": "blog:build:development"
+              "buildTarget": "blog:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -108,7 +108,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "blog:build"
+            "buildTarget": "blog:build"
           }
         },
         "test": {
@@ -164,11 +164,11 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "blog:build:development",
+              "buildTarget": "blog:build:development",
               "serverTarget": "blog:server:development"
             },
             "production": {
-              "browserTarget": "blog:build:production",
+              "buildTarget": "blog:build:production",
               "serverTarget": "blog:server:production"
             }
           },
@@ -181,11 +181,11 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "blog:build:production",
+              "buildTarget": "blog:build:production",
               "serverTarget": "blog:server:production"
             },
             "development": {
-              "browserTarget": "blog:build:development",
+              "buildTarget": "blog:build:development",
               "serverTarget": "blog:server:development"
             }
           },

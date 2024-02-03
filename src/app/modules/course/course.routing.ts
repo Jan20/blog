@@ -1,4 +1,4 @@
-import { PostComponent } from '../shared/components/post/post.component';
+import { PostComponent } from '../../components/post/post.component';
 import { CourseComponent } from './course/course.component';
 
 export const courseRoutes = [
