@@ -12,7 +12,7 @@ import {
 })
 export class LandingTitleComponent {
   public readonly pageTitle = new PageTitle(
-    'Efficient Software Engineering',
+    "Jan's Engineering Blog",
     "Writing software requires passion, skill, and a considerable amount of time. However, time is our most limited resource, so let's explore techniques helping us to craft great software faster.",
     PageTitleBackground.LANDING
   );

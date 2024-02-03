@@ -1,27 +1,23 @@
-# Test
+[![Unit Tests](https://github.com/Jan20/blog/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/Jan20/blog/actions/workflows/unit-tests.yml)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+# Jan's Engineering Blog
 
-## Development server
+This repository holds the code for my software engineering blog which can be found under the following domain: https://janschumann.dev/landing
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+I am aiming to dicuss approach to create great software faster, either by focussing on concrete technologies or discuss ways to overcome problems during the development process.
 
-## Code scaffolding
+# Local Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I am using a standard Angular 17 application, just run:
 
-## Build
+```
+npm i
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+to install all required dependencies and run:
 
-## Running unit tests
+```
+ng serve 
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+to run the application locally.

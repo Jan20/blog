@@ -57,6 +57,12 @@ describe('TitleComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should show the page title', fakeAsync(() => {
+    tick(1);
+    fixture.detectChanges();
+    expect(screen.getByText("Jan's Engineering Blog")).toBeVisible();
+  }));
+
   it('should navigate to the efficient task management component', fakeAsync(() => {
     userEvent.click(screen.getByRole('button', { name: 'Start Reading' }));
     tick(1);
