@@ -22,15 +22,15 @@ Consuming news more consciously would definitely help us to focus better. While 
 
 YouTube is one of the world's largest pools of content. It offers great tutorials and lectures, but also endless possibilities to distract ourselves. Especially recommended videos can draw us in for minutes or even hours. Thus, blocking YouTube on our phones and laptops is a great way to get less distracted. If we make the conscious decision to view a new video from our favorite channel, it is fine to unblock the platform for an evening, while leaving YouTube blocked during the day.
 
-Of course, YouTube can be seen more as an example of any video platform. Just as Twitch, Netflix, Disney+, or other video/streaming services follow a similar approach of recommending popular content, it's a pragmatic way to unsubscribe from all of them and only coming back to one of them when we intentionally make the decision to watch a specific movie, series, or video. Making it intentionally hard to consume content may seem bothersome at first, but it helps keep us focused.
+Not just YouTube, but any video platform such as Twitch, Netflix, Disney+, or other video/streaming services follow a similar approach of recommending popular content, it's a pragmatic way to unsubscribe from all of them and only coming back to one of them when we intentionally make the decision to watch a specific movie, series, or video. Making it intentionally hard to consume content may seem bothersome at first, but it helps keep us focused.
 
 ## Embracing a Social Media-Free Lifestyle
 
 <img class='side-image' src='assets/posts/engineering/204-staying-focused/social-media.png'>
 
-For most of us, checking Instagram or TikTok has become the standard to fill in any moment that might feel even remotely boring. Quickly checking the latest stories of friends seems to be rather compelling. However, virtually all social media companies employ a random reward strategy, mixing desired content such as messages from friends and loved ones with advertisements. Instead of browsing through a wonderfully curated list of awesome things our friends are doing, we get bombarded with offers, ads, and sponsored content with just enough few nuggets of seemingly valuable content sprinkled in to keep us scrolling.
+For most of us, checking Instagram or TikTok has become the standard to fill in any moment that might feel even remotely boring. Quickly checking the latest stories of friends seems to be rather compelling. However, social media companies employ a random reward strategy, mixing desired content such as messages from friends and loved ones with advertisements. Instead of browsing through a wonderfully curated list of awesome things our friends are doing, we get bombarded with offers, ads, and sponsored content with just enough few nuggets of seemingly valuable content sprinkled in to keep us scrolling.
 
-There are not too many strategies to discuss here. The best default is to delete all social media apps from our phones. We can keep up with friends and loved ones just as well, if not arguably better, by messaging or calling them. The same applies to all apps that let us continuously scroll through an endless amount of content. Jake Knapp and John Zeratsky coined the term "Infinity Pools" for such apps in their book [Make Time](https://www.amazon.de/-/en/Jake-Knapp/dp/0525572422/ref=sr_1_1?crid=35PW4KFBPXM3A&keywords=zeit+machen&qid=1670914753&sprefix=make+time%2Caps%2C85&sr=8-1), which is a pretty compelling book overall.
+There are not too many strategies to discuss here. The best default is to delete all social media apps from our phones. We can keep up with friends and loved ones just as well, if not better, by messaging or calling them. The same applies to all apps that let us continuously scroll through an endless amount of content. Jake Knapp and John Zeratsky coined the term "Infinity Pools" for such apps in their book [Make Time](https://www.amazon.de/-/en/Jake-Knapp/dp/0525572422/ref=sr_1_1?crid=35PW4KFBPXM3A&keywords=zeit+machen&qid=1670914753&sprefix=make+time%2Caps%2C85&sr=8-1), which is a pretty compelling book overall.
 
 ## Single Daily Email Check
 
@@ -38,7 +38,7 @@ There are not too many strategies to discuss here. The best default is to delete
 
 There is almost nothing as distracting in a work environment as a flood of emails with requests and information. There are multiple strategies for dealing with emails. My favorite option is to treat emails as what they are, namely an asynchronous medium, not necessitating an immediate reply. There is always the option to call someone or send him or her a direct message for a quicker response. Thus, checking and responding to emails once or twice a day is a practical way to follow up on requests in a timely manner while preserving long, uninterrupted stretches of time for working productively. For all emails not written by a human being, including newsletters and spam, the only right default is to get them filtered out and deleted automatically.
 
-## Cutting Back on Meeting 
+## Cutting Back on Meetings
 
 <img class='side-image' src='assets/posts/engineering/204-staying-focused/meetings.png'>
 
