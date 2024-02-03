@@ -17,14 +17,14 @@ export class Post {
    * @param {number} seriesSection - The section number within the series, if applicable.
    */
   constructor(
-    public category: string = '',
-    public topic: string = '',
-    public headline: string = '',
-    public summary: string = '',
-    public filePath: string = '',
-    public thumbnail: string = '',
-    public date: string = '',
-    public route: string = '',
+    public category: string,
+    public topic: string,
+    public headline: string,
+    public summary: string,
+    public filePath: string,
+    public thumbnail: string,
+    public date: string,
+    public route: string,
     public series: string = '',
     public seriesSection: number = 0
   ) {}

@@ -32,7 +32,7 @@ export class PostNavigationComponent {
     private readonly blogService: BlogService
   ) {
     this.adjacentPosts = this.router.events.pipe(
-      map(() => this.router.url.split('/')[1]),
+      map(() => this.getCategoryFromUrl()),
       mergeMap(category => this.blogService.getPosts(category, 'all')),
       map((posts: Post[]) => this.selectAdjacentPosts(posts))
     );
@@ -49,5 +49,9 @@ export class PostNavigationComponent {
       ['previousPost', index > 0 ? posts[index - 1] : undefined],
       ['upcomingPost', index < posts.length - 1 ? posts[index + 1] : undefined],
     ]);
+  }
+
+  private getCategoryFromUrl(): string {
+    return this.router.url.split('/')[1];
   }
 }
