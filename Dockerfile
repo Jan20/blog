@@ -26,4 +26,4 @@ COPY --from=build_stage /app/dist ./dist
 EXPOSE 80
 
 # Define the command to run your application
-CMD ["node", "node dist/blog/server/server.mjs"]
+CMD ["node", "dist/blog/server/server.mjs"]
