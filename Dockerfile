@@ -12,7 +12,7 @@ COPY package*.json ./
 COPY . .
 
 # Build the application
-RUN npm ci && npm run build:ssr
+RUN npm ci && npm run build
 
 ###############
 # Final Image #
@@ -26,4 +26,4 @@ COPY --from=build_stage /app/dist ./dist
 EXPOSE 80
 
 # Define the command to run your application
-CMD ["node", "dist/blog/server/main.js"]
+CMD ["node", "node dist/blog/server/server.mjs"]

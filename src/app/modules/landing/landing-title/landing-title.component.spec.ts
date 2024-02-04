@@ -60,7 +60,9 @@ describe('TitleComponent', () => {
   it('should show the page title', fakeAsync(() => {
     tick(1);
     fixture.detectChanges();
-    expect(screen.getByText("Jan's Engineering Blog")).toBeVisible();
+    expect(screen.getByText("Jan's Engineering Blog").textContent).toBe(
+      " Jan's Engineering Blog "
+    );
   }));
 
   it('should navigate to the efficient task management component', fakeAsync(() => {

@@ -5,7 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, map, mergeMap } from 'rxjs';
 import { Post } from '../../modules/shared/models/post';
 import { BlogService } from '../../modules/shared/services/blog.service';
@@ -29,9 +29,10 @@ export class PostNavigationComponent {
 
   constructor(
     private readonly router: Router,
+    private readonly activateRoute: ActivatedRoute,
     private readonly blogService: BlogService
   ) {
-    this.adjacentPosts = this.router.events.pipe(
+    this.adjacentPosts = this.activateRoute.paramMap.pipe(
       map(() => this.getCategoryFromUrl()),
       mergeMap(category => this.blogService.getPosts(category, 'all')),
       map((posts: Post[]) => this.selectAdjacentPosts(posts))

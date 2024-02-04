@@ -17,7 +17,6 @@ import { BlogService } from 'src/app/modules/shared/services/blog.service';
 import { PostListComponent } from './post-list.component';
 
 let component: PostListComponent;
-let hostComponent: HostComponent;
 let hostFixture: ComponentFixture<HostComponent>;
 
 const router = jasmine.createSpyObj<Router>('Router', ['navigate']);
@@ -68,7 +67,6 @@ describe('PostListComponent:', () => {
   beforeEach(async () => {
     await compileComponent();
     hostFixture = TestBed.createComponent(HostComponent);
-    hostComponent = hostFixture.componentInstance;
     component = TestBed.createComponent(PostListComponent).componentInstance;
     hostFixture.detectChanges();
   });

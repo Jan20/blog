@@ -14,7 +14,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { MarkdownModule } from 'ngx-markdown';
@@ -34,6 +34,12 @@ router.navigate.and.returnValue(Promise.resolve(true));
 router.url = '/engineering/task-management';
 router.events = new BehaviorSubject(new NavigationEnd(0, '', ''));
 
+const activatedRoute = jasmine.createSpyObj('ActivatedRoute', [
+  'paramMap',
+  'snapshot',
+]);
+activatedRoute.paramMap = of('/engineering/task-management');
+
 const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
   'getPost',
   'getPosts',
@@ -46,6 +52,7 @@ const compileComponent = (): void => {
     declarations: [],
     imports: [
       CommonModule,
+      RouterModule,
       PostNavigationComponent,
       HttpClientModule,
       MatCardModule,
@@ -59,6 +66,7 @@ const compileComponent = (): void => {
     ],
     providers: [
       { provide: Router, useValue: router },
+      { provide: ActivatedRoute, useValue: activatedRoute },
       { provide: BlogService, useValue: blogService },
       { provide: ComponentFixtureAutoDetect, useValue: true },
     ],
@@ -72,6 +80,10 @@ describe('PostNavigationComponent', () => {
     fixture = TestBed.createComponent(PostNavigationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it('should create a post navigation component', () => {
+    expect(component).toBeTruthy();
   });
 
   it('should navigate to the staying focused post', fakeAsync(() => {

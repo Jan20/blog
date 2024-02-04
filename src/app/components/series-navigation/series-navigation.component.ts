@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, map, mergeMap } from 'rxjs';
 import { Post } from '../../modules/shared/models/post';
 import { BlogService } from '../../modules/shared/services/blog.service';
@@ -29,9 +29,10 @@ export class SeriesNavigationComponent {
 
   constructor(
     private readonly router: Router,
+    private readonly activateRoute: ActivatedRoute,
     private readonly blogService: BlogService
   ) {
-    this.adjacentPosts = this.router.events.pipe(
+    this.adjacentPosts = this.activateRoute.paramMap.pipe(
       map(() => this.router.url.split('/')[1]),
       mergeMap(category => this.blogService.getPosts(category, 'all')),
       map((posts: Post[]) => this.selectAdjacentPosts(posts))

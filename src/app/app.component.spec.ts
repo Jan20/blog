@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    declarations: [AppComponent],
-    imports: [RouterTestingModule, CommonModule],
+    declarations: [],
+    imports: [AppComponent, RouterTestingModule, CommonModule],
     providers: [],
     teardown: { destroyAfterEach: false },
   }).compileComponents();

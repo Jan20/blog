@@ -55,12 +55,13 @@ describe('PageTitleComponent:', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create a page title component', () => {
     expect(component).toBeTruthy();
   });
 
   it('should display the correct page title', () => {
-    expect(screen.getByText('Guides')).toBeVisible();
+    fixture.detectChanges();
+    expect(screen.getByText('Guides').textContent).toBe('Guides');
   });
 
   it('should bind the input property correctly', () => {

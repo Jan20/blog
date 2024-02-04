@@ -14,7 +14,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
@@ -32,6 +32,12 @@ const router = jasmine.createSpyObj('Router', ['navigate']);
 router.navigate.and.returnValue(Promise.resolve(true));
 router.url = '/guides/containerize_flask_applications';
 router.events = new BehaviorSubject(new NavigationEnd(0, '', ''));
+
+const activatedRoute = jasmine.createSpyObj('ActivatedRoute', [
+  'paramMap',
+  'snapshot',
+]);
+activatedRoute.paramMap = of('/engineering/task-management');
 
 const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
   'getPost',
@@ -59,6 +65,7 @@ const compileComponent = (): void => {
     ],
     providers: [
       { provide: Router, useValue: router },
+      { provide: ActivatedRoute, useValue: activatedRoute },
       { provide: BlogService, useValue: blogService },
       { provide: ComponentFixtureAutoDetect, useValue: true },
     ],
@@ -74,13 +81,19 @@ describe('SeriesNavigationComponent', () => {
     fixture.detectChanges();
   });
 
+  it('should create a series navigation component', () => {
+    expect(component).toBeTruthy();
+  });
+
   it('should navigate to the containerize Angular application', fakeAsync(() => {
     expect(
       screen.getByRole('heading', { name: 'Introduction to Docker' })
-    ).toBeVisible();
+        .textContent
+    ).toBe('Introduction to Docker');
     expect(
       screen.getByRole('heading', { name: 'Containerize Angular Apps' })
-    ).toBeVisible();
+        .textContent
+    ).toBe('Containerize Angular Apps');
     userEvent.click(
       screen.getByRole('heading', { name: 'Containerize Angular Apps' })
     );
