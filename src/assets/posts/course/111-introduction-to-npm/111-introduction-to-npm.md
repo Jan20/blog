@@ -68,6 +68,20 @@ All global dependencies can easily be updated by running <code>npm update</code>
 npm update -g
 ```
 
+## Managing Node Versions
+
+For updating the Node verions, the Node Version Manager (nvm) is probably the best option.
+
+```Bash
+open 'https://github.com/nvm-sh/nvm'
+```
+
+After having installed nvm, the Node version can be updated by simply running the following command.
+
+```TS
+nvm install node 
+```
+
 ## Recap
 
 In this post, we took a first look at npm and the core purposes for adding a package.json file to a project, which is to simplify the management of dependencies, adding scripts and project metadata. We have covered some of the most-commoonly used command-line commands provided by npm such as <code>npm install</code>, <code>npm outdated</code> and <code>npm update --save</code>.
