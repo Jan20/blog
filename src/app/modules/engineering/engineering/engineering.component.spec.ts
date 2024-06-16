@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -31,27 +31,24 @@ blogService.getPosts.and.returnValue(of(ENGINEERING_POSTS));
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [EngineeringComponent],
-    imports: [
-      CommonModule,
-      PostListComponent,
-      PageTitleComponent,
-      HttpClientModule,
-      MatCardModule,
-      MatMenuModule,
-      MatButtonModule,
-      MatIconModule,
-      MatMenuModule,
-      MatCardModule,
-      MatGridListModule,
-      PostListComponent,
-      MatIconModule,
-      MatRippleModule,
-      RouterTestingModule,
-      MarkdownModule,
-    ],
-    providers: [{ provide: BlogService, useValue: blogService }],
     teardown: { destroyAfterEach: false },
-  }).compileComponents();
+    imports: [CommonModule,
+        PostListComponent,
+        PageTitleComponent,
+        MatCardModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatIconModule,
+        MatMenuModule,
+        MatCardModule,
+        MatGridListModule,
+        PostListComponent,
+        MatIconModule,
+        MatRippleModule,
+        RouterTestingModule,
+        MarkdownModule],
+    providers: [{ provide: BlogService, useValue: blogService }, provideHttpClient(withInterceptorsFromDi())]
+}).compileComponents();
 };
 
 describe('EngineeringComponent', () => {

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LandingComponent } from './landing.component';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
@@ -56,23 +56,20 @@ blogService.getPosts.and.returnValue(of(POSTS));
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [LandingComponent, LandingTitleComponent],
-    imports: [
-      CommonModule,
-      PostListComponent,
-      HttpClientModule,
-      MatButtonModule,
-      MatCardModule,
-      MatMenuModule,
-      MatGridListModule,
-      MatIconModule,
-      PageTitleComponent,
-      MatRippleModule,
-      RouterTestingModule,
-      MarkdownModule,
-    ],
-    providers: [{ provide: BlogService, useValue: blogService }],
     teardown: { destroyAfterEach: false },
-  }).compileComponents();
+    imports: [CommonModule,
+        PostListComponent,
+        MatButtonModule,
+        MatCardModule,
+        MatMenuModule,
+        MatGridListModule,
+        MatIconModule,
+        PageTitleComponent,
+        MatRippleModule,
+        RouterTestingModule,
+        MarkdownModule],
+    providers: [{ provide: BlogService, useValue: blogService }, provideHttpClient(withInterceptorsFromDi())]
+}).compileComponents();
 };
 
 describe('LandingComponent', () => {

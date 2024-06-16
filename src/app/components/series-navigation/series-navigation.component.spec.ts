@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {
   ComponentFixture,
   ComponentFixtureAutoDetect,
@@ -49,28 +49,26 @@ blogService.getPosts.and.returnValue(of(DOCKER_GUIDES));
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [],
-    imports: [
-      CommonModule,
-      SeriesNavigationComponent,
-      HttpClientModule,
-      MatCardModule,
-      MatMenuModule,
-      MatButtonModule,
-      MatIconModule,
-      MatRippleModule,
-      MarkdownModule,
-      NoopAnimationsModule,
-      MatGridListModule,
-      RouterTestingModule,
-    ],
-    providers: [
-      { provide: Router, useValue: router },
-      { provide: ActivatedRoute, useValue: activatedRoute },
-      { provide: BlogService, useValue: blogService },
-      { provide: ComponentFixtureAutoDetect, useValue: true },
-    ],
     teardown: { destroyAfterEach: false },
-  }).compileComponents();
+    imports: [CommonModule,
+        SeriesNavigationComponent,
+        MatCardModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatIconModule,
+        MatRippleModule,
+        MarkdownModule,
+        NoopAnimationsModule,
+        MatGridListModule,
+        RouterTestingModule],
+    providers: [
+        { provide: Router, useValue: router },
+        { provide: ActivatedRoute, useValue: activatedRoute },
+        { provide: BlogService, useValue: blogService },
+        { provide: ComponentFixtureAutoDetect, useValue: true },
+        provideHttpClient(withInterceptorsFromDi()),
+    ]
+}).compileComponents();
 };
 
 describe('SeriesNavigationComponent', () => {

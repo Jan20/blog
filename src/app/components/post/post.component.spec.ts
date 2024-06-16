@@ -17,7 +17,7 @@ import { BlogService } from '../../modules/shared/services/blog.service';
 import { PostNavigationComponent } from '../post-navigation/post-navigation.component';
 import { SeriesNavigationComponent } from '../series-navigation/series-navigation.component';
 import { PostComponent } from './post.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 let component: PostComponent;
 let fixture: ComponentFixture<PostComponent>;
@@ -44,29 +44,27 @@ blogService.getPosts.and.returnValue(of(ENGINEERING_POSTS));
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [],
-    imports: [
-      HttpClientModule,
-      PostComponent,
-      MatCardModule,
-      MatMenuModule,
-      MatButtonModule,
-      MatIconModule,
-      MatRippleModule,
-      MarkdownModule,
-      PostNavigationComponent,
-      SeriesNavigationComponent,
-      MarkdownModule,
-      CommonModule,
-      MarkdownComponent,
-    ],
-    providers: [
-      { provide: ActivatedRoute, useValue: activatedRoute },
-      { provide: BlogService, useValue: blogService },
-      { provide: Router, useValue: router },
-      { provide: ComponentFixtureAutoDetect, useValue: true },
-    ],
     teardown: { destroyAfterEach: false },
-  }).compileComponents();
+    imports: [PostComponent,
+        MatCardModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatIconModule,
+        MatRippleModule,
+        MarkdownModule,
+        PostNavigationComponent,
+        SeriesNavigationComponent,
+        MarkdownModule,
+        CommonModule,
+        MarkdownComponent],
+    providers: [
+        { provide: ActivatedRoute, useValue: activatedRoute },
+        { provide: BlogService, useValue: blogService },
+        { provide: Router, useValue: router },
+        { provide: ComponentFixtureAutoDetect, useValue: true },
+        provideHttpClient(withInterceptorsFromDi()),
+    ]
+}).compileComponents();
 };
 
 describe('PostComponent:', () => {
