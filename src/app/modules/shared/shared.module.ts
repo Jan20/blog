@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -11,14 +14,20 @@ import { SeriesNavigationComponent } from '../../components/series-navigation/se
 import { BlogService } from './services/blog.service';
 import { PostNavigationComponent } from '../../components/post-navigation/post-navigation.component';
 
-@NgModule({ declarations: [],
-    exports: [], imports: [CommonModule,
-        MatCardModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatIconModule,
-        MatRippleModule,
-        MarkdownModule,
-        PostNavigationComponent,
-        SeriesNavigationComponent], providers: [BlogService, provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({
+  declarations: [],
+  exports: [],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatRippleModule,
+    MarkdownModule,
+    PostNavigationComponent,
+    SeriesNavigationComponent,
+  ],
+  providers: [BlogService, provideHttpClient(withInterceptorsFromDi())],
+})
 export class SharedModule {}

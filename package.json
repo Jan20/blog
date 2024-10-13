@@ -31,7 +31,7 @@
     "@angular/ssr": "^18.1.1",
     "bootstrap": "^5.3.3",
     "express": "^4.19.2",
-    "marked": "^13.0.2",
+    "marked": "^12.0.0",
     "ngx-markdown": "^18.0.0",
     "prism": "^4.1.2",
     "prismjs": "^1.29.0",
@@ -56,8 +56,6 @@
     "@types/jasmine": "^5.1.4",
     "@types/node": "^20.14.11",
     "@types/testing-library__jasmine-dom": "^1.3.3",
-    "@typescript-eslint/eslint-plugin": "7.16.1",
-    "@typescript-eslint/parser": "7.16.1",
     "browser-sync": "^3.0.2",
     "eslint": "^9.7.0",
     "eslint-config-google": "^0.14.0",
@@ -65,7 +63,6 @@
     "eslint-plugin-json": "^4.0.0",
     "eslint-plugin-jsonc": "^2.16.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-rxjs": "^5.0.3",
     "eslint-plugin-unused-imports": "^4.0.0",
     "jasmine-core": "^5.2.0",
     "karma": "^6.4.3",
@@ -77,5 +74,8 @@
     "prettier-eslint": "^16.3.0",
     "prettier-eslint-cli": "^8.0.1",
     "typescript": "5.5.3"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.6.1"
   }
 }

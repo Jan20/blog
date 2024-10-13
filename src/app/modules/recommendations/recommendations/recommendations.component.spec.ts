@@ -2,7 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RecommendationsComponent } from './recommendations.component';
 import { CommonModule } from '@angular/common';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
@@ -56,23 +59,28 @@ const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [RecommendationsComponent],
     teardown: { destroyAfterEach: false },
-    imports: [CommonModule,
-        PostListComponent,
-        PageTitleComponent,
-        MatCardModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatIconModule,
-        MatMenuModule,
-        MatCardModule,
-        MatGridListModule,
-        PostListComponent,
-        MatIconModule,
-        MatRippleModule,
-        RouterTestingModule,
-        MarkdownModule],
-    providers: [{ provide: BlogService, useValue: blogService }, provideHttpClient(withInterceptorsFromDi())]
-}).compileComponents();
+    imports: [
+      CommonModule,
+      PostListComponent,
+      PageTitleComponent,
+      MatCardModule,
+      MatMenuModule,
+      MatButtonModule,
+      MatIconModule,
+      MatMenuModule,
+      MatCardModule,
+      MatGridListModule,
+      PostListComponent,
+      MatIconModule,
+      MatRippleModule,
+      RouterTestingModule,
+      MarkdownModule,
+    ],
+    providers: [
+      { provide: BlogService, useValue: blogService },
+      provideHttpClient(withInterceptorsFromDi()),
+    ],
+  }).compileComponents();
 };
 
 describe('RecommendationsComponent', () => {

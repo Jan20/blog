@@ -12,7 +12,7 @@ COPY package*.json ./
 COPY . .
 
 # Build the application
-RUN npm ci && npm run build
+RUN npm i && npm run build
 
 ###############
 # Final Image #

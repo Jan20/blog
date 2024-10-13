@@ -11,7 +11,7 @@ I am aiming to dicuss approach to create great software faster, either by focuss
 I am using a standard Angular 17 application, just run:
 
 ```
-npm i
+npm i --legacy-peer-deps
 ```
 
 to install all required dependencies and run:

@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import {
   ComponentFixture,
   ComponentFixtureAutoDetect,
@@ -14,7 +17,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterModule,
+} from '@angular/router';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { MarkdownModule } from 'ngx-markdown';
@@ -51,25 +59,27 @@ const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [],
     teardown: { destroyAfterEach: false },
-    imports: [CommonModule,
-        RouterModule,
-        PostNavigationComponent,
-        MatCardModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatIconModule,
-        MatRippleModule,
-        MarkdownModule,
-        NoopAnimationsModule,
-        MatGridListModule],
+    imports: [
+      CommonModule,
+      RouterModule,
+      PostNavigationComponent,
+      MatCardModule,
+      MatMenuModule,
+      MatButtonModule,
+      MatIconModule,
+      MatRippleModule,
+      MarkdownModule,
+      NoopAnimationsModule,
+      MatGridListModule,
+    ],
     providers: [
-        { provide: Router, useValue: router },
-        { provide: ActivatedRoute, useValue: activatedRoute },
-        { provide: BlogService, useValue: blogService },
-        { provide: ComponentFixtureAutoDetect, useValue: true },
-        provideHttpClient(withInterceptorsFromDi()),
-    ]
-}).compileComponents();
+      { provide: Router, useValue: router },
+      { provide: ActivatedRoute, useValue: activatedRoute },
+      { provide: BlogService, useValue: blogService },
+      { provide: ComponentFixtureAutoDetect, useValue: true },
+      provideHttpClient(withInterceptorsFromDi()),
+    ],
+  }).compileComponents();
 };
 
 describe('PostNavigationComponent', () => {

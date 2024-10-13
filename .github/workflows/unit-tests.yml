@@ -10,19 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-    - name: Install Dependencies
-      run: npm i --legacy-peer-deps
+      - name: Install Dependencies
+        run: npm i --legacy-peer-deps
 
-    - name: Build Angular App
-      run: npm run build
+      - name: Build Angular App
+        run: npm run build
 
-    - name: Run Unit Tests
-      run: npm run test:ci
+      - name: Run Unit Tests
+        run: npm run test:ci
