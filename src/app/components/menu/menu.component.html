@@ -1,5 +1,5 @@
 <mat-toolbar
-  class="d-flex justify-content-left"
+  class="mobile-menu d-flex justify-content-left"
   *ngIf="activeStates.has(MenuState.MOBILE)">
   <button
     mat-icon-button
@@ -46,6 +46,15 @@
         </div>
       </button>
     </mat-nav-list>
+
+    <button
+      type="button"
+      mat-fab
+      class="theme-button"
+      (click)="toggleTheme()"
+      aria-label="Minimize Navigation Bar">
+      <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
 
     <button
       type="button"

@@ -10,10 +10,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { LinksComponent } from './links.component';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { Window } from 'src/app/providers/window.provider';
+import { NavigationService } from 'src/app/modules/shared/services/navigation.service';
 
 let component: LinksComponent;
 let fixture: ComponentFixture<LinksComponent>;
+let navigationService: NavigationService;
 
 const windowSpy = jasmine.createSpyObj('Window', ['open']);
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -24,7 +25,7 @@ const compileComponent = (): void => {
     declarations: [],
     imports: [LinksComponent, MatCardModule, MatIconModule],
     providers: [
-      { provide: Window, useValue: windowSpy },
+      NavigationService,
       { provide: ComponentFixtureAutoDetect, useValue: true },
     ],
     teardown: { destroyAfterEach: false },
@@ -37,6 +38,7 @@ describe('LinksComponent', () => {
 
     fixture = TestBed.createComponent(LinksComponent);
     component = fixture.componentInstance;
+    navigationService = TestBed.inject(NavigationService);
     fixture.detectChanges();
   });
 
@@ -52,9 +54,8 @@ describe('LinksComponent', () => {
     );
     tick(1);
     fixture.detectChanges();
-    expect(windowSpy.open).toHaveBeenCalledOnceWith(
-      'https://github.com/Jan20',
-      '_blank'
+    expect(navigationService.openUrl).toHaveBeenCalledOnceWith(
+      'https://github.com/Jan20'
     );
   }));
 });

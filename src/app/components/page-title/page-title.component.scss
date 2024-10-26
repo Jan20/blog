@@ -1,3 +1,8 @@
+.mat-mdc-card {
+  min-height: 500px;
+  box-shadow: none;
+}
+
 h1 {
   line-height: 110%;
   font-weight: 400 !important;
@@ -11,14 +16,6 @@ h2 {
   font-size: 28px !important;
   line-height: 150%;
   padding-top: 0px;
-  color: black !important;
-}
-
-.mat-mdc-card {
-  min-height: 500px;
-  background-size: cover;
-  background-position: center;
-  box-shadow: none;
 }
 
 button {
@@ -28,36 +25,50 @@ button {
   border-radius: 100px !important;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+@media (max-width: 600px) {
+  .mat-mdc-card {
+    min-height: 200px;
+    background-position: center;
+    box-shadow: none;
   }
 
-  50% {
-    background-position: 100% 50%;
+  h1 {
+    line-height: 100%;
+    font-weight: 400;
+    font-size: 58px !important;
+    margin-left: 10px;
+    margin-bottom: 0px;
+  }
+  
+  h2 {
+    text-align: left;
+    font-size: 18px !important;
+    line-height: 150%;
+    margin: 10px;
   }
 
-  100% {
-    background-position: 0% 50%;
+  button {
+    margin-top: -10px;
+    margin-bottom: 20px;
   }
 }
 
 .guides {
-  background-image: url('/assets/images/guides/background.svg');
+  background: radial-gradient(ellipse at top left, rgb(84	141	76	), rgb(137	186	114	)); /* Elliptical gradient from top left */
 }
 
 .recommendations {
-  background-image: url('/assets/images/recommendations/background.svg');
+  background: radial-gradient(ellipse at top left, rgb(0	195	218	), rgb(0	195	218	)); /* Elliptical gradient from top left */
 }
 
 .course {
-  background-image: url('/assets/images/course/background.svg');
+  background: radial-gradient(ellipse at top left, rgb(255, 121, 93), rgb(246	198	116	)); /* Elliptical gradient from top left */
 }
 
 .about {
-  background-image: url('/assets/images/about/background.svg');
+  background: radial-gradient(ellipse at top left, rgb(0	152	175	), rgb(107	209	110	)); /* Elliptical gradient from top left */
 }
 
 .engineering {
-  background-image: url('/assets/images/engineering/background.svg');
+  background: radial-gradient(ellipse at top left, #2c426b, #6489b6); /* Elliptical gradient from top left */
 }

@@ -1,5 +1,7 @@
 .mat-sidenav {
-  background-color: rgb(244, 246, 251);
+  background-color: var(--menu-background-color);
+  color: var(--menu-text-color);
+  transition: background-color 0.3s, color 0.3s;
   width: 125px;
   border: none;
 
@@ -9,35 +11,57 @@
 }
 
 .mat-icon {
-  color: rgba(80, 80, 80);
+  color: var(--menu-text-color);
 }
 
 .active {
-  background-color: rgb(201, 230, 252);
-  color: black;
+  background-color: var(--menu-background-color-active);
+  color: var(--menu-text-color);
   .mat-icon {
-    color: black;
+    color: var(--menu-text-color);
   }
 }
 
 button {
   font-size: 10px;
   font-weight: 400 !important;
+  background-color: var(--menu-background-color);
+  color: var(--menu-text-color) !important;
 }
 
 .mat-sidenav-content {
-  background-color: rgb(255, 255, 255) !important;
+  background-color: var(--background-color);
+}
+
+.theme-button {
+  position: fixed;
+  bottom: 0 + 100px;
+  left: 30px;
+  box-shadow: none;
+  border: 0.25px solid gray;
+
+  .mat-icon {
+    font-size: 24px;
+    color: var(--menu-text-color) !important;
+  }
+  background-color: var(--menu-background-color);
+  color: var(--menu-text-color);
 }
 
 .minimize-button {
   position: fixed;
   bottom: 0 + 20px;
   left: 30px;
-  background-color: white;
   box-shadow: none;
   border: 0.25px solid gray;
 
   .mat-icon {
     font-size: 24px;
+    color: var(--menu-text-color) !important;
   }
+  background-color: var(--menu-background-color);
+}
+
+.mobile-menu {
+  background-color: var(--menu-background-color);
 }

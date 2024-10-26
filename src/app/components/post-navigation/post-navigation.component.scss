@@ -9,10 +9,10 @@ p {
 }
 
 .mat-mdc-card {
-  background-color: rgb(248, 250, 253);
+  background-color: var(--menu-background-color);
 }
 
 .mat-mdc-card:hover {
   cursor: pointer;
-  background-color: rgb(201, 230, 251);
+  background-color: var(--menu-background-color-active);
 }

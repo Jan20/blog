@@ -8,10 +8,35 @@
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
-html,
+:root {
+  --background-color: #ffffff;
+  --text-color: rgb(28	27	29	);
+  --menu-background-color: rgb(241,236,238	);
+  --menu-background-color-active: rgb(220, 218, 243);
+  --menu-text-color: #000000;
+}
+
+.dark-theme {
+  --background-color: rgb(20, 19, 20);
+  --text-color: rgb(229, 225, 227);
+  --menu-background-color: rgb(33,	31, 33);
+  --menu-background-color-active: rgb(69, 69, 88);
+  --menu-text-color: rgb(229, 225, 227);
+}
+
 body {
-  height: 100%;
-  background-color: rgb(255, 255, 255) !important;
+  background-color: var(--background-color) !important;
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.full-container {
+  background-color: var(--background-color) !important;
+  color: var(--text-color);
+}
+
+.placeholder {
+  height: 500px !important;
 }
 
 h1 {
@@ -22,6 +47,7 @@ h1 {
   padding-bottom: 36px;
   line-height: 125% !important;
   text-align: left;
+  color: var(--text-color);
 }
 
 h2 {
@@ -31,6 +57,7 @@ h2 {
   margin-top: 30px !important;
   padding-top: 60px;
   padding-bottom: 15px;
+  color: var(--text-color);
 }
 
 h3 {
@@ -39,6 +66,7 @@ h3 {
   font-weight: 300;
   margin-top: 30px;
   margin-bottom: 4px;
+  color: var(--text-color);
 }
 
 p {
@@ -46,8 +74,8 @@ p {
   font-size: 18px;
   font-weight: 400;
   text-align: justify;
-  color: rgb(51, 51, 51) !important;
   margin-bottom: 12px;
+  color: var(--text-color);
 }
 
 code {
@@ -194,3 +222,6 @@ img {
   width: 100%;
   border-radius: 20px;
 }
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

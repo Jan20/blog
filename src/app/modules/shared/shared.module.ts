@@ -13,6 +13,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { SeriesNavigationComponent } from '../../components/series-navigation/series-navigation.component';
 import { BlogService } from './services/blog.service';
 import { PostNavigationComponent } from '../../components/post-navigation/post-navigation.component';
+import { ThemeService } from './services/theme.service';
 
 @NgModule({
   declarations: [],
@@ -28,6 +29,6 @@ import { PostNavigationComponent } from '../../components/post-navigation/post-n
     PostNavigationComponent,
     SeriesNavigationComponent,
   ],
-  providers: [BlogService, provideHttpClient(withInterceptorsFromDi())],
+  providers: [ThemeService, BlogService, provideHttpClient(withInterceptorsFromDi())],
 })
 export class SharedModule {}

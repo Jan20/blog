@@ -1,11 +1,10 @@
 import { LayoutModule } from '@angular/cdk/layout';
-import { CommonModule } from '@angular/common';
-import { Component, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { Window } from 'src/app/providers/window.provider';
 import { Link } from '../models/link';
 
 @Component({
@@ -36,9 +35,11 @@ export class LinksComponent {
     ),
   ];
 
-  constructor(@Inject(Window) private window: Window) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   public openLink(url: string): void {
-    this.window.open(url, '_blank');
+    if (isPlatformBrowser(this.platformId)) {
+      window.open(url, '_blank');
+    }
   }
 }

@@ -1,7 +1,6 @@
 p {
   line-height: 175%;
   text-align: justify;
-  color: #1d1d1f;
   font-weight: 300;
 }
 
@@ -24,4 +23,8 @@ img {
     width 1s,
     height 1s,
     transform 0.7s;
+}
+
+.post {
+  background-color: var(--background-color) !important;
 }

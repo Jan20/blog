@@ -4,6 +4,8 @@ h3 {
 }
 
 .mat-mdc-card {
+  background-color: var(--menu-background-color);
+  color: var(--text-color);
   font-weight: 500;
   box-shadow: none !important;
   transition:
@@ -20,4 +22,8 @@ h3 {
 
 img {
   border-radius: 40px !important;
+}
+
+.post {
+  background-color: var(--background-color) !important;
 }
