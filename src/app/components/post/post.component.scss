@@ -10,11 +10,12 @@ h1 {
 }
 
 h2 {
-  line-height: 150%;
-  font-size: 38px !important;
+  line-height: 150% !important;
+  font-size: 32px !important;
   font-weight: 400 !important;
   margin-top: 20px !important;
   padding-top: 20px;
+  margin-bottom: 0 !important;
   padding-bottom: 5px;
   color: var(--text-color);
 }

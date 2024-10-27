@@ -18,7 +18,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { MarkdownModule } from 'ngx-markdown';
@@ -64,7 +63,6 @@ const compileComponent = (): void => {
       MarkdownModule,
       NoopAnimationsModule,
       MatGridListModule,
-      RouterTestingModule,
     ],
     providers: [
       { provide: Router, useValue: router },
@@ -103,7 +101,7 @@ describe('SeriesNavigationComponent', () => {
     tick(1);
     fixture.detectChanges();
     expect(router.navigate).toHaveBeenCalledWith([
-      '/guides/containerize_Angular_applications',
+      '/guides/containerize-Angular-applications',
     ]);
   }));
 });

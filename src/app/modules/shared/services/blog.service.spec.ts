@@ -58,7 +58,7 @@ describe('BlogService:', () => {
     it('should select a post by its position in a series', () => {
       service
         .getPostBySeriesSection('guides', 'Docker', 2)
-        .subscribe(result => expect(result).toEqual(DOCKER_GUIDES[0]));
+        .subscribe(result => expect(result).toEqual(DOCKER_GUIDES[3]));
     });
   });
 

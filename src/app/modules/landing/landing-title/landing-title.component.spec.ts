@@ -70,7 +70,7 @@ describe('TitleComponent', () => {
     tick(1);
     fixture.detectChanges();
     expect(router.navigate).toHaveBeenCalledWith([
-      'engineering/embracing_the_terminal',
+      'engineering/embracing-the-terminal',
     ]);
   }));
 });
