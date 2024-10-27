@@ -46,7 +46,7 @@ docker-compose -f docker-compose.yml up -d
 ```
 
 If everything got configured correctly, the result should similar to the output shown below:
-<img class='almost-full-width' src='assets/posts/guides/007_multi_container_applications/hello_world.png'>
+<img class='almost-full-width' src='assets/posts/guides/multi_container_applications/hello_world.png'>
 
 ## Closing Remarks
 

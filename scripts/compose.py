@@ -216,7 +216,7 @@ def compose_route(file_path: str) -> str:
     Composes a route from a file path.
 
     Parameters:
-        file_path (str): A file path such as '/Users/<USER_NAME>/Developer/blog/src/assets/posts/course/002-introduction-to-rxjs/002-introduction-to-rxjs.md'
+        file_path (str): A file path such as '/Users/<USER_NAME>/Developer/blog/src/assets/posts/course/introduction-to-rxjs/introduction-to-rxjs.md'
 
     Returns:
         str: The composed route, for example, '/course/introduction-to-rxjs'
@@ -229,14 +229,13 @@ def compose_route(file_path: str) -> str:
         - Returns the composed route.
 
     Example:
-        file_path = '/Users/<USER_NAME>/Developer/blog/src/assets/posts/course/002-introduction-to-rxjs/002-introduction-to-rxjs.md'
+        file_path = '/Users/<USER_NAME>/Developer/blog/src/assets/posts/course/introduction-to-rxjs/introduction-to-rxjs.md'
         compose_route(file_path)  # Output: '/course/introduction-to-rxjs'
     """
     elements = file_path.split("/")
     category = elements[-3]
     post_id = elements[-2]
-    updated_post_id = post_id[4:]
-    return f'/{category}/{updated_post_id}'
+    return f'/{category}/{post_id}'
 
 
 def parse_post_to_line(post: Post) -> str:

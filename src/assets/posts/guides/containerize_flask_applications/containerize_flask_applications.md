@@ -97,9 +97,9 @@ docker ps
 ```
 
 The output of the <code>docker images</code> should look similar to the one depicted below:
-<img class='almost-full-width' src='assets/posts/guides/005_containerize_flask_applications/docker_images.png'>
+<img class='almost-full-width' src='assets/posts/guides/containerize_flask_applications/docker_images.png'>
 
 ## Step 5 (Optional): Take a look at the final result
 
 By spinning up the Docker containing mapping Docker's internal port 5000 to the host's port 8080, the Flask application becomes accessible on localhost. Try it out by opening <code>localhost:8080</code>.
-<img class='almost-full-width' src='assets/posts/guides/005_containerize_flask_applications/hello_world.png'>
+<img class='almost-full-width' src='assets/posts/guides/containerize_flask_applications/hello_world.png'>

@@ -26,7 +26,7 @@ In such instances, investing time in breaking down tasks into actionable pieces 
 
 After having broken down larger tasks into more manageable pieces, it is time to make actual progress on a task's completion. To keep track of the status of tasks, it can be quite useful to have some form of a board with a few columns, representing a task's state. From my personal experience, a rather minimal board consisting of four columns for tasks that are still untouched, in progress, in review, and done usually is all that is needed. It allows a quick overview of all tasks selected to be finished in a specific timeframe. A typical board looks similar to the one shown below and can be easily created by a plethora of tools. My personal favorites are Notion for its great versatility and Atlassian's JIRA application for collaborating in a corporate setting.
 
-<img class='full-width' src='assets/posts/engineering/205-task-management/jira-dashboard.png'>
+<img class='full-width' src='assets/posts/engineering/task-management/jira-dashboard.png'>
 
 ## Executing Tasks
 
