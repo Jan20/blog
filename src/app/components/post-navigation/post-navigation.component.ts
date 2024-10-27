@@ -25,7 +25,7 @@ import { BlogService } from '../../modules/shared/services/blog.service';
   styleUrls: ['./post-navigation.component.scss'],
 })
 export class PostNavigationComponent {
-  public adjacentPosts: Observable<Map<string, Post | undefined>>;
+  adjacentPosts: Observable<Map<string, Post | undefined>>;
 
   constructor(
     private readonly router: Router,
@@ -39,7 +39,7 @@ export class PostNavigationComponent {
     );
   }
 
-  public navigateToPost(post: Post): void {
+  navigateToPost(post: Post): void {
     this.router.navigate([`${post.route}`]);
   }
 

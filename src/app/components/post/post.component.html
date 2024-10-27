@@ -1,5 +1,5 @@
-<div class="full-container">
-  <div class="container col-lg-6 col-sm-12 mt-5" *ngIf="post | async as post">
+<div class="full-container" #targetElement>
+  <div class="container col-lg-6 pt-5 col-sm-12" *ngIf="post | async as post">
     <mat-card class="post">
       <img
         mat-card-image
@@ -8,8 +8,8 @@
         width="960"
         [src]="post.thumbnail"
         alt="Post's thumbnail" />
-      <mat-card-content class="p-4">
-        <h4 class="mt-1 mb-0">
+      <mat-card-content>
+        <h4 class="mt-1">
           {{ post.date | date }}
         </h4>
         <markdown [src]="post.filePath"></markdown>

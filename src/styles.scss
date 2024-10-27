@@ -10,8 +10,8 @@
 
 :root {
   --background-color: #ffffff;
-  --text-color: rgb(28	27	29	);
-  --menu-background-color: rgb(241,236,238	);
+  --text-color: rgb(28 27 29);
+  --menu-background-color: rgb(241, 236, 238);
   --menu-background-color-active: rgb(220, 218, 243);
   --menu-text-color: #000000;
 }
@@ -19,7 +19,7 @@
 .dark-theme {
   --background-color: rgb(20, 19, 20);
   --text-color: rgb(229, 225, 227);
-  --menu-background-color: rgb(33,	31, 33);
+  --menu-background-color: rgb(33, 31, 33);
   --menu-background-color-active: rgb(69, 69, 88);
   --menu-text-color: rgb(229, 225, 227);
 }
@@ -27,7 +27,9 @@
 body {
   background-color: var(--background-color) !important;
   color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .full-container {
@@ -41,20 +43,19 @@ body {
 
 h1 {
   font-size: 58px !important;
-  font-weight: 400 !important;
+  font-weight: 300 !important;
   margin-bottom: 4px;
   padding-top: 30px;
   padding-bottom: 36px;
   line-height: 125% !important;
-  text-align: left;
   color: var(--text-color);
 }
 
 h2 {
   line-height: 150%;
-  font-size: 32px !important;
+  font-size: 32px;
   font-weight: 400 !important;
-  margin-top: 30px !important;
+  margin-top: 30px;
   padding-top: 60px;
   padding-bottom: 15px;
   color: var(--text-color);
@@ -222,6 +223,3 @@ img {
   width: 100%;
   border-radius: 20px;
 }
-
-// html, body { height: 100%; }
-// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

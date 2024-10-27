@@ -1,10 +1,13 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, map, mergeMap } from 'rxjs';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Observable, map, mergeMap, timer } from 'rxjs';
 import { Post } from '../../modules/shared/models/post';
 import { BlogService } from '../../modules/shared/services/blog.service';
 import { CommonModule } from '@angular/common';
@@ -43,14 +46,22 @@ import { SeriesNavigationComponent } from '../series-navigation/series-navigatio
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
   public post: Observable<Post> = this.fetchPost();
+  @ViewChild('targetElement') targetElement!: ElementRef;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly blogservice: BlogService,
     private readonly router: Router
   ) {}
+
+  ngOnInit() {
+    this.router.events.subscribe((event: any) => {
+        console.log("jasn");
+        this.targetElement.nativeElement.scrollIntoView({ block: 'start' });
+    });
+  }
 
   private fetchPost(): Observable<Post> {
     return this.activatedRoute.paramMap.pipe(
