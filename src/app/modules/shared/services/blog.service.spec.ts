@@ -27,7 +27,7 @@ describe('BlogService:', () => {
   });
 
   describe('getPosts:', () => {
-    it('should retrieve all posts belonging to the productivity category', () => {
+    it('should retrieve all posts belonging to the engineering category', () => {
       service
         .getPosts('engineering', 'all')
         .subscribe(result => expect(result).toEqual(ENGINEERING_POSTS));
@@ -66,7 +66,7 @@ describe('BlogService:', () => {
     it('should select the task managment post', () => {
       service
         .getPost('engineering', 'task-management')
-        .subscribe(result => expect(result).toEqual(ENGINEERING_POSTS[0]));
+        .subscribe(result => expect(result).toEqual(ENGINEERING_POSTS[1]));
     });
   });
 });

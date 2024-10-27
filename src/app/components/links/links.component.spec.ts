@@ -3,6 +3,7 @@ import {
   ComponentFixtureAutoDetect,
   TestBed,
   fakeAsync,
+  flush,
   tick,
 } from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
@@ -14,18 +15,16 @@ import { NavigationService } from 'src/app/modules/shared/services/navigation.se
 
 let component: LinksComponent;
 let fixture: ComponentFixture<LinksComponent>;
-let navigationService: NavigationService;
 
-const windowSpy = jasmine.createSpyObj('Window', ['open']);
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
-windowSpy.open.and.returnValue(undefined);
+const navigationService = jasmine.createSpyObj<NavigationService>('NavigationService', ['openUrl']);
+navigationService.openUrl.and.returnValue();
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [],
     imports: [LinksComponent, MatCardModule, MatIconModule],
     providers: [
-      NavigationService,
+      { provide: NavigationService, useValue: navigationService },
       { provide: ComponentFixtureAutoDetect, useValue: true },
     ],
     teardown: { destroyAfterEach: false },
@@ -34,11 +33,10 @@ const compileComponent = (): void => {
 
 describe('LinksComponent', () => {
   beforeEach(async () => {
+    navigationService.openUrl.calls.reset();
     compileComponent();
-
     fixture = TestBed.createComponent(LinksComponent);
     component = fixture.componentInstance;
-    navigationService = TestBed.inject(NavigationService);
     fixture.detectChanges();
   });
 
@@ -46,7 +44,7 @@ describe('LinksComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should navigate to LinkedIn', fakeAsync(() => {
+  it('should navigate to Github', fakeAsync(() => {
     userEvent.click(
       screen.getByRole('button', {
         name: 'Link to assets/images/links/github.png Github',
@@ -57,5 +55,8 @@ describe('LinksComponent', () => {
     expect(navigationService.openUrl).toHaveBeenCalledOnceWith(
       'https://github.com/Jan20'
     );
+    tick(1);
+    fixture.detectChanges();
+    flush();
   }));
 });

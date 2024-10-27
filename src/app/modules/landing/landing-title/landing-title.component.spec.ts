@@ -65,12 +65,12 @@ describe('TitleComponent', () => {
     );
   }));
 
-  it('should navigate to the efficient task management component', fakeAsync(() => {
+  it('should navigate to embracing the terminal', fakeAsync(() => {
     userEvent.click(screen.getByRole('button', { name: 'Start Reading' }));
     tick(1);
     fixture.detectChanges();
     expect(router.navigate).toHaveBeenCalledWith([
-      'engineering/task-management',
+      'engineering/embracing_the_terminal',
     ]);
   }));
 });

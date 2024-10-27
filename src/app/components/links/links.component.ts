@@ -1,10 +1,11 @@
 import { LayoutModule } from '@angular/cdk/layout';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { NavigationService } from 'src/app/modules/shared/services/navigation.service';
 import { Link } from '../models/link';
 
 @Component({
@@ -22,7 +23,7 @@ import { Link } from '../models/link';
   styleUrls: ['./links.component.scss'],
 })
 export class LinksComponent {
-  public readonly links = [
+  readonly links = [
     new Link(
       'Github',
       'https://github.com/Jan20',
@@ -35,11 +36,11 @@ export class LinksComponent {
     ),
   ];
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    private readonly navigationService: NavigationService
+  ) {}
 
-  public openLink(url: string): void {
-    if (isPlatformBrowser(this.platformId)) {
-      window.open(url, '_blank');
-    }
+  openLink(url: string): void {
+    this.navigationService.openUrl(url);
   }
 }

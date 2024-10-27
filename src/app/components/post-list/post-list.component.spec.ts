@@ -51,7 +51,6 @@ const compileComponent = (): void => {
       MatCardModule,
       MatGridListModule,
       PostListComponent,
-      RouterTestingModule,
     ],
     providers: [
       { provide: ActivatedRoute, useValue: activatedRoute },
@@ -75,10 +74,10 @@ describe('PostListComponent:', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should select the "task management" post', () => {
-    component.showPost(ENGINEERING_POSTS[0]);
+  it('should select the "Staying Focused" post', () => {
+    component.showPost(ENGINEERING_POSTS[2]);
     expect(router.navigate).toHaveBeenCalledWith([
-      `/engineering/task-management`,
+      `/engineering/staying-focused`,
     ]);
   });
 });

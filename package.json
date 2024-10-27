@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "scripts": {
     "ng": "ng",
     "coverage": "open ./coverage/blog/index.html",

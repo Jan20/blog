@@ -201,6 +201,16 @@ export const COURSE: Post[] = [
 export const ENGINEERING_POSTS: Post[] = [
   new Post(
     'engineering',
+    'Focus',
+    'Embracing the Terminal',
+    'Post is about outlining how a terminal can be used effectively.',
+    'assets/posts/engineering/203-embracing_the_terminal/203-embracing_the_terminal.md',
+    'assets/posts/engineering/203-embracing_the_terminal/thumbnail.svg',
+    '2024-10-13',
+    '/engineering/embracing_the_terminal'
+  ),
+  new Post(
+    'engineering',
     'Efficiency',
     'Efficient Task Management',
     'Describes an effective task management system for getting stuff done.',

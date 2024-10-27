@@ -11,7 +11,7 @@ import {
   styleUrls: ['./landing-title.component.scss'],
 })
 export class LandingTitleComponent {
-  public readonly pageTitle = new PageTitle(
+  readonly pageTitle = new PageTitle(
     "Jan's Engineering Blog",
     "Writing software requires passion, skill, and a considerable amount of time. However, time is our most limited resource, so let's explore techniques helping us to craft great software faster.",
     PageTitleBackground.LANDING
@@ -19,7 +19,7 @@ export class LandingTitleComponent {
 
   constructor(private readonly router: Router) {}
 
-  public startReading(): void {
-    this.router.navigate([`engineering/task-management`]);
+  startReading(): void {
+    this.router.navigate([`engineering/embracing_the_terminal`]);
   }
 }
