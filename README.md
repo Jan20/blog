@@ -2,22 +2,26 @@
 
 # Jan's Engineering Blog
 
-This repository holds the code for my software engineering blog which can be found under the following domain: https://janschumann.dev/landing
+This repository holds the source code for my small software engineering blog. Feel free to take a look at https://janladicha.de to see the project in action. I decided to go for a rather bare-bone Angular 18 application ready to get served on GCP's Cloud Run platform.
 
-I am aiming to dicuss approach to create great software faster, either by focussing on concrete technologies or discuss ways to overcome problems during the development process.
+<img width="2032" alt="Screenshot 2024-10-27 at 12 29 01" src="https://github.com/user-attachments/assets/e738e7e6-128c-4106-b401-0a81ebefdf36">
 
 # Local Setup
 
-I am using a standard Angular 17 application, just run:
+**Step 1:** Install npm dependencies:
 
 ```
-npm i --legacy-peer-deps
+npm i
 ```
 
-to install all required dependencies and run:
+**Step 2:** Install the Angular CLI if not already present:
 
 ```
-ng serve 
+npm install -g @angular/cli
 ```
 
-to run the application locally.
+**Step 3:** Serve the application locally by running:
+
+```
+ng serve
+```
