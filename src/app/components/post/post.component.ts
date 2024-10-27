@@ -48,7 +48,7 @@ import { SeriesNavigationComponent } from '../series-navigation/series-navigatio
 })
 export class PostComponent implements OnInit {
   public post: Observable<Post> = this.fetchPost();
-  @ViewChild('targetElement') targetElement!: ElementRef;
+  @ViewChild('targetElement') targetElement: ElementRef | undefined;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
@@ -57,9 +57,9 @@ export class PostComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.router.events.subscribe((event: any) => {
-        console.log("jasn");
-        this.targetElement.nativeElement.scrollIntoView({ block: 'start' });
+    this.router.events.subscribe((event: Object) => {
+      if (!this.targetElement) return;
+      if (event instanceof NavigationEnd) this.targetElement.nativeElement.scrollIntoView({ block: 'start' });
     });
   }
 
