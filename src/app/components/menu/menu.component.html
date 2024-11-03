@@ -63,7 +63,7 @@
       class="theme-button"
       (click)="toggleTheme()"
       aria-label="Minimize Navigation Bar">
-      <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      <mat-icon>{{ isLightTheme ? 'dark_mode' : 'light_mode' }}</mat-icon>
     </button>
   </mat-sidenav>
 
@@ -84,7 +84,7 @@
       class="theme-button"
       (click)="toggleTheme()"
       aria-label="Minimize Navigation Bar">
-      <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      <mat-icon>{{ isLightTheme ? 'dark_mode' : 'light_mode' }}</mat-icon>
     </button>
 
     <router-outlet></router-outlet>

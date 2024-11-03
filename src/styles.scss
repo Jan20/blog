@@ -1,5 +1,4 @@
 @import './theme.scss';
-@import '@angular/material';
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 * {
@@ -9,19 +8,19 @@
 }
 
 :root {
-  --background-color: #ffffff;
-  --text-color: rgb(28 27 29);
-  --menu-background-color: rgb(241, 236, 238);
-  --menu-background-color-active: rgb(220, 218, 243);
-  --menu-text-color: #000000;
-}
-
-.dark-theme {
   --background-color: rgb(20, 19, 20);
   --text-color: rgb(229, 225, 227);
   --menu-background-color: rgb(33, 31, 33);
   --menu-background-color-active: rgb(69, 69, 88);
   --menu-text-color: rgb(229, 225, 227);
+}
+
+.light-theme {
+  --background-color: #ffffff;
+  --text-color: rgb(28 27 29);
+  --menu-background-color: rgb(241, 236, 238);
+  --menu-background-color-active: rgb(220, 218, 243);
+  --menu-text-color: rgb(28 27 29);
 }
 
 body {

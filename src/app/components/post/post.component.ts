@@ -59,7 +59,9 @@ export class PostComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((event: Object) => {
       if (!this.targetElement) return;
-      if (event instanceof NavigationEnd) this.targetElement.nativeElement.scrollIntoView({ block: 'start' });
+      if (event instanceof NavigationEnd) {
+        this.targetElement.nativeElement.scrollIntoView({ block: 'start' });
+      }
     });
   }
 

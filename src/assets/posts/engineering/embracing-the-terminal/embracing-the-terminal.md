@@ -4,13 +4,31 @@ topic=Focus
 summary=Post is about outlining how a terminal can be used effectively.
 -->
 
-# Embracing the Terminal
+# Supercharing Your Shell
 
-One of the most essential tools for getting stuff done efficiently is undoubtedly zsh, at least working with MacOS. After having mastered the basics like navigating through directories, creating and changing files, I found myself spending more and more time with various cli tools. Some of which offer rather counter intuive commands or follow conventions that are simple hard to remember.
+For years, zsh as my prefered shell has been a faithful companion in my daily development. It's irreplacable for navigating through directories, creating and changing file as well as carrying out more and more advanced tasks utilizing various cli tools. Some of which offer rather counter intuive commands or follow conventions that are simple hard to remember.
 
-At first, I resorted to either Google the same commands over and over again or creating cheatsheets in Notion or OneNote. Yet, leaving the terminal just to look up some obscure command is not really efficient. However, I have found an approach that works just fine for me and may make your workflow ever so slightly more efficent as well.
+I resorted to either Google the same commands over and over again or creating cheatsheets in Notion or OneNote. Yet, leaving the terminal just to look up some obscure command is not really efficient. Yet, recently I have found an approach that has vastly improved some of my workflows and may save you a lot of time as well. The basic idea is to save basically all commonly used commands from various CLIs into simple text files, reading those file via fzf (fuzzy finder) and upon selecting a command to execute it. Sounds rather trivial on surface but can bring us astonishingly if used correctly. Let's jump into it.
 
 ## Getting Started
+
+**Step 1:** Install the fuzzy finder [fzf](https://github.com/junegunn/fzf)
+
+```TS
+brew install fzf
+```
+
+**Step 2:** Validate whether fzf is working as expected by running something like in zsh:
+
+```TS
+cd $(find . -maxdepth 3 -d | fzf)
+```
+
+By combining cd, find and fzf, we can simply jump into a directory by taking advantage of fzf's fuzzy finding algorithm.
+
+![fzf](assets/posts/engineering/embracing-the-terminal/fzf.png)
+
+
 
 Stating the obvious, we could just take our zsh history, pipe all previously executed commands to the fuzzy finder fzf and execute the selected command. Something like the line below certainly does the trick.
 

@@ -6,15 +6,15 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ThemeService {
 
-  private isDarkTheme = new BehaviorSubject<boolean>(false);
-  isDarkTheme$ = this.isDarkTheme.asObservable();
+  private IsLightTheme = new BehaviorSubject<boolean>(false);
+  isLightTheme$ = this.IsLightTheme.asObservable();
 
   constructor() { }
 
   toggleDarkMode() {
-    const newTheme = !this.isDarkTheme.value;
-    this.isDarkTheme.next(newTheme);
+    const newTheme = !this.IsLightTheme.value;
+    this.IsLightTheme.next(newTheme);
 
-    newTheme ? document.body.classList.add('dark-theme') : document.body.classList.remove('dark-theme')
+    newTheme ? document.body.classList.add('light-theme') : document.body.classList.remove('light-theme')
   }
 }
