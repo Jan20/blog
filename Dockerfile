@@ -6,23 +6,33 @@ WORKDIR /app
 # Copy package.json and package-lock.json for dependency installation
 COPY package*.json ./
 
+# Install dependencies
+RUN npm ci
+
 # Copy the application source code
 COPY . .
 
-# Build the application
-RUN npm ci && npm run build --prod
+# Build the Angular SSR application (both browser and server builds)
+RUN npm run build:ssr
 
-# Final Image
+# -------------------------------------------------------------------
+# FINAL IMAGE
 FROM node:20-alpine3.17
 
-# Copy only the necessary files from the build stage
-COPY --from=build_stage /app/dist ./dist
+WORKDIR /app
 
-COPY robots.txt dist/blog/browser/robots.txt
-COPY sitemap.xml dist/blog/browser/sitemap.xml
+# Copy necessary files from the builder stage
+
+COPY --from=build_stage /app/dist/blog/browser /app/browser
+COPY --from=build_stage /app/dist/blog/server /app/server
+
+COPY robots.txt sitemap.xml /app/browser/
+
+# Install pm2 for process management
+RUN npm install -g pm2
 
 # Expose the port that your application will listen on
 EXPOSE 80
 
 # Define the command to run your application
-CMD ["node", "dist/blog/server/server.mjs"]
+CMD ["pm2-runtime", "/app/server/server.mjs"]

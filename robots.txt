@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://janladicha.com/sitemap.xml
+Sitemap: https://janladicha.de/sitemap.xml
