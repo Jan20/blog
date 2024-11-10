@@ -36,7 +36,7 @@ import { ThemeService } from 'src/app/modules/shared/services/theme.service';
 export class MenuComponent implements OnInit {
   activeStates = new Set<MenuState>();
   isLightTheme: boolean = false;
-  readonly title = 'Efficient Engineering';
+  readonly title = "Jan's Engineering Blog";
   readonly MenuState = MenuState;
   readonly menuItems: MenuItem[] = MENU_ITEMS;
 
