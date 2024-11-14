@@ -6,9 +6,7 @@ summary=Post is about outlining how a terminal can be used effectively.
 
 # Efficient Terminal Setup
 
-For years, zsh has been my preferred shell and a faithful companion in my daily development work. It’s irreplaceable for navigating directories, editing files, and performing more advanced tasks like interacting with Kubernetes clusters or cloud environments using various CLI tools—some of which have rather counterintuitive commands, follow conventions that are hard to remember, or produce outputs I often want to transform or use as inputs for other operations.
-
-I used to rely on either Googling the same commands repeatedly or creating cheatsheets in Notion and OneNote. However, leaving the terminal just to look up an obscure command proved to be inefficient. So, why leave the terminal in the first place? Couldn’t we just save commands that are hard to remember in a text file, search through its content, and execute the command we want?
+Let's face it, there are terminal commands or cli tools we will never remember. I used to rely on either Googling the same commands repeatedly or creating cheatsheets in Notion and OneNote. However, leaving the terminal just to look up an obscure command proved to be inefficient. So, why leave the terminal in the first place? Couldn’t we just save commands that are hard to remember in a text file, search through its content, and execute the command we want?
 
 It turns out this is trivial to set up, highly efficient, and fun to use. Let’s jump into it.
 
@@ -111,6 +109,8 @@ source ~/.zshrc
 
 I'm still flabbergasted by how much time can be saved by leaving the terminal less often and just having to type a couple of letters and letting fzf do the heavy lifting. I hope this post has been helpful for you!
 
+By the way, the approach is not limited to terminal commands, but can applied to anything resembling a list in some shape or form. Think about applications to open quickly through the terminal or webpages you refer on a regular basis. I have virtually replaced my Browser's bookmarks list with a [web-pages.txt](https://github.com/Jan20/dotfiles/blob/93d798956f5b008071d74b39af6192e84d518fe8/lists/web-pages.txt#L1) file. Now, I can simply press on key and jump from my terminal to a webpage without having to open a browser first and scrolling through the brookmarks until finding the right page.
+
 ## Next Steps
 
-Checkout my [Dotfiles Repository](https://github.com/Jan20/dotfiles) if you want to set up your terminal more efficiently. In this post, I only outlined my Docker command list. However, I am working on having one list in place for every technology I use frequently. I have essentially replaced my Browser's bookmarks list with a [web-pages.txt](https://github.com/Jan20/dotfiles/blob/93d798956f5b008071d74b39af6192e84d518fe8/lists/web-pages.txt#L1) file. It is astonishingly how much time can be saved by jumping from the terminal directly to the desired webpage rather than opening a browser and scrolling through the brookmarks until finding the right page.
+Checkout my [Dotfiles Repository](https://github.com/Jan20/dotfiles) if you want to set up your terminal more efficiently. In this post, I only outlined my Docker command list. However, I am working on having one list in place for every technology I use frequently. 
