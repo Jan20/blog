@@ -65,12 +65,12 @@ describe('TitleComponent', () => {
     );
   }));
 
-  it('should navigate to embracing the terminal', fakeAsync(() => {
+  it('should navigate to efficient terminal setup', fakeAsync(() => {
     userEvent.click(screen.getByRole('button', { name: 'Start Reading' }));
     tick(1);
     fixture.detectChanges();
     expect(router.navigate).toHaveBeenCalledWith([
-      'engineering/embracing-the-terminal',
+      'engineering/efficient-terminal-setup',
     ]);
   }));
 });

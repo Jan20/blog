@@ -37,7 +37,7 @@ body {
 }
 
 .placeholder {
-  height: 500px !important;
+  height: 20px !important;
 }
 
 h1 {
@@ -102,10 +102,12 @@ ol {
 }
 
 li {
-  padding-left: 10px;
-  margin-bottom: 10px;
+  line-height: 175%;
+  font-size: 18px;
   font-weight: 400;
-  font-size: 18px !important;
+  text-align: justify;
+  margin-bottom: 12px;
+  color: var(--text-color);
 }
 
 .separator {

@@ -20,7 +20,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { Observable, of } from 'rxjs';
@@ -49,7 +48,6 @@ const compileComponent = (): void => {
     imports: [
       NoopAnimationsModule,
       FormsModule,
-      RouterTestingModule,
       LayoutModule,
       MatButtonModule,
       MatIconModule,
@@ -119,12 +117,14 @@ describe('MenuComponent', () => {
   });
 
   it('should navigate to the landing page', fakeAsync(() => {
+    userEvent.click(screen.getByRole('button', { name: 'Toggle Menu' }));
+    tick(1);
     userEvent.click(
       screen.getByRole('button', { name: 'Efficient Engineering' })
     );
     tick(1);
     fixture.detectChanges();
-    expect(router.navigate).toHaveBeenCalledWith(['']);
+    expect(router.navigate).toHaveBeenCalledWith(['engineering']);
   }));
 
   describe('Toggle menu tests', () => {

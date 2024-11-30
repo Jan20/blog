@@ -57,7 +57,7 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.themeService.isLightTheme$.subscribe((isDark) => this.isLightTheme = isDark);
+    this.themeService.isLightTheme$.subscribe((isLight: boolean) => this.isLightTheme = isLight);
   }
 
   toggleMenu(): void {

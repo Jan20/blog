@@ -7,7 +7,6 @@ export const GUIDES: Post[] = [
   new Post('guides', 'Docker', 'Multi Container Applications', 'Describes how to build an application based on a minimal Flask backend and Angular frontend', 'assets/posts/guides/multi-container-applications/multi-container-applications.md', 'assets/posts/guides/multi-container-applications/thumbnail.svg', '2022-06-27','/guides/multi-container-applications', 'Docker', 4), 
   new Post('guides', 'Docker', 'Containerizing PostgreSQL', 'Gives step-by-step instructions for containerizing Postgres database.', 'assets/posts/guides/postgres/postgres.md', 'assets/posts/guides/postgres/thumbnail.svg', '2023-03-25','/guides/postgres'), 
   new Post('guides', 'Docker', 'Containerize Flask Apps', 'This post covers the creation of a container image for a minimal Flask application.', 'assets/posts/guides/containerize_flask_applications/containerize-flask-applications.md', 'assets/posts/guides/containerize_flask_applications/thumbnail.svg', '2022-06-27','/guides/containerize_flask_applications', 'Docker', 2), 
-
 ];
 
 export const DOCKER_GUIDES: Post[] = [
@@ -31,7 +30,7 @@ export const COURSE: Post[] = [
 ];
 
 export const ENGINEERING_POSTS: Post[] = [
-  new Post('engineering', 'Focus', 'Embracing the Terminal', 'Post is about outlining how a terminal can be used effectively.', 'assets/posts/engineering/embracing-the-terminal/embracing-the-terminal.md', 'assets/posts/engineering/embracing-the-terminal/thumbnail.svg', '2024-10-13','/engineering/embracing-the-terminal'), 
+  new Post('engineering', 'Focus', 'Efficient Terminal Setup', 'Post is about outlining how a terminal can be used effectively.', 'assets/posts/engineering/efficient-terminal-setup/efficient-terminal-setup.md', 'assets/posts/engineering/efficient-terminal-setup/thumbnail.svg', '2024-10-13','/engineering/efficient-terminal-setup'), 
   new Post('engineering', 'Efficiency', 'Efficient Task Management', 'Describes an effective task management system for getting stuff done.', 'assets/posts/engineering/task-management/task-management.md', 'assets/posts/engineering/task-management/thumbnail.svg', '2023-02-04','/engineering/task-management'), 
   new Post('engineering', 'Focus', 'Staying Focused', 'This post will share five simple strategies to become less distracted and stay focused.', 'assets/posts/engineering/staying-focused/staying-focused.md', 'assets/posts/engineering/staying-focused/thumbnail.svg', '2022-10-11','/engineering/staying-focused'), 
 ];

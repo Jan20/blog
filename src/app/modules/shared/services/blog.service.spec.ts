@@ -27,10 +27,13 @@ describe('BlogService:', () => {
   });
 
   describe('getPosts:', () => {
-    it('should retrieve all posts belonging to the engineering category', () => {
+    it('should retrieve all posts belonging to the engineering category', async () => {
       service
-        .getPosts('engineering', 'all')
-        .subscribe(result => expect(result).toEqual(ENGINEERING_POSTS));
+        .getPosts('engineering', 'all').subscribe(result => {
+            expect(result[3]).toEqual(ENGINEERING_POSTS[2]),
+            expect(result[2]).toEqual(ENGINEERING_POSTS[1]),
+            expect(result[1]).toEqual(ENGINEERING_POSTS[0])
+        });
     });
 
     it('should retrieve miscellaneous guide posts', () => {

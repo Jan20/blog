@@ -20,6 +20,6 @@ export class LandingTitleComponent {
   constructor(private readonly router: Router) {}
 
   startReading(): void {
-    this.router.navigate([`engineering/embracing-the-terminal`]);
+    this.router.navigate([`engineering/efficient-terminal-setup`]);
   }
 }

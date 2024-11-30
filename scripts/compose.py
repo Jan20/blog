@@ -1,11 +1,13 @@
 """ Provides a range of functions used to create the overview page for blog
     posts.
 """
+from genericpath import isfile
 import os
 from os import listdir
 from os.path import isdir, join
 from pathlib import Path
 from dataclasses import dataclass
+from typing import List
 
 root_dir: str = f'{Path(__file__).parent.parent}'
 
@@ -34,21 +36,21 @@ def compose_index_files() -> None:
     """
     base_dir = f"{Path(__file__).parent.parent}/src/assets/posts"
 
-    category_dirs: [str] = list(filter(isdir, (join(base_dir, directory) for directory in listdir(base_dir))))
+    category_dirs: List[str] = list(filter(isdir, (join(base_dir, directory) for directory in listdir(base_dir))))
 
     for category_dir in category_dirs:
-        post_dirs: [str] = list(filter(isdir, (join(category_dir, directory) for directory in listdir(category_dir))))
-        posts: [Post] = parse_posts_in_category(post_dirs)
+        post_dirs: List[str] = list(filter(isdir, (join(category_dir, directory) for directory in listdir(category_dir))))
+        posts: List[Post] = parse_posts_in_category(post_dirs)
         if len(posts) > 0:
             write_posts_to_file(posts)
 
 
-def parse_posts_in_category(post_dirs: [str]) -> [Post]:
+def parse_posts_in_category(post_dirs: List[str]) -> List[Post]:
     """ Takes a list of directories that may contain blog posts,
         checks whether the directory actually contains any posts and
         parses the content of the directory into a Post object.
     """
-    posts: [Post] = []
+    posts: List[Post] = []
     for post_dir in post_dirs:
         post_file: str = [join(post_dir, file) for file in listdir(post_dir) if file.endswith('.md')][0]
         posts.append(extract_post_from_file(post_file))
@@ -159,9 +161,9 @@ def clean_str(line: str) -> str:
     return line.replace('\n', ' ').replace('\r', ' ').replace("'", '')[:-1]
 
 
-def write_posts_to_file(posts: [Post]) -> None:
+def write_posts_to_file(posts: List[Post]) -> None:
     """ Writes a parsed Post object to a typescript file."""
-    category: [str] = posts[0].file_path.split("/")[2:-2][0]
+    category: List[str] = posts[0].file_path.split("/")[2:-2][0]
 
     index_file = f'{root_dir}/src/assets/posts/{category}/{category}.ts'
 
@@ -201,8 +203,15 @@ def compose_thumbnail_path(file_path: str) -> str:
     segments of the file path. The extracted path is then combined with the 'assets'
     directory, and the final thumbnail path is returned.
     """
-    file_path = '/'.join(file_path.split("/")[2:-1])
-    return f'assets/{file_path}/thumbnail.svg'
+    file_parts = file_path.split("/")
+    file_path_trimmed = '/'.join(file_parts[2:-1])
+
+    file = join('/'.join(file_parts[:-1]), 'thumbnail.png')
+
+    if isfile(file):
+        return f'assets/{file_path_trimmed}/thumbnail.png'
+
+    return f'assets/{file_path_trimmed}/thumbnail.svg'
 
 
 def compose_file_path(file_path: str) -> str:
@@ -213,7 +222,7 @@ def compose_file_path(file_path: str) -> str:
 
 def compose_route(file_path: str) -> str:
     """
-    Composes a route from a file path.
+    Composes a route from a file path consisting of a category and a post name.
 
     Parameters:
         file_path (str): A file path such as '/Users/<USER_NAME>/Developer/blog/src/assets/posts/course/introduction-to-rxjs/introduction-to-rxjs.md'
