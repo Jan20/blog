@@ -2,7 +2,7 @@
 
 # Jan's Engineering Blog
 
-This repository holds the source code for my small software engineering blog. Feel free to take a look at https://janladicha.de to see the project in action. I decided to go for a rather bare-bone Angular 18 application ready to get served on GCP's Cloud Run platform.
+This repository holds the source code for my small software engineering blog. Feel free to take a look at https://janladicha.de to see the project in action. I decided to go for a rather bare-bone Angular application ready to get served on GCP's Cloud Run platform.
 
 <img width="2032" alt="Screenshot 2024-10-27 at 12 29 01" src="https://github.com/user-attachments/assets/e738e7e6-128c-4106-b401-0a81ebefdf36">
 

@@ -111,21 +111,21 @@ sh manage.sh start
 
 After starting the PostgreSQL and pgAdmin containers, it may take a few seconds for them to become available. Once they are up and running, we can verify that everything is working as expected by launching the pgAdmin UI in a web browser. To do this, we need to open <strong>localhost:5050</strong> in our preferred web browser.
 
-<img class='almost-full-width' src='assets/posts/guides/postgres/pgAdmin_1.png'>
+<img class='almost-full-width' src='assets/posts/guides/postgres/pgAdmin-1.png'>
 
 1. You will be prompted to sign in with the admin account and password previously defined the <code>.env</code> file.
 
 2. Add a server by clicking on "Add New Server". Enter a name for the server in the "General" tab.
 
-<img class='almost-full-width' src='assets/posts/guides/postgres/pgAdmin_2.png'>
+<img class='almost-full-width' src='assets/posts/guides/postgres/pgAdmin-2.png'>
 
 3. In the "Connection" tab, enter the hostname, port, username, and password for the PostgreSQL server you want to connect to. Click on "Save" to save the server connection details.
 
-<img class='almost-full-width' src='assets/posts/guides/postgres/pgAdmin_3.png'>
+<img class='almost-full-width' src='assets/posts/guides/postgres/pgAdmin-3.png'>
 
 4. Hit save and get redirected to the postgres database
 
-<img class='almost-full-width' src='assets/posts/guides/postgres/pgAdmin_4.png'>
+<img class='almost-full-width' src='assets/posts/guides/postgres/pgAdmin-4.png'>
 
 ## Recap
 

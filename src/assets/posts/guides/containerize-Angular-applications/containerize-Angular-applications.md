@@ -28,7 +28,7 @@ cd src/app && ls
 
 The console output should look roughly similar to the one dipected below.
 
-<img class='almost-full-width' src='assets/posts/guides/containerize_Angular_applications/app_module.png'>
+<img class='almost-full-width' src='assets/posts/guides/containerize-Angular-applications/app-module.png'>
 
 First, we need a way to retrieve a message from a backend. There are several ways we could achieve that. But one standard solution would be to create a service handling the backend communication. Angular's CLI provides the <code>ng generate service [SERVICE_NAME]</code> command or just <code>ng g s [SERVICE_NAME]</code> to create new services quickly.
 
@@ -126,7 +126,7 @@ FROM nginx:alpine
 
 WORKDIR /usr/share/nginx/html
 
-RUN rm -rf ./*
+RUN rm -rf .
 
 COPY --from=builder /app/dist/project .
 
@@ -152,7 +152,7 @@ docker ps
 
 After the container has started, it should be possible to open <code>localhost:80</code> and see a page looking similar to one depicted below.
 
-<img class='almost-full-width' src='assets/posts/guides/containerize_Angular_applications/not_connected.png'>
+<img class='almost-full-width' src='assets/posts/guides/containerize-Angular-applications/not-connected.png'>
 
 ## Closing Remarks
 
