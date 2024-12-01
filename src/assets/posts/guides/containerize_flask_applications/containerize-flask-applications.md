@@ -10,7 +10,7 @@ summary=This post covers the creation of a container image for a minimal Flask a
 
 Docker's container runtime allows to run applications in their dedicated containers based on a predefined image. However, how are container images created? Let's answer this question by building a minimal Flask application, creating a corresponding image and spin up a container based on that image.
 
-## Step 1: Creating a Flask Application
+## Step 1: Create a Flask Application
 
 Flask is a minimal Python library for writing web applications. If you are interested to learn more about the library itself, take a look at [Flask's documentation](https://flask.palletsprojects.com/en/2.2.x/). However, our application is intended to be as minimal as it gets. It will spin up a webserver doing not much more than returning "Hello World from Flask" upon calling the single endpoint it provides. It consists of a single app.py file called that's content is depicted below:
 
@@ -56,7 +56,7 @@ Werkzeug==2.1.2
 zipp==3.8.0
 ```
 
-## Step 2: Dockerfile
+## Step 2: Create a Dockerfile
 
 After having created a minimal Flask application, let's take a closer look at the <code>Dockerfile</code> used to create a Docker image depicted below. The Dockerfile is a text document that contains all the commands necessary to assemble an image. An image gets build within a build context, which is the set of files at a specified location, such as the present working directory.
 
@@ -78,7 +78,7 @@ COPY . .
 CMD ["python3", "app.py"]
 ```
 
-## Step 3: Building the image
+## Step 3: Build the Image
 
 First, make sure that you are in the same directory as the Dockerfile. Afterwards, execute the Docker <code>build</code> command that searches for a valid Dockerfile at the present working directory. If a Dockerfile like the one shown above is found, the commands described inside the Dockerfile get executed sequentially. The <code>build</code> may take several additional parameters such as <code>-t</code> short image's tag consisting of a image's name, followed by an optional version number. In our case, we default to <code>latest</code>, but we could just as well have chosen <code>1.0</code> or any other version number. Finally, take note of the <code>.</code> at the end of the build command that sends all files in the present working directory to the Docker deamon as build context.
 
@@ -86,7 +86,7 @@ First, make sure that you are in the same directory as the Dockerfile. Afterward
 docker build -t flask-introduction:latest .
 ```
 
-## Step 4: Running the created image
+## Step 4: Run the Image
 
 After having executed the build command, the newly created image should be listed alongside other images using the <code>docker images</code> command. Now, it is time to actually run a Docker container based on our Docker image. This is achieved by using the <code>docker run</code> command and using the <code>-d</code> (short for <code>--detached</code>)flag for running a container in the background. In addition, we map Fask's default port <code>5000</code> to the port <code>8080</code> of our localhost by using the <code>-p</code> (short for <code>--publish</code> flag. The syntax for mapping ports of a host machine Finally, we provide the name of the image we like to use that is flask-introduction. A container should have been started successfully. All processes running inside Docker including our freshly started container can be observed via <code>docker ps</code>.
 

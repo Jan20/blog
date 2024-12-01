@@ -1,16 +1,18 @@
 import { Routes } from '@angular/router';
-import { MenuComponent } from './components/menu/menu.component';
 import { LandingComponent } from './modules/landing/landing/landing.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'landing',
-    pathMatch: 'full',
+    component: LandingComponent,
+    data: {
+      title: 'Landing',
+      description:
+        "Jan's Engineering Blog offering guides around Docker, Fzf, Angular, and best practices for efficient software engineering.",
+    },
   },
   {
     path: '',
-    component: MenuComponent,
     children: [
       {
         component: LandingComponent,

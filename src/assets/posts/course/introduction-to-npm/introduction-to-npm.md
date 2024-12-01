@@ -8,7 +8,7 @@ summary=Gives a brief introduction to npm and its most commonly-used command-lin
 
 Let's assume you've just started out using Angular or any other modern web application framework. Changes are high that you stumbled across a package.json that got generated automatically using the `ng new` command of Angular's CLI. The package.json file's main purpose is to provide a list of a project's dependencies that are managed through the Node Package Manager (npm) which is the largest registry of open source software packages in the world, with over 1.5 million packages and counting. Let's take a closer look at the package.json.
 
-# Package.json File
+## Package.json File
 
 A typical package.json in a newly initialized Angular project looks similar to the one depicted below.
 
@@ -70,10 +70,10 @@ npm update -g
 
 ## Updating All Outdated Dependencies
 
-If we want to update all dependencies at the once, we can use the ![npm-check-updates](
+If we want to update all dependencies at the once, we can use the [npm-check-updates](
 https://www.npmjs.com/package/npm-check-updates) package.
 
-**Step 1:** Install npm-check-updates or ncu in short globally.
+**Step 1:** Install npm-check-updates (ncu) globally.
 ```TS
 npm i -g npm-check-updates
 ```

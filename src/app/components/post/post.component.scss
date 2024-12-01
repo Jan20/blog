@@ -1,6 +1,6 @@
 h1 {
   font-size: 58px !important;
-  font-weight: 400 !important;
+  font-weight: 300 !important;
   margin-bottom: 4px;
   padding-top: 30px;
   padding-bottom: 0px;
@@ -11,13 +11,19 @@ h1 {
 
 h2 {
   line-height: 150% !important;
-  font-size: 32px !important;
-  font-weight: 400 !important;
+  font-size: 42px !important;
+  font-weight: 300 !important;
   margin-top: 20px !important;
   padding-top: 20px;
-  margin-bottom: 0 !important;
-  padding-bottom: 5px;
+  margin-bottom: 5px !important;
+  padding-bottom: 0px;
   color: var(--text-color);
+}
+
+h4 {
+  padding-top: 10px !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
 }
 
 .mat-mdc-card {

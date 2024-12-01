@@ -10,7 +10,7 @@ summary=This post covers the creation of a container image for a minimal Angular
 
 As we have seen in the last entry of the series, it is rather simple to containerize a miminal Flask application. However, as applications tend to comprise also of a frondend, let's take a closer look at running an Angular application in a Docker container.
 
-## Step 1: Creating a Angular Application
+## Step 1: Create an Angular Application
 
 Our Angular application should do not much more than retrieving a message form a backend, such as the Flask application we've created in the apprevious post of the series and displaying it to the screen. The easiest to initialize a new Angular application is to use the <code>ng new</code> command provided by Angular's CLI. Angular Material is an optional library that provides a range of UI elements, I personally like although not strictly required here.
 
@@ -106,7 +106,7 @@ It is purely optional to provide a stylesheet of the component, but the scss fil
 }
 ```
 
-## Step 2: Defining a Dockerfile
+## Step 2: Define a Dockerfile
 
 There are several ways to create a Docker image for an Angular application. One option would be to split the process into two parts, A first one to build the Angular application and a second one to run the bundled application on a webserver like Nginx. The build step takes a node image, copies all files in the present working directory to the build stage, installs all npm packaged defined in the <code>packages.json</code> file and finally runs npm's <code>build</code> command. 
 
@@ -133,7 +133,7 @@ COPY --from=builder /app/dist/project .
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 ```
 
-## Step 3: Building the Image
+## Step 3: Build the Image
 
 Once the Dockerfile has been defined, building the Docker image is rather straight-forward by running the command shown below.
 
@@ -141,7 +141,7 @@ Once the Dockerfile has been defined, building the Docker image is rather straig
 docker build -t angular-introduction:latest .
 ```
 
-## Step 4: Starting a Container
+## Step 4: Start a Container
 
 A new container based on the <code>angular-introduction</code> image, can be created by running hte following command.
 

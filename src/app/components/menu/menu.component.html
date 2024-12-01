@@ -67,7 +67,7 @@
     </button>
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content (click)="hideMenu()">
     <button
       type="button"
       *ngIf="!activeStates.has(MenuState.MOBILE)"
@@ -80,6 +80,7 @@
 
     <button
       type="button"
+      *ngIf="!activeStates.has(MenuState.MOBILE)"
       mat-fab
       class="theme-button"
       (click)="toggleTheme()"

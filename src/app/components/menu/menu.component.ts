@@ -61,6 +61,12 @@ export class MenuComponent implements OnInit {
     );
   }
 
+  hideMenu(): void {
+    if (!this.activeStates.has(MenuState.MOBILE)) return;
+    if (this.activeStates.has(MenuState.MAXIMIZED))
+      this.activeStates.delete(MenuState.MAXIMIZED);
+  }
+
   toggleMenu(): void {
     this.activeStates.has(MenuState.MAXIMIZED)
       ? this.activeStates.delete(MenuState.MAXIMIZED)
