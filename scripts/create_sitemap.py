@@ -33,8 +33,7 @@ def generate_sitemap(urls, filename="sitemap.xml"):
     for url in urls:
         xml_content += "  <url>\n"
         xml_content += f"    <loc>{url}</loc>\n"
-        xml_content += f"    <lastmod>{datetime.now().strftime('%Y-%m-%d')}</lastmod>\n"
-        xml_content += "    <changefreq>weekly</changefreq>\n"
+        xml_content += "    <changefreq>monthly</changefreq>\n"
         xml_content += "    <priority>0.5</priority>\n"
         xml_content += "  </url>\n"
     

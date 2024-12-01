@@ -68,6 +68,29 @@ All global dependencies can easily be updated by running <code>npm update</code>
 npm update -g
 ```
 
+## Updating All Outdated Dependencies
+
+If we want to update all dependencies at the once, we can use the ![npm-check-updates](
+https://www.npmjs.com/package/npm-check-updates) package.
+
+**Step 1:** Install npm-check-updates or ncu in short globally.
+```TS
+npm i -g npm-check-updates
+```
+
+**Step 2:** Run ncu with the update flag to update all dependencies defined in the package.json file.
+
+```TS
+ncu -u
+```
+
+**Step 3:** Don't forget to run npm install after the package.json file got updated.
+
+```TS
+npm i
+```
+
+
 ## Managing Node Versions
 
 For updating the Node verions, the Node Version Manager (nvm) is probably the best option.

@@ -6,8 +6,8 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Observable, map, mergeMap, timer } from 'rxjs';
+import { ActivatedRoute, NavigationEnd, Router, TitleStrategy } from '@angular/router';
+import { Observable, map, mergeMap, tap, timer } from 'rxjs';
 import { Post } from '../../modules/shared/models/post';
 import { BlogService } from '../../modules/shared/services/blog.service';
 import { CommonModule } from '@angular/common';
@@ -23,6 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { PostNavigationComponent } from '../post-navigation/post-navigation.component';
 import { SeriesNavigationComponent } from '../series-navigation/series-navigation.component';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post',
@@ -47,13 +48,15 @@ import { SeriesNavigationComponent } from '../series-navigation/series-navigatio
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostComponent implements OnInit {
-  public post: Observable<Post> = this.fetchPost();
+  post: Observable<Post> = this.fetchPost();
   @ViewChild('targetElement') targetElement: ElementRef | undefined;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly blogservice: BlogService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly titleService: Title,
+    private readonly metaService: Meta,
   ) {}
 
   ngOnInit() {
@@ -70,7 +73,9 @@ export class PostComponent implements OnInit {
       map(() => this.router.url.split('/')),
       mergeMap((route: string[]) =>
         this.blogservice.getPost(route[1], route[2])
-      )
+      ),
+      tap((post: Post) => this.titleService.setTitle(post.headline)),
+      tap((post: Post) => this.metaService.updateTag({ name: 'description', content: post.summary }) )
     );
   }
 }
