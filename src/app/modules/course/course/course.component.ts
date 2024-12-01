@@ -10,6 +10,7 @@ import { BlogService } from '../../shared/services/blog.service';
   selector: 'app-course',
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.scss'],
+  standalone: false,
 })
 export class CourseComponent {
   public readonly pageTitle = new PageTitle(

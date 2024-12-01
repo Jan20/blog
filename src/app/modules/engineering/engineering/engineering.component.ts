@@ -5,8 +5,9 @@ import {
 } from '../../../components/models/page-title';
 
 @Component({
-  selector: 'app-engineering',
-  templateUrl: './engineering.component.html',
+    selector: 'app-engineering',
+    templateUrl: './engineering.component.html',
+    standalone: false
 })
 export class EngineeringComponent {
   public readonly pageTitle = new PageTitle(

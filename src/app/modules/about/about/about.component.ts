@@ -8,6 +8,7 @@ import {
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
+  standalone: false,
 })
 export class AboutComponent {
   public readonly pageTitle = new PageTitle(

@@ -9,6 +9,7 @@ import {
   selector: 'app-landing-title',
   templateUrl: './landing-title.component.html',
   styleUrls: ['./landing-title.component.scss'],
+  standalone: false,
 })
 export class LandingTitleComponent {
   readonly pageTitle = new PageTitle(

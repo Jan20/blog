@@ -17,7 +17,6 @@ import { MENU_ITEMS, MenuItem, MenuState } from '../models/menu-item';
 import { ThemeService } from 'src/app/modules/shared/services/theme.service';
 
 @Component({
-  standalone: true,
   imports: [
     CommonModule,
     LayoutModule,
@@ -43,7 +42,7 @@ export class MenuComponent implements OnInit {
   constructor(
     private readonly breakpointObserver: BreakpointObserver,
     private readonly router: Router,
-    private readonly themeService: ThemeService,
+    private readonly themeService: ThemeService
   ) {
     this.breakpointObserver
       .observe(Breakpoints.Web)
@@ -57,7 +56,9 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.themeService.isLightTheme$.subscribe((isLight: boolean) => this.isLightTheme = isLight);
+    this.themeService.isLightTheme$.subscribe(
+      (isLight: boolean) => (this.isLightTheme = isLight)
+    );
   }
 
   toggleMenu(): void {

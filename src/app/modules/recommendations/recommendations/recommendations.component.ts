@@ -8,6 +8,7 @@ import {
   selector: 'app-recommendations',
   templateUrl: './recommendations.component.html',
   styleUrls: ['./recommendations.component.scss'],
+  standalone: false,
 })
 export class RecommendationsComponent {
   public readonly pageTitle = new PageTitle(

@@ -9,7 +9,6 @@ import { NavigationService } from 'src/app/modules/shared/services/navigation.se
 import { Link } from '../models/link';
 
 @Component({
-  standalone: true,
   imports: [
     CommonModule,
     LayoutModule,
@@ -36,9 +35,7 @@ export class LinksComponent {
     ),
   ];
 
-  constructor(
-    private readonly navigationService: NavigationService
-  ) {}
+  constructor(private readonly navigationService: NavigationService) {}
 
   openLink(url: string): void {
     this.navigationService.openUrl(url);

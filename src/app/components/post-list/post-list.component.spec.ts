@@ -36,8 +36,9 @@ blogService.getPost.and.returnValue(of(ENGINEERING_POSTS[0]));
 blogService.getPosts.and.returnValue(of(ENGINEERING_POSTS));
 
 @Component({
-  selector: 'app-host-component',
-  template: '<app-post-list category="course" series="misc"></app-post-list>',
+    selector: 'app-host-component',
+    template: '<app-post-list category="course" series="misc"></app-post-list>',
+    standalone: false
 })
 class HostComponent {}
 

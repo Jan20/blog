@@ -6,7 +6,6 @@ import { MatRippleModule } from '@angular/material/core';
 import { PageTitle } from '../models/page-title';
 
 @Component({
-  standalone: true,
   imports: [CommonModule, MatCardModule, MatButtonModule, MatRippleModule],
   selector: 'app-page-title',
   templateUrl: './page-title.component.html',

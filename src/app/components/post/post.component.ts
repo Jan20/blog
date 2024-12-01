@@ -6,7 +6,12 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router, TitleStrategy } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  TitleStrategy,
+} from '@angular/router';
 import { Observable, map, mergeMap, tap, timer } from 'rxjs';
 import { Post } from '../../modules/shared/models/post';
 import { BlogService } from '../../modules/shared/services/blog.service';
@@ -29,7 +34,6 @@ import { Meta, Title } from '@angular/platform-browser';
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
-  standalone: true,
   imports: [
     MatCardModule,
     MatMenuModule,
@@ -56,7 +60,7 @@ export class PostComponent implements OnInit {
     private readonly blogservice: BlogService,
     private readonly router: Router,
     private readonly titleService: Title,
-    private readonly metaService: Meta,
+    private readonly metaService: Meta
   ) {}
 
   ngOnInit() {
@@ -75,7 +79,12 @@ export class PostComponent implements OnInit {
         this.blogservice.getPost(route[1], route[2])
       ),
       tap((post: Post) => this.titleService.setTitle(post.headline)),
-      tap((post: Post) => this.metaService.updateTag({ name: 'description', content: post.summary }) )
+      tap((post: Post) =>
+        this.metaService.updateTag({
+          name: 'description',
+          content: post.summary,
+        })
+      )
     );
   }
 }

@@ -10,6 +10,7 @@ import { BlogService } from '../../shared/services/blog.service';
   selector: 'app-guides',
   templateUrl: './guides.component.html',
   styleUrls: ['./guides.component.scss'],
+  standalone: false,
 })
 export class GuidesComponent {
   public readonly pageTitle = new PageTitle(

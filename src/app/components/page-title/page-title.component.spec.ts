@@ -26,6 +26,7 @@ const PAGE_TITLE = new PageTitle(
 
 @Component({
   template: `<app-page-title [pageTitle]="pageTitle"></app-page-title>`,
+  standalone: false,
 })
 class TestHostComponent {
   public readonly pageTitle = PAGE_TITLE;

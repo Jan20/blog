@@ -11,7 +11,6 @@ import { Post } from '../../modules/shared/models/post';
 import { BlogService } from '../../modules/shared/services/blog.service';
 
 @Component({
-  standalone: true,
   imports: [
     CommonModule,
     MatCardModule,

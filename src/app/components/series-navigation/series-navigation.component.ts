@@ -11,7 +11,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
-  standalone: true,
   imports: [
     CommonModule,
     MatCardModule,

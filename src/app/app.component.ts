@@ -4,7 +4,6 @@ import { ThemeService } from './modules/shared/services/theme.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -15,6 +14,8 @@ export class AppComponent implements OnInit {
   constructor(private readonly themeService: ThemeService) {}
 
   ngOnInit() {
-    this.themeService.isLightTheme$.subscribe((isDark) => this.isDarkMode = isDark);
+    this.themeService.isLightTheme$.subscribe(
+      isDark => (this.isDarkMode = isDark)
+    );
   }
 }
