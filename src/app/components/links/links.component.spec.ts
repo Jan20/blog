@@ -16,7 +16,10 @@ import { NavigationService } from 'src/app/modules/shared/services/navigation.se
 let component: LinksComponent;
 let fixture: ComponentFixture<LinksComponent>;
 
-const navigationService = jasmine.createSpyObj<NavigationService>('NavigationService', ['openUrl']);
+const navigationService = jasmine.createSpyObj<NavigationService>(
+  'NavigationService',
+  ['openUrl']
+);
 navigationService.openUrl.and.returnValue();
 
 const compileComponent = (): void => {
@@ -46,7 +49,7 @@ describe('LinksComponent', () => {
 
   it('should navigate to Github', fakeAsync(() => {
     userEvent.click(
-      screen.getByRole('button', {
+      screen.getByRole('heading', {
         name: 'Link to assets/images/links/github.png Github',
       })
     );
