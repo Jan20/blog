@@ -52,8 +52,10 @@ def parse_posts_in_category(post_dirs: List[str]) -> List[Post]:
     """
     posts: List[Post] = []
     for post_dir in post_dirs:
-        post_file: str = [join(post_dir, file) for file in listdir(post_dir) if file.endswith('.md')][0]
-        posts.append(extract_post_from_file(post_file))
+        files: List[str] = [join(post_dir, file) for file in listdir(post_dir) if file.endswith('.md')]
+        if len(files) == 0:
+            raise ValueError("No .md file was be found in " + post_dir)
+        posts.append(extract_post_from_file(files[0]))
     return posts
 
 
