@@ -8,27 +8,57 @@
 }
 
 :root {
-  --background-color: rgb(20, 19, 20);
-  --text-color: rgb(229, 225, 227);
-  --menu-background-color: rgb(33, 31, 33);
-  --menu-background-color-active: rgb(69, 69, 88);
-  --menu-text-color: rgb(229, 225, 227);
-}
-
-.light-theme {
   --background-color: #ffffff;
   --text-color: rgb(28 27 29);
   --menu-background-color: rgb(241, 236, 238);
   --menu-background-color-active: rgb(220, 218, 243);
   --menu-text-color: rgb(28 27 29);
+  --code-bg: rgb(212, 212, 212);
+  --code-color: rgb(51, 51, 51);
+  --separator-color: rgb(51, 51, 51);
+}
+
+.light-theme {
+  --background-color: rgb(20, 19, 20);
+  --text-color: rgb(229, 225, 227);
+  --menu-background-color: rgb(33, 31, 33);
+  --menu-background-color-active: rgb(69, 69, 88);
+  --menu-text-color: rgb(229, 225, 227);
+  --code-bg: rgb(60, 60, 60);
+  --code-color: rgb(229, 225, 227);
+  --separator-color: rgb(229, 225, 227);
 }
 
 body {
-  background-color: var(--background-color) !important;
+  background-color: var(--background-color);
   color: var(--text-color);
   transition:
     background-color 0.3s,
     color 0.3s;
+}
+
+h1,
+h2,
+h3,
+p,
+ol,
+li {
+  color: var(--text-color);
+}
+
+p,
+ol,
+li {
+  line-height: 1.75;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: justify;
+  margin-bottom: 12px;
+}
+
+ol {
+  margin-left: 24px;
+  font-size: 18px;
 }
 
 .full-container {
@@ -81,7 +111,7 @@ p {
 code {
   font-family: monospace !important;
   font-weight: normal !important;
-  font-size: 12px !important;
+  font-size: 14px !important;
   background-color: rgb(212, 212, 212) !important;
   border-radius: 5px;
   padding: 2px;
@@ -90,37 +120,9 @@ code {
   color: rgb(51, 51, 51) !important;
 }
 
-ol {
-  padding: 0px;
-  margin-left: 24px;
-  line-height: 175%;
-  font-weight: 400;
-  text-align: justify;
-  color: rgb(51, 51, 51);
-  margin-bottom: 12px;
-  font-size: 18px !important;
-}
-
-li {
-  line-height: 175%;
-  font-size: 18px;
-  font-weight: 400;
-  text-align: justify;
-  margin-bottom: 12px;
-  color: var(--text-color);
-}
-
 .separator {
   border-bottom: 1px solid rgb(51, 51, 51);
   margin: 0;
-}
-
-strong {
-  font-weight: 500 !important;
-}
-
-b {
-  font-weight: 500 !important;
 }
 
 a:hover {
@@ -223,4 +225,32 @@ a:hover {
 img {
   width: 100%;
   border-radius: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 1em 0;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tr:hover {
+  background-color: #f0f8ff;
 }
