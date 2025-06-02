@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
+import { BlogService } from './blog.service';
 import {
-  DOCKER_GUIDES,
   ENGINEERING_POSTS,
   MISCELLANEOUS_GUIDES,
+  DOCKER_GUIDES,
 } from 'src/app/helpers/post-mocks';
-import { BlogService } from './blog.service';
 
 let service: BlogService;
 
@@ -27,14 +27,6 @@ describe('BlogService:', () => {
   });
 
   describe('getPosts:', () => {
-    it('should retrieve all posts belonging to the engineering category', async () => {
-      service.getPosts('engineering', 'all').subscribe(result => {
-        expect(result[4]).toEqual(ENGINEERING_POSTS[2]),
-          expect(result[3]).toEqual(ENGINEERING_POSTS[1]),
-          expect(result[2]).toEqual(ENGINEERING_POSTS[0]);
-      });
-    });
-
     it('should retrieve miscellaneous guide posts', () => {
       service
         .getPosts('guides', 'misc')

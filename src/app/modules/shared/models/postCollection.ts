@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { guides } from 'src/assets/posts/guides/guides';
-import { recommendations } from 'src/assets/posts/recommendations/Recommendations';
 import { Post } from './post';
-import { engineering } from 'src/assets/posts/engineering/engineering';
-import { course } from 'src/assets/posts/course/course';
+import { course } from '../../../../assets/posts/course/course';
+import { engineering } from '../../../../assets/posts/engineering/engineering';
+import { guides } from '../../../../assets/posts/guides/guides';
+import { recommendations } from '../../../../assets/posts/recommendations/Recommendations';
 
 @Injectable({
   providedIn: 'root',

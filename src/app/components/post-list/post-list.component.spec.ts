@@ -12,8 +12,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
-import { ENGINEERING_POSTS } from 'src/app/helpers/post-mocks';
-import { BlogService } from 'src/app/modules/shared/services/blog.service';
+import { ENGINEERING_POSTS } from '../../helpers/post-mocks';
+import { BlogService } from '../../modules/shared/services/blog.service';
 import { PostListComponent } from './post-list.component';
 
 let component: PostListComponent;
@@ -36,9 +36,9 @@ blogService.getPost.and.returnValue(of(ENGINEERING_POSTS[0]));
 blogService.getPosts.and.returnValue(of(ENGINEERING_POSTS));
 
 @Component({
-    selector: 'app-host-component',
-    template: '<app-post-list category="course" series="misc"></app-post-list>',
-    standalone: false
+  selector: 'app-host-component',
+  template: '<app-post-list category="course" series="misc"></app-post-list>',
+  standalone: false,
 })
 class HostComponent {}
 

@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { LinksComponent } from './links.component';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { NavigationService } from 'src/app/modules/shared/services/navigation.service';
+import { NavigationService } from '../../modules/shared/services/navigation.service';
 
 let component: LinksComponent;
 let fixture: ComponentFixture<LinksComponent>;

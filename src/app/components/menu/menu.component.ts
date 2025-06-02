@@ -14,7 +14,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router, RouterModule } from '@angular/router';
 import { MENU_ITEMS, MenuItem, MenuState } from '../models/menu-item';
-import { ThemeService } from 'src/app/modules/shared/services/theme.service';
+import { ThemeService } from '../../modules/shared/services/theme.service';
 
 @Component({
   imports: [

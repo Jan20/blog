@@ -12,7 +12,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { MarkdownComponent, MarkdownModule } from 'ngx-markdown';
 import { BehaviorSubject, of } from 'rxjs';
-import { ENGINEERING_POSTS } from 'src/app/helpers/post-mocks';
+import { ENGINEERING_POSTS } from '../../helpers/post-mocks';
 import { BlogService } from '../../modules/shared/services/blog.service';
 import { PostNavigationComponent } from '../post-navigation/post-navigation.component';
 import { SeriesNavigationComponent } from '../series-navigation/series-navigation.component';

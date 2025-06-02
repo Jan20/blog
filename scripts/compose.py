@@ -170,7 +170,7 @@ def write_posts_to_file(posts: List[Post]) -> None:
     index_file = f'{root_dir}/src/assets/posts/{category}/{category}.ts'
 
     with open(index_file, 'w') as writer:
-        writer.write('import { Post } from "src/app/modules/shared/models/post"; \n')
+        writer.write('import { Post } from "../../../app/modules/shared/models/post"; \n')
         writer.write('\n')
         writer.write(f'export const {category}: Post[] = [\n')
         for post in posts:

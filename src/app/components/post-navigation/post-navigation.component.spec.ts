@@ -27,7 +27,7 @@ import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { MarkdownModule } from 'ngx-markdown';
 import { BehaviorSubject, of } from 'rxjs';
-import { ENGINEERING_POSTS } from 'src/app/helpers/post-mocks';
+import { ENGINEERING_POSTS } from '../../helpers/post-mocks';
 import { BlogService } from '../../modules/shared/services/blog.service';
 import { PostNavigationComponent } from './post-navigation.component';
 

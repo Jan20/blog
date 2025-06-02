@@ -13,11 +13,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MarkdownModule } from 'ngx-markdown';
 import { of } from 'rxjs';
+import { BlogService } from '../../shared/services/blog.service';
+import { EngineeringComponent } from './engineering.component';
 import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
 import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 import { ENGINEERING_POSTS } from 'src/app/helpers/post-mocks';
-import { BlogService } from '../../shared/services/blog.service';
-import { EngineeringComponent } from './engineering.component';
 
 let component: EngineeringComponent;
 let fixture: ComponentFixture<EngineeringComponent>;

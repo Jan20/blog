@@ -11,12 +11,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 import { LandingTitleComponent } from './landing-title.component';
 import { MatButtonModule } from '@angular/material/button';
+import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 
 let component: LandingTitleComponent;
 let fixture: ComponentFixture<LandingTitleComponent>;
@@ -26,8 +25,8 @@ router.navigate.and.returnValue(Promise.resolve(true));
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    declarations: [LandingTitleComponent],
     imports: [
+      LandingTitleComponent,
       NoopAnimationsModule,
       MatIconModule,
       MatMenuModule,
@@ -35,7 +34,6 @@ const compileComponent = (): void => {
       MatCardModule,
       MatGridListModule,
       PostListComponent,
-      RouterTestingModule,
     ],
     providers: [
       { provide: Router, useValue: router },

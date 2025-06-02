@@ -15,10 +15,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MarkdownModule } from 'ngx-markdown';
 import { of } from 'rxjs';
-import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
-import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 import { Post } from '../../shared/models/post';
 import { BlogService } from '../../shared/services/blog.service';
+import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
+import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 
 let component: RecommendationsComponent;
 let fixture: ComponentFixture<RecommendationsComponent>;

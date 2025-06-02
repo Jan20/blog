@@ -22,7 +22,7 @@ import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { MarkdownModule } from 'ngx-markdown';
 import { BehaviorSubject, of } from 'rxjs';
-import { DOCKER_GUIDES } from 'src/app/helpers/post-mocks';
+import { DOCKER_GUIDES } from '../../helpers/post-mocks';
 import { BlogService } from '../../modules/shared/services/blog.service';
 import { SeriesNavigationComponent } from './series-navigation.component';
 

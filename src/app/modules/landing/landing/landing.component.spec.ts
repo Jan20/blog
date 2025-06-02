@@ -15,11 +15,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MarkdownModule } from 'ngx-markdown';
 import { of } from 'rxjs';
-import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
-import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 import { Post } from '../../shared/models/post';
 import { BlogService } from '../../shared/services/blog.service';
 import { LandingTitleComponent } from '../landing-title/landing-title.component';
+import { PostListComponent } from '../../../components/post-list/post-list.component';
+import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
 
 let component: LandingComponent;
 let fixture: ComponentFixture<LandingComponent>;
@@ -58,9 +58,10 @@ blogService.getPosts.and.returnValue(of(POSTS));
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    declarations: [LandingComponent, LandingTitleComponent],
+    declarations: [LandingComponent],
     teardown: { destroyAfterEach: false },
     imports: [
+      LandingTitleComponent,
       CommonModule,
       PostListComponent,
       MatButtonModule,
