@@ -1,4 +1,4 @@
-@import './theme.scss';
+@use './theme.scss' as theme;
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 * {
@@ -157,8 +157,8 @@ a:hover {
   margin-left: 20px;
   border: double 0.25px transparent;
   border-radius: 10px;
-  background-image: linear-gradient(white, white),
-    linear-gradient(to right, #c850c0, #ffcc70);
+  background-image:
+    linear-gradient(white, white), linear-gradient(to right, #c850c0, #ffcc70);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }

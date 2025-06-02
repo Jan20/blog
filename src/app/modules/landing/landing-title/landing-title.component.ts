@@ -4,12 +4,17 @@ import {
   PageTitle,
   PageTitleBackground,
 } from '../../../components/models/page-title';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatRippleModule } from '@angular/material/core';
 
 @Component({
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatRippleModule],
   selector: 'app-landing-title',
   templateUrl: './landing-title.component.html',
   styleUrls: ['./landing-title.component.scss'],
-  standalone: false,
+  standalone: true,
 })
 export class LandingTitleComponent {
   readonly pageTitle = new PageTitle(

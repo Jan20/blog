@@ -13,12 +13,13 @@ import { LandingTitleComponent } from './landing-title/landing-title.component';
 import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
-  declarations: [LandingComponent, LandingTitleComponent],
+  declarations: [LandingComponent],
   imports: [
     CommonModule,
     MatButtonModule,
     MatIconModule,
     EngineeringModule,
+    LandingTitleComponent,
     GuidesModule,
     CourseModule,
     MatCardModule,
