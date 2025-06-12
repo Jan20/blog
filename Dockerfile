@@ -1,5 +1,5 @@
 # BUILD STAGE
-FROM node:20 AS build_stage
+FROM node:24 AS build_stage
 
 WORKDIR /app
 
@@ -17,7 +17,7 @@ RUN npm run build:ssr
 
 # -------------------------------------------------------------------
 # FINAL IMAGE
-FROM node:20-alpine3.17
+FROM node:24-alpine3.21
 
 WORKDIR /app
 
