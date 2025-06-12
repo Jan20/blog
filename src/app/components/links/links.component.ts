@@ -30,7 +30,7 @@ export class LinksComponent {
     ),
     new Link(
       'LinkedIn',
-      'https://www.linkedin.com/in/jan-schumann-b5740213b/',
+      'https://www.linkedin.com/in/jan-ladicha-b5740213b/',
       'assets/images/links/linkedin.png'
     ),
   ];
