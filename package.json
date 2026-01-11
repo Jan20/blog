@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "coverage": "open ./coverage/blog/index.html",
-    "start": "ng run blog:serve-ssr",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -13,7 +13,7 @@
     "lint": "ng lint --fix",
     "format": "prettier-eslint --eslint-config-path ./.eslintrc --write '**/*.ts'",
     "prettier": "npx prettier --write .",
-    "serve:ssr:blog": "node dist/blog/server/server.mjs",
+    "serve": "npm run serve:ssr",
     "build:ssr": "ng build --configuration=production",
     "serve:ssr": "node dist/blog/server/server.mjs",
     "dev:ssr": "ng run blog:serve-ssr"

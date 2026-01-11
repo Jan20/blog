@@ -15,7 +15,6 @@ export const routes: Routes = [
     path: '',
     children: [
       {
-        component: LandingComponent,
         path: 'landing',
         loadChildren: () =>
           import('./modules/landing/landing.module').then(

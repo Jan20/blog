@@ -16,7 +16,6 @@ import { CourseComponent } from './course/course.component';
     MatButtonModule,
     MatCardModule,
     SharedModule,
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     RouterModule.forChild(courseRoutes),
     PageTitleComponent,
     PostListComponent,
