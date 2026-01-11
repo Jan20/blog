@@ -38,8 +38,8 @@ RUN npm ci --omit=dev --no-audit --no-fund
 # using --chown to avoid permission issues when switching users
 COPY --from=build --chown=node:node /app/dist/blog/browser /app/browser
 COPY --from=build --chown=node:node /app/dist/blog/server /app/server
-COPY --from=build --chown=node:node /app/robots.txt /app/browser/ || true
-COPY --from=build --chown=node:node /app/sitemap.xml /app/browser/ || true
+COPY --from=build --chown=node:node /app/robots.txt /app/browser
+COPY --from=build --chown=node:node /app/sitemap.xml /app/browser
 
 RUN npm install -g pm2
 
