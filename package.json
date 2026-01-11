@@ -16,7 +16,6 @@
     "serve:ssr:blog": "node dist/blog/server/server.mjs",
     "build:ssr": "ng build --configuration=production",
     "serve:ssr": "node dist/blog/server/server.mjs",
-    "prerender": "ng run blog:prerender",
     "dev:ssr": "ng run blog:serve-ssr"
   },
   "private": true,
@@ -32,7 +31,7 @@
     "@angular/platform-browser-dynamic": "^20.0.3",
     "@angular/platform-server": "^20.0.3",
     "@angular/router": "^20.0.3",
-    "@angular/ssr": "^20.0.2",
+    "@angular/ssr": "^21.0.5",
     "bootstrap": "^5.3.6",
     "express": "^5.1.0",
     "marked": "^15.0.12",
@@ -44,13 +43,13 @@
     "zone.js": "^0.15.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^20.0.2",
     "@angular-eslint/builder": "20.0.0",
     "@angular-eslint/eslint-plugin": "20.0.0",
     "@angular-eslint/eslint-plugin-template": "20.0.0",
     "@angular-eslint/schematics": "20.0.0",
     "@angular-eslint/template-parser": "20.0.0",
-    "@angular/cli": "^20.0.2",
+    "@angular/build": "^21.0.5",
+    "@angular/cli": "^21.0.5",
     "@angular/compiler-cli": "^20.0.3",
     "@testing-library/angular": "^17.4.0",
     "@testing-library/dom": "^10.4.0",
