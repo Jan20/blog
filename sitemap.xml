@@ -1,88 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://janladicha.de/</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Courses -->
+  <url>
     <loc>https://janladicha.de/course/introduction-to-npm</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://janladicha.de/course/rxjs-pipe-operators</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://janladicha.de/course/eslint</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://janladicha.de/course/angular-apps-on-github-pages</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://janladicha.de/course/introduction-to-rxjs</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
+
+  <!-- Recommendations -->
   <url>
     <loc>https://janladicha.de/recommendations/effective-engineering</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <!-- Guides -->
   <url>
     <loc>https://janladicha.de/guides/virtual-envs-and-dependencies</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://janladicha.de/guides/containerize-Angular-applications</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://janladicha.de/guides/introduction-to-docker</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://janladicha.de/guides/multi-container-applications</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://janladicha.de/guides/postgres</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://janladicha.de/guides/containerize_flask_applications</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
   </url>
+
+  <!-- Engineering posts -->
   <url>
     <loc>https://janladicha.de/engineering/task-management</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://janladicha.de/engineering/staying-focused</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://janladicha.de/engineering/lessons-learned</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://janladicha.de/engineering/efficient-terminal-setup</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://janladicha.de/engineering/why-using-vim</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
 </urlset>
