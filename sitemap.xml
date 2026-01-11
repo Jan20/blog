@@ -2,118 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://janladicha.de/</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <lastmod>2026-01-11</lastmod>
   </url>
-
-  <!-- Courses -->
   <url>
     <loc>https://janladicha.de/course/introduction-to-npm</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-12-01</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/course/rxjs-pipe-operators</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-10-27</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/course/eslint</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-10-27</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/course/angular-apps-on-github-pages</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-10-27</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/course/introduction-to-rxjs</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-10-27</lastmod>
   </url>
-
-  <!-- Recommendations -->
   <url>
     <loc>https://janladicha.de/recommendations/effective-engineering</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2024-10-27</lastmod>
   </url>
-
-  <!-- Guides -->
   <url>
     <loc>https://janladicha.de/guides/virtual-envs-and-dependencies</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-10-27</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/guides/containerize-Angular-applications</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-12-01</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/guides/introduction-to-docker</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-10-27</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/guides/multi-container-applications</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-12-01</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/guides/postgres</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-12-01</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/guides/containerize_flask_applications</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-12-01</lastmod>
   </url>
-
-  <!-- Engineering posts -->
   <url>
     <loc>https://janladicha.de/engineering/task-management</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-01-11</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/engineering/staying-focused</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-05-31</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/engineering/lessons-learned</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2024-12-24</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/engineering/efficient-terminal-setup</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2024-11-14</lastmod>
   </url>
   <url>
     <loc>https://janladicha.de/engineering/why-using-vim</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2025-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://janladicha.de/engineering/efficient-mac-os-setup</loc>
+    <lastmod>2025-05-31</lastmod>
   </url>
 </urlset>
