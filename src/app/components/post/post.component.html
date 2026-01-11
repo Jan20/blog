@@ -1,22 +1,28 @@
 <div class="full-container" #targetElement>
-  <div class="container col-lg-6 pt-5 col-sm-12" *ngIf="post | async as post">
-    <mat-card class="post">
-      <img
-        mat-card-image
-        class="img-fluid"
-        height="720"
-        width="960"
-        [src]="post.thumbnail"
-        alt="Post's thumbnail" />
-      <mat-card-content>
-        <h4 class="mt-1">
-          {{ post.date | date }}
-        </h4>
-        <markdown [src]="post.filePath"></markdown>
-      </mat-card-content>
-    </mat-card>
-    <app-series-navigation *ngIf="post.seriesSection"></app-series-navigation>
-    <app-post-navigation *ngIf="!post.seriesSection"></app-post-navigation>
-  </div>
+  @if (post | async; as post) {
+    <div class="container col-lg-6 pt-5 col-sm-12">
+      <mat-card class="post">
+        <img
+          mat-card-image
+          class="img-fluid"
+          height="720"
+          width="960"
+          [src]="post.thumbnail"
+          alt="Post's thumbnail" />
+        <mat-card-content>
+          <h4 class="mt-1">
+            {{ post.date | date }}
+          </h4>
+          <markdown [src]="post.filePath"></markdown>
+        </mat-card-content>
+      </mat-card>
+      @if (post.seriesSection) {
+        <app-series-navigation></app-series-navigation>
+      }
+      @if (!post.seriesSection) {
+        <app-post-navigation></app-post-navigation>
+      }
+    </div>
+  }
   <div class="placeholder"></div>
 </div>
