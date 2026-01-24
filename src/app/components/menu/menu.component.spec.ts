@@ -1,30 +1,18 @@
-import {
-  BreakpointObserver,
-  BreakpointState,
-  Breakpoints,
-  LayoutModule,
-} from '@angular/cdk/layout';
-import { APP_BASE_HREF, CommonModule } from '@angular/common';
-import {
-  ComponentFixture,
-  ComponentFixtureAutoDetect,
-  TestBed,
-  fakeAsync,
-  tick,
-} from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { Router } from '@angular/router';
-import { screen } from '@testing-library/angular';
+import {BreakpointObserver, Breakpoints, BreakpointState, LayoutModule,} from '@angular/cdk/layout';
+import {APP_BASE_HREF, CommonModule} from '@angular/common';
+import {ComponentFixture, ComponentFixtureAutoDetect, fakeAsync, TestBed, tick,} from '@angular/core/testing';
+import {FormsModule} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {Router} from '@angular/router';
+import {screen} from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { Observable, of } from 'rxjs';
-import { MenuItem, MenuState } from '../models/menu-item';
-import { MenuComponent } from './menu.component';
+import {Observable, of} from 'rxjs';
+import {MenuItem, MenuState} from '../models/menu-item';
+import {MenuComponent} from './menu.component';
 
 let component: MenuComponent;
 let fixture: ComponentFixture<MenuComponent>;
@@ -46,7 +34,6 @@ const compileComponent = (): void => {
   TestBed.configureTestingModule({
     declarations: [],
     imports: [
-      NoopAnimationsModule,
       FormsModule,
       LayoutModule,
       MatButtonModule,
@@ -117,33 +104,36 @@ describe('MenuComponent', () => {
   });
 
   it('should navigate to the landing page', fakeAsync(() => {
-    userEvent.click(screen.getByRole('button', { name: 'Toggle Menu' }));
-    tick(1);
-    userEvent.click(
-      screen.getByRole('button', { name: 'Efficient Engineering' })
-    );
+    component.activeStates = new Set([MenuState.MOBILE]);
+    fixture.detectChanges();
+    userEvent.click(screen.getByRole('button', { name: /switch to landing page/i }));
     tick(1);
     fixture.detectChanges();
-    expect(router.navigate).toHaveBeenCalledWith(['engineering']);
+    expect(router.navigate).toHaveBeenCalledWith(['']);
   }));
 
   describe('Toggle menu tests', () => {
     it('should maximize the menu', fakeAsync(() => {
       component.activeStates = new Set([MenuState.MOBILE]);
-      userEvent.click(screen.getByRole('button', { name: 'Toggle Menu' }));
+      fixture.detectChanges();
+      const maximizeButton = screen.getByRole('button', { name: /Toggle Navigation Bar in Mobile View/i });
+      expect(maximizeButton).toBeTruthy();
+      userEvent.click(maximizeButton);
       tick(1);
       fixture.detectChanges();
       expect(component.activeStates).toEqual(
-        new Set([MenuState.MOBILE, MenuState.MAXIMIZED])
+          new Set([MenuState.MOBILE, MenuState.MAXIMIZED])
       );
     }));
 
     it('should minimize the menu', fakeAsync(() => {
       component.activeStates = new Set([MenuState.MAXIMIZED]);
-      userEvent.click(screen.getByRole('button', { name: 'Toggle Menu' }));
+      const toggleButton = screen.getByRole('button', { name: /Toggle Navigation Bar in Desktop View/i });
+      expect(toggleButton).toBeTruthy();
+      userEvent.click(toggleButton);
       tick(1);
       fixture.detectChanges();
-      expect(component.activeStates).toEqual(new Set([]));
+      expect(component.activeStates).toEqual(new Set([MenuState.MINIMIZED]));
     }));
   });
 });

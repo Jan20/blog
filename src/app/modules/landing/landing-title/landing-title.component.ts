@@ -8,9 +8,10 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @Component({
-  imports: [MatCardModule, MatButtonModule, MatRippleModule],
+  imports: [MatCardModule, MatButtonModule, MatRippleModule, MatGridListModule],
   selector: 'app-landing-title',
   templateUrl: './landing-title.component.html',
   styleUrls: ['./landing-title.component.scss'],

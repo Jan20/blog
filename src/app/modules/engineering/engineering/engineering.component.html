@@ -1,5 +1,12 @@
-<div class="full-container">
-    <app-page-title [pageTitle]="pageTitle"></app-page-title>
-    <app-post-list category="engineering"></app-post-list>
-    <div class="placeholder"></div>
-</div>    
+<app-page-title [pageTitle]="pageTitle"></app-page-title>
+
+<div class="container mat-typography">
+    @if (seriesTitles | async; as seriesTitles) {
+        @for (title of seriesTitles; track title) {
+            <h1>{{ title }}</h1>
+            <app-post-list category="engineering" [series]="title"></app-post-list>
+        }
+    }
+    <h1>Miscellaneous</h1>
+    <app-post-list category="engineering" series="misc"></app-post-list>
+</div>

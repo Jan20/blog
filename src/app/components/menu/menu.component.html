@@ -1,3 +1,4 @@
+<!-- Mobile Menu Bar -->
 @if (activeStates.has(MenuState.MOBILE)) {
   <mat-toolbar
     class="mobile-menu d-flex justify-content-left"
@@ -6,13 +7,14 @@
       mat-icon-button
       type="button"
       (click)="toggleMenu()"
-      aria-label="Toggle Menu">
+      aria-label="Toggle Navigation Bar in Mobile View">
       <mat-icon>menu</mat-icon>
     </button>
     <button
       mat-button
       type="button"
       class="title"
+      aria-label="Switch to Landing Page"
       (click)="switchToLandingPage()">
       {{ title }}
     </button>
@@ -28,13 +30,13 @@
       #sidenav
       [opened]="activeStates.has(MenuState.MAXIMIZED)"
       [mode]="activeStates.has(MenuState.MINIMIZED) ? 'over' : 'side'"
-      color="primary">
+      >
       <mat-nav-list>
         @for (item of menuItems; track item) {
           <button
             type="button"
             mat-button
-            class="pt-5 pb-5 w-100"
+            class="side-button"
             [ngClass]="{ active: item.active }"
             (click)="navigateToMenuEntry(item)"
             >
@@ -55,7 +57,7 @@
           mat-fab
           class="minimize-button"
           (click)="minimize()"
-          aria-label="Minimize Navigation Bar">
+          aria-label="Minimize Navigation Bar in Desktop View">
           <mat-icon>close_fullscreen</mat-icon>
         </button>
       }
@@ -64,7 +66,7 @@
         mat-fab
         class="theme-button"
         (click)="toggleTheme()"
-        aria-label="Minimize Navigation Bar">
+        aria-label="Toggle Theme in Desktop View">
         <mat-icon>{{ isLightTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
       </button>
     </mat-sidenav>
@@ -77,7 +79,7 @@
         mat-fab
         class="minimize-button"
         (click)="minimize()"
-        aria-label="Minimize Navigation Bar">
+        aria-label="Toggle Navigation Bar in Desktop View and Minimized Menu">
         <mat-icon>open_in_full</mat-icon>
       </button>
     }
@@ -88,7 +90,7 @@
         mat-fab
         class="theme-button"
         (click)="toggleTheme()"
-        aria-label="Minimize Navigation Bar">
+        aria-label="Toggle Theme in Desktop View and Minimized Menu">
         <mat-icon>{{ isLightTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
       </button>
     }

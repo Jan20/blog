@@ -88,15 +88,13 @@ describe('SeriesNavigationComponent', () => {
 
   it('should navigate to the containerize Angular application', fakeAsync(() => {
     expect(
-      screen.getByRole('heading', { name: 'Introduction to Docker' })
-        .textContent
+        screen.getByText(/introduction to docker/i).textContent?.trim()
     ).toBe('Introduction to Docker');
     expect(
-      screen.getByRole('heading', { name: 'Containerize Angular Apps' })
-        .textContent
+        screen.getByText(/containerize angular apps/i).textContent?.trim()
     ).toBe('Containerize Angular Apps');
     userEvent.click(
-      screen.getByRole('heading', { name: 'Containerize Angular Apps' })
+        screen.getByText(/Containerize Angular Apps/i)
     );
     tick(1);
     fixture.detectChanges();

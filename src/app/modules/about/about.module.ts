@@ -7,16 +7,18 @@ import { SharedModule } from '../shared/shared.module';
 import { aboutRoutes } from './about.routing';
 import { AboutComponent } from './about/about.component';
 import { LinksComponent } from '../../components/links/links.component';
+import {PostListComponent} from "../../components/post-list/post-list.component";
 
 @NgModule({
   declarations: [AboutComponent],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    RouterModule.forChild(aboutRoutes),
-    SharedModule,
-    PageTitleComponent,
-    LinksComponent,
-  ],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        RouterModule.forChild(aboutRoutes),
+        SharedModule,
+        PageTitleComponent,
+        LinksComponent,
+        PostListComponent,
+    ],
 })
 export class AboutModule {}

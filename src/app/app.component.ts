@@ -7,16 +7,15 @@ import { MenuComponent } from './components/menu/menu.component';
   selector: 'app-root',
   imports: [MenuComponent, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   isDarkMode: boolean = false;
 
   constructor(private readonly themeService: ThemeService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.themeService.isLightTheme$.subscribe(
-      isDark => (this.isDarkMode = isDark)
+        (isDark: boolean) => (this.isDarkMode = isDark)
     );
   }
 }

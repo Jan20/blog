@@ -1,5 +1,5 @@
 h1 {
-  font-size: 58px !important;
+  font-size: 48px !important;
   font-weight: 300 !important;
   margin-bottom: 4px;
   padding-top: 30px;
@@ -11,7 +11,7 @@ h1 {
 
 h2 {
   line-height: 150% !important;
-  font-size: 42px !important;
+  font-size: 38px !important;
   font-weight: 300 !important;
   margin-top: 20px !important;
   padding-top: 20px;
@@ -24,6 +24,24 @@ h4 {
   padding-top: 10px !important;
   font-size: 18px !important;
   font-weight: 400 !important;
+}
+
+.mat-card-image {
+  border-radius: 20px !important;
+}
+
+.post-image {
+  padding-top: -43 !important;
+  height: 80%;
+  width: 100%;
+}
+
+.full-container {
+  width: 100%;
+  background-color: var(--background-color) !important;
+  color: var(--text-color);
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
 }
 
 .mat-mdc-card {
@@ -45,4 +63,13 @@ h4 {
 
 .post {
   background-color: var(--background-color) !important;
+}
+
+.post {
+  width: 100%;
+}
+
+.post-date {
+  margin-top: 8px;
+  margin-bottom: 16px;
 }

@@ -1,12 +1,8 @@
-<div class="container-fluid pt-3 pb-4 d-flex">
-  <mat-card
-    class="col-lg-12 col-md-12 d-flex img-fluid"
-    [ngClass]="pageTitle.background">
-    <div class="row ms-lg-5 ms-sm-1">
-      <div class="col-lg-8 col-md-12 col-ms-12">
-        <h1 class="mt-5 st-0">{{ pageTitle.headline }}</h1>
-        <h2 class="mt-0">{{ pageTitle.description }}</h2>
-      </div>
-    </div>
-  </mat-card>
-</div>
+<mat-card [ngClass]="pageTitle.background" class="page-title-card mat-typography">
+    <mat-card-title>
+        <h1>{{ pageTitle.headline }}</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+        <p>{{ pageTitle.description }}</p>
+    </mat-card-subtitle>
+</mat-card>

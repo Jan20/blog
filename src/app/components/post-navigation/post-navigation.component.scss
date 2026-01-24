@@ -16,3 +16,21 @@ p {
   cursor: pointer;
   background-color: var(--menu-background-color-active);
 }
+
+.post-nav-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.post-nav-card {
+  flex: 1 1 0;
+  cursor: pointer;
+}
+
+.post-nav-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}

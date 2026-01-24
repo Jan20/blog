@@ -20,6 +20,7 @@ import { BlogService } from '../../shared/services/blog.service';
 import { LandingTitleComponent } from '../landing-title/landing-title.component';
 import { PostListComponent } from '../../../components/post-list/post-list.component';
 import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
+import {MatDividerModule} from "@angular/material/divider";
 
 let component: LandingComponent;
 let fixture: ComponentFixture<LandingComponent>;
@@ -73,6 +74,8 @@ const compileComponent = (): void => {
       MatRippleModule,
       RouterTestingModule,
       MarkdownModule,
+      MatGridListModule,
+      MatDividerModule,
     ],
     providers: [
       { provide: BlogService, useValue: blogService },

@@ -1,12 +1,13 @@
-import { LayoutModule } from '@angular/cdk/layout';
+import {LayoutModule} from '@angular/cdk/layout';
 
-import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { NavigationService } from '../../modules/shared/services/navigation.service';
-import { Link } from '../models/link';
+import {Component} from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {NavigationService} from '../../modules/shared/services/navigation.service';
+import {Link} from '../models/link';
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   imports: [
@@ -14,8 +15,9 @@ import { Link } from '../models/link';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
-],
+    MatMenuModule,
+    NgOptimizedImage,
+  ],
   selector: 'app-links',
   templateUrl: './links.component.html',
   styleUrls: ['./links.component.scss'],

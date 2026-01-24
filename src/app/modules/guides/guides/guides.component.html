@@ -1,21 +1,12 @@
-<div class="full-container">
-  <app-page-title [pageTitle]="pageTitle"></app-page-title>
+<app-page-title [pageTitle]="pageTitle"></app-page-title>
 
-  @if (seriesTitles | async; as seriesTitles) {
-    <div>
-      @for (title of seriesTitles; track title) {
-        <div class="col-12">
-          <div class="container d-flex flex-column col-lg-9 col-sm-12">
+<div class="container mat-typography">
+    @if (seriesTitles | async; as seriesTitles) {
+        @for (title of seriesTitles; track title) {
             <h1>{{ title }}</h1>
-          </div>
-          <app-post-list category="guides" [series]="title"></app-post-list>
-        </div>
-      }
-    </div>
-  }
-
-  <div class="container d-flex flex-column col-lg-9 col-sm-12">
+            <app-post-list category="guides" [series]="title"></app-post-list>
+        }
+    }
     <h1>Miscellaneous</h1>
-  </div>
-  <app-post-list category="guides" series="misc"></app-post-list>
+    <app-post-list category="guides" series="misc"></app-post-list>
 </div>

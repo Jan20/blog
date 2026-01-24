@@ -1,30 +1,25 @@
-<div class="container d-flex flex-column col-lg-9 col-sm-12">
-  @if (posts | async; as posts) {
-    <div class="row gx-4">
-      @for (post of posts; track post) {
-        <div
-          class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-4">
-          <mat-card (click)="showPost(post)" class="h-100">
-            <img
-              mat-card-image
-              class="img-fluid"
-              height="360"
-              width="480"
-              [src]="post.thumbnail"
-              alt="A post's thumbnail" />
-            <mat-card-content>
-              <mat-card-title>
-                <h1 class="mb-0">
-                  {{ post.headline }}
-                </h1>
-              </mat-card-title>
-              <p>
-                {{ post.summary }}
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      }
-    </div>
-  }
-</div>
+<mat-grid-list class="container mat-typography" [cols]="cols$ | async" gutterSize="16px">
+    @if (posts | async; as posts) {
+        @for (post of posts; track post) {
+            <mat-grid-tile>
+                <mat-card (click)="showPost(post)" class="post-card">
+                    <img
+                            class="post-image"
+                            mat-card-image
+                            height="100"
+                            width="178"
+                            [ngSrc]="post.thumbnail"
+                            alt="A post's thumbnail"/>
+                    <mat-card-content class="content mat-typography">
+                        <h3>
+                            {{ post.headline }}
+                        </h3>
+                        <p>
+                            {{ post.summary }}
+                        </p>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        }
+    }
+</mat-grid-list>

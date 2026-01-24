@@ -1,28 +1,28 @@
-<h1 class="col-lg-3 col-sm-6">Links</h1>
+<h1>Links</h1>
 
 <p>
   If you are interested taking a look on what I'm working on in my free time,
   take a look at my Github account or LinkedIn profile.
 </p>
 
-<div class="row mb-5 mp-2">
+<div class="post-nav-row">
   @for (link of links; track link) {
-    <div class="col-6">
-      <mat-card matRipple class="col-12 shadow-none" (click)="openLink(link.url)">
-        <mat-card-content class="p-4">
-          <h2 class="mt-5 d-flex align-middle">
+      <mat-card (click)="openLink(link.url)" class="post-nav-card">
+        <mat-card-content>
+          <h3>
             <img
               class="icon icon"
-              src="{{ link.iconPath }}"
+              ngSrc="{{ link.iconPath }}"
+              height="1"
+              width="1"
               alt="Link to {{ link.iconPath }}" />
             <span>&nbsp;</span>
             {{ link.name }}
             <span
               >&nbsp;<mat-icon aria-label="External link">launch</mat-icon>
             </span>
-          </h2>
+          </h3>
         </mat-card-content>
       </mat-card>
-    </div>
   }
 </div>

@@ -1,34 +1,36 @@
 @if (adjacentPosts | async; as adjacentPosts) {
-  <div class="row mb-5 mp-2">
-    <div class="col-6">
-      @if (adjacentPosts.get('previousPost')) {
-        <mat-card
-          matRipple
-          class="col-12"
-          (click)="navigateToPost(adjacentPosts.get('previousPost')!)">
-          <mat-card-content class="p-4">
-            <p class="mt-2 d-flex align-middle">
-              <mat-icon>arrow_back</mat-icon>Previous
-            </p>
-            <h2>{{ adjacentPosts.get('previousPost')!.headline }}</h2>
-          </mat-card-content>
-        </mat-card>
-      }
+    <div class="post-nav-row">
+        @if (adjacentPosts.get('previousPost')) {
+            <mat-card
+                    matRipple
+                    class="post-nav-card"
+                    (click)="navigateToPost(adjacentPosts.get('previousPost')!)">
+                <mat-card-content>
+                    <div class="mat-subtitle-2 post-nav-label">
+                        <mat-icon>arrow_back</mat-icon>
+                        Previous
+                    </div>
+                    <h3>
+                        {{ adjacentPosts.get('previousPost')!.headline }}
+                    </h3>
+                </mat-card-content>
+            </mat-card>
+        }
+        @if (adjacentPosts.get('upcomingPost')) {
+            <mat-card
+                    matRipple
+                    class="post-nav-card"
+                    (click)="navigateToPost(adjacentPosts.get('upcomingPost')!)">
+                <mat-card-content>
+                    <div class="mat-subtitle-2 post-nav-label">
+                        Up next
+                        <mat-icon>arrow_forward</mat-icon>
+                    </div>
+                    <h3>
+                        {{ adjacentPosts.get('upcomingPost')!.headline }}
+                    </h3>
+                </mat-card-content>
+            </mat-card>
+        }
     </div>
-    <div class="col-6">
-      @if (adjacentPosts.get('upcomingPost')) {
-        <mat-card
-          matRipple
-          class="col-12"
-          (click)="navigateToPost(adjacentPosts.get('upcomingPost')!)">
-          <mat-card-content class="p-4">
-            <p class="mt-2 d-flex align-middle">
-              Up next<mat-icon>arrow_forward</mat-icon>
-            </p>
-            <h2>{{ adjacentPosts.get('upcomingPost')!.headline }}</h2>
-          </mat-card-content>
-        </mat-card>
-      }
-    </div>
-  </div>
 }

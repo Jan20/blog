@@ -13,8 +13,8 @@ import { PostListComponent } from '../../components/post-list/post-list.componen
   declarations: [GuidesComponent],
   imports: [
     CommonModule,
-    MatCardModule,
     MatButtonModule,
+    MatCardModule,
     RouterModule.forChild(guidesRoutes),
     SharedModule,
     PageTitleComponent,

@@ -6,12 +6,12 @@ This repository holds the source code for my small software engineering blog. Fe
 
 <img width="2032" alt="Screenshot 2024-10-27 at 12 29 01" src="https://github.com/user-attachments/assets/e738e7e6-128c-4106-b401-0a81ebefdf36">
 
-# Local Setup
+# Getting Started
 
 **Step 1:** Install npm dependencies:
 
 ```
-npm i
+npm install --verbose
 ```
 
 **Step 2:** Install the Angular CLI if not already present:
@@ -24,4 +24,24 @@ npm install -g @angular/cli
 
 ```
 ng serve
+```
+
+# Deployment
+
+**Step 1:** Sign in to your GCP account
+
+```
+gcloud auth login
+```
+
+**Step 2:** Set the desired GCP project
+
+```
+gcloud config set project <your-gcp-project-id>
+```
+
+**Step 3:** Submit the build using Cloud Build
+
+```
+gcloud builds submit --config cloudbuild.yaml --verbosity=debug
 ```

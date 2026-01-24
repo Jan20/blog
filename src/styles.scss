@@ -61,11 +61,6 @@ ol {
   font-size: 18px;
 }
 
-.full-container {
-  background-color: var(--background-color) !important;
-  color: var(--text-color);
-}
-
 .placeholder {
   height: 20px !important;
 }
@@ -73,20 +68,6 @@ ol {
 h1 {
   font-size: 58px !important;
   font-weight: 300 !important;
-  margin-bottom: 4px;
-  padding-top: 30px;
-  padding-bottom: 36px;
-  line-height: 125% !important;
-  color: var(--text-color);
-}
-
-h2 {
-  line-height: 150%;
-  font-size: 32px;
-  font-weight: 400 !important;
-  margin-top: 30px;
-  padding-top: 60px;
-  padding-bottom: 15px;
   color: var(--text-color);
 }
 
@@ -108,15 +89,18 @@ p {
   color: var(--text-color);
 }
 
+.container {
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
 code {
   font-family: monospace !important;
   font-weight: normal !important;
   font-size: 14px !important;
   background-color: rgb(212, 212, 212) !important;
   border-radius: 5px;
-  padding: 2px;
-  padding-right: 6px;
-  padding-left: 6px;
+  padding: 2px 6px;
   color: rgb(51, 51, 51) !important;
 }
 
@@ -192,21 +176,18 @@ a:hover {
 
 .keyword-this {
   font-family: monospace !important;
-  font-weight: 100 !important;
   font-weight: normal !important;
   font-size: 14px !important;
 }
 
 .token {
   font-family: monospace !important;
-  font-weight: 100 !important;
   font-weight: normal !important;
   font-size: 14px !important;
 }
 
 .punctuation {
   font-family: monospace !important;
-  font-weight: 500 !important;
   font-weight: normal !important;
   font-size: 14px !important;
 }

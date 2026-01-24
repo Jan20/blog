@@ -3,6 +3,8 @@ import {
   PageTitle,
   PageTitleBackground,
 } from '../../../components/models/page-title';
+import {Observable} from "rxjs";
+import {BlogService} from "../../shared/services/blog.service";
 
 @Component({
     selector: 'app-engineering',
@@ -15,4 +17,13 @@ export class EngineeringComponent {
     "While practical guides are excellent for addressing specific issues, I've come across some broader strategies that I'd like to share here.",
     PageTitleBackground.ENGINEERING
   );
+    public seriesTitles: Observable<Set<string>>;
+
+    constructor(private readonly blogService: BlogService) {
+        this.seriesTitles = this.fetchSeries();
+    }
+
+    public fetchSeries(): Observable<Set<string>> {
+        return this.blogService.getSeriesTitles('engineering');
+    }
 }
