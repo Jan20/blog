@@ -10,7 +10,6 @@ import { LinksComponent } from '../../components/links/links.component';
 import {PostListComponent} from "../../components/post-list/post-list.component";
 
 @NgModule({
-  declarations: [AboutComponent],
     imports: [
         CommonModule,
         MatCardModule,
@@ -19,6 +18,7 @@ import {PostListComponent} from "../../components/post-list/post-list.component"
         PageTitleComponent,
         LinksComponent,
         PostListComponent,
+        AboutComponent,
     ],
 })
 export class AboutModule {}

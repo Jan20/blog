@@ -1,12 +1,12 @@
 import {CommonModule, NgOptimizedImage} from '@angular/common';
-import { Component, Input, inject } from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatRippleModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {ActivatedRoute, Router} from '@angular/router';
-import {BehaviorSubject, Observable, Subject, switchMap} from 'rxjs';
+import {BehaviorSubject, Observable, switchMap} from 'rxjs';
 import {Post} from '../../modules/shared/models/post';
 import {BlogService} from '../../modules/shared/services/blog.service';
 import {MatGridListModule} from "@angular/material/grid-list";

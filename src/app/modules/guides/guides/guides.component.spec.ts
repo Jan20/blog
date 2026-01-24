@@ -33,30 +33,30 @@ blogService.getPosts.and.returnValue(of(ENGINEERING_POSTS));
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    declarations: [GuidesComponent],
     teardown: { destroyAfterEach: false },
     imports: [
-      CommonModule,
-      PostListComponent,
-      PageTitleComponent,
-      MatCardModule,
-      MatMenuModule,
-      MatButtonModule,
-      MatIconModule,
-      MatMenuModule,
-      MatCardModule,
-      MatGridListModule,
-      PostListComponent,
-      MatIconModule,
-      MatRippleModule,
-      RouterTestingModule,
-      MarkdownModule,
+        CommonModule,
+        PostListComponent,
+        PageTitleComponent,
+        MatCardModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatIconModule,
+        MatMenuModule,
+        MatCardModule,
+        MatGridListModule,
+        PostListComponent,
+        MatIconModule,
+        MatRippleModule,
+        RouterTestingModule,
+        MarkdownModule,
+        GuidesComponent,
     ],
     providers: [
-      { provide: BlogService, useValue: blogService },
-      provideHttpClient(withInterceptorsFromDi()),
+        { provide: BlogService, useValue: blogService },
+        provideHttpClient(withInterceptorsFromDi()),
     ],
-  }).compileComponents();
+}).compileComponents();
 };
 
 describe('GuidesComponent', () => {

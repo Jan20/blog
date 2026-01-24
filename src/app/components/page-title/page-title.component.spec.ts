@@ -1,18 +1,13 @@
-import {
-  ComponentFixture,
-  ComponentFixtureAutoDetect,
-  TestBed,
-} from '@angular/core/testing';
+import {ComponentFixture, ComponentFixtureAutoDetect, TestBed,} from '@angular/core/testing';
 
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatRippleModule } from '@angular/material/core';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { screen } from '@testing-library/angular';
-import { PageTitle, PageTitleBackground } from '../models/page-title';
-import { PageTitleComponent } from './page-title.component';
+import {CommonModule} from '@angular/common';
+import {Component} from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatRippleModule} from '@angular/material/core';
+import {screen} from '@testing-library/angular';
+import {PageTitle, PageTitleBackground} from '../models/page-title';
+import {PageTitleComponent} from './page-title.component';
 import '@testing-library/jasmine-dom';
 
 let component: PageTitleComponent;
@@ -25,8 +20,13 @@ const PAGE_TITLE = new PageTitle(
 );
 
 @Component({
-  template: `<app-page-title [pageTitle]="pageTitle"></app-page-title>`,
-  standalone: false,
+    template: `<app-page-title [pageTitle]="pageTitle"></app-page-title>`,
+    imports: [CommonModule,
+        MatCardModule,
+        MatButtonModule,
+        MatRippleModule,
+        PageTitleComponent,
+    ],
 })
 class TestHostComponent {
   public readonly pageTitle = PAGE_TITLE;
@@ -34,18 +34,17 @@ class TestHostComponent {
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    declarations: [TestHostComponent],
     imports: [
-      CommonModule,
-      MatCardModule,
-      MatButtonModule,
-      MatRippleModule,
-      PageTitleComponent,
-      NoopAnimationsModule,
+        CommonModule,
+        MatCardModule,
+        MatButtonModule,
+        MatRippleModule,
+        PageTitleComponent,
+        TestHostComponent,
     ],
     providers: [{ provide: ComponentFixtureAutoDetect, useValue: true }],
     teardown: { destroyAfterEach: false },
-  }).compileComponents();
+}).compileComponents();
 };
 
 describe('PageTitleComponent:', () => {

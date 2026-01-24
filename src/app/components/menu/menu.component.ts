@@ -75,9 +75,11 @@ export class MenuComponent implements OnInit {
     }
 
     toggleMenu(): void {
-        this.activeStates.has(MenuState.MAXIMIZED)
-            ? this.activeStates.delete(MenuState.MAXIMIZED)
-            : this.activeStates.add(MenuState.MAXIMIZED);
+        if (this.activeStates.has(MenuState.MAXIMIZED)) {
+            this.activeStates.delete(MenuState.MAXIMIZED)
+            return;
+        }
+        this.activeStates.add(MenuState.MAXIMIZED);
     }
 
     toggleTheme(): void {

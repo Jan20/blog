@@ -5,11 +5,14 @@ import {
 } from '../../../components/models/page-title';
 import {Observable} from "rxjs";
 import {BlogService} from "../../shared/services/blog.service";
+import { PageTitleComponent } from '../../../components/page-title/page-title.component';
+import { PostListComponent } from '../../../components/post-list/post-list.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-engineering',
     templateUrl: './engineering.component.html',
-    standalone: false
+    imports: [PageTitleComponent, PostListComponent, AsyncPipe]
 })
 export class EngineeringComponent {
   private readonly blogService = inject(BlogService);

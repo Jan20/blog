@@ -15,21 +15,21 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
-  declarations: [LandingComponent],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatIconModule,
-    EngineeringModule,
-    LandingTitleComponent,
-    GuidesModule,
-    CourseModule,
-    MatCardModule,
-    SharedModule,
-    FooterModule,
-    PostListComponent,
-    MatGridListModule,
-    MatDividerModule,
-  ],
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatIconModule,
+        EngineeringModule,
+        LandingTitleComponent,
+        GuidesModule,
+        CourseModule,
+        MatCardModule,
+        SharedModule,
+        FooterModule,
+        PostListComponent,
+        MatGridListModule,
+        MatDividerModule,
+        LandingComponent,
+    ],
 })
 export class LandingModule {}

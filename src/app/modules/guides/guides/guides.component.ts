@@ -5,11 +5,18 @@ import {
   PageTitleBackground,
 } from '../../../components/models/page-title';
 import { BlogService } from '../../shared/services/blog.service';
+import { PageTitleComponent } from '../../../components/page-title/page-title.component';
+import { PostListComponent } from '../../../components/post-list/post-list.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-guides',
-  templateUrl: './guides.component.html',
-  standalone: false,
+    selector: 'app-guides',
+    templateUrl: './guides.component.html',
+    imports: [
+        PageTitleComponent,
+        PostListComponent,
+        AsyncPipe,
+    ],
 })
 export class GuidesComponent {
   private readonly blogService = inject(BlogService);

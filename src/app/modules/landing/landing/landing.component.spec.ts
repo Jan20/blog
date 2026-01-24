@@ -59,29 +59,29 @@ blogService.getPosts.and.returnValue(of(POSTS));
 
 const compileComponent = (): void => {
   TestBed.configureTestingModule({
-    declarations: [LandingComponent],
     teardown: { destroyAfterEach: false },
     imports: [
-      LandingTitleComponent,
-      CommonModule,
-      PostListComponent,
-      MatButtonModule,
-      MatCardModule,
-      MatMenuModule,
-      MatGridListModule,
-      MatIconModule,
-      PageTitleComponent,
-      MatRippleModule,
-      RouterTestingModule,
-      MarkdownModule,
-      MatGridListModule,
-      MatDividerModule,
+        LandingTitleComponent,
+        CommonModule,
+        PostListComponent,
+        MatButtonModule,
+        MatCardModule,
+        MatMenuModule,
+        MatGridListModule,
+        MatIconModule,
+        PageTitleComponent,
+        MatRippleModule,
+        RouterTestingModule,
+        MarkdownModule,
+        MatGridListModule,
+        MatDividerModule,
+        LandingComponent,
     ],
     providers: [
-      { provide: BlogService, useValue: blogService },
-      provideHttpClient(withInterceptorsFromDi()),
+        { provide: BlogService, useValue: blogService },
+        provideHttpClient(withInterceptorsFromDi()),
     ],
-  }).compileComponents();
+}).compileComponents();
 };
 
 describe('LandingComponent', () => {

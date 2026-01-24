@@ -10,16 +10,16 @@ import { EngineeringComponent } from './engineering/engineering.component';
 import { engineeringRoutes } from './guides.routing';
 
 @NgModule({
-  declarations: [EngineeringComponent],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatCardModule,
-    RouterModule.forChild(engineeringRoutes),
-    SharedModule,
-    PageTitleComponent,
-    PostListComponent,
-  ],
-  exports: [],
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatCardModule,
+        RouterModule.forChild(engineeringRoutes),
+        SharedModule,
+        PageTitleComponent,
+        PostListComponent,
+        EngineeringComponent,
+    ],
+    exports: [],
 })
 export class EngineeringModule {}
