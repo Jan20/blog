@@ -100,12 +100,16 @@
             "outputPath": "dist/blog/server",
             "main": "src/main.server.ts",
             "tsConfig": "tsconfig.server.json",
-            "polyfills": []
+            "polyfills": [],
+            "externalDependencies": "all"
           },
           "configurations": {
             "production": {
               "browserTarget": "blog:build:production",
-              "serverTarget": "blog:server:production"
+              "serverTarget": "blog:server:production",
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
             },
             "development": {
               "sourceMap": true
