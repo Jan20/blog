@@ -40,7 +40,7 @@ export class PostListComponent {
     public readonly posts: Observable<Post[]>;
     @Input() public category!: string;
     @Input() public series: string = 'misc';
-    public readonly cols$: BehaviorSubject<number> = new BehaviorSubject<number>(3);
+    public readonly cols$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
 
     constructor() {
         this.posts = this.activatedRoute.paramMap.pipe(
