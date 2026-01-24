@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import {
   PageTitle,
@@ -12,6 +12,8 @@ import { BlogService } from '../../shared/services/blog.service';
   standalone: false,
 })
 export class CourseComponent {
+  private readonly blogService = inject(BlogService);
+
   public readonly pageTitle = new PageTitle(
     'Angular Guides',
     "Angular is an exceptional web application framework, particularly well-suited for large-scale applications. Below, I've curated a series of posts that delve into specific areas deserving a closer look.",
@@ -19,7 +21,7 @@ export class CourseComponent {
   );
   public seriesTitles: Observable<Set<string>>;
 
-  constructor(private readonly blogService: BlogService) {
+  constructor() {
     this.seriesTitles = this.fetchSeries();
   }
 

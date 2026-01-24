@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Post } from '../models/post';
@@ -8,7 +8,8 @@ import { PostCollection } from '../models/postCollection';
   providedIn: 'root',
 })
 export class BlogService {
-  constructor(private readonly postCollection: PostCollection) {}
+  private readonly postCollection = inject(PostCollection);
+
 
   public getPosts(category: string, series: string): Observable<Post[]> {
     if (series === 'all') {

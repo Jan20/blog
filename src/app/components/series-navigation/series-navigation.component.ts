@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, map, mergeMap } from 'rxjs';
 import { Post } from '../../modules/shared/models/post';
@@ -24,13 +24,13 @@ import { MatMenuModule } from '@angular/material/menu';
   styleUrls: ['./series-navigation.component.scss'],
 })
 export class SeriesNavigationComponent {
+  private readonly router = inject(Router);
+  private readonly activateRoute = inject(ActivatedRoute);
+  private readonly blogService = inject(BlogService);
+
   public adjacentPosts: Observable<Map<string, Post | undefined>>;
 
-  constructor(
-    private readonly router: Router,
-    private readonly activateRoute: ActivatedRoute,
-    private readonly blogService: BlogService
-  ) {
+  constructor() {
     this.adjacentPosts = this.activateRoute.paramMap.pipe(
       map(() => this.router.url.split('/')[1]),
       mergeMap(category => this.blogService.getPosts(category, 'all')),

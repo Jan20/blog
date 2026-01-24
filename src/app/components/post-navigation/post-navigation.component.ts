@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
@@ -24,13 +24,13 @@ import { BlogService } from '../../modules/shared/services/blog.service';
   styleUrls: ['./post-navigation.component.scss'],
 })
 export class PostNavigationComponent {
+  private readonly router = inject(Router);
+  private readonly activateRoute = inject(ActivatedRoute);
+  private readonly blogService = inject(BlogService);
+
   adjacentPosts: Observable<Map<string, Post | undefined>>;
 
-  constructor(
-    private readonly router: Router,
-    private readonly activateRoute: ActivatedRoute,
-    private readonly blogService: BlogService
-  ) {
+  constructor() {
     this.adjacentPosts = this.activateRoute.paramMap.pipe(
       map(() => this.getCategoryFromUrl()),
       mergeMap(category => this.blogService.getPosts(category, 'all')),

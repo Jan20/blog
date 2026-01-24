@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import {
   PageTitle,
@@ -12,14 +12,14 @@ import { BlogService } from '../../shared/services/blog.service';
   standalone: false,
 })
 export class GuidesComponent {
+  private readonly blogService = inject(BlogService);
+
   public readonly pageTitle = new PageTitle(
     'Guides',
     'Over the years, I have encountered a rather vast array of technical challenges. Thus, I would like to share some of them that have not yet been exclusively covered elsewhere or deserve further explanation.',
     PageTitleBackground.GUIDES
   );
   public readonly seriesTitles: Observable<Set<string>> = this.fetchSeries();
-
-  constructor(private readonly blogService: BlogService) {}
 
   public fetchSeries(): Observable<Set<string>> {
     return this.blogService.getSeriesTitles('guides');

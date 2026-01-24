@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './modules/shared/services/theme.service';
 import { MenuComponent } from './components/menu/menu.component';
@@ -9,9 +9,9 @@ import { MenuComponent } from './components/menu/menu.component';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  isDarkMode: boolean = false;
+  private readonly themeService = inject(ThemeService);
 
-  constructor(private readonly themeService: ThemeService) {}
+  isDarkMode: boolean = false;
 
   ngOnInit(): void {
     this.themeService.isLightTheme$.subscribe(

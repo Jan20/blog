@@ -1,6 +1,6 @@
 import {BreakpointObserver, Breakpoints, LayoutModule,} from '@angular/cdk/layout';
 import {CommonModule} from '@angular/common';
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
@@ -29,17 +29,17 @@ import {map} from "rxjs/operators";
     styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
+    private readonly breakpointObserver = inject(BreakpointObserver);
+    private readonly router = inject(Router);
+    private readonly themeService = inject(ThemeService);
+
     activeStates = new Set<MenuState>();
     isLightTheme: boolean = false;
     readonly title = "Jan's Engineering Blog";
     readonly MenuState = MenuState;
     readonly menuItems: MenuItem[] = MENU_ITEMS;
 
-    constructor(
-        private readonly breakpointObserver: BreakpointObserver,
-        private readonly router: Router,
-        private readonly themeService: ThemeService
-    ) {
+    constructor() {
         this.breakpointObserver
             .observe([
                 Breakpoints.Small,

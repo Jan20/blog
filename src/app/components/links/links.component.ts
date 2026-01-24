@@ -1,6 +1,6 @@
 import {LayoutModule} from '@angular/cdk/layout';
 
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
@@ -23,6 +23,8 @@ import {NgOptimizedImage} from "@angular/common";
   styleUrls: ['./links.component.scss'],
 })
 export class LinksComponent {
+  private readonly navigationService = inject(NavigationService);
+
   readonly links = [
     new Link(
       'Github',
@@ -35,8 +37,6 @@ export class LinksComponent {
       'assets/images/links/linkedin.png'
     ),
   ];
-
-  constructor(private readonly navigationService: NavigationService) {}
 
   openLink(url: string): void {
     this.navigationService.openUrl(url);

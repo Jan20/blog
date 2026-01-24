@@ -1,5 +1,5 @@
 import {CommonModule, NgOptimizedImage} from '@angular/common';
-import {Component, Input} from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatRippleModule} from '@angular/material/core';
@@ -32,17 +32,17 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
     styleUrls: ['./post-list.component.scss'],
 })
 export class PostListComponent {
+    private readonly activatedRoute = inject(ActivatedRoute);
+    private readonly blogService = inject(BlogService);
+    private readonly router = inject(Router);
+    private breakpointObserver = inject(BreakpointObserver);
+
     public readonly posts: Observable<Post[]>;
     @Input() public category!: string;
     @Input() public series: string = 'misc';
     public readonly cols$: BehaviorSubject<number> = new BehaviorSubject<number>(3);
 
-    constructor(
-        private readonly activatedRoute: ActivatedRoute,
-        private readonly blogService: BlogService,
-        private readonly router: Router,
-        private breakpointObserver: BreakpointObserver
-    ) {
+    constructor() {
         this.posts = this.activatedRoute.paramMap.pipe(
             switchMap(() => this.blogService.getPosts(this.category, this.series))
         );

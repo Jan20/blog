@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation,} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation, inject } from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router,} from '@angular/router';
 import {map, mergeMap, Observable, tap} from 'rxjs';
 import {Post} from '../../modules/shared/models/post';
@@ -37,16 +37,14 @@ import {Meta, Title} from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostComponent implements OnInit {
+  private readonly activatedRoute = inject(ActivatedRoute);
+  private readonly blogService = inject(BlogService);
+  private readonly router = inject(Router);
+  private readonly titleService = inject(Title);
+  private readonly metaService = inject(Meta);
+
   post: Observable<Post> = this.fetchPost();
   @ViewChild('targetElement') targetElement: ElementRef | undefined;
-
-  constructor(
-    private readonly activatedRoute: ActivatedRoute,
-    private readonly blogService: BlogService,
-    private readonly router: Router,
-    private readonly titleService: Title,
-    private readonly metaService: Meta
-  ) {}
 
   ngOnInit() {
     this.router.events.subscribe((event: object) => {
