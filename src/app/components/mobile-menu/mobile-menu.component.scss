@@ -9,9 +9,7 @@ button {
   position: fixed;
   background-color: var(--menu-background-color);
   color: var(--menu-text-color);
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   width: 125px;
   border: none;
 
@@ -97,7 +95,7 @@ button {
 .mobile-content {
   flex: 1;
   overflow-y: auto;
-  padding-bottom: 56px;
+  padding-bottom: 56px; /* Space for the bottom nav */
 }
 
 .bottom-nav {
@@ -112,6 +110,7 @@ button {
 
 .bottom-nav-item {
   &.active {
-    color: var(--mat-primary-color);
+    color: var(--mat-primary-color); /* Or your theme's primary color */
   }
 }
+

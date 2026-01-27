@@ -1,0 +1,20 @@
+<div class="mobile-container">
+    <main class="mobile-content">
+        <router-outlet></router-outlet>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <mat-toolbar class="bottom-nav">
+        @for (item of menuItems; track item) {
+            <button
+                    mat-icon-button
+                    class="bottom-nav-item"
+                    [ngClass]="{ active: item.active }"
+                    (click)="navigateToMenuEntry(item)"
+                    [attr.aria-label]="item.name"
+            >
+                <mat-icon>{{ item.icon }}</mat-icon>
+            </button>
+        }
+    </mat-toolbar>
+</div>

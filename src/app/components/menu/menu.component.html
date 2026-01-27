@@ -1,79 +1,47 @@
-<!-- Mobile Menu Bar -->
-@if (activeStates.has(MenuState.MOBILE)) {
-  <mat-toolbar
-    class="mobile-menu d-flex justify-content-left"
-    >
-    <button
-      mat-icon-button
-      type="button"
-      (click)="toggleMenu()"
-      aria-label="Toggle Navigation Bar in Mobile View">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <button
-      mat-button
-      type="button"
-      class="title"
-      aria-label="Switch to Landing Page"
-      (click)="switchToLandingPage()">
-      {{ title }}
-    </button>
-  </mat-toolbar>
-}
-
 <mat-sidenav-container class="vh-100">
-  @if (
-    !activeStates.has(MenuState.MOBILE) ||
-    activeStates.has(MenuState.MAXIMIZED)
-    ) {
-    <mat-sidenav
-      #sidenav
-      [opened]="activeStates.has(MenuState.MAXIMIZED)"
-      [mode]="activeStates.has(MenuState.MINIMIZED) ? 'over' : 'side'"
-      >
-      <mat-nav-list>
-        @for (item of menuItems; track item) {
-          <button
-            type="button"
-            mat-button
-            class="side-button"
-            [ngClass]="{ active: item.active }"
-            (click)="navigateToMenuEntry(item)"
-            >
-            <div class="w-100">
-              <mat-icon class="w-100 h-100">
-                {{ item.icon }}
-              </mat-icon>
-            </div>
-            <div>
-              {{ item.name }}
-            </div>
-          </button>
-        }
-      </mat-nav-list>
-      @if (!activeStates.has(MenuState.MOBILE)) {
+  <mat-sidenav
+    #sidenav
+    [opened]="activeStates.has(MenuState.MAXIMIZED)"
+    [mode]="activeStates.has(MenuState.MINIMIZED) ? 'over' : 'side'">
+    <mat-nav-list>
+      @for (item of menuItems; track item) {
         <button
           type="button"
-          mat-fab
-          class="minimize-button"
-          (click)="minimize()"
-          aria-label="Minimize Navigation Bar in Desktop View">
-          <mat-icon>close_fullscreen</mat-icon>
+          mat-button
+          class="side-button"
+          [ngClass]="{ active: item.active }"
+          (click)="navigateToMenuEntry(item)">
+          <div class="w-100">
+            <mat-icon class="w-100 h-100">
+              {{ item.icon }}
+            </mat-icon>
+          </div>
+          <div>
+            {{ item.name }}
+          </div>
         </button>
       }
-      <button
-        type="button"
-        mat-fab
-        class="theme-button"
-        (click)="toggleTheme()"
-        aria-label="Toggle Theme in Desktop View">
-        <mat-icon>{{ isLightTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
-      </button>
-    </mat-sidenav>
-  }
+    </mat-nav-list>
+    <button
+      type="button"
+      mat-fab
+      class="minimize-button"
+      (click)="minimize()"
+      aria-label="Minimize Navigation Bar in Desktop View">
+      <mat-icon>close_fullscreen</mat-icon>
+    </button>
+    <button
+      type="button"
+      mat-fab
+      class="theme-button"
+      (click)="toggleTheme()"
+      aria-label="Toggle Theme in Desktop View">
+      <mat-icon>{{ isLightTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+  </mat-sidenav>
 
-  <mat-sidenav-content (click)="hideMenu()">
-    @if (!activeStates.has(MenuState.MOBILE)) {
+  <mat-sidenav-content>
+    @if (activeStates.has(MenuState.MINIMIZED)) {
       <button
         type="button"
         mat-fab
@@ -83,18 +51,14 @@
         <mat-icon>open_in_full</mat-icon>
       </button>
     }
-
-    @if (!activeStates.has(MenuState.MOBILE)) {
-      <button
-        type="button"
-        mat-fab
-        class="theme-button"
-        (click)="toggleTheme()"
-        aria-label="Toggle Theme in Desktop View and Minimized Menu">
-        <mat-icon>{{ isLightTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
-      </button>
-    }
-
+    <button
+      type="button"
+      mat-fab
+      class="theme-button"
+      (click)="toggleTheme()"
+      aria-label="Toggle Theme in Desktop View and Minimized Menu">
+      <mat-icon>{{ isLightTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

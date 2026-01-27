@@ -8,7 +8,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {Router, RouterModule} from '@angular/router';
-import {MENU_ITEMS, MenuItem, MenuState} from '../models/menu-item';
+import {MENU_ITEMS, MenuItem} from '../models/menu-item';
 import {ThemeService} from '../../modules/shared/services/theme.service';
 
 @Component({
@@ -23,18 +23,15 @@ import {ThemeService} from '../../modules/shared/services/theme.service';
         MatListModule,
         RouterModule,
     ],
-    selector: 'app-menu',
-    templateUrl: './menu.component.html',
-    styleUrls: ['./menu.component.scss'],
+    selector: 'app-mobile-menu',
+    templateUrl: './mobile-menu.component.html',
+    styleUrls: ['./mobile-menu.component.scss'],
 })
-export class MenuComponent implements OnInit {
+export class MobileMenuComponent implements OnInit {
     private readonly router: Router = inject(Router);
     private readonly themeService: ThemeService = inject(ThemeService);
 
-    activeStates: Set<MenuState> = new Set([MenuState.MAXIMIZED]);
     isLightTheme: boolean = false;
-    readonly title = "Jan's Engineering Blog";
-    readonly MenuState = MenuState;
     readonly menuItems: MenuItem[] = MENU_ITEMS;
 
     ngOnInit() {
@@ -43,32 +40,10 @@ export class MenuComponent implements OnInit {
         );
     }
 
-    toggleMenu(): void {
-        if (this.activeStates.has(MenuState.MAXIMIZED)) {
-            this.activeStates.delete(MenuState.MAXIMIZED)
-            return;
-        }
-        this.activeStates.add(MenuState.MAXIMIZED);
-    }
-
-    toggleTheme(): void {
-        this.themeService.toggleDarkMode();
-    }
-
-    minimize(): void {
-        this.activeStates = this.activeStates.has(MenuState.MAXIMIZED)
-            ? new Set([MenuState.MINIMIZED])
-            : new Set([MenuState.MAXIMIZED]);
-    }
-
     navigateToMenuEntry(selectedItem: MenuItem): void {
         const activeItem = this.menuItems.find(item => item.active);
         if (activeItem) activeItem.active = false;
         selectedItem.active = true;
         this.router.navigate([selectedItem.link]);
-    }
-
-    switchToLandingPage(): void {
-        this.router.navigate(['']);
     }
 }

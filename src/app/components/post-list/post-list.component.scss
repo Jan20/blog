@@ -1,13 +1,28 @@
 h3 {
   text-align: left;
-  font-size: 38px !important;
+  font-size: 34px;
   word-break: break-word;
+  margin-bottom: 16px;
+
+  @media (max-width: 599px) {
+    font-size: 28px;
+  }
 }
 
 p {
   text-align: left;
   font-size: 20px !important;
   word-break: break-word;
+}
+
+@media (max-width: 599px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px !important;
+  }
 }
 
 .mat-mdc-card {
@@ -18,15 +33,25 @@ p {
   padding: 0 !important;
 }
 
+mat-card {
+  @media (max-width: 599px) {
+    height: 95%;
+  }
+}
+
 .post-image {
-  padding-top: -43 !important;
   height: 80%;
   width: 100%;
+
+  @media (max-width: 599px) {
+    height: 80%;
+  }
 }
 
 .content {
   height: 180px;
   margin: 0;
+
 }
 
 .mat-mdc-card:hover {
