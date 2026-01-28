@@ -35,7 +35,7 @@ export class MobileMenuComponent implements OnInit {
     readonly menuItems: MenuItem[] = MENU_ITEMS;
 
     ngOnInit() {
-        this.themeService.isLightTheme$.subscribe(
+        this.themeService.isDarkTheme$.subscribe(
             (isLight: boolean): boolean => (this.isLightTheme = isLight)
         );
     }

@@ -36,7 +36,7 @@
       class="theme-button"
       (click)="toggleTheme()"
       aria-label="Toggle Theme in Desktop View">
-      <mat-icon>{{ isLightTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      <mat-icon>{{ inDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
     </button>
   </mat-sidenav>
 
@@ -57,7 +57,7 @@
       class="theme-button"
       (click)="toggleTheme()"
       aria-label="Toggle Theme in Desktop View and Minimized Menu">
-      <mat-icon>{{ isLightTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      <mat-icon>{{ inDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
     </button>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

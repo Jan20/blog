@@ -28,27 +28,19 @@ import {ThemeService} from '../../modules/shared/services/theme.service';
     styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
+    public inDarkMode: boolean = false;
+    public activeStates: Set<MenuState> = new Set([MenuState.MAXIMIZED]);
+
     private readonly router: Router = inject(Router);
     private readonly themeService: ThemeService = inject(ThemeService);
 
-    activeStates: Set<MenuState> = new Set([MenuState.MAXIMIZED]);
-    isLightTheme: boolean = false;
-    readonly title = "Jan's Engineering Blog";
-    readonly MenuState = MenuState;
+    readonly MenuState: typeof MenuState = MenuState;
     readonly menuItems: MenuItem[] = MENU_ITEMS;
 
     ngOnInit() {
-        this.themeService.isLightTheme$.subscribe(
-            (isLight: boolean): boolean => (this.isLightTheme = isLight)
+        this.themeService.isDarkTheme$.subscribe(
+            (inDarkMode: boolean): boolean => (this.inDarkMode = inDarkMode)
         );
-    }
-
-    toggleMenu(): void {
-        if (this.activeStates.has(MenuState.MAXIMIZED)) {
-            this.activeStates.delete(MenuState.MAXIMIZED)
-            return;
-        }
-        this.activeStates.add(MenuState.MAXIMIZED);
     }
 
     toggleTheme(): void {
@@ -66,9 +58,5 @@ export class MenuComponent implements OnInit {
         if (activeItem) activeItem.active = false;
         selectedItem.active = true;
         this.router.navigate([selectedItem.link]);
-    }
-
-    switchToLandingPage(): void {
-        this.router.navigate(['']);
     }
 }
