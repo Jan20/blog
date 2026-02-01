@@ -1,26 +1,15 @@
-<h1>Links</h1>
-
-<p>
-  If you are interested taking a look on what I'm working on in my free time,
-  take a look at my Github account or LinkedIn profile.
-</p>
-
-<div class="post-nav-row">
+<div class="post-nav-row mat-typography">
   @for (link of links; track link) {
       <mat-card (click)="openLink(link.url)" class="post-nav-card">
         <mat-card-content>
           <h3>
             <img
-              class="icon icon"
               ngSrc="{{ link.iconPath }}"
               height="1"
               width="1"
               alt="Link to {{ link.iconPath }}" />
-            <span>&nbsp;</span>
             {{ link.name }}
-            <span
-              >&nbsp;<mat-icon aria-label="External link">launch</mat-icon>
-            </span>
+              <mat-icon aria-label="External link">launch</mat-icon>
           </h3>
         </mat-card-content>
       </mat-card>

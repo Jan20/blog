@@ -1,4 +1,4 @@
-@if (isMobileMenu) {
+@if (isMobile$ | async) {
   <app-mobile-menu></app-mobile-menu>
 } @else {
   <app-menu></app-menu>

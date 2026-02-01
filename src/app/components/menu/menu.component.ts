@@ -8,7 +8,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {Router, RouterModule} from '@angular/router';
-import {MENU_ITEMS, MenuItem, MenuState} from '../models/menu-item';
+import {MENU_ITEMS, MenuItem, MenuState, Theme} from '../models/menu-item';
 import {ThemeService} from '../../modules/shared/services/theme.service';
 
 @Component({
@@ -28,8 +28,8 @@ import {ThemeService} from '../../modules/shared/services/theme.service';
     styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-    public inDarkMode: boolean = false;
-    public activeStates: Set<MenuState> = new Set([MenuState.MAXIMIZED]);
+    public theme: Theme = Theme.DARK;
+    public menuState: MenuState = MenuState.MAXIMIZED;
 
     private readonly router: Router = inject(Router);
     private readonly themeService: ThemeService = inject(ThemeService);
@@ -37,26 +37,28 @@ export class MenuComponent implements OnInit {
     readonly MenuState: typeof MenuState = MenuState;
     readonly menuItems: MenuItem[] = MENU_ITEMS;
 
-    ngOnInit() {
-        this.themeService.isDarkTheme$.subscribe(
-            (inDarkMode: boolean): boolean => (this.inDarkMode = inDarkMode)
+    ngOnInit(): void {
+        this.themeService.theme$.subscribe(
+            (theme: Theme): Theme => (this.theme = theme)
         );
     }
 
     toggleTheme(): void {
-        this.themeService.toggleDarkMode();
+        this.themeService.toggleTheme()
     }
 
-    minimize(): void {
-        this.activeStates = this.activeStates.has(MenuState.MAXIMIZED)
-            ? new Set([MenuState.MINIMIZED])
-            : new Set([MenuState.MAXIMIZED]);
+    toggleMenu(): void {
+        this.menuState = (this.menuState === MenuState.MAXIMIZED)
+            ? MenuState.MINIMIZED
+            : MenuState.MAXIMIZED;
     }
 
-    navigateToMenuEntry(selectedItem: MenuItem): void {
+    navigateTo(selectedItem: MenuItem): void {
         const activeItem = this.menuItems.find(item => item.active);
         if (activeItem) activeItem.active = false;
         selectedItem.active = true;
         this.router.navigate([selectedItem.link]);
     }
+
+    protected readonly Theme = Theme;
 }

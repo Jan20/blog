@@ -1,58 +1,22 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {ThemeService} from './modules/shared/services/theme.service';
 import {MenuComponent} from './components/menu/menu.component';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
 import {map} from 'rxjs/operators';
 import {MobileMenuComponent} from './components/mobile-menu/mobile-menu.component';
+import {Observable} from "rxjs";
+import {AsyncPipe} from "@angular/common";
 
 @Component({
     selector: 'app-root',
-    imports: [MenuComponent, MobileMenuComponent, RouterOutlet],
+    imports: [MenuComponent, MobileMenuComponent, RouterOutlet, AsyncPipe],
     templateUrl: './app.component.html',
 })
-export class AppComponent implements OnInit {
-    isMobileMenu: boolean = true;
-    private readonly themeService = inject(ThemeService);
+export class AppComponent {
     private readonly breakpointObserver: BreakpointObserver = inject(BreakpointObserver);
 
-    isDarkMode: boolean = false;
+    public isMobile$: Observable<boolean> = this.breakpointObserver
+        .observe([Breakpoints.Small, Breakpoints.XSmall])
+        .pipe(map((state: BreakpointState): boolean => state.matches));
 
-    constructor() {
-        this.breakpointObserver
-            .observe([
-                Breakpoints.Small,
-                Breakpoints.Medium,
-                Breakpoints.Large,
-                Breakpoints.XLarge,
-            ])
-            .pipe(
-                map(state => {
-                    if (state.breakpoints[Breakpoints.Small]) {
-                        this.isMobileMenu = true;
-                    } else if (state.breakpoints[Breakpoints.Medium]) {
-                        this.isMobileMenu = false;
-                    } else if (state.breakpoints[Breakpoints.Large]) {
-                        this.isMobileMenu = false;
-                    } else if (state.breakpoints[Breakpoints.XLarge]) {
-                        this.isMobileMenu = false;
-                    }
-                })
-            )
-            .subscribe();
-    }
-
-    ngOnInit(): void {
-        this.themeService.isDarkTheme$.subscribe(
-            (isDark: boolean) => (this.isDarkMode = isDark)
-        );
-        const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        this.isDarkMode = darkModeMediaQuery.matches;
-        this.themeService.setTheme(this.isDarkMode);
-
-        darkModeMediaQuery.addEventListener('change', (e) => {
-            this.isDarkMode = e.matches;
-            this.themeService.setTheme(this.isDarkMode);
-        });
-    }
 }

@@ -1,17 +1,11 @@
 <mat-card class="page-title-card mat-typography">
-        <mat-card-title>
-            <h1 class="mat-headline-1 landing-title-headline">
-                {{ pageTitle.headline }}
-            </h1>
-        </mat-card-title>
-        <mat-card-subtitle>
-            <p class="mat-headline-2">
-                {{ pageTitle.description }}
-            </p>
-            <div class="landing-title-actions">
-                <button mat-raised-button type="button" (click)="startReading()">
-                    Start Reading
-                </button>
-            </div>
-        </mat-card-subtitle>
+    <mat-card-title>
+        <h1>{{ pageTitle.headline }}</h1>
+    </mat-card-title>
+        <p>{{ pageTitle.description }}</p>
+        <div class="landing-title-actions">
+            <button mat-raised-button type="button" (click)="startReading()">
+                Start Reading
+            </button>
+        </div>
 </mat-card>

@@ -1,12 +1,8 @@
-import {BreakpointObserver, Breakpoints, BreakpointState, LayoutModule,} from '@angular/cdk/layout';
-import {APP_BASE_HREF, CommonModule} from '@angular/common';
-import {ComponentFixture, ComponentFixtureAutoDetect, fakeAsync, TestBed, tick,} from '@angular/core/testing';
-import {FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
+import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
+import {APP_BASE_HREF} from '@angular/common';
+import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {Router} from '@angular/router';
 import {screen} from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
@@ -14,49 +10,31 @@ import {Observable, of} from 'rxjs';
 import {MenuItem, MenuState} from '../models/menu-item';
 import {MenuComponent} from './menu.component';
 
-let component: MenuComponent;
-let fixture: ComponentFixture<MenuComponent>;
-
-const router = jasmine.createSpyObj<Router>('Router', ['navigate']);
-router.navigate.and.returnValue(Promise.resolve(true));
-
-export class MockBreakpointObserver {
+class MockBreakpointObserver {
   observe(breakPoint: string): Observable<BreakpointState> {
-    if (breakPoint === 'small') {
-      return of({ matches: true, breakpoints: { [Breakpoints.XLarge]: true } });
+    if (breakPoint === Breakpoints.Handset) {
+      return of({ matches: true, breakpoints: { [Breakpoints.Handset]: true } });
     }
-
     return of({ matches: false, breakpoints: {} });
   }
 }
 
-const compileComponent = (): void => {
-  TestBed.configureTestingModule({
-    declarations: [],
-    imports: [
-      FormsModule,
-      LayoutModule,
-      MatButtonModule,
-      MatIconModule,
-      MatSidenavModule,
-      MatToolbarModule,
-      MatListModule,
-      MenuComponent,
-      CommonModule,
-    ],
-    providers: [
-      { provide: Router, useValue: router },
-      { provide: BreakpointObserver, useClass: MockBreakpointObserver },
-      { provide: APP_BASE_HREF, useValue: '/' },
-      { provide: ComponentFixtureAutoDetect, useValue: true },
-    ],
-    teardown: { destroyAfterEach: false },
-  }).compileComponents();
-};
-
 describe('MenuComponent', () => {
-  beforeEach(() => {
-    compileComponent();
+  let component: MenuComponent;
+  let fixture: ComponentFixture<MenuComponent>;
+  const router = jasmine.createSpyObj<Router>('Router', ['navigate']);
+  router.navigate.and.returnValue(Promise.resolve(true));
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [MatSidenavModule, NoopAnimationsModule, MenuComponent],
+      providers: [
+        { provide: Router, useValue: router },
+        { provide: BreakpointObserver, useClass: MockBreakpointObserver },
+        { provide: APP_BASE_HREF, useValue: '/' },
+      ],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -67,49 +45,33 @@ describe('MenuComponent', () => {
   });
 
   it('should toggle menu state', () => {
-    component.activeStates = new Set([MenuState.MAXIMIZED]);
+    component.menuState = MenuState.MAXIMIZED;
     component.toggleMenu();
-    expect(component.activeStates.has(MenuState.MAXIMIZED)).toBe(false);
+    expect(component.menuState).toBe(MenuState.MINIMIZED);
 
     component.toggleMenu();
-    expect(component.activeStates.has(MenuState.MAXIMIZED)).toBe(true);
-  });
-
-  it('should minimize menu', () => {
-    component.activeStates = new Set([MenuState.MAXIMIZED]);
-    component.minimize();
-    expect(component.activeStates.has(MenuState.MINIMIZED)).toBe(true);
-
-    component.minimize();
-    expect(component.activeStates.has(MenuState.MINIMIZED)).toBe(false);
+    expect(component.menuState).toBe(MenuState.MAXIMIZED);
   });
 
   it('should navigate to menu entry', () => {
-    const selectedItem = new MenuItem(
-      'Angular Guides',
-      'school',
-      'course',
-      false
-    );
-    component.navigateToMenuEntry(selectedItem);
+    const selectedItem = new MenuItem('Angular Guides', 'school', 'course', false);
+    component.navigateTo(selectedItem);
 
     expect(selectedItem.active).toBe(true);
     expect(router.navigate).toHaveBeenCalledWith([selectedItem.link]);
   });
 
-  it('should switch to landing page', () => {
-    component.switchToLandingPage();
-
-    expect(router.navigate).toHaveBeenCalledWith(['']);
-  });
-
-  it('should minimize the menu', fakeAsync(() => {
-    component.activeStates = new Set([MenuState.MINIMIZED]);
-    const toggleButton = screen.getByRole('button', { name: /Minimize Navigation Bar in Desktop View/i });
-    expect(toggleButton).toBeTruthy();
-    userEvent.click(toggleButton);
-    tick(1);
+  it('should toggle the menu when button is clicked', fakeAsync(() => {
+    component.menuState = MenuState.MINIMIZED;
+    tick();
     fixture.detectChanges();
-    expect(component.activeStates).toEqual(new Set([MenuState.MAXIMIZED]));
+    expect(component.menuState).toBe(MenuState.MINIMIZED);
+
+    const toggleButton = screen.getByRole('button', { name: /Toggle Navigation Bar in Desktop View/i });
+    userEvent.click(toggleButton);
+    tick();
+    fixture.detectChanges();
+
+    expect(component.menuState).toBe(MenuState.MAXIMIZED);
   }));
 });

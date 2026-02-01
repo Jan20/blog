@@ -8,7 +8,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {Router, RouterModule} from '@angular/router';
-import {MENU_ITEMS, MenuItem} from '../models/menu-item';
+import {MENU_ITEMS, MenuItem, Theme} from '../models/menu-item';
 import {ThemeService} from '../../modules/shared/services/theme.service';
 
 @Component({
@@ -31,12 +31,12 @@ export class MobileMenuComponent implements OnInit {
     private readonly router: Router = inject(Router);
     private readonly themeService: ThemeService = inject(ThemeService);
 
-    isLightTheme: boolean = false;
+    public theme: Theme = Theme.LIGHT;
     readonly menuItems: MenuItem[] = MENU_ITEMS;
 
     ngOnInit() {
-        this.themeService.isDarkTheme$.subscribe(
-            (isLight: boolean): boolean => (this.isLightTheme = isLight)
+        this.themeService.theme$.subscribe(
+            (theme: Theme): Theme => (this.theme = theme)
         );
     }
 

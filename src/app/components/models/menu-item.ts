@@ -22,7 +22,11 @@ export const MENU_ITEMS: MenuItem[] = [
 ];
 
 export enum MenuState {
-  MOBILE = 'mobile',
   MINIMIZED = 'minimized',
   MAXIMIZED = 'maximized',
+}
+
+export enum Theme {
+  LIGHT = 'light-theme',
+  DARK = 'dark-theme',
 }

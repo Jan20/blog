@@ -59,7 +59,7 @@ describe('TitleComponent', () => {
     tick(1);
     fixture.detectChanges();
     expect(screen.getByText("Jan's Engineering Blog").textContent).toBe(
-      " Jan's Engineering Blog "
+      "Jan's Engineering Blog"
     );
   }));
 

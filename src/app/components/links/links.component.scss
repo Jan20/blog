@@ -1,28 +1,18 @@
-button {
-  font-size: 24px;
-  color: var(--text-color) !important;
-}
-
-img {
-  margin-top: 10px;
-  height: 38px;
-  width: 20px;
-  border-radius: 0;
-}
-
-.icon {
-  font-size: 24px !important;
-  width: 36px;
-  color: var(--text-color) !important;
-}
-
 h3 {
   font-size: 33px !important;
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
 
+img {
+  margin-top: 10px;
+  height: 30px;
+  width: 30px;
+  border-radius: 0;
+}
+
 .mat-mdc-card {
+  box-shadow: none !important;
   background-color: var(--menu-background-color);
 }
 
