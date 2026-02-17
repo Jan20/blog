@@ -1,64 +1,65 @@
 <mat-sidenav-container class="vh-100">
-  <mat-sidenav
-    #sidenav
-    [opened]="menuState === MenuState.MAXIMIZED"
-    [mode]="menuState === MenuState.MINIMIZED ? 'over' : 'side'">
-    <mat-nav-list>
-      @for (item of menuItems; track item) {
-        <button
-          type="button"
-          mat-button
-          class="side-button"
-          [ngClass]="{ active: item.active }"
-          (click)="navigateTo(item)">
-          <div class="w-100">
-            <mat-icon class="w-100 h-100">
-              {{ item.icon }}
-            </mat-icon>
-          </div>
-          <div>
-            {{ item.name }}
-          </div>
-        </button>
-      }
-    </mat-nav-list>
-    <button
-      type="button"
-      mat-fab
-      class="minimize-button"
-      (click)="toggleMenu()"
-      aria-label="Minimize Navigation Bar in Desktop View">
-      <mat-icon>close_fullscreen</mat-icon>
-    </button>
-    <button
-      type="button"
-      mat-fab
-      class="theme-button"
-      (click)="toggleTheme()"
-      aria-label="Toggle Theme in Desktop View">
-      <mat-icon> {{ theme === Theme.DARK ? 'light_mode' : 'dark_mode' }}</mat-icon>
-    </button>
-  </mat-sidenav>
+    <mat-sidenav
+        #sidenav
+        [opened]="menuState === MenuState.MAXIMIZED"
+        [mode]="menuState === MenuState.MINIMIZED ? 'over' : 'side'">
+        <mat-nav-list>
+            @for (item of menuItems; track item) {
+                <button type="button"
+                        mat-button
+                        class="side-button"
+                        [routerLink]="item.link"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">
+                    <div class="w-100">
+                        <mat-icon class="w-100 h-100">
+                            {{ item.icon }}
+                        </mat-icon>
+                    </div>
+                    <div>
+                        {{ item.name }}
+                    </div>
+                </button>
+            }
+        </mat-nav-list>
 
-  <mat-sidenav-content>
-    @if (menuState === MenuState.MINIMIZED) {
-      <button
-        type="button"
-        mat-fab
-        class="minimize-button"
-        (click)="toggleMenu()"
-        aria-label="Toggle Navigation Bar in Desktop View">
-        <mat-icon>open_in_full</mat-icon>
-      </button>
-    }
-    <button
-      type="button"
-      mat-fab
-      class="theme-button"
-      (click)="toggleTheme()"
-      aria-label="Toggle Theme in Desktop View and Minimized Menu">
-      <mat-icon>{{ theme === Theme.DARK ? 'light_mode' : 'dark_mode' }}</mat-icon>
-    </button>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
+        <button type="button"
+                mat-fab
+                class="minimize-button"
+                (click)="toggleMenu()"
+                aria-label="Minimize Navigation Bar in Desktop View">
+            <mat-icon>close_fullscreen</mat-icon>
+        </button>
+
+        <button type="button"
+                mat-fab
+                class="theme-button"
+                (click)="toggleTheme()"
+                aria-label="Toggle Theme in Desktop View">
+            <mat-icon> {{ (theme$ | async) === Theme.DARK ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        </button>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        @if (menuState === MenuState.MINIMIZED) {
+            <button
+                    type="button"
+                    mat-fab
+                    class="minimize-button"
+                    (click)="toggleMenu()"
+                    aria-label="Toggle Navigation Bar in Desktop View">
+                <mat-icon>open_in_full</mat-icon>
+            </button>
+        }
+        <button
+                type="button"
+                mat-fab
+                class="theme-button"
+                (click)="toggleTheme()"
+                aria-label="Toggle Theme in Desktop View and Minimized Menu">
+            <mat-icon>{{ (theme$ | async) === Theme.DARK ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        </button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
 </mat-sidenav-container>

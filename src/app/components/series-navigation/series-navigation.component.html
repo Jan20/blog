@@ -1,16 +1,16 @@
 @if (adjacentPosts | async; as adjacentPosts) {
-    <div class="series-nav-row">
+    <div class="post-nav-row">
         <div class="post-nav-card">
             @if (adjacentPosts.get('previousPost')) {
                 <mat-card (click)="navigateToPost(adjacentPosts.get('previousPost')!)">
                     <mat-card-content>
-                        <div class="mat-subtitle-2 series-nav-label">
+                        <div class="mat-subtitle-2 post-nav-label">
                             <mat-icon>arrow_back</mat-icon>
                             Previous
                         </div>
-                        <div class="mat-headline-6">
+                        <h3>
                             {{ adjacentPosts.get('previousPost')!.headline }}
-                        </div>
+                        </h3>
                     </mat-card-content>
                 </mat-card>
             }
@@ -19,13 +19,13 @@
             @if (adjacentPosts.get('upcomingPost')) {
                 <mat-card (click)="navigateToPost(adjacentPosts.get('upcomingPost')!)">
                     <mat-card-content>
-                        <div class="mat-subtitle-2 series-nav-label">
+                        <div class="mat-subtitle-2 post-nav-label">
                             Up next
                             <mat-icon>arrow_forward</mat-icon>
                         </div>
-                        <div class="mat-headline-6">
+                        <h3>
                             {{ adjacentPosts.get('upcomingPost')!.headline }}
-                        </div>
+                        </h3>
                     </mat-card-content>
                 </mat-card>
             }

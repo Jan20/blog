@@ -11,18 +11,18 @@ p {
   background-color: var(--menu-background-color-active);
 }
 
-.series-nav-row {
+.post-nav-row {
   display: flex;
   gap: 24px;
   margin-bottom: 40px;
 }
 
-.series-nav-card {
+.post-nav-card {
   flex: 1 1 0;
   cursor: pointer;
 }
 
-.series-nav-label {
+.post-nav-label {
   display: flex;
   align-items: center;
   gap: 8px;

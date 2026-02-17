@@ -2,12 +2,12 @@ import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/lay
 import {APP_BASE_HREF} from '@angular/common';
 import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {screen} from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import {Observable, of} from 'rxjs';
-import {MenuItem, MenuState} from '../models/menu-item';
+import {ThemeService} from '../../modules/shared/services/theme.service';
+import {MenuState} from '../models/menu-item';
 import {MenuComponent} from './menu.component';
 
 class MockBreakpointObserver {
@@ -19,19 +19,34 @@ class MockBreakpointObserver {
   }
 }
 
+const activatedRoute = jasmine.createSpyObj('ActivatedRoute', [
+  'paramMap',
+  'snapshot',
+]);
+activatedRoute.paramMap = of('/engineering');
+
 describe('MenuComponent', () => {
   let component: MenuComponent;
   let fixture: ComponentFixture<MenuComponent>;
-  const router = jasmine.createSpyObj<Router>('Router', ['navigate']);
+  const router = jasmine.createSpyObj<Router>('Router', ['navigate'], {
+    events: of(), // Add the events property here
+  });
   router.navigate.and.returnValue(Promise.resolve(true));
+
+  const mockThemeService = {
+    theme$: of('light-theme'),
+    toggleTheme: jasmine.createSpy('toggleTheme')
+  };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MatSidenavModule, NoopAnimationsModule, MenuComponent],
+      imports: [MatSidenavModule, MenuComponent],
       providers: [
         { provide: Router, useValue: router },
         { provide: BreakpointObserver, useClass: MockBreakpointObserver },
         { provide: APP_BASE_HREF, useValue: '/' },
+        { provide: ActivatedRoute, useValue: activatedRoute },
+        { provide: ThemeService, useValue: mockThemeService }
       ],
     }).compileComponents();
 
@@ -51,14 +66,6 @@ describe('MenuComponent', () => {
 
     component.toggleMenu();
     expect(component.menuState).toBe(MenuState.MAXIMIZED);
-  });
-
-  it('should navigate to menu entry', () => {
-    const selectedItem = new MenuItem('Angular Guides', 'school', 'course', false);
-    component.navigateTo(selectedItem);
-
-    expect(selectedItem.active).toBe(true);
-    expect(router.navigate).toHaveBeenCalledWith([selectedItem.link]);
   });
 
   it('should toggle the menu when button is clicked', fakeAsync(() => {
