@@ -24,9 +24,9 @@ import { BlogService } from '../../modules/shared/services/blog.service';
   styleUrls: ['./post-navigation.component.scss'],
 })
 export class PostNavigationComponent {
-  private readonly router = inject(Router);
-  private readonly activateRoute = inject(ActivatedRoute);
-  private readonly blogService = inject(BlogService);
+  private readonly router: Router = inject(Router);
+  private readonly activateRoute: ActivatedRoute = inject(ActivatedRoute);
+  private readonly blogService: BlogService = inject(BlogService);
 
   adjacentPosts: Observable<Map<string, Post | undefined>>;
 
