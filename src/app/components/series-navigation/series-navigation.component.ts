@@ -24,9 +24,9 @@ import { MatMenuModule } from '@angular/material/menu';
   styleUrls: ['./series-navigation.component.scss'],
 })
 export class SeriesNavigationComponent {
-  private readonly router: Router = inject(Router);
-  private readonly activateRoute: ActivatedRoute = inject(ActivatedRoute);
-  private readonly blogService: BlogService = inject(BlogService);
+  private readonly router = inject(Router);
+  private readonly activateRoute = inject(ActivatedRoute);
+  private readonly blogService = inject(BlogService);
 
   public adjacentPosts: Observable<Map<string, Post | undefined>>;
 
