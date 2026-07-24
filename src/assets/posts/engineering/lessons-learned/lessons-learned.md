@@ -27,7 +27,7 @@ On the flipside, I am not a great fan of tampering with CI/CD pipelines and moni
 ## 🐚 Embracing the Shell
 
 No other program has a greater effect on a developer’s productivity than a shell like **zsh** or **bash**. To be honest, when starting out, trying to accomplish anything with the shell might seem a bit tedious, underwhelming, and strangely unpolished. Yet, after mastering some fundamental concepts, installing a few CLI tools, and learning how to chain commands together, things become much more interesting.
-
+    
 ## 📚 Keep Learning
 
 There are constantly new technologies to learn, new concepts emerging, and only limited time available for learning. Yet, setting aside time to learn new skills is paramount.

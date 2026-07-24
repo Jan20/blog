@@ -74,3 +74,4 @@ Vim comes with a plethora of keyboard shortcuts. There are quite a few resources
 | `o`        | insert a new line                                                |
 | `D`        | Delete everything to the end of a line                           |
 | `:retab`   | replaces all sequences of spaces used for indentation with tabs  |
+| `:set nu`  | Set line numbers                                                 |
