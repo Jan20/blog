@@ -34,7 +34,7 @@ export class SeriesNavigationComponent {
     this.adjacentPosts = this.activateRoute.paramMap.pipe(
       map(() => this.router.url.split('/')[1]),
       mergeMap(category => this.blogService.getPosts(category, 'all')),
-      map((posts: Post[]) => this.selectAdjacentPosts(posts))
+      map((posts: Post[]) => this.selectAdjacentPosts(posts)),
     );
   }
 
@@ -45,14 +45,8 @@ export class SeriesNavigationComponent {
   private selectAdjacentPosts(posts: Post[]): Map<string, Post | undefined> {
     const post = posts.filter(p => this.router.url.includes(p.route))[0];
     return new Map<string, Post | undefined>([
-      [
-        'previousPost',
-        posts.filter(p => p.seriesSection === post.seriesSection - 1)[0],
-      ],
-      [
-        'upcomingPost',
-        posts.filter(p => p.seriesSection === post.seriesSection + 1)[0],
-      ],
+      ['previousPost', posts.filter(p => p.seriesSection === post.seriesSection - 1)[0]],
+      ['upcomingPost', posts.filter(p => p.seriesSection === post.seriesSection + 1)[0]],
     ]);
   }
 }

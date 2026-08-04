@@ -10,16 +10,16 @@ import { courseRoutes } from './course.routing';
 import { CourseComponent } from './course/course.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        MatButtonModule,
-        MatCardModule,
-        SharedModule,
-        RouterModule.forChild(courseRoutes),
-        PageTitleComponent,
-        PostListComponent,
-        CourseComponent,
-    ],
-    exports: [],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatCardModule,
+    SharedModule,
+    RouterModule.forChild(courseRoutes),
+    PageTitleComponent,
+    PostListComponent,
+    CourseComponent,
+  ],
+  exports: [],
 })
 export class CourseModule {}

@@ -1,17 +1,13 @@
 <div class="post-nav-row mat-typography">
   @for (link of links; track link) {
-      <mat-card (click)="openLink(link.url)" class="post-nav-card">
-        <mat-card-content>
-          <h3>
-            <img
-              ngSrc="{{ link.iconPath }}"
-              height="1"
-              width="1"
-              alt="Link to {{ link.iconPath }}" />
-            {{ link.name }}
-              <mat-icon aria-label="External link">launch</mat-icon>
-          </h3>
-        </mat-card-content>
-      </mat-card>
+    <mat-card (click)="openLink(link.url)" class="post-nav-card">
+      <mat-card-content>
+        <h3>
+          <img ngSrc="{{ link.iconPath }}" height="1" width="1" alt="Link to {{ link.iconPath }}" />
+          {{ link.name }}
+          <mat-icon aria-label="External link">launch</mat-icon>
+        </h3>
+      </mat-card-content>
+    </mat-card>
   }
 </div>

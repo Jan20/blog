@@ -58,17 +58,13 @@ describe('TitleComponent', () => {
   it('should show the page title', fakeAsync(() => {
     tick(1);
     fixture.detectChanges();
-    expect(screen.getByText("Jan's Engineering Blog").textContent).toBe(
-      "Jan's Engineering Blog"
-    );
+    expect(screen.getByText("Jan's Engineering Blog").textContent).toBe("Jan's Engineering Blog");
   }));
 
   it('should navigate to efficient terminal setup', fakeAsync(() => {
     userEvent.click(screen.getByRole('button', { name: 'Start Reading' }));
     tick(1);
     fixture.detectChanges();
-    expect(router.navigate).toHaveBeenCalledWith([
-      'engineering/efficient-terminal-setup',
-    ]);
+    expect(router.navigate).toHaveBeenCalledWith(['engineering/efficient-terminal-setup']);
   }));
 });

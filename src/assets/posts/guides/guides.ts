@@ -9,7 +9,7 @@ export const guides: Post[] = [
     'assets/posts/guides/virtual-envs-and-dependencies/virtual-envs-and-dependencies.md',
     'assets/posts/guides/virtual-envs-and-dependencies/thumbnail.svg',
     '2023-02-06',
-    '/guides/virtual-envs-and-dependencies'
+    '/guides/virtual-envs-and-dependencies',
   ),
   new Post(
     'guides',
@@ -21,7 +21,7 @@ export const guides: Post[] = [
     '2022-06-27',
     '/guides/containerize-Angular-applications',
     'Docker',
-    3
+    3,
   ),
   new Post(
     'guides',
@@ -33,7 +33,7 @@ export const guides: Post[] = [
     '2022-06-27',
     '/guides/introduction-to-docker',
     'Docker',
-    1
+    1,
   ),
   new Post(
     'guides',
@@ -45,7 +45,7 @@ export const guides: Post[] = [
     '2022-06-27',
     '/guides/multi-container-applications',
     'Docker',
-    4
+    4,
   ),
   new Post(
     'guides',
@@ -55,7 +55,7 @@ export const guides: Post[] = [
     'assets/posts/guides/postgres/postgres.md',
     'assets/posts/guides/postgres/thumbnail.svg',
     '2023-03-25',
-    '/guides/postgres'
+    '/guides/postgres',
   ),
   new Post(
     'guides',
@@ -67,6 +67,6 @@ export const guides: Post[] = [
     '2022-06-27',
     '/guides/containerize_flask_applications',
     'Docker',
-    2
+    2,
   ),
 ];

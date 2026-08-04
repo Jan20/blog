@@ -1,8 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {
   ComponentFixture,
   ComponentFixtureAutoDetect,
@@ -35,16 +32,10 @@ router.navigate.and.returnValue(Promise.resolve(true));
 router.url = '/guides/containerize_flask_applications';
 router.events = new BehaviorSubject(new NavigationEnd(0, '', ''));
 
-const activatedRoute = jasmine.createSpyObj('ActivatedRoute', [
-  'paramMap',
-  'snapshot',
-]);
+const activatedRoute = jasmine.createSpyObj('ActivatedRoute', ['paramMap', 'snapshot']);
 activatedRoute.paramMap = of('/engineering/task-management');
 
-const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
-  'getPost',
-  'getPosts',
-]);
+const blogService = jasmine.createSpyObj<BlogService>('BlogService', ['getPost', 'getPosts']);
 blogService.getPost.and.returnValue(of(DOCKER_GUIDES[0]));
 blogService.getPosts.and.returnValue(of(DOCKER_GUIDES));
 
@@ -87,19 +78,15 @@ describe('SeriesNavigationComponent', () => {
   });
 
   it('should navigate to the containerize Angular application', fakeAsync(() => {
-    expect(
-        screen.getByText(/introduction to docker/i).textContent?.trim()
-    ).toBe('Introduction to Docker');
-    expect(
-        screen.getByText(/containerize angular apps/i).textContent?.trim()
-    ).toBe('Containerize Angular Apps');
-    userEvent.click(
-        screen.getByText(/Containerize Angular Apps/i)
+    expect(screen.getByText(/introduction to docker/i).textContent?.trim()).toBe(
+      'Introduction to Docker',
     );
+    expect(screen.getByText(/containerize angular apps/i).textContent?.trim()).toBe(
+      'Containerize Angular Apps',
+    );
+    userEvent.click(screen.getByText(/Containerize Angular Apps/i));
     tick(1);
     fixture.detectChanges();
-    expect(router.navigate).toHaveBeenCalledWith([
-      '/guides/containerize-Angular-applications',
-    ]);
+    expect(router.navigate).toHaveBeenCalledWith(['/guides/containerize-Angular-applications']);
   }));
 });

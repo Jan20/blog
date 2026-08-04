@@ -17,9 +17,7 @@ export const routes: Routes = [
       {
         path: 'landing',
         loadChildren: () =>
-          import('./modules/landing/landing.module').then(
-            module => module.LandingModule
-          ),
+          import('./modules/landing/landing.module').then(module => module.LandingModule),
         data: {
           title: 'Landing',
           description:
@@ -30,7 +28,7 @@ export const routes: Routes = [
         path: 'recommendations',
         loadChildren: () =>
           import('./modules/recommendations/recommendations.module').then(
-            module => module.RecommendationsModule
+            module => module.RecommendationsModule,
           ),
         data: {
           title: 'Recommendations',
@@ -41,9 +39,7 @@ export const routes: Routes = [
       {
         path: 'about',
         loadChildren: () =>
-          import('./modules/about/about.module').then(
-            module => module.AboutModule
-          ),
+          import('./modules/about/about.module').then(module => module.AboutModule),
         data: {
           title: 'About',
           description: 'Find move information about me, Jan Ladicha',
@@ -52,9 +48,7 @@ export const routes: Routes = [
       {
         path: 'guides',
         loadChildren: () =>
-          import('./modules/guides/guides.module').then(
-            module => module.GuidesModule
-          ),
+          import('./modules/guides/guides.module').then(module => module.GuidesModule),
         data: {
           title: 'Guides',
           description:
@@ -64,20 +58,17 @@ export const routes: Routes = [
       {
         path: 'course',
         loadChildren: () =>
-          import('./modules/course/course.module').then(
-            module => module.CourseModule
-          ),
+          import('./modules/course/course.module').then(module => module.CourseModule),
         data: {
           title: 'Angular Course',
-          description:
-            'Learn more about Angular, RxJS, npm, eslint, and related technologies',
+          description: 'Learn more about Angular, RxJS, npm, eslint, and related technologies',
         },
       },
       {
         path: 'engineering',
         loadChildren: () =>
           import('./modules/engineering/engineering.module').then(
-            module => module.EngineeringModule
+            module => module.EngineeringModule,
           ),
         data: {
           title: 'Engineering',

@@ -10,16 +10,16 @@ import { GuidesComponent } from './guides/guides.component';
 import { PostListComponent } from '../../components/post-list/post-list.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        MatButtonModule,
-        MatCardModule,
-        RouterModule.forChild(guidesRoutes),
-        SharedModule,
-        PageTitleComponent,
-        PostListComponent,
-        GuidesComponent,
-    ],
-    exports: [],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatCardModule,
+    RouterModule.forChild(guidesRoutes),
+    SharedModule,
+    PageTitleComponent,
+    PostListComponent,
+    GuidesComponent,
+  ],
+  exports: [],
 })
 export class GuidesModule {}

@@ -1,18 +1,11 @@
 steps:
   # Builds the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-      [
-        'build',
-        '-t',
-        'europe-west3-docker.pkg.dev/$PROJECT_ID/blog-repo/blog:latest',
-        '.',
-      ]
+    args: ['build', '-t', 'europe-west3-docker.pkg.dev/$PROJECT_ID/blog-repo/blog:latest', '.']
 
   # Uploads the created image to GCP's container registry
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-      ['push', 'europe-west3-docker.pkg.dev/$PROJECT_ID/blog-repo/blog:latest']
+    args: ['push', 'europe-west3-docker.pkg.dev/$PROJECT_ID/blog-repo/blog:latest']
 
   # Deploys the image to Cloud Run
   - name: 'gcr.io/cloud-builders/gcloud'

@@ -10,15 +10,15 @@ import { RecommendationsComponent } from './recommendations/recommendations.comp
 import { PostListComponent } from '../../components/post-list/post-list.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        MatButtonModule,
-        MatCardModule,
-        RouterModule.forChild(recommendationsRoutes),
-        PageTitleComponent,
-        SharedModule,
-        PostListComponent,
-        RecommendationsComponent,
-    ],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatCardModule,
+    RouterModule.forChild(recommendationsRoutes),
+    PageTitleComponent,
+    SharedModule,
+    PostListComponent,
+    RecommendationsComponent,
+  ],
 })
 export class RecommendationsModule {}

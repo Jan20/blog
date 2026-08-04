@@ -11,25 +11,25 @@ import { SharedModule } from '../shared/shared.module';
 import { LandingTitleComponent } from './landing-title/landing-title.component';
 import { LandingComponent } from './landing/landing.component';
 import { PostListComponent } from '../../components/post-list/post-list.component';
-import {MatGridListModule} from "@angular/material/grid-list";
-import {MatDividerModule} from "@angular/material/divider";
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        MatButtonModule,
-        MatIconModule,
-        EngineeringModule,
-        LandingTitleComponent,
-        GuidesModule,
-        CourseModule,
-        MatCardModule,
-        SharedModule,
-        FooterModule,
-        PostListComponent,
-        MatGridListModule,
-        MatDividerModule,
-        LandingComponent,
-    ],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatIconModule,
+    EngineeringModule,
+    LandingTitleComponent,
+    GuidesModule,
+    CourseModule,
+    MatCardModule,
+    SharedModule,
+    FooterModule,
+    PostListComponent,
+    MatGridListModule,
+    MatDividerModule,
+    LandingComponent,
+  ],
 })
 export class LandingModule {}

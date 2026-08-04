@@ -1,37 +1,46 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation, inject } from '@angular/core';
-import {ActivatedRoute, NavigationEnd, Router,} from '@angular/router';
-import {map, mergeMap, Observable, tap} from 'rxjs';
-import {Post} from '../../modules/shared/models/post';
-import {BlogService} from '../../modules/shared/services/blog.service';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
-import {MarkdownComponent, MarkdownModule, provideMarkdown,} from 'ngx-markdown';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatRippleModule} from '@angular/material/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
-import {PostNavigationComponent} from '../post-navigation/post-navigation.component';
-import {SeriesNavigationComponent} from '../series-navigation/series-navigation.component';
-import {Meta, Title} from '@angular/platform-browser';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  ViewEncapsulation,
+  inject,
+} from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter, map, mergeMap, Observable, tap } from 'rxjs';
+import { Post } from '../../modules/shared/models/post';
+import { BlogService } from '../../modules/shared/services/blog.service';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { MarkdownComponent, MarkdownModule, provideMarkdown } from 'ngx-markdown';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatRippleModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { PostNavigationComponent } from '../post-navigation/post-navigation.component';
+import { SeriesNavigationComponent } from '../series-navigation/series-navigation.component';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
-    imports: [
-        MatCardModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatIconModule,
-        MatRippleModule,
-        MarkdownModule,
-        PostNavigationComponent,
-        SeriesNavigationComponent,
-        MarkdownModule,
-        CommonModule,
-        MarkdownComponent,
-        NgOptimizedImage,
-    ],
+  imports: [
+    MatCardModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatRippleModule,
+    MarkdownModule,
+    PostNavigationComponent,
+    SeriesNavigationComponent,
+    CommonModule,
+    MarkdownComponent,
+    NgOptimizedImage,
+  ],
   providers: [provideMarkdown()],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -42,32 +51,33 @@ export class PostComponent implements OnInit {
   private readonly router = inject(Router);
   private readonly titleService = inject(Title);
   private readonly metaService = inject(Meta);
+  private readonly destroyRef = inject(DestroyRef);
 
   post: Observable<Post> = this.fetchPost();
   @ViewChild('targetElement') targetElement: ElementRef | undefined;
 
   ngOnInit() {
-    this.router.events.subscribe((event: object) => {
-      if (!this.targetElement) return;
-      if (event instanceof NavigationEnd) {
-        this.targetElement.nativeElement.scrollIntoView({ block: 'start' });
-      }
-    });
+    this.router.events
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe(() => {
+        this.targetElement?.nativeElement.scrollIntoView({ block: 'start' });
+      });
   }
 
   private fetchPost(): Observable<Post> {
     return this.activatedRoute.paramMap.pipe(
       map(() => this.router.url.split('/')),
-      mergeMap((route: string[]) =>
-        this.blogService.getPost(route[1], route[2])
-      ),
+      mergeMap((route: string[]) => this.blogService.getPost(route[1], route[2])),
       tap((post: Post) => this.titleService.setTitle(post.headline)),
       tap((post: Post) =>
         this.metaService.updateTag({
           name: 'description',
           content: post.summary,
-        })
-      )
+        }),
+      ),
     );
   }
 }

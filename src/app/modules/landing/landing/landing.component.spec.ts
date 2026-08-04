@@ -2,17 +2,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LandingComponent } from './landing.component';
 import { CommonModule } from '@angular/common';
-import {
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { RouterTestingModule } from '@angular/router/testing';
 import { MarkdownModule } from 'ngx-markdown';
 import { of } from 'rxjs';
 import { Post } from '../../shared/models/post';
@@ -20,12 +16,12 @@ import { BlogService } from '../../shared/services/blog.service';
 import { LandingTitleComponent } from '../landing-title/landing-title.component';
 import { PostListComponent } from '../../../components/post-list/post-list.component';
 import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
-import {MatDividerModule} from "@angular/material/divider";
+import { MatDividerModule } from '@angular/material/divider';
 
 let component: LandingComponent;
 let fixture: ComponentFixture<LandingComponent>;
 
-const POSTS: Post[] = [
+  const POSTS: Post[] = [
   new Post(
     '205-task-management',
     'Efficiency',
@@ -34,7 +30,7 @@ const POSTS: Post[] = [
     '/engineering/205-task-management/205-task-management.md',
     'assets/posts/engineering/205-task-management/thumbnail.svg',
     '2023-02-04',
-    '/Users/jan/Developer/blog/src/assets/posts/engineering/205-task-management/205-task-management.md'
+    '/Users/jan/Developer/blog/src/assets/posts/engineering/205-task-management/205-task-management.md',
   ),
   new Post(
     '204-staying-focus',
@@ -44,7 +40,7 @@ const POSTS: Post[] = [
     '/engineering/204-staying-focus/204-staying-focused.md',
     'assets/posts/engineering/204-staying-focus/thumbnail.svg',
     '2022-10-11',
-    '/Users/jan/Developer/blog/src/assets/posts/engineering/204-staying-focus/204-staying-focused.md'
+    '/Users/jan/Developer/blog/src/assets/posts/engineering/204-staying-focus/204-staying-focused.md',
   ),
 ];
 
@@ -61,27 +57,26 @@ const compileComponent = (): void => {
   TestBed.configureTestingModule({
     teardown: { destroyAfterEach: false },
     imports: [
-        LandingTitleComponent,
-        CommonModule,
-        PostListComponent,
-        MatButtonModule,
-        MatCardModule,
-        MatMenuModule,
-        MatGridListModule,
-        MatIconModule,
-        PageTitleComponent,
-        MatRippleModule,
-        RouterTestingModule,
-        MarkdownModule,
-        MatGridListModule,
-        MatDividerModule,
-        LandingComponent,
+      LandingTitleComponent,
+      CommonModule,
+      PostListComponent,
+      MatButtonModule,
+      MatCardModule,
+      MatMenuModule,
+      MatGridListModule,
+      MatIconModule,
+      PageTitleComponent,
+      MatRippleModule,
+      MarkdownModule,
+      MatGridListModule,
+      MatDividerModule,
+      LandingComponent,
     ],
     providers: [
-        { provide: BlogService, useValue: blogService },
-        provideHttpClient(withInterceptorsFromDi()),
+      { provide: BlogService, useValue: blogService },
+      provideHttpClient(withInterceptorsFromDi()),
     ],
-}).compileComponents();
+  }).compileComponents();
 };
 
 describe('LandingComponent', () => {

@@ -9,7 +9,7 @@ export const course: Post[] = [
     'assets/posts/course/introduction-to-npm/introduction-to-npm.md',
     'assets/posts/course/introduction-to-npm/thumbnail.svg',
     '2023-04-13',
-    '/course/introduction-to-npm'
+    '/course/introduction-to-npm',
   ),
   new Post(
     'course',
@@ -19,7 +19,7 @@ export const course: Post[] = [
     'assets/posts/course/rxjs-pipe-operators/rxjs-pipe-operators.md',
     'assets/posts/course/rxjs-pipe-operators/thumbnail.svg',
     '2022-07-04',
-    '/course/rxjs-pipe-operators'
+    '/course/rxjs-pipe-operators',
   ),
   new Post(
     'course',
@@ -29,7 +29,7 @@ export const course: Post[] = [
     'assets/posts/course/eslint/eslint.md',
     'assets/posts/course/eslint/thumbnail.svg',
     '2023-03-05',
-    '/course/eslint'
+    '/course/eslint',
   ),
   new Post(
     'course',
@@ -39,7 +39,7 @@ export const course: Post[] = [
     'assets/posts/course/angular-apps-on-github-pages/angular-apps-on-github-pages.md',
     'assets/posts/course/angular-apps-on-github-pages/thumbnail.svg',
     '2022-07-08',
-    '/course/angular-apps-on-github-pages'
+    '/course/angular-apps-on-github-pages',
   ),
   new Post(
     'course',
@@ -49,6 +49,6 @@ export const course: Post[] = [
     'assets/posts/course/introduction-to-rxjs/introduction-to-rxjs.md',
     'assets/posts/course/introduction-to-rxjs/thumbnail.svg',
     '2022-07-04',
-    '/course/introduction-to-rxjs'
+    '/course/introduction-to-rxjs',
   ),
 ];

@@ -1,25 +1,25 @@
 <mat-grid-list class="container mat-typography" [cols]="cols$ | async" gutterSize="16px">
-    @if (posts | async; as posts) {
-        @for (post of posts; track post) {
-            <mat-grid-tile>
-                <mat-card (click)="showPost(post)" class="post-card">
-                    <img
-                            class="post-image"
-                            mat-card-image
-                            height="100"
-                            width="178"
-                            [ngSrc]="post.thumbnail"
-                            alt="A post's thumbnail"/>
-                    <mat-card-content class="content mat-typography">
-                        <h3>
-                            {{ post.headline }}
-                        </h3>
-                        <p>
-                            {{ post.summary }}
-                        </p>
-                    </mat-card-content>
-                </mat-card>
-            </mat-grid-tile>
-        }
+  @if (posts | async; as posts) {
+    @for (post of posts; track post) {
+      <mat-grid-tile>
+        <mat-card (click)="showPost(post)" class="post-card">
+          <img
+            class="post-image"
+            mat-card-image
+            height="100"
+            width="178"
+            [ngSrc]="post.thumbnail"
+            alt="A post's thumbnail" />
+          <mat-card-content class="content mat-typography">
+            <h3>
+              {{ post.headline }}
+            </h3>
+            <p>
+              {{ post.summary }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
     }
+  }
 </mat-grid-list>

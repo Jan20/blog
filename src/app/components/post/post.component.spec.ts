@@ -1,9 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  ComponentFixture,
-  ComponentFixtureAutoDetect,
-  TestBed,
-} from '@angular/core/testing';
+import { ComponentFixture, ComponentFixtureAutoDetect, TestBed } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
@@ -17,18 +13,12 @@ import { BlogService } from '../../modules/shared/services/blog.service';
 import { PostNavigationComponent } from '../post-navigation/post-navigation.component';
 import { SeriesNavigationComponent } from '../series-navigation/series-navigation.component';
 import { PostComponent } from './post.component';
-import {
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 let component: PostComponent;
 let fixture: ComponentFixture<PostComponent>;
 
-const activatedRoute = jasmine.createSpyObj('ActivatedRoute', [
-  'paramMap',
-  'snapshot',
-]);
+const activatedRoute = jasmine.createSpyObj('ActivatedRoute', ['paramMap', 'snapshot']);
 activatedRoute.paramMap = of('/engineering/task-management');
 
 const router = jasmine.createSpyObj('Router', ['navigate', 'parseUrl']);
@@ -37,10 +27,7 @@ router.navigate.and.returnValue(Promise.resolve(true));
 router.url = '/engineering/task-management';
 router.events = new BehaviorSubject(new NavigationEnd(0, '', ''));
 
-const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
-  'getPost',
-  'getPosts',
-]);
+const blogService = jasmine.createSpyObj<BlogService>('BlogService', ['getPost', 'getPosts']);
 blogService.getPost.and.returnValue(of(ENGINEERING_POSTS[0]));
 blogService.getPosts.and.returnValue(of(ENGINEERING_POSTS));
 
@@ -86,9 +73,6 @@ describe('PostComponent:', () => {
   });
 
   it("should call the blog service a post's category and id extracted from the router's URL", () => {
-    expect(blogService.getPost).toHaveBeenCalledOnceWith(
-      'engineering',
-      'task-management'
-    );
+    expect(blogService.getPost).toHaveBeenCalledOnceWith('engineering', 'task-management');
   });
 });

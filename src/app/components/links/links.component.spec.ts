@@ -16,10 +16,7 @@ import { NavigationService } from '../../modules/shared/services/navigation.serv
 let component: LinksComponent;
 let fixture: ComponentFixture<LinksComponent>;
 
-const navigationService = jasmine.createSpyObj<NavigationService>(
-  'NavigationService',
-  ['openUrl']
-);
+const navigationService = jasmine.createSpyObj<NavigationService>('NavigationService', ['openUrl']);
 navigationService.openUrl.and.returnValue();
 
 const compileComponent = (): void => {
@@ -51,13 +48,11 @@ describe('LinksComponent', () => {
     userEvent.click(
       screen.getByRole('heading', {
         name: 'Link to assets/images/links/github.png Github',
-      })
+      }),
     );
     tick(1);
     fixture.detectChanges();
-    expect(navigationService.openUrl).toHaveBeenCalledOnceWith(
-      'https://github.com/Jan20'
-    );
+    expect(navigationService.openUrl).toHaveBeenCalledOnceWith('https://github.com/Jan20');
     tick(1);
     fixture.detectChanges();
     flush();

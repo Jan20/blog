@@ -1,3 +1,4 @@
+/** @type {import("prettier").Config} */
 module.exports = {
   tabWidth: 2,
   useTabs: false,
@@ -5,7 +6,8 @@ module.exports = {
   semi: true,
   bracketSpacing: true,
   arrowParens: 'avoid',
-  trailingComma: 'es5',
+  trailingComma: 'all',
   bracketSameLine: true,
-  printWidth: 80,
+  printWidth: 100,
+  endOfLine: 'lf',
 };

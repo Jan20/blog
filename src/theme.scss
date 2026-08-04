@@ -44,15 +44,8 @@ $my-theme: mat.m2-define-light-theme(
       accent: $my-accent,
       warn: $my-warn,
     ),
-    typography:
-      mat.m2-define-typography-config(
-        $headline-2:
-          mat.m2-define-typography-level(
-            156px,
-            156px,
-            400,
-            $letter-spacing: -0.02em
-          ),
+    typography: mat.m2-define-typography-config(
+        $headline-2: mat.m2-define-typography-level(156px, 156px, 400, $letter-spacing: -0.02em),
       ),
     density: 0,
   )

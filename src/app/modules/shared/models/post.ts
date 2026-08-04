@@ -26,6 +26,6 @@ export class Post {
     public date: string,
     public route: string,
     public series: string = '',
-    public seriesSection: number = 0
+    public seriesSection: number = 0,
   ) {}
 }

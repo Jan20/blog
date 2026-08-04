@@ -10,7 +10,6 @@ import { PostCollection } from '../models/postCollection';
 export class BlogService {
   private readonly postCollection = inject(PostCollection);
 
-
   public getPosts(category: string, series: string): Observable<Post[]> {
     if (series === 'all') {
       return this.postCollection
@@ -21,13 +20,13 @@ export class BlogService {
     if (series === 'misc') {
       return this.postCollection.selectPosts(category).pipe(
         map(posts => posts.filter((post: Post) => post.series === '')),
-        map(posts => posts.sort(this.sortByDate))
+        map(posts => posts.sort(this.sortByDate)),
       );
     }
 
     return this.postCollection.selectPosts(category).pipe(
       map(posts => posts.filter((post: Post) => post.series === series)),
-      map(posts => posts.sort(this.sortByDate))
+      map(posts => posts.sort(this.sortByDate)),
     );
   }
 
@@ -35,29 +34,24 @@ export class BlogService {
     return this.getPosts(category, 'all').pipe(
       map((posts: Post[]) => posts.map(post => post.series)),
       map(seriesTitle => seriesTitle.filter(seriesTitle => seriesTitle != '')),
-      map(seriesTitle => new Set(seriesTitle))
+      map(seriesTitle => new Set(seriesTitle)),
     );
   }
 
   public getPostBySeriesSection(
     category: string,
     series: string,
-    section: number
+    section: number,
   ): Observable<Post> {
     return this.getPosts(category, series).pipe(
-      map(posts => posts.filter(post => post.seriesSection === section)[0])
+      map(posts => posts.filter(post => post.seriesSection === section)[0]),
     );
   }
 
   public getPost(category: string, id: string): Observable<Post> {
     return this.postCollection
       .selectPosts(category)
-      .pipe(
-        map(
-          (posts: Post[]) =>
-            posts.filter((post: Post) => post.filePath.includes(id))[0]
-        )
-      );
+      .pipe(map((posts: Post[]) => posts.filter((post: Post) => post.filePath.includes(id))[0]));
   }
 
   private sortByDate(post1: Post, post2: Post): number {

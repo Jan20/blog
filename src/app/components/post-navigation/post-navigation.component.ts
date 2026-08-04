@@ -34,7 +34,7 @@ export class PostNavigationComponent {
     this.adjacentPosts = this.activateRoute.paramMap.pipe(
       map(() => this.getCategoryFromUrl()),
       mergeMap(category => this.blogService.getPosts(category, 'all')),
-      map((posts: Post[]) => this.selectAdjacentPosts(posts))
+      map((posts: Post[]) => this.selectAdjacentPosts(posts)),
     );
   }
 

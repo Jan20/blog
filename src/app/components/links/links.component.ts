@@ -1,13 +1,13 @@
-import {LayoutModule} from '@angular/cdk/layout';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import { Component, inject } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
-import {NavigationService} from '../../modules/shared/services/navigation.service';
-import {Link} from '../models/link';
-import {NgOptimizedImage} from "@angular/common";
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { NavigationService } from '../../modules/shared/services/navigation.service';
+import { Link } from '../models/link';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   imports: [
@@ -26,15 +26,11 @@ export class LinksComponent {
   private readonly navigationService = inject(NavigationService);
 
   readonly links = [
-    new Link(
-      'Github',
-      'https://github.com/Jan20',
-      'assets/images/links/github.png'
-    ),
+    new Link('Github', 'https://github.com/Jan20', 'assets/images/links/github.png'),
     new Link(
       'LinkedIn',
       'https://www.linkedin.com/in/jan-ladicha-b5740213b/',
-      'assets/images/links/linkedin.png'
+      'assets/images/links/linkedin.png',
     ),
   ];
 

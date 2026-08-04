@@ -1,8 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {
   ComponentFixture,
   ComponentFixtureAutoDetect,
@@ -17,12 +14,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  ActivatedRoute,
-  NavigationEnd,
-  Router,
-  RouterModule,
-} from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { MarkdownModule } from 'ngx-markdown';
@@ -42,16 +34,10 @@ router.navigate.and.returnValue(Promise.resolve(true));
 router.url = '/engineering/task-management';
 router.events = new BehaviorSubject(new NavigationEnd(0, '', ''));
 
-const activatedRoute = jasmine.createSpyObj('ActivatedRoute', [
-  'paramMap',
-  'snapshot',
-]);
+const activatedRoute = jasmine.createSpyObj('ActivatedRoute', ['paramMap', 'snapshot']);
 activatedRoute.paramMap = of('/engineering/task-management');
 
-const blogService = jasmine.createSpyObj<BlogService>('BlogService', [
-  'getPost',
-  'getPosts',
-]);
+const blogService = jasmine.createSpyObj<BlogService>('BlogService', ['getPost', 'getPosts']);
 blogService.getPost.and.returnValue(of(ENGINEERING_POSTS[0]));
 blogService.getPosts.and.returnValue(of(ENGINEERING_POSTS));
 
@@ -98,8 +84,6 @@ describe('PostNavigationComponent', () => {
     userEvent.click(screen.getByRole('heading', { name: 'Staying Focused' }));
     tick(1);
     fixture.detectChanges();
-    expect(router.navigate).toHaveBeenCalledWith([
-      '/engineering/staying-focused',
-    ]);
+    expect(router.navigate).toHaveBeenCalledWith(['/engineering/staying-focused']);
   }));
 });

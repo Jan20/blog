@@ -8,14 +8,9 @@ import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(
-      routes,
-      withInMemoryScrolling({ scrollPositionRestoration: 'top' })
-    ),
+    provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: 'top' })),
     provideHttpClient(withFetch()),
-    provideClientHydration(
-      withEventReplay(),
-    ),
+    provideClientHydration(withEventReplay()),
     provideAnimations(),
     provideAnimationsAsync(),
   ],

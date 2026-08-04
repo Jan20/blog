@@ -1,10 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { BlogService } from './blog.service';
-import {
-  ENGINEERING_POSTS,
-  MISCELLANEOUS_GUIDES,
-  DOCKER_GUIDES,
-} from 'src/app/helpers/post-mocks';
+import { ENGINEERING_POSTS, MISCELLANEOUS_GUIDES, DOCKER_GUIDES } from 'src/app/helpers/post-mocks';
 
 let service: BlogService;
 

@@ -1,29 +1,35 @@
 h1 {
-  font-size: 48px !important;
+  font-size: 44px !important;
   font-weight: 300 !important;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
   padding-top: 30px;
   padding-bottom: 0px;
-  line-height: 125% !important;
+  line-height: 1.3 !important;
   text-align: left;
   color: var(--text-color);
 }
 
 h2 {
-  line-height: 150% !important;
-  font-size: 38px !important;
-  font-weight: 300 !important;
-  margin-top: 20px !important;
-  padding-top: 20px;
-  margin-bottom: 5px !important;
+  line-height: 1.4 !important;
+  font-size: 30px !important;
+  font-weight: 400 !important;
+  margin-top: 40px !important;
+  padding-top: 0px;
+  margin-bottom: 12px !important;
   padding-bottom: 0px;
   color: var(--text-color);
 }
 
 h4 {
-  padding-top: 10px !important;
+  padding-top: 24px !important;
   font-size: 18px !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
+}
+
+markdown {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .mat-card-image {
@@ -67,6 +73,21 @@ h4 {
 }
 
 .post-date {
-  margin-top: 8px;
-  margin-bottom: 16px;
+  max-width: 720px;
+  margin: 8px auto 16px auto;
+}
+
+@media (max-width: 768px) {
+  markdown,
+  .post-date {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 32px !important;
+  }
+
+  h2 {
+    font-size: 26px !important;
+  }
 }

@@ -1,28 +1,28 @@
-import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
-import {APP_BASE_HREF} from '@angular/common';
-import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {ActivatedRoute, Router} from '@angular/router';
-import {screen} from '@testing-library/angular';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { APP_BASE_HREF } from '@angular/common';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { ActivatedRoute, Router } from '@angular/router';
+import { screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import {Observable, of} from 'rxjs';
-import {ThemeService} from '../../modules/shared/services/theme.service';
-import {MenuState} from '../models/menu-item';
-import {MenuComponent} from './menu.component';
+import { Observable, of } from 'rxjs';
+import { ThemeService } from '../../modules/shared/services/theme.service';
+import { MenuState } from '../models/menu-item';
+import { MenuComponent } from './menu.component';
 
 class MockBreakpointObserver {
   observe(breakPoint: string): Observable<BreakpointState> {
     if (breakPoint === Breakpoints.Handset) {
-      return of({ matches: true, breakpoints: { [Breakpoints.Handset]: true } });
+      return of({
+        matches: true,
+        breakpoints: { [Breakpoints.Handset]: true },
+      });
     }
     return of({ matches: false, breakpoints: {} });
   }
 }
 
-const activatedRoute = jasmine.createSpyObj('ActivatedRoute', [
-  'paramMap',
-  'snapshot',
-]);
+const activatedRoute = jasmine.createSpyObj('ActivatedRoute', ['paramMap', 'snapshot']);
 activatedRoute.paramMap = of('/engineering');
 
 describe('MenuComponent', () => {
@@ -35,7 +35,7 @@ describe('MenuComponent', () => {
 
   const mockThemeService = {
     theme$: of('light-theme'),
-    toggleTheme: jasmine.createSpy('toggleTheme')
+    toggleTheme: jasmine.createSpy('toggleTheme'),
   };
 
   beforeEach(async () => {
@@ -46,7 +46,7 @@ describe('MenuComponent', () => {
         { provide: BreakpointObserver, useClass: MockBreakpointObserver },
         { provide: APP_BASE_HREF, useValue: '/' },
         { provide: ActivatedRoute, useValue: activatedRoute },
-        { provide: ThemeService, useValue: mockThemeService }
+        { provide: ThemeService, useValue: mockThemeService },
       ],
     }).compileComponents();
 
@@ -74,7 +74,9 @@ describe('MenuComponent', () => {
     fixture.detectChanges();
     expect(component.menuState).toBe(MenuState.MINIMIZED);
 
-    const toggleButton = screen.getByRole('button', { name: /Toggle Navigation Bar in Desktop View/i });
+    const toggleButton = screen.getByRole('button', {
+      name: /Toggle Navigation Bar in Desktop View/i,
+    });
     userEvent.click(toggleButton);
     tick();
     fixture.detectChanges();

@@ -1,16 +1,21 @@
-import {BreakpointObserver, Breakpoints, BreakpointState, LayoutModule,} from '@angular/cdk/layout';
-import {APP_BASE_HREF, CommonModule} from '@angular/common';
-import {ComponentFixture, ComponentFixtureAutoDetect, TestBed,} from '@angular/core/testing';
-import {FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {Router} from '@angular/router';
-import {Observable, of} from 'rxjs';
-import {MenuItem} from '../models/menu-item';
-import {MobileMenuComponent} from './mobile-menu.component';
+import {
+  BreakpointObserver,
+  Breakpoints,
+  BreakpointState,
+  LayoutModule,
+} from '@angular/cdk/layout';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
+import { ComponentFixture, ComponentFixtureAutoDetect, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { MenuItem } from '../models/menu-item';
+import { MobileMenuComponent } from './mobile-menu.component';
 
 let component: MobileMenuComponent;
 let fixture: ComponentFixture<MobileMenuComponent>;
@@ -65,12 +70,7 @@ describe('MobileMenuComponent', () => {
   });
 
   it('should navigate to menu entry', () => {
-    const selectedItem = new MenuItem(
-      'Angular Guides',
-      'school',
-      'course',
-      false
-    );
+    const selectedItem = new MenuItem('Angular Guides', 'school', 'course', false);
     component.navigateToMenuEntry(selectedItem);
 
     expect(selectedItem.active).toBe(true);

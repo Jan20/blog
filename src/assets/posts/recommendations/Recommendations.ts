@@ -9,6 +9,6 @@ export const recommendations: Post[] = [
     'assets/posts/recommendations/effective-engineering/effective-engineering.md',
     'assets/posts/recommendations/effective-engineering/thumbnail.svg',
     '2023-05-02',
-    '/recommendations/effective-engineering'
+    '/recommendations/effective-engineering',
   ),
 ];

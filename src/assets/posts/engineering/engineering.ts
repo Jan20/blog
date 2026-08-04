@@ -9,7 +9,7 @@ export const engineering: Post[] = [
     'assets/posts/engineering/task-management/task-management.md',
     'assets/posts/engineering/task-management/thumbnail.svg',
     '2023-02-04',
-    '/engineering/task-management'
+    '/engineering/task-management',
   ),
   new Post(
     'engineering',
@@ -19,7 +19,7 @@ export const engineering: Post[] = [
     'assets/posts/engineering/staying-focused/staying-focused.md',
     'assets/posts/engineering/staying-focused/thumbnail.svg',
     '2022-10-11',
-    '/engineering/staying-focused'
+    '/engineering/staying-focused',
   ),
   new Post(
     'engineering',
@@ -29,7 +29,7 @@ export const engineering: Post[] = [
     'assets/posts/engineering/lessons-learned/lessons-learned.md',
     'assets/posts/engineering/lessons-learned/thumbnail.png',
     '2024-11-30',
-    '/engineering/lessons-learned'
+    '/engineering/lessons-learned',
   ),
   new Post(
     'engineering',
@@ -39,7 +39,7 @@ export const engineering: Post[] = [
     'assets/posts/engineering/efficient-terminal-setup/efficient-terminal-setup.md',
     'assets/posts/engineering/efficient-terminal-setup/thumbnail.svg',
     '2024-10-13',
-    '/engineering/efficient-terminal-setup'
+    '/engineering/efficient-terminal-setup',
   ),
   new Post(
     'engineering',
@@ -49,7 +49,7 @@ export const engineering: Post[] = [
     'assets/posts/engineering/why-using-vim/why-using-vim.md',
     'assets/posts/engineering/why-using-vim/thumbnail.png',
     '2025-01-18',
-    '/engineering/why-using-vim'
+    '/engineering/why-using-vim',
   ),
   new Post(
     'engineering',
@@ -59,6 +59,6 @@ export const engineering: Post[] = [
     'assets/posts/engineering/efficient-mac-os-setup/efficient-mac-os-setup.md',
     'assets/posts/engineering/efficient-mac-os-setup/thumbnail.png',
     '2025-05-31',
-    '/engineering/efficient-mac-os-setup'
+    '/engineering/efficient-mac-os-setup',
   ),
 ];
